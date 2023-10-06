@@ -1,0 +1,23 @@
+name: platform/external/python/absl-py Clone and Push
+
+on:
+  schedule:
+    - cron: '35 2 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/python/absl-py platform/external/python/absl-py
+
+    - name: Push
+      run: |
+        cd platform/external/python/absl-py
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/python/absl-py.git

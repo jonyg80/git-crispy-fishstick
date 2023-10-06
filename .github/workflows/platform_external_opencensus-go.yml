@@ -1,0 +1,23 @@
+name: platform/external/opencensus-go Clone and Push
+
+on:
+  schedule:
+    - cron: '44 1 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/opencensus-go platform/external/opencensus-go
+
+    - name: Push
+      run: |
+        cd platform/external/opencensus-go
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/opencensus-go.git

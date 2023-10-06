@@ -1,0 +1,23 @@
+name: platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9 Clone and Push
+
+on:
+  schedule:
+    - cron: '29 22 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9 platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9
+
+    - name: Push
+      run: |
+        cd platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9.git

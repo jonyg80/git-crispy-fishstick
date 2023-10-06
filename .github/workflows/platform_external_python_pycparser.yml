@@ -1,0 +1,23 @@
+name: platform/external/python/pycparser Clone and Push
+
+on:
+  schedule:
+    - cron: '31 3 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/python/pycparser platform/external/python/pycparser
+
+    - name: Push
+      run: |
+        cd platform/external/python/pycparser
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/python/pycparser.git

@@ -1,0 +1,23 @@
+name: platform/external/python/pyyaml Clone and Push
+
+on:
+  schedule:
+    - cron: '40 3 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/python/pyyaml platform/external/python/pyyaml
+
+    - name: Push
+      run: |
+        cd platform/external/python/pyyaml
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/python/pyyaml.git

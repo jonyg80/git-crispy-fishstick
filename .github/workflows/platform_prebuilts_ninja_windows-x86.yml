@@ -1,0 +1,23 @@
+name: platform/prebuilts/ninja/windows-x86 Clone and Push
+
+on:
+  schedule:
+    - cron: '37 23 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/prebuilts/ninja/windows-x86 platform/prebuilts/ninja/windows-x86
+
+    - name: Push
+      run: |
+        cd platform/prebuilts/ninja/windows-x86
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/ninja/windows-x86.git

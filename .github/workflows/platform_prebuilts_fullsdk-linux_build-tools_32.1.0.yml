@@ -1,0 +1,23 @@
+name: platform/prebuilts/fullsdk-linux/build-tools/32.1.0 Clone and Push
+
+on:
+  schedule:
+    - cron: '17 21 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/prebuilts/fullsdk-linux/build-tools/32.1.0 platform/prebuilts/fullsdk-linux/build-tools/32.1.0
+
+    - name: Push
+      run: |
+        cd platform/prebuilts/fullsdk-linux/build-tools/32.1.0
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/fullsdk-linux/build-tools/32.1.0.git

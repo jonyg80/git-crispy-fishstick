@@ -1,0 +1,23 @@
+name: platform/system/server_configurable_flags Clone and Push
+
+on:
+  schedule:
+    - cron: '16 1 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/system/server_configurable_flags platform/system/server_configurable_flags
+
+    - name: Push
+      run: |
+        cd platform/system/server_configurable_flags
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/system/server_configurable_flags.git

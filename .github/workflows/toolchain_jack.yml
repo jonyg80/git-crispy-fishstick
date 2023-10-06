@@ -1,0 +1,23 @@
+name: toolchain/jack Clone and Push
+
+on:
+  schedule:
+    - cron: '42 3 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/toolchain/jack toolchain/jack
+
+    - name: Push
+      run: |
+        cd toolchain/jack
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/toolchain/jack.git

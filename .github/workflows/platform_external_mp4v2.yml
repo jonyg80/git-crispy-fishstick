@@ -1,0 +1,23 @@
+name: platform/external/mp4v2 Clone and Push
+
+on:
+  schedule:
+    - cron: '6 1 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/mp4v2 platform/external/mp4v2
+
+    - name: Push
+      run: |
+        cd platform/external/mp4v2
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/mp4v2.git

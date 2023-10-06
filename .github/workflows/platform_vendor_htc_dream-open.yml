@@ -1,0 +1,23 @@
+name: platform/vendor/htc/dream-open Clone and Push
+
+on:
+  schedule:
+    - cron: '15 3 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/vendor/htc/dream-open platform/vendor/htc/dream-open
+
+    - name: Push
+      run: |
+        cd platform/vendor/htc/dream-open
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/vendor/htc/dream-open.git

@@ -1,0 +1,23 @@
+name: toolchain/jdk/jdk9_jaxp Clone and Push
+
+on:
+  schedule:
+    - cron: '50 3 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/toolchain/jdk/jdk9_jaxp toolchain/jdk/jdk9_jaxp
+
+    - name: Push
+      run: |
+        cd toolchain/jdk/jdk9_jaxp
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/toolchain/jdk/jdk9_jaxp.git

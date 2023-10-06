@@ -1,0 +1,23 @@
+name: platform/packages/apps/Mms Clone and Push
+
+on:
+  schedule:
+    - cron: '19 17 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/packages/apps/Mms platform/packages/apps/Mms
+
+    - name: Push
+      run: |
+        cd platform/packages/apps/Mms
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/Mms.git

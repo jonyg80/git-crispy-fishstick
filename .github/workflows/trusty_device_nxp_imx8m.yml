@@ -1,0 +1,23 @@
+name: trusty/device/nxp/imx8m Clone and Push
+
+on:
+  schedule:
+    - cron: '3 5 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/trusty/device/nxp/imx8m trusty/device/nxp/imx8m
+
+    - name: Push
+      run: |
+        cd trusty/device/nxp/imx8m
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/trusty/device/nxp/imx8m.git

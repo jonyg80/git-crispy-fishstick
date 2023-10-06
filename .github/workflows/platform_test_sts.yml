@@ -1,0 +1,23 @@
+name: platform/test/sts Clone and Push
+
+on:
+  schedule:
+    - cron: '48 1 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/test/sts platform/test/sts
+
+    - name: Push
+      run: |
+        cd platform/test/sts
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/test/sts.git

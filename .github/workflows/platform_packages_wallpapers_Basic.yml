@@ -1,0 +1,23 @@
+name: platform/packages/wallpapers/Basic Clone and Push
+
+on:
+  schedule:
+    - cron: '32 19 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/packages/wallpapers/Basic platform/packages/wallpapers/Basic
+
+    - name: Push
+      run: |
+        cd platform/packages/wallpapers/Basic
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/packages/wallpapers/Basic.git

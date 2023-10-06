@@ -1,0 +1,23 @@
+name: platform/external/protobuf Clone and Push
+
+on:
+  schedule:
+    - cron: '26 2 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/protobuf platform/external/protobuf
+
+    - name: Push
+      run: |
+        cd platform/external/protobuf
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/protobuf.git

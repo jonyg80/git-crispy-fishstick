@@ -1,0 +1,23 @@
+name: platform/external/pandora/mmi2grpc Clone and Push
+
+on:
+  schedule:
+    - cron: '7 2 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/pandora/mmi2grpc platform/external/pandora/mmi2grpc
+
+    - name: Push
+      run: |
+        cd platform/external/pandora/mmi2grpc
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/pandora/mmi2grpc.git

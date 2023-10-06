@@ -1,0 +1,23 @@
+name: platform/test/vts-testcase/performance Clone and Push
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/test/vts-testcase/performance platform/test/vts-testcase/performance
+
+    - name: Push
+      run: |
+        cd platform/test/vts-testcase/performance
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/test/vts-testcase/performance.git

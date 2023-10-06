@@ -1,0 +1,23 @@
+name: platform/hardware/qcom/sdm845/media Clone and Push
+
+on:
+  schedule:
+    - cron: '22 15 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/hardware/qcom/sdm845/media platform/hardware/qcom/sdm845/media
+
+    - name: Push
+      run: |
+        cd platform/hardware/qcom/sdm845/media
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/qcom/sdm845/media.git

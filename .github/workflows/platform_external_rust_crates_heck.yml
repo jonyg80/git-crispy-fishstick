@@ -1,0 +1,23 @@
+name: platform/external/rust/crates/heck Clone and Push
+
+on:
+  schedule:
+    - cron: '14 6 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/rust/crates/heck platform/external/rust/crates/heck
+
+    - name: Push
+      run: |
+        cd platform/external/rust/crates/heck
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/rust/crates/heck.git

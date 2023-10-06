@@ -1,0 +1,23 @@
+name: toolchain/yasm Clone and Push
+
+on:
+  schedule:
+    - cron: '43 4 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/toolchain/yasm toolchain/yasm
+
+    - name: Push
+      run: |
+        cd toolchain/yasm
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/toolchain/yasm.git

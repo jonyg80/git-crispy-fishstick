@@ -1,0 +1,23 @@
+name: platform/hardware/ti/am57x Clone and Push
+
+on:
+  schedule:
+    - cron: '49 15 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/hardware/ti/am57x platform/hardware/ti/am57x
+
+    - name: Push
+      run: |
+        cd platform/hardware/ti/am57x
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/ti/am57x.git

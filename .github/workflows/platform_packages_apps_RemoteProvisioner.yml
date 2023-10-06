@@ -1,0 +1,23 @@
+name: platform/packages/apps/RemoteProvisioner Clone and Push
+
+on:
+  schedule:
+    - cron: '32 17 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/packages/apps/RemoteProvisioner platform/packages/apps/RemoteProvisioner
+
+    - name: Push
+      run: |
+        cd platform/packages/apps/RemoteProvisioner
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/RemoteProvisioner.git

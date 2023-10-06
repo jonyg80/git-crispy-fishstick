@@ -1,0 +1,23 @@
+name: platform/hardware/google/graphics/common Clone and Push
+
+on:
+  schedule:
+    - cron: '15 14 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/hardware/google/graphics/common platform/hardware/google/graphics/common
+
+    - name: Push
+      run: |
+        cd platform/hardware/google/graphics/common
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/google/graphics/common.git

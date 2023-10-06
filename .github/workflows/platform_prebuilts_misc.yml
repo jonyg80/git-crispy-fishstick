@@ -1,0 +1,23 @@
+name: platform/prebuilts/misc Clone and Push
+
+on:
+  schedule:
+    - cron: '11 23 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/prebuilts/misc platform/prebuilts/misc
+
+    - name: Push
+      run: |
+        cd platform/prebuilts/misc
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/misc.git

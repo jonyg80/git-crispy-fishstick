@@ -1,0 +1,23 @@
+name: platform/external/python/more-itertools Clone and Push
+
+on:
+  schedule:
+    - cron: '13 3 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/python/more-itertools platform/external/python/more-itertools
+
+    - name: Push
+      run: |
+        cd platform/external/python/more-itertools
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/external/python/more-itertools.git

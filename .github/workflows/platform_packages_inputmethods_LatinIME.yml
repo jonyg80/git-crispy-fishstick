@@ -1,0 +1,23 @@
+name: platform/packages/inputmethods/LatinIME Clone and Push
+
+on:
+  schedule:
+    - cron: '6 18 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/packages/inputmethods/LatinIME platform/packages/inputmethods/LatinIME
+
+    - name: Push
+      run: |
+        cd platform/packages/inputmethods/LatinIME
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/packages/inputmethods/LatinIME.git

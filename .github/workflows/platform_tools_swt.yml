@@ -1,0 +1,23 @@
+name: platform/tools/swt Clone and Push
+
+on:
+  schedule:
+    - cron: '3 3 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/tools/swt platform/tools/swt
+
+    - name: Push
+      run: |
+        cd platform/tools/swt
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/tools/swt.git

@@ -1,0 +1,23 @@
+name: trusty/host/common Clone and Push
+
+on:
+  schedule:
+    - cron: '14 5 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/trusty/host/common trusty/host/common
+
+    - name: Push
+      run: |
+        cd trusty/host/common
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/trusty/host/common.git

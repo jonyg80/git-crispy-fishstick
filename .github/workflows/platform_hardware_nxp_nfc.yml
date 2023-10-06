@@ -1,0 +1,23 @@
+name: platform/hardware/nxp/nfc Clone and Push
+
+on:
+  schedule:
+    - cron: '48 14 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/hardware/nxp/nfc platform/hardware/nxp/nfc
+
+    - name: Push
+      run: |
+        cd platform/hardware/nxp/nfc
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/nxp/nfc.git

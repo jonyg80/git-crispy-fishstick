@@ -1,0 +1,23 @@
+name: platform/packages/apps/CertInstaller Clone and Push
+
+on:
+  schedule:
+    - cron: '50 16 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/packages/apps/CertInstaller platform/packages/apps/CertInstaller
+
+    - name: Push
+      run: |
+        cd platform/packages/apps/CertInstaller
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/CertInstaller.git

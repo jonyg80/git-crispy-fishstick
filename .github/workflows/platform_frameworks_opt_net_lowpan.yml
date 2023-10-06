@@ -1,0 +1,23 @@
+name: platform/frameworks/opt/net/lowpan Clone and Push
+
+on:
+  schedule:
+    - cron: '7 13 * * *' # Runs every day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/frameworks/opt/net/lowpan platform/frameworks/opt/net/lowpan
+
+    - name: Push
+      run: |
+        cd platform/frameworks/opt/net/lowpan
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/opt/net/lowpan.git
