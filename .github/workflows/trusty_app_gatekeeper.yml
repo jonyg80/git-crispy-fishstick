@@ -2,7 +2,7 @@ name: trusty/app/gatekeeper Clone and Push
 
 on:
   schedule:
-    - cron: '53 4 * * *' # Runs every day
+    - cron: '24 6 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/app/gatekeeper
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/app/gatekeeper.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/app/gatekeeper.git

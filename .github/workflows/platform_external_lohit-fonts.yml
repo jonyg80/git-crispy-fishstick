@@ -2,7 +2,7 @@ name: platform/external/lohit-fonts Clone and Push
 
 on:
   schedule:
-    - cron: '36 0 * * *' # Runs every day
+    - cron: '33 17 * * 1' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/lohit-fonts
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/lohit-fonts.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/lohit-fonts.git

@@ -2,7 +2,7 @@ name: toolchain/valgrind Clone and Push
 
 on:
   schedule:
-    - cron: '41 4 * * *' # Runs every day
+    - cron: '48 5 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd toolchain/valgrind
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/toolchain/valgrind.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/toolchain/valgrind.git

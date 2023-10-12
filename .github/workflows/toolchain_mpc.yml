@@ -2,7 +2,7 @@ name: toolchain/mpc Clone and Push
 
 on:
   schedule:
-    - cron: '7 4 * * *' # Runs every day
+    - cron: '6 4 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd toolchain/mpc
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/toolchain/mpc.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/toolchain/mpc.git

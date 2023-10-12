@@ -2,7 +2,7 @@ name: platform/packages/apps/Car/MultiDisplay Clone and Push
 
 on:
   schedule:
-    - cron: '31 16 * * *' # Runs every day
+    - cron: '18 17 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/packages/apps/Car/MultiDisplay
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/Car/MultiDisplay.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/packages/apps/Car/MultiDisplay.git

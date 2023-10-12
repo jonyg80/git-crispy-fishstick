@@ -1,0 +1,23 @@
+name: platform/external/dtc Clone and Push
+
+on:
+  schedule:
+    - cron: '6 2 * * 1' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/dtc platform/external/dtc
+
+    - name: Push
+      run: |
+        cd platform/external/dtc
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/dtc.git

@@ -2,7 +2,7 @@ name: platform/packages/wallpapers/MusicVisualization Clone and Push
 
 on:
   schedule:
-    - cron: '38 19 * * *' # Runs every day
+    - cron: '39 2 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/packages/wallpapers/MusicVisualization
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/packages/wallpapers/MusicVisualization.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/packages/wallpapers/MusicVisualization.git

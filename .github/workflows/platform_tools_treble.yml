@@ -2,7 +2,7 @@ name: platform/tools/treble Clone and Push
 
 on:
   schedule:
-    - cron: '13 3 * * *' # Runs every day
+    - cron: '24 1 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/tools/treble
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/tools/treble.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/tools/treble.git

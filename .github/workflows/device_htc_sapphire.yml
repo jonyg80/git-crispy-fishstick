@@ -1,0 +1,23 @@
+name: device/htc/sapphire Clone and Push
+
+on:
+  schedule:
+    - cron: '51 5 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/device/htc/sapphire device/htc/sapphire
+
+    - name: Push
+      run: |
+        cd device/htc/sapphire
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/device/htc/sapphire.git

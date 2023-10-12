@@ -2,7 +2,7 @@ name: platform/external/seccomp-tests Clone and Push
 
 on:
   schedule:
-    - cron: '16 10 * * *' # Runs every day
+    - cron: '33 22 * * 2' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/seccomp-tests
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/seccomp-tests.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/seccomp-tests.git

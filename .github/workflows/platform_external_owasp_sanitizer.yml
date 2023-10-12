@@ -2,7 +2,7 @@ name: platform/external/owasp/sanitizer Clone and Push
 
 on:
   schedule:
-    - cron: '4 2 * * *' # Runs every day
+    - cron: '57 21 * * 1' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/owasp/sanitizer
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/owasp/sanitizer.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/owasp/sanitizer.git

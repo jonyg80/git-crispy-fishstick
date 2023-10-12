@@ -1,0 +1,23 @@
+name: platform/external/gvdb Clone and Push
+
+on:
+  schedule:
+    - cron: '9 8 * * 1' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/gvdb platform/external/gvdb
+
+    - name: Push
+      run: |
+        cd platform/external/gvdb
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/gvdb.git

@@ -2,7 +2,7 @@ name: platform/frameworks/libs/systemui Clone and Push
 
 on:
   schedule:
-    - cron: '38 12 * * *' # Runs every day
+    - cron: '39 5 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/libs/systemui
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/libs/systemui.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/libs/systemui.git

@@ -2,7 +2,7 @@ name: platform/frameworks/opt/tv/tvsystem Clone and Push
 
 on:
   schedule:
-    - cron: '15 13 * * *' # Runs every day
+    - cron: '30 7 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/opt/tv/tvsystem
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/opt/tv/tvsystem.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/opt/tv/tvsystem.git

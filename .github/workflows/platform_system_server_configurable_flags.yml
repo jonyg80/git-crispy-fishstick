@@ -2,7 +2,7 @@ name: platform/system/server_configurable_flags Clone and Push
 
 on:
   schedule:
-    - cron: '16 1 * * *' # Runs every day
+    - cron: '33 19 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/system/server_configurable_flags
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/system/server_configurable_flags.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/system/server_configurable_flags.git

@@ -2,7 +2,7 @@ name: platform/prebuilts/jdk/jdk9 Clone and Push
 
 on:
   schedule:
-    - cron: '53 22 * * *' # Runs every day
+    - cron: '24 12 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/jdk/jdk9
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/jdk/jdk9.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/jdk/jdk9.git

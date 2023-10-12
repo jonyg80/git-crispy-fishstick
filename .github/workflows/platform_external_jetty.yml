@@ -1,0 +1,23 @@
+name: platform/external/jetty Clone and Push
+
+on:
+  schedule:
+    - cron: '54 10 * * 1' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/jetty platform/external/jetty
+
+    - name: Push
+      run: |
+        cd platform/external/jetty
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/jetty.git

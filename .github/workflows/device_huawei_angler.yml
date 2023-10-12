@@ -1,0 +1,23 @@
+name: device/huawei/angler Clone and Push
+
+on:
+  schedule:
+    - cron: '54 5 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/device/huawei/angler device/huawei/angler
+
+    - name: Push
+      run: |
+        cd device/huawei/angler
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/device/huawei/angler.git

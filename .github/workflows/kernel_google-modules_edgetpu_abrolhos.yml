@@ -1,0 +1,23 @@
+name: kernel/google-modules/edgetpu/abrolhos Clone and Push
+
+on:
+  schedule:
+    - cron: '42 9 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/kernel/google-modules/edgetpu/abrolhos kernel/google-modules/edgetpu/abrolhos
+
+    - name: Push
+      run: |
+        cd kernel/google-modules/edgetpu/abrolhos
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/kernel/google-modules/edgetpu/abrolhos.git

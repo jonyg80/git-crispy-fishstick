@@ -2,7 +2,7 @@ name: trusty/external/trusted-firmware-a Clone and Push
 
 on:
   schedule:
-    - cron: '11 5 * * *' # Runs every day
+    - cron: '18 7 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/external/trusted-firmware-a
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/external/trusted-firmware-a.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/external/trusted-firmware-a.git

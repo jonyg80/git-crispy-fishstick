@@ -2,7 +2,7 @@ name: trusty/lk/trusty Clone and Push
 
 on:
   schedule:
-    - cron: '19 5 * * *' # Runs every day
+    - cron: '42 7 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/lk/trusty
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/lk/trusty.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/lk/trusty.git

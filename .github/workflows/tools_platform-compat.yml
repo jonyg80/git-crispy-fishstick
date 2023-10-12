@@ -2,7 +2,7 @@ name: tools/platform-compat Clone and Push
 
 on:
   schedule:
-    - cron: '47 4 * * *' # Runs every day
+    - cron: '6 6 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd tools/platform-compat
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/tools/platform-compat.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/tools/platform-compat.git

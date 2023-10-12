@@ -2,7 +2,7 @@ name: platform/test/vti/dashboard Clone and Push
 
 on:
   schedule:
-    - cron: '51 1 * * *' # Runs every day
+    - cron: '18 21 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/test/vti/dashboard
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/test/vti/dashboard.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/test/vti/dashboard.git

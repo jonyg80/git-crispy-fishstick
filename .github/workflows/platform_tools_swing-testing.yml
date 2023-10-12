@@ -2,7 +2,7 @@ name: platform/tools/swing-testing Clone and Push
 
 on:
   schedule:
-    - cron: '2 3 * * *' # Runs every day
+    - cron: '51 0 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/tools/swing-testing
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/tools/swing-testing.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/tools/swing-testing.git

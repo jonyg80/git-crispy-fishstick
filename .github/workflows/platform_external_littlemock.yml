@@ -2,7 +2,7 @@ name: platform/external/littlemock Clone and Push
 
 on:
   schedule:
-    - cron: '28 0 * * *' # Runs every day
+    - cron: '9 17 * * 1' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/littlemock
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/littlemock.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/littlemock.git

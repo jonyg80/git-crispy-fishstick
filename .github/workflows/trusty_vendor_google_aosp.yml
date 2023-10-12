@@ -2,7 +2,7 @@ name: trusty/vendor/google/aosp Clone and Push
 
 on:
   schedule:
-    - cron: '22 5 * * *' # Runs every day
+    - cron: '51 7 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/vendor/google/aosp
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/vendor/google/aosp.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/vendor/google/aosp.git

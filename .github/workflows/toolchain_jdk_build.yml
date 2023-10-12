@@ -2,7 +2,7 @@ name: toolchain/jdk/build Clone and Push
 
 on:
   schedule:
-    - cron: '44 3 * * *' # Runs every day
+    - cron: '57 2 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd toolchain/jdk/build
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/toolchain/jdk/build.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/toolchain/jdk/build.git

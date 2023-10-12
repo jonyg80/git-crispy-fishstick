@@ -2,7 +2,7 @@ name: platform/packages/apps/UnifiedEmail Clone and Push
 
 on:
   schedule:
-    - cron: '58 17 * * *' # Runs every day
+    - cron: '39 21 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/packages/apps/UnifiedEmail
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/UnifiedEmail.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/packages/apps/UnifiedEmail.git

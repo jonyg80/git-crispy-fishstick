@@ -1,0 +1,23 @@
+name: platform/external/chromium_org/third_party/angle_dx11 Clone and Push
+
+on:
+  schedule:
+    - cron: '57 21 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/chromium_org/third_party/angle_dx11 platform/external/chromium_org/third_party/angle_dx11
+
+    - name: Push
+      run: |
+        cd platform/external/chromium_org/third_party/angle_dx11
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/chromium_org/third_party/angle_dx11.git

@@ -2,7 +2,7 @@ name: platform/external/rust/crates/pest_meta Clone and Push
 
 on:
   schedule:
-    - cron: '30 7 * * *' # Runs every day
+    - cron: '15 14 * * 2' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/rust/crates/pest_meta
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/rust/crates/pest_meta.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/rust/crates/pest_meta.git

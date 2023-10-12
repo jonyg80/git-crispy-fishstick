@@ -2,7 +2,7 @@ name: platform/external/wuffs-mirror-release-c Clone and Push
 
 on:
   schedule:
-    - cron: '2 12 * * *' # Runs every day
+    - cron: '51 3 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/wuffs-mirror-release-c
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/wuffs-mirror-release-c.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/wuffs-mirror-release-c.git

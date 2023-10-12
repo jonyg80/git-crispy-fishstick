@@ -1,0 +1,23 @@
+name: kernel/exynos-modules/config Clone and Push
+
+on:
+  schedule:
+    - cron: '0 9 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/kernel/exynos-modules/config kernel/exynos-modules/config
+
+    - name: Push
+      run: |
+        cd kernel/exynos-modules/config
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/kernel/exynos-modules/config.git

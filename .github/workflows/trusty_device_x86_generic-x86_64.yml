@@ -2,7 +2,7 @@ name: trusty/device/x86/generic-x86_64 Clone and Push
 
 on:
   schedule:
-    - cron: '4 5 * * *' # Runs every day
+    - cron: '57 6 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/device/x86/generic-x86_64
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/device/x86/generic-x86_64.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/device/x86/generic-x86_64.git

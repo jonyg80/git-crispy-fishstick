@@ -2,7 +2,7 @@ name: platform/prebuilts/gcc/darwin-x86/host/headers Clone and Push
 
 on:
   schedule:
-    - cron: '55 21 * * *' # Runs every day
+    - cron: '30 9 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/gcc/darwin-x86/host/headers
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/gcc/darwin-x86/host/headers.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/gcc/darwin-x86/host/headers.git

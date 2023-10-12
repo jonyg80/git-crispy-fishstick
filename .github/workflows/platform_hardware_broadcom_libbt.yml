@@ -2,7 +2,7 @@ name: platform/hardware/broadcom/libbt Clone and Push
 
 on:
   schedule:
-    - cron: '30 13 * * *' # Runs every day
+    - cron: '15 8 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/hardware/broadcom/libbt
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/broadcom/libbt.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/hardware/broadcom/libbt.git

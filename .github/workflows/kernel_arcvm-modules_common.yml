@@ -1,0 +1,23 @@
+name: kernel/arcvm-modules/common Clone and Push
+
+on:
+  schedule:
+    - cron: '21 8 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/kernel/arcvm-modules/common kernel/arcvm-modules/common
+
+    - name: Push
+      run: |
+        cd kernel/arcvm-modules/common
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/kernel/arcvm-modules/common.git

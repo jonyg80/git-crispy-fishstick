@@ -2,7 +2,7 @@ name: platform/frameworks/opt/mms Clone and Push
 
 on:
   schedule:
-    - cron: '3 13 * * *' # Runs every day
+    - cron: '54 6 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/opt/mms
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/opt/mms.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/opt/mms.git

@@ -1,0 +1,23 @@
+name: device/generic/mini-emulator-armv7-a-neon Clone and Push
+
+on:
+  schedule:
+    - cron: '15 1 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/device/generic/mini-emulator-armv7-a-neon device/generic/mini-emulator-armv7-a-neon
+
+    - name: Push
+      run: |
+        cd device/generic/mini-emulator-armv7-a-neon
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/device/generic/mini-emulator-armv7-a-neon.git

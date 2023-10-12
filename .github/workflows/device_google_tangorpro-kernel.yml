@@ -1,0 +1,23 @@
+name: device/google/tangorpro-kernel Clone and Push
+
+on:
+  schedule:
+    - cron: '9 5 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/device/google/tangorpro-kernel device/google/tangorpro-kernel
+
+    - name: Push
+      run: |
+        cd device/google/tangorpro-kernel
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/device/google/tangorpro-kernel.git

@@ -1,0 +1,23 @@
+name: platform/external/Reactive-Extensions/RxCpp Clone and Push
+
+on:
+  schedule:
+    - cron: '24 16 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/Reactive-Extensions/RxCpp platform/external/Reactive-Extensions/RxCpp
+
+    - name: Push
+      run: |
+        cd platform/external/Reactive-Extensions/RxCpp
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/Reactive-Extensions/RxCpp.git

@@ -2,7 +2,7 @@ name: platform/frameworks/support-golden Clone and Push
 
 on:
   schedule:
-    - cron: '22 13 * * *' # Runs every day
+    - cron: '51 7 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/support-golden
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/support-golden.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/support-golden.git

@@ -2,7 +2,7 @@ name: platform/prebuilts/android-emulator-build/qt Clone and Push
 
 on:
   schedule:
-    - cron: '55 19 * * *' # Runs every day
+    - cron: '30 3 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/android-emulator-build/qt
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/android-emulator-build/qt.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/android-emulator-build/qt.git

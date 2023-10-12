@@ -2,7 +2,7 @@ name: platform/prebuilts/gradle-plugin Clone and Push
 
 on:
   schedule:
-    - cron: '49 22 * * *' # Runs every day
+    - cron: '12 12 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/gradle-plugin
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/gradle-plugin.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/gradle-plugin.git

@@ -1,0 +1,23 @@
+name: platform/external/elfcopy Clone and Push
+
+on:
+  schedule:
+    - cron: '39 2 * * 1' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/elfcopy platform/external/elfcopy
+
+    - name: Push
+      run: |
+        cd platform/external/elfcopy
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/elfcopy.git

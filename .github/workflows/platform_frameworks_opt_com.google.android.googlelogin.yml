@@ -2,7 +2,7 @@ name: platform/frameworks/opt/com.google.android.googlelogin Clone and Push
 
 on:
   schedule:
-    - cron: '54 12 * * *' # Runs every day
+    - cron: '27 6 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/opt/com.google.android.googlelogin
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/opt/com.google.android.googlelogin.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/opt/com.google.android.googlelogin.git

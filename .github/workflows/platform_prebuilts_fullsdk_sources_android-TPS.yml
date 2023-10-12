@@ -2,7 +2,7 @@ name: platform/prebuilts/fullsdk/sources/android-TPS Clone and Push
 
 on:
   schedule:
-    - cron: '44 21 * * *' # Runs every day
+    - cron: '57 8 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/fullsdk/sources/android-TPS
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/fullsdk/sources/android-TPS.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/fullsdk/sources/android-TPS.git

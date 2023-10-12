@@ -2,7 +2,7 @@ name: trusty/app/cast-auth Clone and Push
 
 on:
   schedule:
-    - cron: '51 4 * * *' # Runs every day
+    - cron: '18 6 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/app/cast-auth
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/app/cast-auth.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/app/cast-auth.git

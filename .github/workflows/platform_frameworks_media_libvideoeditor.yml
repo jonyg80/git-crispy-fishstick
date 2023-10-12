@@ -2,7 +2,7 @@ name: platform/frameworks/media/libvideoeditor Clone and Push
 
 on:
   schedule:
-    - cron: '39 12 * * *' # Runs every day
+    - cron: '42 5 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/media/libvideoeditor
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/media/libvideoeditor.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/media/libvideoeditor.git

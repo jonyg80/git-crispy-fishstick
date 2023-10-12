@@ -2,7 +2,7 @@ name: platform/packages/apps/Calculator Clone and Push
 
 on:
   schedule:
-    - cron: '10 16 * * *' # Runs every day
+    - cron: '15 16 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/packages/apps/Calculator
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/Calculator.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/packages/apps/Calculator.git

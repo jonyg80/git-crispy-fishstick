@@ -1,0 +1,23 @@
+name: platform/external/fsck_msdos Clone and Push
+
+on:
+  schedule:
+    - cron: '24 4 * * 1' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/fsck_msdos platform/external/fsck_msdos
+
+    - name: Push
+      run: |
+        cd platform/external/fsck_msdos
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/fsck_msdos.git

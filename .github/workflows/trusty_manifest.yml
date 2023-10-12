@@ -2,7 +2,7 @@ name: trusty/manifest Clone and Push
 
 on:
   schedule:
-    - cron: '20 5 * * *' # Runs every day
+    - cron: '45 7 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/manifest
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/manifest.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/manifest.git

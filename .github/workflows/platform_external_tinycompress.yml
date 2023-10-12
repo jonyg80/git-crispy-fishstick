@@ -2,7 +2,7 @@ name: platform/external/tinycompress Clone and Push
 
 on:
   schedule:
-    - cron: '12 11 * * *' # Runs every day
+    - cron: '21 1 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/tinycompress
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/tinycompress.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/tinycompress.git

@@ -2,7 +2,7 @@ name: platform/external/musl Clone and Push
 
 on:
   schedule:
-    - cron: '11 1 * * *' # Runs every day
+    - cron: '18 19 * * 1' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/musl
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/musl.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/musl.git

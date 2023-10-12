@@ -1,0 +1,23 @@
+name: device/google/redbull Clone and Push
+
+on:
+  schedule:
+    - cron: '36 4 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/device/google/redbull device/google/redbull
+
+    - name: Push
+      run: |
+        cd device/google/redbull
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/device/google/redbull.git

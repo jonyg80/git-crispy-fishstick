@@ -2,7 +2,7 @@ name: platform/hardware/bsp/freescale Clone and Push
 
 on:
   schedule:
-    - cron: '36 13 * * *' # Runs every day
+    - cron: '33 8 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/hardware/bsp/freescale
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/bsp/freescale.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/hardware/bsp/freescale.git

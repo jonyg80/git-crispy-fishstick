@@ -2,7 +2,7 @@ name: platform/prebuilts/clang/darwin-x86/arm/3.3 Clone and Push
 
 on:
   schedule:
-    - cron: '21 20 * * *' # Runs every day
+    - cron: '48 4 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/clang/darwin-x86/arm/3.3
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/clang/darwin-x86/arm/3.3.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/clang/darwin-x86/arm/3.3.git

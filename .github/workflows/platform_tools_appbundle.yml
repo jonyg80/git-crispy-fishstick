@@ -2,7 +2,7 @@ name: platform/tools/appbundle Clone and Push
 
 on:
   schedule:
-    - cron: '11 2 * * *' # Runs every day
+    - cron: '18 22 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/tools/appbundle
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/tools/appbundle.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/tools/appbundle.git

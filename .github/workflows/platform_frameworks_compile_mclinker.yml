@@ -2,7 +2,7 @@ name: platform/frameworks/compile/mclinker Clone and Push
 
 on:
   schedule:
-    - cron: '24 12 * * *' # Runs every day
+    - cron: '57 4 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/compile/mclinker
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/compile/mclinker.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/compile/mclinker.git

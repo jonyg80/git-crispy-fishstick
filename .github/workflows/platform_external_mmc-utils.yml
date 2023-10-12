@@ -2,7 +2,7 @@ name: platform/external/mmc-utils Clone and Push
 
 on:
   schedule:
-    - cron: '55 0 * * *' # Runs every day
+    - cron: '30 18 * * 1' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/mmc-utils
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/mmc-utils.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/mmc-utils.git

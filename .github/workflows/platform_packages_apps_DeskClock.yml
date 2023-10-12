@@ -2,7 +2,7 @@ name: platform/packages/apps/DeskClock Clone and Push
 
 on:
   schedule:
-    - cron: '53 16 * * *' # Runs every day
+    - cron: '24 18 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/packages/apps/DeskClock
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/DeskClock.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/packages/apps/DeskClock.git

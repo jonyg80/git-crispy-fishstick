@@ -2,7 +2,7 @@ name: platform/external/python/jinja Clone and Push
 
 on:
   schedule:
-    - cron: '8 3 * * *' # Runs every day
+    - cron: '9 1 * * 2' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/python/jinja
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/python/jinja.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/python/jinja.git

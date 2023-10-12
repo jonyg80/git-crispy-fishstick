@@ -2,7 +2,7 @@ name: platform/hardware/bsp/kernel/common/v4.1 Clone and Push
 
 on:
   schedule:
-    - cron: '39 13 * * *' # Runs every day
+    - cron: '42 8 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/hardware/bsp/kernel/common/v4.1
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/bsp/kernel/common/v4.1.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/hardware/bsp/kernel/common/v4.1.git

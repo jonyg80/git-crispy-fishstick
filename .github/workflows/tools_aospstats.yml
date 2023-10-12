@@ -2,7 +2,7 @@ name: tools/aospstats Clone and Push
 
 on:
   schedule:
-    - cron: '44 4 * * *' # Runs every day
+    - cron: '57 5 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd tools/aospstats
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/tools/aospstats.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/tools/aospstats.git

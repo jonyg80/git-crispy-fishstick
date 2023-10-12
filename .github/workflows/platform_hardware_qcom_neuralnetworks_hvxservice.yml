@@ -2,7 +2,7 @@ name: platform/hardware/qcom/neuralnetworks/hvxservice Clone and Push
 
 on:
   schedule:
-    - cron: '10 15 * * *' # Runs every day
+    - cron: '15 13 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/hardware/qcom/neuralnetworks/hvxservice
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/qcom/neuralnetworks/hvxservice.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/hardware/qcom/neuralnetworks/hvxservice.git

@@ -2,7 +2,7 @@ name: platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8 Clone a
 
 on:
   schedule:
-    - cron: '10 22 * * *' # Runs every day
+    - cron: '15 10 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8.git

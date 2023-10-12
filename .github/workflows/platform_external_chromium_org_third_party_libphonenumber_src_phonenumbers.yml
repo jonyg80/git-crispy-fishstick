@@ -1,0 +1,23 @@
+name: platform/external/chromium_org/third_party/libphonenumber/src/phonenumbers Clone and Push
+
+on:
+  schedule:
+    - cron: '27 22 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/chromium_org/third_party/libphonenumber/src/phonenumbers platform/external/chromium_org/third_party/libphonenumber/src/phonenumbers
+
+    - name: Push
+      run: |
+        cd platform/external/chromium_org/third_party/libphonenumber/src/phonenumbers
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/chromium_org/third_party/libphonenumber/src/phonenumbers.git

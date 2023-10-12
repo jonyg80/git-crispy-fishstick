@@ -2,7 +2,7 @@ name: platform/hardware/nxp/weaver Clone and Push
 
 on:
   schedule:
-    - cron: '51 14 * * *' # Runs every day
+    - cron: '18 12 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/hardware/nxp/weaver
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/nxp/weaver.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/hardware/nxp/weaver.git

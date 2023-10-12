@@ -2,7 +2,7 @@ name: platform/external/tpm2-tss Clone and Push
 
 on:
   schedule:
-    - cron: '20 11 * * *' # Runs every day
+    - cron: '45 1 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/tpm2-tss
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/tpm2-tss.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/tpm2-tss.git

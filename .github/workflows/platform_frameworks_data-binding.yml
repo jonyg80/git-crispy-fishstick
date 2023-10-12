@@ -2,7 +2,7 @@ name: platform/frameworks/data-binding Clone and Push
 
 on:
   schedule:
-    - cron: '27 12 * * *' # Runs every day
+    - cron: '6 5 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/data-binding
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/data-binding.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/data-binding.git

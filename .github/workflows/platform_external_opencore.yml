@@ -2,7 +2,7 @@ name: platform/external/opencore Clone and Push
 
 on:
   schedule:
-    - cron: '46 1 * * *' # Runs every day
+    - cron: '3 21 * * 1' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/opencore
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/opencore.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/opencore.git

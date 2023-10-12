@@ -1,0 +1,23 @@
+name: platform/external/OpenCL-CTS Clone and Push
+
+on:
+  schedule:
+    - cron: '18 16 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/OpenCL-CTS platform/external/OpenCL-CTS
+
+    - name: Push
+      run: |
+        cd platform/external/OpenCL-CTS
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/OpenCL-CTS.git

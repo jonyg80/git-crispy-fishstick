@@ -13,6 +13,7 @@ project_names = [p.get('name') for p in root.findall('project')]
 
 minute = 0
 hour = 0
+week = 0
 
 # Create yml files using project names as variable
 for repo_name in project_names:
@@ -23,7 +24,7 @@ for repo_name in project_names:
 
 on:
   schedule:
-    - cron: '{minute} {hour} * * *' # Runs every day
+    - cron: '{minute} {hour} * * {week}' # Runs every week
 
 jobs:
   build:
@@ -41,17 +42,23 @@ jobs:
         cd {repo_name}
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{{{ secrets.GitURL }}}}/{repo_name}.git''')
+        git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/{repo_name}.git''')
     # Increment minute and hour
 
-    if minute >=59 and hour >= 23:
+    minute += 3
+    
+    if minute >=59 and hour >= 23 and week >= 6:
         minute = 0
         hour = 0
+        week = 0
+    elif minute >= 59 and hour >= 23:
+        minute = 0
+        hour = 0
+        week += 1
     elif minute >= 59:
-      minute = 0
-      hour += 1
-    else:
-        minute += 1
+        minute = 0
+        hour += 1
+        
 
 
 

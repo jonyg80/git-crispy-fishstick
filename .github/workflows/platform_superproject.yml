@@ -2,7 +2,7 @@ name: platform/superproject Clone and Push
 
 on:
   schedule:
-    - cron: '11 0 * * *' # Runs every day
+    - cron: '18 16 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/superproject
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/superproject.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/superproject.git

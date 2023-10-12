@@ -2,7 +2,7 @@ name: platform/external/testng Clone and Push
 
 on:
   schedule:
-    - cron: '4 11 * * *' # Runs every day
+    - cron: '57 0 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/testng
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/testng.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/testng.git

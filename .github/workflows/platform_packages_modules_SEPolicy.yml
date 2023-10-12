@@ -2,7 +2,7 @@ name: platform/packages/modules/SEPolicy Clone and Push
 
 on:
   schedule:
-    - cron: '44 18 * * *' # Runs every day
+    - cron: '57 23 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/packages/modules/SEPolicy
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/packages/modules/SEPolicy.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/packages/modules/SEPolicy.git

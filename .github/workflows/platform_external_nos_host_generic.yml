@@ -2,7 +2,7 @@ name: platform/external/nos/host/generic Clone and Push
 
 on:
   schedule:
-    - cron: '27 1 * * *' # Runs every day
+    - cron: '6 20 * * 1' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/nos/host/generic
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/nos/host/generic.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/nos/host/generic.git

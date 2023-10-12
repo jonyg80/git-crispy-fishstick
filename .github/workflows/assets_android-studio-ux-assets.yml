@@ -1,0 +1,23 @@
+name: assets/android-studio-ux-assets Clone and Push
+
+on:
+  schedule:
+    - cron: '3 0 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/assets/android-studio-ux-assets assets/android-studio-ux-assets
+
+    - name: Push
+      run: |
+        cd assets/android-studio-ux-assets
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/assets/android-studio-ux-assets.git

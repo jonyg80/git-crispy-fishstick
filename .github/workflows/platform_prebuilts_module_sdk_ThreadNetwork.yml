@@ -2,7 +2,7 @@ name: platform/prebuilts/module_sdk/ThreadNetwork Clone and Push
 
 on:
   schedule:
-    - cron: '29 23 * * *' # Runs every day
+    - cron: '12 14 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/module_sdk/ThreadNetwork
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/module_sdk/ThreadNetwork.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/module_sdk/ThreadNetwork.git

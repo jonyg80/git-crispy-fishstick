@@ -2,7 +2,7 @@ name: toolchain/openmp_llvm Clone and Push
 
 on:
   schedule:
-    - cron: '14 4 * * *' # Runs every day
+    - cron: '27 4 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd toolchain/openmp_llvm
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/toolchain/openmp_llvm.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/toolchain/openmp_llvm.git

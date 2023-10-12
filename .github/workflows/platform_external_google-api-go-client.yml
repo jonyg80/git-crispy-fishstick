@@ -1,0 +1,23 @@
+name: platform/external/google-api-go-client Clone and Push
+
+on:
+  schedule:
+    - cron: '54 5 * * 1' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/google-api-go-client platform/external/google-api-go-client
+
+    - name: Push
+      run: |
+        cd platform/external/google-api-go-client
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/google-api-go-client.git

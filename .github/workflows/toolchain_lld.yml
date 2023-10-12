@@ -2,7 +2,7 @@ name: toolchain/lld Clone and Push
 
 on:
   schedule:
-    - cron: '58 3 * * *' # Runs every day
+    - cron: '39 3 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd toolchain/lld
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/toolchain/lld.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/toolchain/lld.git

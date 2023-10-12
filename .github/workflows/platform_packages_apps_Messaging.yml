@@ -2,7 +2,7 @@ name: platform/packages/apps/Messaging Clone and Push
 
 on:
   schedule:
-    - cron: '18 17 * * *' # Runs every day
+    - cron: '39 19 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/packages/apps/Messaging
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/packages/apps/Messaging.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/packages/apps/Messaging.git

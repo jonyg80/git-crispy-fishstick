@@ -1,0 +1,23 @@
+name: device/pifoundation/rpi3 Clone and Push
+
+on:
+  schedule:
+    - cron: '12 7 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/device/pifoundation/rpi3 device/pifoundation/rpi3
+
+    - name: Push
+      run: |
+        cd device/pifoundation/rpi3
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/device/pifoundation/rpi3.git

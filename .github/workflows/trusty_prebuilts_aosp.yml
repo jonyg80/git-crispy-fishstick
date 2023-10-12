@@ -2,7 +2,7 @@ name: trusty/prebuilts/aosp Clone and Push
 
 on:
   schedule:
-    - cron: '21 5 * * *' # Runs every day
+    - cron: '48 7 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/prebuilts/aosp
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/prebuilts/aosp.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/prebuilts/aosp.git

@@ -2,7 +2,7 @@ name: platform/frameworks/native Clone and Push
 
 on:
   schedule:
-    - cron: '44 12 * * *' # Runs every day
+    - cron: '57 5 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/frameworks/native
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/frameworks/native.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/frameworks/native.git

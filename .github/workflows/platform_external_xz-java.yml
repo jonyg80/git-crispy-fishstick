@@ -2,7 +2,7 @@ name: platform/external/xz-java Clone and Push
 
 on:
   schedule:
-    - cron: '11 12 * * *' # Runs every day
+    - cron: '18 4 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/xz-java
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/xz-java.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/xz-java.git

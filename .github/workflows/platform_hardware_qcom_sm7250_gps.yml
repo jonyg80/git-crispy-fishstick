@@ -2,7 +2,7 @@ name: platform/hardware/qcom/sm7250/gps Clone and Push
 
 on:
   schedule:
-    - cron: '31 15 * * *' # Runs every day
+    - cron: '18 14 * * 3' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/hardware/qcom/sm7250/gps
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/hardware/qcom/sm7250/gps.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/hardware/qcom/sm7250/gps.git

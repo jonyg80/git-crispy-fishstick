@@ -1,0 +1,23 @@
+name: device/google/bramble-sepolicy Clone and Push
+
+on:
+  schedule:
+    - cron: '45 2 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/device/google/bramble-sepolicy device/google/bramble-sepolicy
+
+    - name: Push
+      run: |
+        cd device/google/bramble-sepolicy
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/device/google/bramble-sepolicy.git

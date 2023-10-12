@@ -2,7 +2,7 @@ name: trusty/external/qemu-meson Clone and Push
 
 on:
   schedule:
-    - cron: '10 5 * * *' # Runs every day
+    - cron: '15 7 * * 5' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd trusty/external/qemu-meson
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/trusty/external/qemu-meson.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/trusty/external/qemu-meson.git

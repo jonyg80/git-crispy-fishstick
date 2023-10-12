@@ -2,7 +2,7 @@ name: platform/prebuilts/androidx/studio Clone and Push
 
 on:
   schedule:
-    - cron: '1 20 * * *' # Runs every day
+    - cron: '48 3 * * 4' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/prebuilts/androidx/studio
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/prebuilts/androidx/studio.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/prebuilts/androidx/studio.git

@@ -2,7 +2,7 @@ name: platform/external/roboto-flex-fonts Clone and Push
 
 on:
   schedule:
-    - cron: '4 4 * * *' # Runs every day
+    - cron: '57 3 * * 2' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/roboto-flex-fonts
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/roboto-flex-fonts.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/roboto-flex-fonts.git

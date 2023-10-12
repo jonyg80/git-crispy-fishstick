@@ -1,0 +1,23 @@
+name: kernel/google-modules/misc Clone and Push
+
+on:
+  schedule:
+    - cron: '3 10 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/kernel/google-modules/misc kernel/google-modules/misc
+
+    - name: Push
+      run: |
+        cd kernel/google-modules/misc
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/kernel/google-modules/misc.git

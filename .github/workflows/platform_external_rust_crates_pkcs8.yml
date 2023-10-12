@@ -2,7 +2,7 @@ name: platform/external/rust/crates/pkcs8 Clone and Push
 
 on:
   schedule:
-    - cron: '36 7 * * *' # Runs every day
+    - cron: '33 14 * * 2' # Runs every week
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
         cd platform/external/rust/crates/pkcs8
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitURL }}/platform/external/rust/crates/pkcs8.git
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/rust/crates/pkcs8.git

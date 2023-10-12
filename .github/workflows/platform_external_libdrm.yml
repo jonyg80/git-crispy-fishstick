@@ -1,0 +1,23 @@
+name: platform/external/libdrm Clone and Push
+
+on:
+  schedule:
+    - cron: '33 13 * * 1' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/libdrm platform/external/libdrm
+
+    - name: Push
+      run: |
+        cd platform/external/libdrm
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/libdrm.git

@@ -1,0 +1,23 @@
+name: platform/external/bluetooth/bluez Clone and Push
+
+on:
+  schedule:
+    - cron: '21 20 * * 0' # Runs every week
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/platform/external/bluetooth/bluez platform/external/bluetooth/bluez
+
+    - name: Push
+      run: |
+        cd platform/external/bluetooth/bluez
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/platform/external/bluetooth/bluez.git
