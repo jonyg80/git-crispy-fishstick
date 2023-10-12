@@ -3,6 +3,8 @@ name: assets/android-studio-ux-assets Clone and Push
 on:
   schedule:
     - cron: '3 0 * * 0' # Runs every week
+  workflow_dispatch:
+    
 
 jobs:
   build:
