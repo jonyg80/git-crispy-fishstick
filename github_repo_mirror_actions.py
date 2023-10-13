@@ -62,7 +62,7 @@ jobs:
         cd ${{{{ matrix.repo_name }}}}
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
-        git push --mirror https://${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git"""
+        git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git"""
         )
 
     # Increment hour and week
