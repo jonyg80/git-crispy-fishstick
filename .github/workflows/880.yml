@@ -12,19 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
+      max-parallel: 5
       matrix:
         repo_name: ['platform/external/minigbm', 'platform/external/minijail', 'platform/external/mksh', 'platform/external/mmc-utils', 'platform/external/mobile-data-download', 'platform/external/mobly-bundled-snippets', 'platform/external/mobly-snippet-lib', 'platform/external/mock', 'platform/external/mockftpserver', 'platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modp_b64', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpg123', 'platform/external/ms-tpm-20-ref', 'platform/external/mtools', 'platform/external/mtpd', 'platform/external/musl', 'platform/external/nanohttpd', 'platform/external/nanopb-c', 'platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct', 'platform/external/ninja', 'platform/external/nist-pkits', 'platform/external/nist-sip', 'platform/external/nos/host/android', 'platform/external/nos/host/generic', 'platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4', 'platform/external/okio', 'platform/external/one-true-awk', 'platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore', 'platform/external/opencv', 'platform/external/opencv3', 'platform/external/openfst', 'platform/external/openmp_llvm', 'platform/external/openocd', 'platform/external/openscreen', 'platform/external/openssh', 'platform/external/openssl', 'platform/external/openthread', 'platform/external/openvpn', 'platform/external/openwrt-prebuilts', 'platform/external/oprofile', 'platform/external/optee/apps', 'platform/external/oss-fuzz', 'platform/external/ot-br-posix', 'platform/external/ow2-asm', 'platform/external/owasp/java-encoder', 'platform/external/owasp/sanitizer', 'platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pcre', 'platform/external/pdfium', 'platform/external/perf_data_converter', 'platform/external/perfetto', 'platform/external/perfmark', 'platform/external/pffft', 'platform/external/piex', 'platform/external/pigweed', 'platform/external/ping', 'platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config', 'platform/external/ply', 'platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5', 'platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto', 'platform/external/python/astroid', 'platform/external/python/atomicwrites', 'platform/external/python/attrs']
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Git clone
-      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-    - name: Push
-      run: |
-        cd ${{ matrix.repo_name }}
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

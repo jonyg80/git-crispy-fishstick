@@ -46,23 +46,24 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
+      max-parallel: 5
       matrix:
         repo_name: {create_matrix_array(project_names, i)}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Git clone
-      run: git clone --mirror https://android.googlesource.com/${{{{ matrix.repo_name }}}} ${{{{ matrix.repo_name }}}}
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{{{ matrix.repo_name }}}} ${{{{ matrix.repo_name }}}}
 
-    - name: Push
-      run: |
-        cd ${{{{ matrix.repo_name }}}}
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git"""
-        )
+      - name: Push
+        run: |
+          cd ${{{{ matrix.repo_name }}}}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git
+""")
 
     # # Increment hour and week
     # if hour >= 23 and week >= 6:

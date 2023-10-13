@@ -12,19 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
+      max-parallel: 5
       matrix:
         repo_name: ['platform/external/rust/crates/atty', 'platform/external/rust/crates/base64', 'platform/external/rust/crates/bencher', 'platform/external/rust/crates/bincode', 'platform/external/rust/crates/bindgen', 'platform/external/rust/crates/bindgen-cli', 'platform/external/rust/crates/bitflags', 'platform/external/rust/crates/bitreader', 'platform/external/rust/crates/bstr', 'platform/external/rust/crates/buddy_system_allocator', 'platform/external/rust/crates/bytemuck', 'platform/external/rust/crates/bytemuck_derive', 'platform/external/rust/crates/byteorder', 'platform/external/rust/crates/bytes', 'platform/external/rust/crates/bzip2', 'platform/external/rust/crates/bzip2-sys', 'platform/external/rust/crates/cast', 'platform/external/rust/crates/cc', 'platform/external/rust/crates/cesu8', 'platform/external/rust/crates/cexpr', 'platform/external/rust/crates/cfg-if', 'platform/external/rust/crates/chrono', 'platform/external/rust/crates/ciborium', 'platform/external/rust/crates/ciborium-io', 'platform/external/rust/crates/ciborium-ll', 'platform/external/rust/crates/clang-sys', 'platform/external/rust/crates/clap', 'platform/external/rust/crates/clap_derive', 'platform/external/rust/crates/clap_lex', 'platform/external/rust/crates/cobs', 'platform/external/rust/crates/codespan-reporting', 'platform/external/rust/crates/combine', 'platform/external/rust/crates/command-fds', 'platform/external/rust/crates/compiler_builtins', 'platform/external/rust/crates/config', 'platform/external/rust/crates/configparser', 'platform/external/rust/crates/const-oid', 'platform/external/rust/crates/const_fn', 'platform/external/rust/crates/cortex-a', 'platform/external/rust/crates/coset', 'platform/external/rust/crates/crc32fast', 'platform/external/rust/crates/criterion', 'platform/external/rust/crates/criterion-plot', 'platform/external/rust/crates/critical-section', 'platform/external/rust/crates/crossbeam-channel', 'platform/external/rust/crates/crossbeam-deque', 'platform/external/rust/crates/crossbeam-epoch', 'platform/external/rust/crates/crossbeam-queue', 'platform/external/rust/crates/crossbeam-utils', 'platform/external/rust/crates/csv', 'platform/external/rust/crates/csv-core', 'platform/external/rust/crates/data-encoding', 'platform/external/rust/crates/der', 'platform/external/rust/crates/der-oid-macro', 'platform/external/rust/crates/der-parser', 'platform/external/rust/crates/der_derive', 'platform/external/rust/crates/derive-getters', 'platform/external/rust/crates/derive_arbitrary', 'platform/external/rust/crates/dlmalloc', 'platform/external/rust/crates/document-features', 'platform/external/rust/crates/downcast-rs', 'platform/external/rust/crates/either', 'platform/external/rust/crates/enumn', 'platform/external/rust/crates/env_logger', 'platform/external/rust/crates/epoll', 'platform/external/rust/crates/fallible-iterator', 'platform/external/rust/crates/fallible-streaming-iterator', 'platform/external/rust/crates/fastrand', 'platform/external/rust/crates/flagset', 'platform/external/rust/crates/flate2', 'platform/external/rust/crates/fnv', 'platform/external/rust/crates/foreign-types', 'platform/external/rust/crates/foreign-types-macros', 'platform/external/rust/crates/foreign-types-shared', 'platform/external/rust/crates/form_urlencoded', 'platform/external/rust/crates/futures', 'platform/external/rust/crates/futures-channel', 'platform/external/rust/crates/futures-core', 'platform/external/rust/crates/futures-executor', 'platform/external/rust/crates/futures-io', 'platform/external/rust/crates/futures-macro', 'platform/external/rust/crates/futures-sink', 'platform/external/rust/crates/futures-task', 'platform/external/rust/crates/futures-test', 'platform/external/rust/crates/futures-util', 'platform/external/rust/crates/fxhash', 'platform/external/rust/crates/gdbstub', 'platform/external/rust/crates/gdbstub_arch', 'platform/external/rust/crates/getrandom', 'platform/external/rust/crates/gimli', 'platform/external/rust/crates/glam', 'platform/external/rust/crates/glob', 'platform/external/rust/crates/googletest', 'platform/external/rust/crates/googletest_macro', 'platform/external/rust/crates/grpcio', 'platform/external/rust/crates/grpcio-compiler', 'platform/external/rust/crates/grpcio-sys', 'platform/external/rust/crates/half', 'platform/external/rust/crates/hash32', 'platform/external/rust/crates/hashbrown', 'platform/external/rust/crates/hashlink', 'platform/external/rust/crates/heapless', 'platform/external/rust/crates/heck', 'platform/external/rust/crates/hermit-abi', 'platform/external/rust/crates/hex', 'platform/external/rust/crates/http', 'platform/external/rust/crates/httparse', 'platform/external/rust/crates/icu_capi', 'platform/external/rust/crates/idna', 'platform/external/rust/crates/indexmap']
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Git clone
-      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-    - name: Push
-      run: |
-        cd ${{ matrix.repo_name }}
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

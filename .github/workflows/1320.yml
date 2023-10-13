@@ -12,19 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
+      max-parallel: 5
       matrix:
         repo_name: ['platform/external/rust/crates/rusqlite', 'platform/external/rust/crates/rustc-demangle', 'platform/external/rust/crates/rustc-demangle-capi', 'platform/external/rust/crates/rustc-hash', 'platform/external/rust/crates/rustc_version', 'platform/external/rust/crates/rusticata-macros', 'platform/external/rust/crates/rustversion', 'platform/external/rust/crates/ryu', 'platform/external/rust/crates/same-file', 'platform/external/rust/crates/scopeguard', 'platform/external/rust/crates/sec1', 'platform/external/rust/crates/semver', 'platform/external/rust/crates/serde', 'platform/external/rust/crates/serde-xml-rs', 'platform/external/rust/crates/serde_cbor', 'platform/external/rust/crates/serde_derive', 'platform/external/rust/crates/serde_json', 'platform/external/rust/crates/serde_spanned', 'platform/external/rust/crates/serde_test', 'platform/external/rust/crates/serde_yaml', 'platform/external/rust/crates/sharded-slab', 'platform/external/rust/crates/shared_child', 'platform/external/rust/crates/shared_library', 'platform/external/rust/crates/shlex', 'platform/external/rust/crates/slab', 'platform/external/rust/crates/smallvec', 'platform/external/rust/crates/smccc', 'platform/external/rust/crates/socket2', 'platform/external/rust/crates/spin', 'platform/external/rust/crates/spki', 'platform/external/rust/crates/stable_deref_trait', 'platform/external/rust/crates/standback', 'platform/external/rust/crates/static_assertions', 'platform/external/rust/crates/structopt', 'platform/external/rust/crates/structopt-derive', 'platform/external/rust/crates/syn', 'platform/external/rust/crates/syn-mid', 'platform/external/rust/crates/synstructure', 'platform/external/rust/crates/tempfile', 'platform/external/rust/crates/termcolor', 'platform/external/rust/crates/terminal-size', 'platform/external/rust/crates/textwrap', 'platform/external/rust/crates/thiserror', 'platform/external/rust/crates/thiserror-impl', 'platform/external/rust/crates/thread_local', 'platform/external/rust/crates/threadpool', 'platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl', 'platform/external/rust/crates/tinyjson', 'platform/external/rust/crates/tinytemplate', 'platform/external/rust/crates/tinyvec', 'platform/external/rust/crates/tinyvec_macros', 'platform/external/rust/crates/tinyvec_string', 'platform/external/rust/crates/tokio', 'platform/external/rust/crates/tokio-macros', 'platform/external/rust/crates/tokio-stream', 'platform/external/rust/crates/tokio-test', 'platform/external/rust/crates/tokio-util', 'platform/external/rust/crates/tokio-vsock', 'platform/external/rust/crates/toml', 'platform/external/rust/crates/toml_datetime', 'platform/external/rust/crates/toml_edit', 'platform/external/rust/crates/tracing', 'platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/ucd-trie', 'platform/external/rust/crates/uds', 'platform/external/rust/crates/unicode-bidi', 'platform/external/rust/crates/unicode-ident', 'platform/external/rust/crates/unicode-normalization', 'platform/external/rust/crates/unicode-segmentation', 'platform/external/rust/crates/unicode-width', 'platform/external/rust/crates/unicode-xid', 'platform/external/rust/crates/unsafe-libyaml', 'platform/external/rust/crates/untrusted', 'platform/external/rust/crates/url', 'platform/external/rust/crates/userfaultfd', 'platform/external/rust/crates/userfaultfd-sys', 'platform/external/rust/crates/utf-8', 'platform/external/rust/crates/uuid', 'platform/external/rust/crates/version_check', 'platform/external/rust/crates/vhost', 'platform/external/rust/crates/vhost-device-vsock', 'platform/external/rust/crates/vhost-user-backend', 'platform/external/rust/crates/virtio-bindings', 'platform/external/rust/crates/virtio-drivers', 'platform/external/rust/crates/virtio-queue', 'platform/external/rust/crates/virtio-vsock', 'platform/external/rust/crates/vm-memory', 'platform/external/rust/crates/vmm-sys-util', 'platform/external/rust/crates/vmm_vhost', 'platform/external/rust/crates/vsock', 'platform/external/rust/crates/vulkano', 'platform/external/rust/crates/walkdir', 'platform/external/rust/crates/wasi', 'platform/external/rust/crates/weak-table', 'platform/external/rust/crates/webpki', 'platform/external/rust/crates/which', 'platform/external/rust/crates/winapi', 'platform/external/rust/crates/winnow', 'platform/external/rust/crates/x509-cert', 'platform/external/rust/crates/x509-parser', 'platform/external/rust/crates/xml-rs', 'platform/external/rust/crates/yaml-rust', 'platform/external/rust/crates/zerocopy', 'platform/external/rust/crates/zerocopy-derive', 'platform/external/rust/crates/zeroize']
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Git clone
-      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-    - name: Push
-      run: |
-        cd ${{ matrix.repo_name }}
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

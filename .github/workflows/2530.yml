@@ -12,19 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
+      max-parallel: 5
       matrix:
         repo_name: ['toolchain/ppl', 'toolchain/prebuilts/ndk-darwin/r21', 'toolchain/prebuilts/ndk-darwin/r23', 'toolchain/prebuilts/ndk/r13', 'toolchain/prebuilts/ndk/r14', 'toolchain/prebuilts/ndk/r15', 'toolchain/prebuilts/ndk/r16', 'toolchain/prebuilts/ndk/r17', 'toolchain/prebuilts/ndk/r18', 'toolchain/prebuilts/ndk/r19', 'toolchain/prebuilts/ndk/r20', 'toolchain/prebuilts/ndk/r21', 'toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26', 'toolchain/prebuilts/ndk/releases', 'toolchain/prebuilts/sysroot/platform/riscv64-linux-android', 'toolchain/python', 'toolchain/rr', 'toolchain/rustc', 'toolchain/sccache', 'toolchain/sed', 'toolchain/valgrind', 'toolchain/xz', 'toolchain/yasm', 'tools/aospstats', 'tools/fetch_artifact', 'tools/manifest', 'tools/platform-compat', 'tools/presubmit-automerger/test1', 'tools/repo', 'trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64', 'trusty/external/headers', 'trusty/external/musl', 'trusty/external/qemu', 'trusty/external/qemu-keycodemapdb', 'trusty/external/qemu-libslirp', 'trusty/external/qemu-meson', 'trusty/external/trusted-firmware-a', 'trusty/external/trusty', 'trusty/host/aidl', 'trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/vendor/google/aosp']
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Git clone
-      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-    - name: Push
-      run: |
-        cd ${{ matrix.repo_name }}
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
