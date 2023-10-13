@@ -1,0 +1,30 @@
+name: 1870 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 17 * * *' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        repo_name: ['platform/packages/apps/Music', 'platform/packages/apps/MusicFX', 'platform/packages/apps/Nfc', 'platform/packages/apps/OnDeviceAppPrediction', 'platform/packages/apps/OneTimeInitializer', 'platform/packages/apps/PackageInstaller', 'platform/packages/apps/Phone', 'platform/packages/apps/PhoneCommon', 'platform/packages/apps/Protips', 'platform/packages/apps/Provision', 'platform/packages/apps/QuickAccessWallet', 'platform/packages/apps/QuickSearchBox', 'platform/packages/apps/RemoteProvisioner', 'platform/packages/apps/RetailDemo', 'platform/packages/apps/SafetyRegulatoryInfo', 'platform/packages/apps/SampleLocationAttribution', 'platform/packages/apps/SecureElement', 'platform/packages/apps/Settings', 'platform/packages/apps/SettingsIntelligence', 'platform/packages/apps/SmartCardService', 'platform/packages/apps/SoundRecorder', 'platform/packages/apps/SpareParts', 'platform/packages/apps/SpeechRecorder', 'platform/packages/apps/Stk', 'platform/packages/apps/StorageManager', 'platform/packages/apps/Sync', 'platform/packages/apps/SystemUIGo', 'platform/packages/apps/TV', 'platform/packages/apps/Tag', 'platform/packages/apps/Terminal', 'platform/packages/apps/Test/connectivity', 'platform/packages/apps/ThemePicker', 'platform/packages/apps/TimeZoneData', 'platform/packages/apps/TimeZoneUpdater', 'platform/packages/apps/Traceur', 'platform/packages/apps/TvFeedbackConsent', 'platform/packages/apps/TvSettings', 'platform/packages/apps/TvSystemUI', 'platform/packages/apps/UnifiedEmail', 'platform/packages/apps/UniversalMediaPlayer', 'platform/packages/apps/Updater', 'platform/packages/apps/VideoEditor', 'platform/packages/apps/VoiceDialer', 'platform/packages/apps/WallpaperPicker', 'platform/packages/apps/WallpaperPicker2', 'platform/packages/experimental', 'platform/packages/inputmethods/LatinIME', 'platform/packages/inputmethods/LeanbackIME', 'platform/packages/inputmethods/OpenWnn', 'platform/packages/inputmethods/PinyinIME', 'platform/packages/modules/ANGLE', 'platform/packages/modules/AdServices', 'platform/packages/modules/ApiExtensions', 'platform/packages/modules/AppSearch', 'platform/packages/modules/ArtPrebuilt', 'platform/packages/modules/Bluetooth', 'platform/packages/modules/BootPrebuilt/5.10/arm64', 'platform/packages/modules/BootPrebuilt/5.4/arm64', 'platform/packages/modules/CaptivePortalLogin', 'platform/packages/modules/CellBroadcastService', 'platform/packages/modules/ConfigInfrastructure', 'platform/packages/modules/Connectivity', 'platform/packages/modules/CrashRecovery', 'platform/packages/modules/Cronet', 'platform/packages/modules/DeviceLock', 'platform/packages/modules/DnsResolver', 'platform/packages/modules/ExtServices', 'platform/packages/modules/GeoTZ', 'platform/packages/modules/Gki', 'platform/packages/modules/HealthFitness', 'platform/packages/modules/IPsec', 'platform/packages/modules/ImsMedia', 'platform/packages/modules/IntentResolver', 'platform/packages/modules/Media', 'platform/packages/modules/MediaSwCodec', 'platform/packages/modules/ModuleMetadata', 'platform/packages/modules/NetworkPermissionConfig', 'platform/packages/modules/NetworkStack', 'platform/packages/modules/NeuralNetworks', 'platform/packages/modules/OnDevicePersonalization', 'platform/packages/modules/Permission', 'platform/packages/modules/PermissionController', 'platform/packages/modules/RemoteKeyProvisioning', 'platform/packages/modules/RuntimeI18n', 'platform/packages/modules/SEPolicy', 'platform/packages/modules/Scheduling', 'platform/packages/modules/SdkExtensions', 'platform/packages/modules/Sharesheet', 'platform/packages/modules/StatsD', 'platform/packages/modules/Telephony', 'platform/packages/modules/TestModule', 'platform/packages/modules/Tethering', 'platform/packages/modules/ThreadNetwork', 'platform/packages/modules/Uwb', 'platform/packages/modules/Virtualization', 'platform/packages/modules/Wifi', 'platform/packages/modules/adb', 'platform/packages/modules/common', 'platform/packages/modules/vndk', 'platform/packages/providers/ApplicationsProvider', 'platform/packages/providers/BlockedNumberProvider', 'platform/packages/providers/BookmarkProvider', 'platform/packages/providers/CalendarProvider', 'platform/packages/providers/CallLogProvider', 'platform/packages/providers/ContactsProvider', 'platform/packages/providers/DownloadProvider', 'platform/packages/providers/DrmProvider', 'platform/packages/providers/GoogleContactsProvider', 'platform/packages/providers/GoogleSubscribedFeedsProvider', 'platform/packages/providers/ImProvider']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

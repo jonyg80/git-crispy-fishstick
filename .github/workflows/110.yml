@@ -1,0 +1,30 @@
+name: 110 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        repo_name: ['device/google/wahoo-kernel', 'device/google/zuma', 'device/google/zuma-sepolicy', 'device/google_car', 'device/htc/common', 'device/htc/dream', 'device/htc/dream-sapphire', 'device/htc/flounder', 'device/htc/flounder-kernel', 'device/htc/passion', 'device/htc/passion-common', 'device/htc/sapphire', 'device/huawei/angler', 'device/huawei/angler-kernel', 'device/imagination/creatorci41', 'device/intel/edison', 'device/intel/minnowboard', 'device/lge/bullhead', 'device/lge/bullhead-kernel', 'device/lge/hammerhead', 'device/lge/hammerhead-kernel', 'device/lge/mako', 'device/lge/mako-kernel', 'device/linaro/bootloader/OpenPlatformPkg', 'device/linaro/bootloader/arm-trusted-firmware', 'device/linaro/bootloader/edk2', 'device/linaro/dragonboard', 'device/linaro/dragonboard-kernel', 'device/linaro/hikey', 'device/linaro/hikey-kernel', 'device/linaro/poplar', 'device/linaro/poplar-kernel', 'device/mediatek/wembley-sepolicy', 'device/moto/common', 'device/moto/shamu', 'device/moto/shamu-kernel', 'device/moto/stingray', 'device/moto/wingray', 'device/pifoundation/rpi3', 'device/qcom/dragonboard', 'device/rockchip/kylin', 'device/sample', 'device/samsung/crespo', 'device/samsung/crespo4g', 'device/samsung/maguro', 'device/samsung/manta', 'device/samsung/toro', 'device/samsung/toroplus', 'device/samsung/torospr', 'device/samsung/tuna', 'device/samsung_slsi/arndale', 'device/sony/lt26', 'device/ti/beagle-x15', 'device/ti/beagle-x15-kernel', 'device/ti/bootloader/uboot', 'device/ti/panda', 'ernel/devices/google/eos', 'kernel/amlogic-tv-modules/dhd-driver', 'kernel/amlogic-tv-modules/mali-driver', 'kernel/amlogic-tv-modules/media_modules', 'kernel/amlogic-tv-modules/optee_linuxdriver', 'kernel/amlogic-tv-modules/wifi_rtl8822BS', 'kernel/arcvm-modules/common', 'kernel/arm64', 'kernel/build', 'kernel/common', 'kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/bluejay', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/tangorpro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers', 'kernel/google-modules/aoc', 'kernel/google-modules/aoc-ipc', 'kernel/google-modules/bluetooth/broadcom', 'kernel/google-modules/bluetooth/qcom', 'kernel/google-modules/bluetooth/synaptics', 'kernel/google-modules/bms', 'kernel/google-modules/display', 'kernel/google-modules/edgetpu', 'kernel/google-modules/edgetpu/abrolhos', 'kernel/google-modules/edgetpu/janeiro', 'kernel/google-modules/fingerprint/fpc', 'kernel/google-modules/fingerprint/goodix', 'kernel/google-modules/gpu', 'kernel/google-modules/gxp/gs201', 'kernel/google-modules/i3c/exynos', 'kernel/google-modules/lwis', 'kernel/google-modules/misc', 'kernel/google-modules/nanohub', 'kernel/google-modules/nfc', 'kernel/google-modules/power/reset', 'kernel/google-modules/raviole-device', 'kernel/google-modules/rotary-encoders', 'kernel/google-modules/sensors/hall_sensor', 'kernel/google-modules/soc/gs', 'kernel/google-modules/soc/msm', 'kernel/google-modules/sound/mcu', 'kernel/google-modules/sound/mcu_mic_codec', 'kernel/google-modules/touch/common']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

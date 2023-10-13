@@ -1,0 +1,30 @@
+name: 1430 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 13 * * *' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        repo_name: ['platform/external/rust/crates/zeroize_derive', 'platform/external/rust/crates/zip', 'platform/external/rust/cxx', 'platform/external/rust/pica', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop', 'platform/external/sandboxed-api', 'platform/external/scapy', 'platform/external/scrypt', 'platform/external/scudo', 'platform/external/sdl2', 'platform/external/sdl2_ttf', 'platform/external/sdv/vsomeip', 'platform/external/seccomp-tests', 'platform/external/selinux', 'platform/external/sepolicy', 'platform/external/setfilters', 'platform/external/setupcompat', 'platform/external/setupdesign', 'platform/external/sfntly', 'platform/external/sg3_utils', 'platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags', 'platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm', 'platform/external/sqlite', 'platform/external/squashfs-tools', 'platform/external/srec', 'platform/external/srtp', 'platform/external/stardoc', 'platform/external/starlark-go', 'platform/external/stg', 'platform/external/stlport', 'platform/external/strace', 'platform/external/stressapptest', 'platform/external/subsampling-scale-image-view', 'platform/external/svox', 'platform/external/swiftshader', 'platform/external/swig', 'platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new', 'platform/external/tinycompress', 'platform/external/tinyobjloader', 'platform/external/tinyxml', 'platform/external/tinyxml2', 'platform/external/tlsdate', 'platform/external/toolchain-utils', 'platform/external/toybox', 'platform/external/tpm2', 'platform/external/tpm2-tss', 'platform/external/trace-cmd', 'platform/external/trappy', 'platform/external/tremolo', 'platform/external/tremor', 'platform/external/truth', 'platform/external/turbine', 'platform/external/tz', 'platform/external/u-boot', 'platform/external/ukey2', 'platform/external/unicode', 'platform/external/universal-tween-engine', 'platform/external/usrsctp', 'platform/external/utf8proc', 'platform/external/uwb', 'platform/external/v4l2_codec2', 'platform/external/v8', 'platform/external/valgrind', 'platform/external/vboot_reference', 'platform/external/virglrenderer', 'platform/external/vixl', 'platform/external/vm_tools/p9', 'platform/external/vogar', 'platform/external/volk', 'platform/external/volley', 'platform/external/vulkan-headers', 'platform/external/vulkan-tools', 'platform/external/vulkan-validation-layers', 'platform/external/walt', 'platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

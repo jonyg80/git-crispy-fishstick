@@ -2,9 +2,9 @@ name: update action files
 
 on:
   schedule:
-    - cron: '0 0 * * 6'
+    - cron: "0 0 * * 6"
   workflow_dispatch:
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
 
       - name: Run python script
         run: python3 github_repo_mirror_actions.py
-        
+
       - name: Commit and Push
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -27,4 +27,3 @@ jobs:
           git add .
           git commit -m "Update action files"
           git push
-      
