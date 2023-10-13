@@ -1,0 +1,31 @@
+name: 300 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 15 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['kernel/prebuilts/common-modules/virtual-device/5.4/arm64', 'kernel/prebuilts/common-modules/virtual-device/5.4/x86-64', 'kernel/prebuilts/common-modules/virtual-device/6.1/arm64', 'kernel/prebuilts/common-modules/virtual-device/6.1/x86-64', 'kernel/prebuilts/common-modules/virtual-device/mainline/arm64', 'kernel/prebuilts/common-modules/virtual-device/mainline/x86-64', 'kernel/prebuilts/mainline/arm64', 'kernel/prebuilts/mainline/x86-64', 'kernel/samsung', 'kernel/superproject', 'kernel/tegra', 'kernel/tests', 'kernel/x86', 'kernel/x86_64', 'mirror/manifest', 'platform/abi/cpp', 'platform/apisurface', 'platform/art', 'platform/bbuildbot_config', 'platform/bionic']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

@@ -1,0 +1,31 @@
+name: 1280 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 16 * * 2' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/rust/crates/pin-project-internal', 'platform/external/rust/crates/pin-project-lite', 'platform/external/rust/crates/pin-utils', 'platform/external/rust/crates/pkcs1', 'platform/external/rust/crates/pkcs8', 'platform/external/rust/crates/pkg-config', 'platform/external/rust/crates/plotters', 'platform/external/rust/crates/plotters-backend', 'platform/external/rust/crates/plotters-svg', 'platform/external/rust/crates/postcard', 'platform/external/rust/crates/ppv-lite86', 'platform/external/rust/crates/prettyplease', 'platform/external/rust/crates/proc-macro-error', 'platform/external/rust/crates/proc-macro-error-attr', 'platform/external/rust/crates/proc-macro-hack', 'platform/external/rust/crates/proc-macro-nested', 'platform/external/rust/crates/proc-macro2', 'platform/external/rust/crates/protobuf', 'platform/external/rust/crates/protobuf-codegen', 'platform/external/rust/crates/protobuf-json-mapping']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

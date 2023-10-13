@@ -1,0 +1,31 @@
+name: 2240 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 16 * * 4' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/prebuilts/module_sdk/ThreadNetwork', 'platform/prebuilts/module_sdk/Uwb', 'platform/prebuilts/module_sdk/Wifi', 'platform/prebuilts/module_sdk/art', 'platform/prebuilts/module_sdk/conscrypt', 'platform/prebuilts/ndk', 'platform/prebuilts/ninja/darwin-x86', 'platform/prebuilts/ninja/linux-x86', 'platform/prebuilts/ninja/windows-x86', 'platform/prebuilts/protobuf', 'platform/prebuilts/python/darwin-x86', 'platform/prebuilts/python/darwin-x86/2.7.5', 'platform/prebuilts/python/linux-x86', 'platform/prebuilts/python/linux-x86/2.7.5', 'platform/prebuilts/python/windows-x86', 'platform/prebuilts/qemu-kernel', 'platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

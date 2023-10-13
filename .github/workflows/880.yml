@@ -1,0 +1,31 @@
+name: 880 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 20 * * 1' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/minigbm', 'platform/external/minijail', 'platform/external/mksh', 'platform/external/mmc-utils', 'platform/external/mobile-data-download', 'platform/external/mobly-bundled-snippets', 'platform/external/mobly-snippet-lib', 'platform/external/mock', 'platform/external/mockftpserver', 'platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modp_b64', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpg123', 'platform/external/ms-tpm-20-ref', 'platform/external/mtools', 'platform/external/mtpd', 'platform/external/musl']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

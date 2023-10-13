@@ -1,0 +1,31 @@
+name: 1620 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 9 * * 3' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/frameworks/opt/sherpa', 'platform/frameworks/opt/telephony', 'platform/frameworks/opt/timezonepicker', 'platform/frameworks/opt/tv/tvsystem', 'platform/frameworks/opt/vcard', 'platform/frameworks/opt/widget', 'platform/frameworks/policies/base', 'platform/frameworks/proto_logging', 'platform/frameworks/rs', 'platform/frameworks/support', 'platform/frameworks/support-golden', 'platform/frameworks/testing', 'platform/frameworks/uiautomator', 'platform/frameworks/volley', 'platform/frameworks/webview', 'platform/frameworks/wilhelm', 'platform/gdk', 'platform/hardware/akm', 'platform/hardware/broadcom/libbt', 'platform/hardware/broadcom/wlan']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

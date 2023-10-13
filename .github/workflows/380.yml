@@ -1,0 +1,31 @@
+name: 380 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 19 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/android-mock', 'platform/external/android-nn-driver', 'platform/external/android-studio-gradle-test', 'platform/external/android_onboarding', 'platform/external/androidplot', 'platform/external/angle', 'platform/external/annotation-tools', 'platform/external/anonymous-counting-tokens', 'platform/external/ant-glob', 'platform/external/antlr', 'platform/external/apache-apr', 'platform/external/apache-apr-util', 'platform/external/apache-commons-bcel', 'platform/external/apache-commons-compress', 'platform/external/apache-commons-io', 'platform/external/apache-commons-lang', 'platform/external/apache-commons-math', 'platform/external/apache-harmony', 'platform/external/apache-http', 'platform/external/apache-log4cxx']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

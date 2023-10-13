@@ -1,0 +1,31 @@
+name: 2020 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 5 * * 4' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/prebuilts/android-emulator-build/curl', 'platform/prebuilts/android-emulator-build/mesa', 'platform/prebuilts/android-emulator-build/mesa-deps', 'platform/prebuilts/android-emulator-build/protobuf', 'platform/prebuilts/android-emulator-build/qemu-android-deps', 'platform/prebuilts/android-emulator-build/qt', 'platform/prebuilts/android-emulator-build/system-images', 'platform/prebuilts/androidx/exoplayer', 'platform/prebuilts/androidx/external', 'platform/prebuilts/androidx/internal', 'platform/prebuilts/androidx/konan', 'platform/prebuilts/androidx/studio', 'platform/prebuilts/androidx/traceprocessor', 'platform/prebuilts/asuite', 'platform/prebuilts/au-generator', 'platform/prebuilts/bazel/common', 'platform/prebuilts/bazel/darwin-x86_64', 'platform/prebuilts/bazel/linux-x86_64', 'platform/prebuilts/bazel/windows-x86_64', 'platform/prebuilts/boot-artifacts']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

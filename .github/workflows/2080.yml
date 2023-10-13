@@ -1,0 +1,31 @@
+name: 2080 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 8 * * 4' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/prebuilts/eclipse-build-deps', 'platform/prebuilts/eclipse-build-deps-sources', 'platform/prebuilts/fuchsia_sdk', 'platform/prebuilts/fullsdk-darwin/build-tools', 'platform/prebuilts/fullsdk-darwin/build-tools/27.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/28.0.2', 'platform/prebuilts/fullsdk-darwin/build-tools/28.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/29.0.0', 'platform/prebuilts/fullsdk-darwin/build-tools/29.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/30.0.2', 'platform/prebuilts/fullsdk-darwin/build-tools/30.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/31.0.0', 'platform/prebuilts/fullsdk-darwin/build-tools/32.0.0', 'platform/prebuilts/fullsdk-darwin/build-tools/32.1.0', 'platform/prebuilts/fullsdk-darwin/platform-tools', 'platform/prebuilts/fullsdk-darwin/tools', 'platform/prebuilts/fullsdk-linux/build-tools', 'platform/prebuilts/fullsdk-linux/build-tools/26.0.1', 'platform/prebuilts/fullsdk-linux/build-tools/27.0.3', 'platform/prebuilts/fullsdk-linux/build-tools/28.0.2']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

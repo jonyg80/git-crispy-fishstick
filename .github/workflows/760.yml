@@ -1,0 +1,31 @@
+name: 760 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 14 * * 1' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/libabigail', 'platform/external/libaom', 'platform/external/libavc', 'platform/external/libbackup', 'platform/external/libbpf', 'platform/external/libbrillo', 'platform/external/libc-test', 'platform/external/libcap', 'platform/external/libcap-ng', 'platform/external/libchrome', 'platform/external/libchrome-gestures', 'platform/external/libchromeos', 'platform/external/libchromeos-rs', 'platform/external/libconfig', 'platform/external/libconstrainedcrypto', 'platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

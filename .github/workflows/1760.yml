@@ -1,0 +1,31 @@
+name: 1760 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 16 * * 3' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/hardware/qcom/sm7250/gps', 'platform/hardware/qcom/sm7250/media', 'platform/hardware/qcom/sm8150/data/ipacfg-mgr', 'platform/hardware/qcom/sm8150/display', 'platform/hardware/qcom/sm8150/gps', 'platform/hardware/qcom/sm8150/media', 'platform/hardware/qcom/sm8150/thermal', 'platform/hardware/qcom/sm8150/vr', 'platform/hardware/qcom/sm8150p/gps', 'platform/hardware/qcom/wlan', 'platform/hardware/ril', 'platform/hardware/samsung/nfc', 'platform/hardware/samsung_slsi/exynos5', 'platform/hardware/st/nfc', 'platform/hardware/st/secure_element', 'platform/hardware/st/secure_element2', 'platform/hardware/synaptics/wlan', 'platform/hardware/telink/atv/refDesignRcu', 'platform/hardware/ti/am57x', 'platform/hardware/ti/omap3']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

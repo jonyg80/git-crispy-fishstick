@@ -1,0 +1,31 @@
+name: 2420 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 1 * * 5' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/tools/external/bazelbuild-rules-kotlin', 'platform/tools/external/fat32lib', 'platform/tools/external/go/src/github.com/go-gl-legacy/gl', 'platform/tools/external/go/src/github.com/go-gl/glfw', 'platform/tools/external/go/src/github.com/golang/protobuf', 'platform/tools/external/go/src/golang.org/x/net', 'platform/tools/external/go/src/golang.org/x/tools', 'platform/tools/external/gradle', 'platform/tools/external_updater', 'platform/tools/google_prebuilts/studio/sdk/remote', 'platform/tools/gpu', 'platform/tools/gradle', 'platform/tools/gradle-recipes', 'platform/tools/idea', 'platform/tools/lint_checks', 'platform/tools/loganalysis', 'platform/tools/metalava', 'platform/tools/motodev', 'platform/tools/multitest_transport', 'platform/tools/ndkports']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

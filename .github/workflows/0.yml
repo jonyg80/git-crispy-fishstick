@@ -1,0 +1,31 @@
+name: 0 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['accessories/manifest', 'assets/android-studio-ux-assets', 'brillo/manifest', 'device/amlogic/yukawa', 'device/amlogic/yukawa-kernel', 'device/asus/deb', 'device/asus/flo', 'device/asus/flo-kernel', 'device/asus/fugu', 'device/asus/fugu-kernel', 'device/asus/grouper', 'device/asus/tilapia', 'device/casio/koi-uboot', 'device/common', 'device/freescale/picoimx', 'device/generic/arm64', 'device/generic/armv7-a', 'device/generic/armv7-a-neon', 'device/generic/art', 'device/generic/brillo']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

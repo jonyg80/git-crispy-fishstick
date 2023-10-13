@@ -1,0 +1,31 @@
+name: 2560 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 8 * * 5' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['tools/presubmit-automerger/test1', 'tools/repo', 'trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64', 'trusty/external/headers', 'trusty/external/musl', 'trusty/external/qemu']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

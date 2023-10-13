@@ -1,0 +1,31 @@
+name: 1680 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 12 * * 3' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/hardware/google/easel', 'platform/hardware/google/gchips', 'platform/hardware/google/gfxstream', 'platform/hardware/google/graphics/common', 'platform/hardware/google/graphics/gs101', 'platform/hardware/google/graphics/gs201', 'platform/hardware/google/graphics/zuma', 'platform/hardware/google/interfaces', 'platform/hardware/google/pixel', 'platform/hardware/google/pixel-sepolicy', 'platform/hardware/google/trusty', 'platform/hardware/intel/audio_media', 'platform/hardware/intel/bootstub', 'platform/hardware/intel/common/bd_prov', 'platform/hardware/intel/common/libmix', 'platform/hardware/intel/common/libstagefrighthw', 'platform/hardware/intel/common/libva', 'platform/hardware/intel/common/libwsbm', 'platform/hardware/intel/common/omx-components', 'platform/hardware/intel/common/utils']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

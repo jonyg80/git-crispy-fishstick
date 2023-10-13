@@ -1,0 +1,31 @@
+name: 2360 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 22 * * 4' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/system/ucontainer', 'platform/system/unwinding', 'platform/system/update_engine', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root', 'platform/test/dittosuite', 'platform/test/framework', 'platform/test/mlts/benchmark', 'platform/test/mlts/models', 'platform/test/mts', 'platform/test/p2pts', 'platform/test/robolectric-extensions', 'platform/test/sts']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

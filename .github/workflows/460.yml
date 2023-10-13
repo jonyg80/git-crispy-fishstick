@@ -1,0 +1,31 @@
+name: 460 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 23 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/checkstyle', 'platform/external/cherry', 'platform/external/chromite', 'platform/external/chromium', 'platform/external/chromium-libpac', 'platform/external/chromium-trace', 'platform/external/chromium-webview', 'platform/external/chromium_org', 'platform/external/chromium_org/sdch/open-vcdiff', 'platform/external/chromium_org/testing/gtest', 'platform/external/chromium_org/third_party/WebKit', 'platform/external/chromium_org/third_party/angle', 'platform/external/chromium_org/third_party/angle_dx11', 'platform/external/chromium_org/third_party/boringssl/src', 'platform/external/chromium_org/third_party/brotli/src', 'platform/external/chromium_org/third_party/eyesfree/src/android/java/src/com/googlecode/eyesfree/braille', 'platform/external/chromium_org/third_party/freetype', 'platform/external/chromium_org/third_party/icu', 'platform/external/chromium_org/third_party/leveldatabase/src', 'platform/external/chromium_org/third_party/libaddressinput/src']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

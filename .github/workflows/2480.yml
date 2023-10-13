@@ -1,0 +1,31 @@
+name: 2480 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 4 * * 5' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['toolchain/ccache', 'toolchain/clang', 'toolchain/clang-tools-extra', 'toolchain/cloog', 'toolchain/common', 'toolchain/compiler-rt', 'toolchain/expat', 'toolchain/gcc', 'toolchain/gcc-12.2.0', 'toolchain/gdb', 'toolchain/gmp', 'toolchain/gmp-6.2.1', 'toolchain/gold', 'toolchain/isl', 'toolchain/jack', 'toolchain/jack-server', 'toolchain/jdk/build', 'toolchain/jdk/jdk11', 'toolchain/jdk/jdk17', 'toolchain/jdk/jdk9']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

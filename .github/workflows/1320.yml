@@ -1,0 +1,31 @@
+name: 1320 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 18 * * 2' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/rust/crates/rusqlite', 'platform/external/rust/crates/rustc-demangle', 'platform/external/rust/crates/rustc-demangle-capi', 'platform/external/rust/crates/rustc-hash', 'platform/external/rust/crates/rustc_version', 'platform/external/rust/crates/rusticata-macros', 'platform/external/rust/crates/rustversion', 'platform/external/rust/crates/ryu', 'platform/external/rust/crates/same-file', 'platform/external/rust/crates/scopeguard', 'platform/external/rust/crates/sec1', 'platform/external/rust/crates/semver', 'platform/external/rust/crates/serde', 'platform/external/rust/crates/serde-xml-rs', 'platform/external/rust/crates/serde_cbor', 'platform/external/rust/crates/serde_derive', 'platform/external/rust/crates/serde_json', 'platform/external/rust/crates/serde_spanned', 'platform/external/rust/crates/serde_test', 'platform/external/rust/crates/serde_yaml']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

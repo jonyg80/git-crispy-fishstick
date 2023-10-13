@@ -1,0 +1,31 @@
+name: 1020 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 3 * * 2' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/python/mock', 'platform/external/python/more-itertools', 'platform/external/python/numpy', 'platform/external/python/oauth2client', 'platform/external/python/olefile', 'platform/external/python/packaging', 'platform/external/python/parse', 'platform/external/python/parse_type', 'platform/external/python/pexpect', 'platform/external/python/pluggy', 'platform/external/python/ply', 'platform/external/python/portpicker', 'platform/external/python/proto-google-cloud-pubsub-v1', 'platform/external/python/protobuf', 'platform/external/python/ptyprocess', 'platform/external/python/py', 'platform/external/python/pyasn1', 'platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

@@ -1,0 +1,31 @@
+name: 1140 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 9 * * 2' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/rust/crates/crc32fast', 'platform/external/rust/crates/criterion', 'platform/external/rust/crates/criterion-plot', 'platform/external/rust/crates/critical-section', 'platform/external/rust/crates/crossbeam-channel', 'platform/external/rust/crates/crossbeam-deque', 'platform/external/rust/crates/crossbeam-epoch', 'platform/external/rust/crates/crossbeam-queue', 'platform/external/rust/crates/crossbeam-utils', 'platform/external/rust/crates/csv', 'platform/external/rust/crates/csv-core', 'platform/external/rust/crates/data-encoding', 'platform/external/rust/crates/der', 'platform/external/rust/crates/der-oid-macro', 'platform/external/rust/crates/der-parser', 'platform/external/rust/crates/der_derive', 'platform/external/rust/crates/derive-getters', 'platform/external/rust/crates/derive_arbitrary', 'platform/external/rust/crates/dlmalloc', 'platform/external/rust/crates/document-features']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

@@ -1,0 +1,31 @@
+name: 840 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 18 * * 1' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/libvorbis', 'platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt', 'platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-kselftest', 'platform/external/linux-tools-perf', 'platform/external/lisa', 'platform/external/littlemock', 'platform/external/lld', 'platform/external/lldb', 'platform/external/lldb-utils']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Git clone
+      run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+    - name: Push
+      run: |
+        cd ${{ matrix.repo_name }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git push --mirror https://${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
