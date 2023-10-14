@@ -51,6 +51,15 @@ jobs:
         repo_name: {create_matrix_array(project_names, i)}
 
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
       - name: Checkout
         uses: actions/checkout@v4
 
