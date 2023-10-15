@@ -1,0 +1,40 @@
+name: 1900 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 23 * * 3' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/packages/apps/Test/connectivity', 'platform/packages/apps/ThemePicker', 'platform/packages/apps/TimeZoneData', 'platform/packages/apps/TimeZoneUpdater', 'platform/packages/apps/Traceur', 'platform/packages/apps/TvFeedbackConsent', 'platform/packages/apps/TvSettings', 'platform/packages/apps/TvSystemUI', 'platform/packages/apps/UnifiedEmail', 'platform/packages/apps/UniversalMediaPlayer', 'platform/packages/apps/Updater', 'platform/packages/apps/VideoEditor', 'platform/packages/apps/VoiceDialer', 'platform/packages/apps/WallpaperPicker', 'platform/packages/apps/WallpaperPicker2', 'platform/packages/experimental', 'platform/packages/inputmethods/LatinIME', 'platform/packages/inputmethods/LeanbackIME', 'platform/packages/inputmethods/OpenWnn', 'platform/packages/inputmethods/PinyinIME']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

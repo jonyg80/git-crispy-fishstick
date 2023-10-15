@@ -1,0 +1,40 @@
+name: 1800 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 18 * * 3' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/packages/apps/Calendar', 'platform/packages/apps/Camera', 'platform/packages/apps/Camera2', 'platform/packages/apps/Car/Calendar', 'platform/packages/apps/Car/CalendarPrebuilt', 'platform/packages/apps/Car/Cluster', 'platform/packages/apps/Car/CompanionDeviceSupport', 'platform/packages/apps/Car/DebuggingRestrictionController', 'platform/packages/apps/Car/Dialer', 'platform/packages/apps/Car/DialerPrebuilt', 'platform/packages/apps/Car/DriverUI', 'platform/packages/apps/Car/Hvac', 'platform/packages/apps/Car/LatinIME', 'platform/packages/apps/Car/Launcher', 'platform/packages/apps/Car/LensPicker', 'platform/packages/apps/Car/LinkViewer', 'platform/packages/apps/Car/LocalMediaPlayer', 'platform/packages/apps/Car/Media', 'platform/packages/apps/Car/MediaPrebuilt', 'platform/packages/apps/Car/Messenger']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

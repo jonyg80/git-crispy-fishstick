@@ -1,0 +1,40 @@
+name: 180 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 9 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['kernel/devices/google/bluejay', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/tangorpro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers', 'kernel/google-modules/aoc', 'kernel/google-modules/aoc-ipc', 'kernel/google-modules/bluetooth/broadcom', 'kernel/google-modules/bluetooth/qcom', 'kernel/google-modules/bluetooth/synaptics', 'kernel/google-modules/bms', 'kernel/google-modules/display', 'kernel/google-modules/edgetpu']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

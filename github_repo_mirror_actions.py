@@ -17,7 +17,7 @@ week = 0
 
 def create_matrix_array(project_names, start):
   matrix_array = []
-  for j in range(start, start+110):
+  for j in range(start, start+20):
     matrix_array.append(project_names[j])
     if j == len(project_names)-1:
       break
@@ -27,7 +27,7 @@ def create_matrix_array(project_names, start):
 
 # Create yml files using project names as variable
 # for repo_name in project_names:
-for i in range(0,len(project_names),110):
+for i in range(0,len(project_names),20):
     # change / to _ in repo_name
     # file_name = repo_name.replace("/", "_")
     with open(".github/workflows/"+ str(i) + ".yml", "w", encoding="utf-8") as f:
@@ -36,7 +36,7 @@ for i in range(0,len(project_names),110):
 
 on:
   schedule:
-    - cron: '0 {hour} * * *' # Runs every week
+    - cron: '0 {hour} * * {week}' # Runs every week
   workflow_dispatch:
 
 
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
-      max-parallel: 5
+      max-parallel: 1
       matrix:
         repo_name: {create_matrix_array(project_names, i)}
 
@@ -74,21 +74,17 @@ jobs:
           git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git
 """)
 
-    # # Increment hour and week
-    # if hour >= 23 and week >= 6:
-    #     hour = 0
-    #     week = 0
-    # elif hour >= 23:
-    #     hour = 0
-    #     week += 1
-    # else:
-    #     hour += 1
-
-    if hour >= 23:
-      hour = 0
+    # Increment hour and week
+    if hour >= 23 and week >= 6:
+        hour = 0
+        week = 0
+    elif hour >= 23:
+        hour = 0
+        week += 1
     else:
-      hour += 1
+        hour += 1
 
+    
 
 # Print confirmation message
 print("Text files created successfully!")

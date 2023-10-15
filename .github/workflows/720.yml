@@ -1,0 +1,40 @@
+name: 720 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 12 * * 1' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/jetbrains/jcef', 'platform/external/jetbrains/jdk8u', 'platform/external/jetbrains/jdk8u_corba', 'platform/external/jetbrains/jdk8u_hotspot', 'platform/external/jetbrains/jdk8u_jaxp', 'platform/external/jetbrains/jdk8u_jaxws', 'platform/external/jetbrains/jdk8u_jdk', 'platform/external/jetbrains/jdk8u_jfx', 'platform/external/jetbrains/jdk8u_langtools', 'platform/external/jetbrains/jdk8u_nashorn', 'platform/external/jetbrains/kotlin', 'platform/external/jetty', 'platform/external/jhead', 'platform/external/jimfs', 'platform/external/jline', 'platform/external/jmdns', 'platform/external/jmonkeyengine', 'platform/external/jpeg', 'platform/external/jsilver', 'platform/external/jsmn']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

@@ -1,0 +1,40 @@
+name: 260 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 13 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['kernel/msm-extra/nfc-devicetree', 'kernel/msm-extra/video-devicetree', 'kernel/msm-extra/video-driver', 'kernel/msm-extra/wlan-devicetree', 'kernel/msm-modules', 'kernel/msm-modules/bt', 'kernel/msm-modules/data-kernel', 'kernel/msm-modules/datarmnet', 'kernel/msm-modules/datarmnet-ext', 'kernel/msm-modules/fts_touch', 'kernel/msm-modules/fts_touch_s5', 'kernel/msm-modules/graphics', 'kernel/msm-modules/mm', 'kernel/msm-modules/mmrm', 'kernel/msm-modules/modem', 'kernel/msm-modules/qca-wfi-host-cmn', 'kernel/msm-modules/qcacld', 'kernel/msm-modules/sec_touch', 'kernel/msm-modules/securemsm', 'kernel/msm-modules/touch']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

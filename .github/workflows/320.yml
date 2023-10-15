@@ -1,0 +1,40 @@
+name: 320 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 16 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/bootable/bootloader/legacy', 'platform/bootable/diskinstaller', 'platform/bootable/libbootloader', 'platform/bootable/recovery', 'platform/build', 'platform/build/bazel', 'platform/build/bazel_common_rules', 'platform/build/blueprint', 'platform/build/docker', 'platform/build/kati', 'platform/build/orchestrator', 'platform/build/pesto', 'platform/build/release', 'platform/build/soong', 'platform/compatibility/cdd', 'platform/cts', 'platform/dalvik', 'platform/dalvik-snapshot', 'platform/dalvik2', 'platform/developers/build']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

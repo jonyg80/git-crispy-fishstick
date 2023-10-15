@@ -1,0 +1,40 @@
+name: 1080 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 6 * * 2' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/rust/crates/ahash', 'platform/external/rust/crates/aho-corasick', 'platform/external/rust/crates/aliasable', 'platform/external/rust/crates/android_log-sys', 'platform/external/rust/crates/android_logger', 'platform/external/rust/crates/anes', 'platform/external/rust/crates/annotate-snippets', 'platform/external/rust/crates/anyhow', 'platform/external/rust/crates/arbitrary', 'platform/external/rust/crates/arc-swap', 'platform/external/rust/crates/argh', 'platform/external/rust/crates/argh_derive', 'platform/external/rust/crates/argh_shared', 'platform/external/rust/crates/ash', 'platform/external/rust/crates/async-stream', 'platform/external/rust/crates/async-stream-impl', 'platform/external/rust/crates/async-task', 'platform/external/rust/crates/async-trait', 'platform/external/rust/crates/atomic', 'platform/external/rust/crates/atomic-polyfill']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

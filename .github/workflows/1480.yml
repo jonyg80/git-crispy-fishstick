@@ -1,0 +1,40 @@
+name: 1480 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 2 * * 3' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/stressapptest', 'platform/external/subsampling-scale-image-view', 'platform/external/svox', 'platform/external/swiftshader', 'platform/external/swig', 'platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

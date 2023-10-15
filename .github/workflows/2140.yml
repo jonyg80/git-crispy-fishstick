@@ -1,0 +1,40 @@
+name: 2140 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 11 * * 4' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9', 'platform/prebuilts/gcc/darwin-x86/host/headers', 'platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1', 'platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.8', 'platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9', 'platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.4.3', 'platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6', 'platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.7', 'platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8', 'platform/prebuilts/gcc/darwin-x86/x86/i686-android-linux-4.4.3', 'platform/prebuilts/gcc/darwin-x86/x86/i686-android-linux-4.6', 'platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6', 'platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.7', 'platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.7', 'platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8', 'platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

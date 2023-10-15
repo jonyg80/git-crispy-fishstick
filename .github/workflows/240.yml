@@ -1,0 +1,40 @@
+name: 240 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 12 * * 0' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['kernel/hikey-linaro', 'kernel/hikey-modules', 'kernel/lk', 'kernel/manifest', 'kernel/mediatek', 'kernel/msm', 'kernel/msm-extra', 'kernel/msm-extra/audio-devicetree', 'kernel/msm-extra/bt-devicetree', 'kernel/msm-extra/camera-devicetree', 'kernel/msm-extra/camera-kernel', 'kernel/msm-extra/config', 'kernel/msm-extra/data-devicetree', 'kernel/msm-extra/dataipa', 'kernel/msm-extra/devicetree', 'kernel/msm-extra/display-devicetree', 'kernel/msm-extra/display-drivers', 'kernel/msm-extra/drivers', 'kernel/msm-extra/graphics-devicetree', 'kernel/msm-extra/mmrm-devicetree']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

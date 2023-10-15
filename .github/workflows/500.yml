@@ -1,0 +1,40 @@
+name: 500 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 1 * * 1' # Runs every week
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/chromium_org/third_party/yasm/source/patched-yasm', 'platform/external/chromium_org/tools/grit', 'platform/external/chromium_org/tools/gyp', 'platform/external/chromium_org/v8', 'platform/external/cibu-fonts', 'platform/external/clang', 'platform/external/clang-tools-extra', 'platform/external/clang_35a', 'platform/external/cldr', 'platform/external/clearsilver', 'platform/external/cmake', 'platform/external/cmockery', 'platform/external/cn-cbor', 'platform/external/codesourcery', 'platform/external/collada', 'platform/external/compiler-rt', 'platform/external/compiler-rt_35a', 'platform/external/connectedappssdk', 'platform/external/conscrypt', 'platform/external/cpu_features']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git

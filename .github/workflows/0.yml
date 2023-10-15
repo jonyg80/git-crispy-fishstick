@@ -2,7 +2,7 @@ name: 0 Clone and Push
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every week
+    - cron: '0 0 * * 0' # Runs every week
   workflow_dispatch:
 
 
@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
-      max-parallel: 5
+      max-parallel: 1
       matrix:
-        repo_name: ['accessories/manifest', 'assets/android-studio-ux-assets', 'brillo/manifest', 'device/amlogic/yukawa', 'device/amlogic/yukawa-kernel', 'device/asus/deb', 'device/asus/flo', 'device/asus/flo-kernel', 'device/asus/fugu', 'device/asus/fugu-kernel', 'device/asus/grouper', 'device/asus/tilapia', 'device/casio/koi-uboot', 'device/common', 'device/freescale/picoimx', 'device/generic/arm64', 'device/generic/armv7-a', 'device/generic/armv7-a-neon', 'device/generic/art', 'device/generic/brillo', 'device/generic/car', 'device/generic/common', 'device/generic/goldfish', 'device/generic/goldfish-opengl', 'device/generic/mini-emulator-arm64', 'device/generic/mini-emulator-armv7-a-neon', 'device/generic/mini-emulator-mips', 'device/generic/mini-emulator-mips64', 'device/generic/mini-emulator-x86', 'device/generic/mini-emulator-x86_64', 'device/generic/mips', 'device/generic/mips64', 'device/generic/opengl-transport', 'device/generic/qemu', 'device/generic/trusty', 'device/generic/uml', 'device/generic/vulkan-cereal', 'device/generic/x86', 'device/generic/x86_64', 'device/google/accessory/adk2012', 'device/google/accessory/adk2012_demo', 'device/google/accessory/arduino', 'device/google/accessory/demokit', 'device/google/atv', 'device/google/barbet', 'device/google/barbet-kernel', 'device/google/barbet-sepolicy', 'device/google/bluejay', 'device/google/bluejay-kernel', 'device/google/bluejay-sepolicy', 'device/google/bonito', 'device/google/bonito-kernel', 'device/google/bonito-sepolicy', 'device/google/bramble', 'device/google/bramble-kernel', 'device/google/bramble-sepolicy', 'device/google/contexthub', 'device/google/coral', 'device/google/coral-kernel', 'device/google/coral-sepolicy', 'device/google/crosshatch', 'device/google/crosshatch-kernel', 'device/google/crosshatch-sepolicy', 'device/google/cuttlefish', 'device/google/cuttlefish_common', 'device/google/cuttlefish_kernel', 'device/google/cuttlefish_prebuilts', 'device/google/cuttlefish_vmm', 'device/google/debugcable', 'device/google/dragon', 'device/google/dragon-kernel', 'device/google/felix', 'device/google/felix-kernel', 'device/google/felix-sepolicy', 'device/google/fuchsia', 'device/google/gs-common', 'device/google/gs101', 'device/google/gs101-sepolicy', 'device/google/gs201', 'device/google/gs201-sepolicy', 'device/google/lynx', 'device/google/lynx-kernel', 'device/google/lynx-sepolicy', 'device/google/marlin', 'device/google/marlin-kernel', 'device/google/muskie', 'device/google/pantah', 'device/google/pantah-kernel', 'device/google/pantah-sepolicy', 'device/google/phantasm', 'device/google/raviole', 'device/google/raviole-kernel', 'device/google/redbull', 'device/google/redbull-kernel', 'device/google/redbull-sepolicy', 'device/google/redfin', 'device/google/redfin-kernel', 'device/google/redfin-sepolicy', 'device/google/shusky-kernel', 'device/google/shusky-sepolicy', 'device/google/sunfish', 'device/google/sunfish-kernel', 'device/google/sunfish-sepolicy', 'device/google/taimen', 'device/google/tangorpro', 'device/google/tangorpro-kernel', 'device/google/tangorpro-sepolicy', 'device/google/trout', 'device/google/vrservices', 'device/google/wahoo']
+        repo_name: ['accessories/manifest', 'assets/android-studio-ux-assets', 'brillo/manifest', 'device/amlogic/yukawa', 'device/amlogic/yukawa-kernel', 'device/asus/deb', 'device/asus/flo', 'device/asus/flo-kernel', 'device/asus/fugu', 'device/asus/fugu-kernel', 'device/asus/grouper', 'device/asus/tilapia', 'device/casio/koi-uboot', 'device/common', 'device/freescale/picoimx', 'device/generic/arm64', 'device/generic/armv7-a', 'device/generic/armv7-a-neon', 'device/generic/art', 'device/generic/brillo']
 
     steps:
       - name: Maximize build space
