@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/libfmq', 'platform/system/libhidl', 'platform/system/libhwbinder', 'platform/system/libprocinfo', 'platform/system/librustutils', 'platform/system/libsysprop', 'platform/system/libufdt', 'platform/system/libvintf', 'platform/system/libziparchive', 'platform/system/linkerconfig', 'platform/system/logging', 'platform/system/media', 'platform/system/memory/libdmabufheap', 'platform/system/memory/libion', 'platform/system/memory/libmeminfo', 'platform/system/memory/libmemtrack', 'platform/system/memory/libmemunreachable', 'platform/system/memory/lmkd', 'platform/system/memory/mm_eventsd', 'platform/system/metricsd']
+        repo_name: ['platform/system/libartpalette', 'platform/system/libbase', 'platform/system/libcppbor', 'platform/system/libfmq', 'platform/system/libhidl', 'platform/system/libhwbinder', 'platform/system/libprocinfo', 'platform/system/librustutils', 'platform/system/libsysprop', 'platform/system/libufdt', 'platform/system/libvintf', 'platform/system/libziparchive', 'platform/system/linkerconfig', 'platform/system/logging', 'platform/system/media', 'platform/system/memory/libdmabufheap', 'platform/system/memory/libion', 'platform/system/memory/libmeminfo', 'platform/system/memory/libmemtrack', 'platform/system/memory/libmemunreachable']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/external/qemu-keycodemapdb', 'trusty/external/qemu-libslirp', 'trusty/external/qemu-meson', 'trusty/external/trusted-firmware-a', 'trusty/external/trusty', 'trusty/host/aidl', 'trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/vendor/google/aosp']
+        repo_name: ['trusty/external/headers', 'trusty/external/musl', 'trusty/external/qemu', 'trusty/external/qemu-keycodemapdb', 'trusty/external/qemu-libslirp', 'trusty/external/qemu-meson', 'trusty/external/trusted-firmware-a', 'trusty/external/trusty', 'trusty/host/aidl', 'trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/vendor/google/aosp']
 
     steps:
       - name: Maximize build space

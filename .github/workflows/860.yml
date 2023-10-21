@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/llvm', 'platform/external/llvm_35a', 'platform/external/lmfit', 'platform/external/login-items-ae', 'platform/external/lohit-fonts', 'platform/external/lottie', 'platform/external/ltp', 'platform/external/ltrace', 'platform/external/lua', 'platform/external/lvm2', 'platform/external/lz4', 'platform/external/lzma', 'platform/external/lzop', 'platform/external/marisa-trie', 'platform/external/markdown', 'platform/external/mbedtls', 'platform/external/mdnsresponder', 'platform/external/mesa3d', 'platform/external/messageformat', 'platform/external/mime-support']
+        repo_name: ['platform/external/lldb', 'platform/external/lldb-utils', 'platform/external/llvm', 'platform/external/llvm_35a', 'platform/external/lmfit', 'platform/external/login-items-ae', 'platform/external/lohit-fonts', 'platform/external/lottie', 'platform/external/ltp', 'platform/external/ltrace', 'platform/external/lua', 'platform/external/lvm2', 'platform/external/lz4', 'platform/external/lzma', 'platform/external/lzop', 'platform/external/marisa-trie', 'platform/external/markdown', 'platform/external/mbedtls', 'platform/external/mdnsresponder', 'platform/external/mesa3d']
 
     steps:
       - name: Maximize build space
