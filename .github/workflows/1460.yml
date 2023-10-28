@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm', 'platform/external/sqlite', 'platform/external/squashfs-tools', 'platform/external/srec', 'platform/external/srtp', 'platform/external/stardoc', 'platform/external/starlark-go']
+        repo_name: ['platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags', 'platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm', 'platform/external/sqlite']
 
     steps:
       - name: Maximize build space

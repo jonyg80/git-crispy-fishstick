@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/eyes-free', 'platform/external/f2fs-tools', 'platform/external/faad', 'platform/external/fastrpc', 'platform/external/fat32lib', 'platform/external/fdlibm', 'platform/external/fec', 'platform/external/federated-compute', 'platform/external/fff', 'platform/external/ffmpeg', 'platform/external/fft2d', 'platform/external/fio', 'platform/external/firebase-messaging', 'platform/external/flac', 'platform/external/flashbench', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib', 'platform/external/fonttools', 'platform/external/free-image']
+        repo_name: ['platform/external/extfuse', 'platform/external/eyes-free', 'platform/external/f2fs-tools', 'platform/external/faad', 'platform/external/fastrpc', 'platform/external/fat32lib', 'platform/external/fdlibm', 'platform/external/fec', 'platform/external/federated-compute', 'platform/external/fff', 'platform/external/ffmpeg', 'platform/external/fft2d', 'platform/external/fio', 'platform/external/firebase-messaging', 'platform/external/flac', 'platform/external/flashbench', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib', 'platform/external/fonttools']
 
     steps:
       - name: Maximize build space

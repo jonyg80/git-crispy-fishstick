@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/eclipse-basebuilder', 'platform/external/eclipse-windowbuilder', 'platform/external/effcee', 'platform/external/egl-registry', 'platform/external/eglib', 'platform/external/eigen', 'platform/external/elfcopy', 'platform/external/elfutils', 'platform/external/embunit', 'platform/external/emma', 'platform/external/epid-sdk', 'platform/external/erofs-utils', 'platform/external/error_prone', 'platform/external/escapevelocity', 'platform/external/esd', 'platform/external/ethtool', 'platform/external/exfatprogs', 'platform/external/exoplayer', 'platform/external/expat', 'platform/external/extfuse']
+        repo_name: ['platform/external/easymock', 'platform/external/eclipse-basebuilder', 'platform/external/eclipse-windowbuilder', 'platform/external/effcee', 'platform/external/egl-registry', 'platform/external/eglib', 'platform/external/eigen', 'platform/external/elfcopy', 'platform/external/elfutils', 'platform/external/embunit', 'platform/external/emma', 'platform/external/epid-sdk', 'platform/external/erofs-utils', 'platform/external/error_prone', 'platform/external/escapevelocity', 'platform/external/esd', 'platform/external/ethtool', 'platform/external/exfatprogs', 'platform/external/exoplayer', 'platform/external/expat']
 
     steps:
       - name: Maximize build space

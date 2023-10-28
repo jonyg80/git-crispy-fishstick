@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common', 'platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy', 'platform/external/webview_support_interfaces', 'platform/external/wmediumd', 'platform/external/wpa_supplicant', 'platform/external/wpa_supplicant_6', 'platform/external/wpa_supplicant_8', 'platform/external/wpantund', 'platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof', 'platform/external/x264', 'platform/external/xdelta3', 'platform/external/xerces-cpp', 'platform/external/xmlrpcpp', 'platform/external/xmlwriter']
+        repo_name: ['platform/external/volley', 'platform/external/vulkan-headers', 'platform/external/vulkan-tools', 'platform/external/vulkan-validation-layers', 'platform/external/walt', 'platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common', 'platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy', 'platform/external/webview_support_interfaces', 'platform/external/wmediumd', 'platform/external/wpa_supplicant', 'platform/external/wpa_supplicant_6', 'platform/external/wpa_supplicant_8', 'platform/external/wpantund', 'platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof']
 
     steps:
       - name: Maximize build space
