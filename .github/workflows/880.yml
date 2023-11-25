@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/mesa3d', 'platform/external/messageformat', 'platform/external/mime-support', 'platform/external/minigbm', 'platform/external/minijail', 'platform/external/mksh', 'platform/external/mmc-utils', 'platform/external/mobile-data-download', 'platform/external/mobly-bundled-snippets', 'platform/external/mobly-snippet-lib', 'platform/external/mock', 'platform/external/mockftpserver', 'platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modp_b64', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpg123', 'platform/external/ms-tpm-20-ref']
+        repo_name: ['platform/external/mdnsresponder', 'platform/external/mesa3d', 'platform/external/messageformat', 'platform/external/mime-support', 'platform/external/minigbm', 'platform/external/minijail', 'platform/external/mksh', 'platform/external/mmc-utils', 'platform/external/mobile-data-download', 'platform/external/mobly-bundled-snippets', 'platform/external/mobly-snippet-lib', 'platform/external/mock', 'platform/external/mockftpserver', 'platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modp_b64', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpg123']
 
     steps:
       - name: Maximize build space

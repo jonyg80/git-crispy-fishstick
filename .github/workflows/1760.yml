@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/qcom/sdm845/display', 'platform/hardware/qcom/sdm845/gps', 'platform/hardware/qcom/sdm845/media', 'platform/hardware/qcom/sdm845/thermal', 'platform/hardware/qcom/sdm845/vr', 'platform/hardware/qcom/sensors', 'platform/hardware/qcom/sm7150/display', 'platform/hardware/qcom/sm7150/gps', 'platform/hardware/qcom/sm7150/media', 'platform/hardware/qcom/sm7150/vr', 'platform/hardware/qcom/sm7250/display', 'platform/hardware/qcom/sm7250/gps', 'platform/hardware/qcom/sm7250/media', 'platform/hardware/qcom/sm8150/data/ipacfg-mgr', 'platform/hardware/qcom/sm8150/display', 'platform/hardware/qcom/sm8150/gps', 'platform/hardware/qcom/sm8150/media', 'platform/hardware/qcom/sm8150/thermal', 'platform/hardware/qcom/sm8150/vr', 'platform/hardware/qcom/sm8150p/gps']
+        repo_name: ['platform/hardware/qcom/sdm845/data/ipacfg-mgr', 'platform/hardware/qcom/sdm845/display', 'platform/hardware/qcom/sdm845/gps', 'platform/hardware/qcom/sdm845/media', 'platform/hardware/qcom/sdm845/thermal', 'platform/hardware/qcom/sdm845/vr', 'platform/hardware/qcom/sensors', 'platform/hardware/qcom/sm7150/display', 'platform/hardware/qcom/sm7150/gps', 'platform/hardware/qcom/sm7150/media', 'platform/hardware/qcom/sm7150/vr', 'platform/hardware/qcom/sm7250/display', 'platform/hardware/qcom/sm7250/gps', 'platform/hardware/qcom/sm7250/media', 'platform/hardware/qcom/sm8150/data/ipacfg-mgr', 'platform/hardware/qcom/sm8150/display', 'platform/hardware/qcom/sm8150/gps', 'platform/hardware/qcom/sm8150/media', 'platform/hardware/qcom/sm8150/thermal', 'platform/hardware/qcom/sm8150/vr']
 
     steps:
       - name: Maximize build space

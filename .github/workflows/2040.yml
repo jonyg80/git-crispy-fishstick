@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/androidx/exoplayer', 'platform/prebuilts/androidx/external', 'platform/prebuilts/androidx/internal', 'platform/prebuilts/androidx/konan', 'platform/prebuilts/androidx/studio', 'platform/prebuilts/androidx/traceprocessor', 'platform/prebuilts/asuite', 'platform/prebuilts/au-generator', 'platform/prebuilts/bazel/common', 'platform/prebuilts/bazel/darwin-x86_64', 'platform/prebuilts/bazel/linux-x86_64', 'platform/prebuilts/bazel/windows-x86_64', 'platform/prebuilts/boot-artifacts', 'platform/prebuilts/build-artifacts', 'platform/prebuilts/build-artifacts2', 'platform/prebuilts/build-artifacts3', 'platform/prebuilts/build-tools', 'platform/prebuilts/bundletool', 'platform/prebuilts/checkcolor', 'platform/prebuilts/checkstyle']
+        repo_name: ['platform/prebuilts/android-emulator-build/system-images', 'platform/prebuilts/androidx/exoplayer', 'platform/prebuilts/androidx/external', 'platform/prebuilts/androidx/internal', 'platform/prebuilts/androidx/konan', 'platform/prebuilts/androidx/studio', 'platform/prebuilts/androidx/traceprocessor', 'platform/prebuilts/asuite', 'platform/prebuilts/au-generator', 'platform/prebuilts/bazel/common', 'platform/prebuilts/bazel/darwin-x86_64', 'platform/prebuilts/bazel/linux-x86_64', 'platform/prebuilts/bazel/windows-x86_64', 'platform/prebuilts/boot-artifacts', 'platform/prebuilts/build-artifacts', 'platform/prebuilts/build-artifacts2', 'platform/prebuilts/build-artifacts3', 'platform/prebuilts/build-tools', 'platform/prebuilts/bundletool', 'platform/prebuilts/checkcolor']
 
     steps:
       - name: Maximize build space
