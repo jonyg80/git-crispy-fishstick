@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/google/sunfish', 'device/google/sunfish-kernel', 'device/google/sunfish-sepolicy', 'device/google/taimen', 'device/google/tangorpro', 'device/google/tangorpro-kernel', 'device/google/tangorpro-sepolicy', 'device/google/trout', 'device/google/vrservices', 'device/google/wahoo', 'device/google/wahoo-kernel', 'device/google/zuma', 'device/google/zuma-sepolicy', 'device/google_car', 'device/htc/common', 'device/htc/dream', 'device/htc/dream-sapphire', 'device/htc/flounder', 'device/htc/flounder-kernel', 'device/htc/passion']
+        repo_name: ['device/google/shusky-sepolicy', 'device/google/sunfish', 'device/google/sunfish-kernel', 'device/google/sunfish-sepolicy', 'device/google/taimen', 'device/google/tangorpro', 'device/google/tangorpro-kernel', 'device/google/tangorpro-sepolicy', 'device/google/trout', 'device/google/vrservices', 'device/google/wahoo', 'device/google/wahoo-kernel', 'device/google/zuma', 'device/google/zuma-sepolicy', 'device/google_car', 'device/htc/common', 'device/htc/dream', 'device/htc/dream-sapphire', 'device/htc/flounder', 'device/htc/flounder-kernel']
 
     steps:
       - name: Maximize build space

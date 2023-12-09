@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/ms-tpm-20-ref', 'platform/external/mtools', 'platform/external/mtpd', 'platform/external/musl', 'platform/external/nanohttpd', 'platform/external/nanopb-c', 'platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct', 'platform/external/ninja', 'platform/external/nist-pkits', 'platform/external/nist-sip', 'platform/external/nos/host/android', 'platform/external/nos/host/generic']
+        repo_name: ['platform/external/mpg123', 'platform/external/ms-tpm-20-ref', 'platform/external/mtools', 'platform/external/mtpd', 'platform/external/musl', 'platform/external/nanohttpd', 'platform/external/nanopb-c', 'platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct', 'platform/external/ninja', 'platform/external/nist-pkits', 'platform/external/nist-sip', 'platform/external/nos/host/android']
 
     steps:
       - name: Maximize build space

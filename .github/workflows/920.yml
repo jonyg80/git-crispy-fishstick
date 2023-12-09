@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4', 'platform/external/okio', 'platform/external/one-true-awk', 'platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore', 'platform/external/opencv']
+        repo_name: ['platform/external/nos/host/generic', 'platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4', 'platform/external/okio', 'platform/external/one-true-awk', 'platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore']
 
     steps:
       - name: Maximize build space

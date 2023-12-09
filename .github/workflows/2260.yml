@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/ninja/darwin-x86', 'platform/prebuilts/ninja/linux-x86', 'platform/prebuilts/ninja/windows-x86', 'platform/prebuilts/protobuf', 'platform/prebuilts/python/darwin-x86', 'platform/prebuilts/python/darwin-x86/2.7.5', 'platform/prebuilts/python/linux-x86', 'platform/prebuilts/python/linux-x86/2.7.5', 'platform/prebuilts/python/windows-x86', 'platform/prebuilts/qemu-kernel', 'platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/sdk', 'platform/prebuilts/simpleperf', 'platform/prebuilts/studio/jdk']
+        repo_name: ['platform/prebuilts/module_sdk/conscrypt', 'platform/prebuilts/ndk', 'platform/prebuilts/ninja/darwin-x86', 'platform/prebuilts/ninja/linux-x86', 'platform/prebuilts/ninja/windows-x86', 'platform/prebuilts/protobuf', 'platform/prebuilts/python/darwin-x86', 'platform/prebuilts/python/darwin-x86/2.7.5', 'platform/prebuilts/python/linux-x86', 'platform/prebuilts/python/linux-x86/2.7.5', 'platform/prebuilts/python/windows-x86', 'platform/prebuilts/qemu-kernel', 'platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/sdk']
 
     steps:
       - name: Maximize build space

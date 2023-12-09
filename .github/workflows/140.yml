@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/linaro/poplar', 'device/linaro/poplar-kernel', 'device/mediatek/wembley-sepolicy', 'device/moto/common', 'device/moto/shamu', 'device/moto/shamu-kernel', 'device/moto/stingray', 'device/moto/wingray', 'device/pifoundation/rpi3', 'device/qcom/dragonboard', 'device/rockchip/kylin', 'device/sample', 'device/samsung/crespo', 'device/samsung/crespo4g', 'device/samsung/maguro', 'device/samsung/manta', 'device/samsung/toro', 'device/samsung/toroplus', 'device/samsung/torospr', 'device/samsung/tuna']
+        repo_name: ['device/linaro/hikey-kernel', 'device/linaro/poplar', 'device/linaro/poplar-kernel', 'device/mediatek/wembley-sepolicy', 'device/moto/common', 'device/moto/shamu', 'device/moto/shamu-kernel', 'device/moto/stingray', 'device/moto/wingray', 'device/pifoundation/rpi3', 'device/qcom/dragonboard', 'device/rockchip/kylin', 'device/sample', 'device/samsung/crespo', 'device/samsung/crespo4g', 'device/samsung/maguro', 'device/samsung/manta', 'device/samsung/toro', 'device/samsung/toroplus', 'device/samsung/torospr']
 
     steps:
       - name: Maximize build space
