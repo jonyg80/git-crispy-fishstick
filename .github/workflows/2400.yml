@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/test/vti/fuzz_test_serving', 'platform/test/vti/test_serving', 'platform/test/vts', 'platform/test/vts-testcase/fuzz', 'platform/test/vts-testcase/hal', 'platform/test/vts-testcase/hal-trace', 'platform/test/vts-testcase/kernel', 'platform/test/vts-testcase/nbu', 'platform/test/vts-testcase/performance', 'platform/test/vts-testcase/security', 'platform/test/vts-testcase/vndk', 'platform/tools/aadevtools', 'platform/tools/acloud', 'platform/tools/adt/eclipse', 'platform/tools/adt/idea', 'platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle']
+        repo_name: ['platform/system/unwinding', 'platform/system/update_engine', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root', 'platform/test/dittosuite', 'platform/test/framework', 'platform/test/mlts/benchmark', 'platform/test/mlts/models', 'platform/test/mts', 'platform/test/p2pts', 'platform/test/robolectric-extensions', 'platform/test/sts', 'platform/test/suite_harness']
 
     steps:
       - name: Maximize build space

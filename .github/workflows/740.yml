@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/jpeg', 'platform/external/jsilver', 'platform/external/jsmn', 'platform/external/jsoncpp', 'platform/external/jsr305', 'platform/external/jsr330', 'platform/external/junit', 'platform/external/junit-params', 'platform/external/kernel-headers', 'platform/external/kmod', 'platform/external/kotlinc', 'platform/external/kotlinpoet', 'platform/external/kotlinx.atomicfu', 'platform/external/kotlinx.coroutines', 'platform/external/kotlinx.metadata', 'platform/external/ksoap2', 'platform/external/ksp', 'platform/external/ktfmt', 'platform/external/ktlint', 'platform/external/kythe']
+        repo_name: ['platform/external/jmdns', 'platform/external/jmonkeyengine', 'platform/external/jpeg', 'platform/external/jsilver', 'platform/external/jsmn', 'platform/external/jsoncpp', 'platform/external/jsr305', 'platform/external/jsr330', 'platform/external/junit', 'platform/external/junit-params', 'platform/external/kernel-headers', 'platform/external/kmod', 'platform/external/kotlinc', 'platform/external/kotlinpoet', 'platform/external/kotlinx.atomicfu', 'platform/external/kotlinx.coroutines', 'platform/external/kotlinx.metadata', 'platform/external/ksoap2', 'platform/external/ksp', 'platform/external/ktfmt']
 
     steps:
       - name: Maximize build space

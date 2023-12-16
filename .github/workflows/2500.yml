@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/common', 'toolchain/compiler-rt', 'toolchain/expat', 'toolchain/gcc', 'toolchain/gcc-12.2.0', 'toolchain/gdb', 'toolchain/gmp', 'toolchain/gmp-6.2.1', 'toolchain/gold', 'toolchain/isl', 'toolchain/jack', 'toolchain/jack-server', 'toolchain/jdk/build', 'toolchain/jdk/jdk11', 'toolchain/jdk/jdk17', 'toolchain/jdk/jdk21', 'toolchain/jdk/jdk9', 'toolchain/jdk/jdk9_corba', 'toolchain/jdk/jdk9_hotspot', 'toolchain/jdk/jdk9_jaxp']
+        repo_name: ['platform/tools/tradefederation', 'platform/tools/tradefederation/contrib', 'platform/tools/tradefederation/prebuilts', 'platform/tools/treble', 'platform/tools/trebuchet', 'platform/vendor/htc/dream-open', 'platform/vendor/invensense', 'platform/vendor/sample', 'product/google/common', 'product/google/example-ledflasher', 'toolchain/android_rust', 'toolchain/avr-libc', 'toolchain/benchmark', 'toolchain/binutils', 'toolchain/build', 'toolchain/capnproto', 'toolchain/cargo-deny', 'toolchain/cargo-vet', 'toolchain/ccache', 'toolchain/clang']
 
     steps:
       - name: Maximize build space

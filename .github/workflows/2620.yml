@@ -1,8 +1,8 @@
-name: 1100 Clone and Push
+name: 2620 Clone and Push
 
 on:
   schedule:
-    - cron: '0 7 * * 2' # Runs every week
+    - cron: '0 11 * * 5' # Runs every week
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/arbitrary', 'platform/external/rust/crates/arc-swap', 'platform/external/rust/crates/argh', 'platform/external/rust/crates/argh_derive', 'platform/external/rust/crates/argh_shared', 'platform/external/rust/crates/arrayvec', 'platform/external/rust/crates/ash', 'platform/external/rust/crates/asn1-rs', 'platform/external/rust/crates/asn1-rs-derive', 'platform/external/rust/crates/asn1-rs-impl', 'platform/external/rust/crates/async-stream', 'platform/external/rust/crates/async-stream-impl', 'platform/external/rust/crates/async-task', 'platform/external/rust/crates/async-trait', 'platform/external/rust/crates/atomic', 'platform/external/rust/crates/atomic-polyfill', 'platform/external/rust/crates/atty', 'platform/external/rust/crates/base64', 'platform/external/rust/crates/bencher', 'platform/external/rust/crates/bincode']
+        repo_name: ['trusty/external/qemu', 'trusty/external/qemu-keycodemapdb', 'trusty/external/qemu-libslirp', 'trusty/external/qemu-meson', 'trusty/external/trusted-firmware-a', 'trusty/external/trusty', 'trusty/host/aidl', 'trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/vendor/google/aosp']
 
     steps:
       - name: Maximize build space
