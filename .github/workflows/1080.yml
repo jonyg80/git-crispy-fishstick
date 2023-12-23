@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rnnoise', 'platform/external/robolectric', 'platform/external/robolectric-shadows', 'platform/external/roboto-flex-fonts', 'platform/external/roboto-fonts', 'platform/external/rootdev', 'platform/external/rules_pkg', 'platform/external/rust/autocxx', 'platform/external/rust/beto-rust', 'platform/external/rust/crates/aarch64-paging', 'platform/external/rust/crates/addr2line', 'platform/external/rust/crates/adler', 'platform/external/rust/crates/ahash', 'platform/external/rust/crates/aho-corasick', 'platform/external/rust/crates/aliasable', 'platform/external/rust/crates/android_log-sys', 'platform/external/rust/crates/android_logger', 'platform/external/rust/crates/anes', 'platform/external/rust/crates/annotate-snippets', 'platform/external/rust/crates/anyhow']
+        repo_name: ['platform/external/rapidjson', 'platform/external/rappor', 'platform/external/regex-re2', 'platform/external/renderscript-intrinsics-replacement-toolkit', 'platform/external/replicaisland', 'platform/external/rmi4utils', 'platform/external/rnnoise', 'platform/external/robolectric', 'platform/external/robolectric-shadows', 'platform/external/roboto-flex-fonts', 'platform/external/roboto-fonts', 'platform/external/rootdev', 'platform/external/rules_pkg', 'platform/external/rust/autocxx', 'platform/external/rust/beto-rust', 'platform/external/rust/crates/aarch64-paging', 'platform/external/rust/crates/addr2line', 'platform/external/rust/crates/adler', 'platform/external/rust/crates/ahash', 'platform/external/rust/crates/aho-corasick']
 
     steps:
       - name: Maximize build space
