@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/drm_gralloc', 'platform/external/drm_hwcomposer', 'platform/external/droiddriver', 'platform/external/dropbear', 'platform/external/drrickorang', 'platform/external/dtc', 'platform/external/dwarves', 'platform/external/dynamic_depth', 'platform/external/e2fsprogs', 'platform/external/easymock', 'platform/external/eclipse-basebuilder', 'platform/external/eclipse-windowbuilder', 'platform/external/effcee', 'platform/external/egl-registry', 'platform/external/eglib', 'platform/external/eigen', 'platform/external/elfcopy', 'platform/external/elfutils', 'platform/external/embunit', 'platform/external/emma']
+        repo_name: ['platform/external/doxygen', 'platform/external/drm_gralloc', 'platform/external/drm_hwcomposer', 'platform/external/droiddriver', 'platform/external/dropbear', 'platform/external/drrickorang', 'platform/external/dtc', 'platform/external/dwarves', 'platform/external/dynamic_depth', 'platform/external/e2fsprogs', 'platform/external/easymock', 'platform/external/eclipse-basebuilder', 'platform/external/eclipse-windowbuilder', 'platform/external/effcee', 'platform/external/egl-registry', 'platform/external/eglib', 'platform/external/eigen', 'platform/external/elfcopy', 'platform/external/elfutils', 'platform/external/embunit']
 
     steps:
       - name: Maximize build space

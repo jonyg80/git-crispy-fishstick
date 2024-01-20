@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/vndk/v31', 'platform/prebuilts/vndk/v32', 'platform/prebuilts/vndk/v33', 'platform/prebuilts/vndk/v34', 'platform/sdk', 'platform/smaratorg', 'platform/superproject', 'platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager']
+        repo_name: ['platform/prebuilts/trusty/sysroot', 'platform/prebuilts/vndk/v27', 'platform/prebuilts/vndk/v28', 'platform/prebuilts/vndk/v29', 'platform/prebuilts/vndk/v30', 'platform/prebuilts/vndk/v31', 'platform/prebuilts/vndk/v32', 'platform/prebuilts/vndk/v33', 'platform/prebuilts/vndk/v34', 'platform/sdk', 'platform/smaratorg', 'platform/superproject', 'platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs']
 
     steps:
       - name: Maximize build space

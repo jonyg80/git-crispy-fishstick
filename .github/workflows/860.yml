@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt', 'platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-kselftest', 'platform/external/linux-tools-perf', 'platform/external/lisa', 'platform/external/littlemock', 'platform/external/lld', 'platform/external/lldb', 'platform/external/lldb-utils', 'platform/external/llvm', 'platform/external/llvm_35a', 'platform/external/lmfit', 'platform/external/login-items-ae', 'platform/external/lohit-fonts', 'platform/external/lottie', 'platform/external/ltp']
+        repo_name: ['platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt', 'platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-kselftest', 'platform/external/linux-tools-perf', 'platform/external/lisa', 'platform/external/littlemock', 'platform/external/lld', 'platform/external/lldb', 'platform/external/lldb-utils', 'platform/external/llvm', 'platform/external/llvm_35a', 'platform/external/lmfit', 'platform/external/login-items-ae', 'platform/external/lohit-fonts', 'platform/external/lottie']
 
     steps:
       - name: Maximize build space

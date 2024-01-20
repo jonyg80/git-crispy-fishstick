@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/google-fonts/source-sans-pro', 'platform/external/google-fonts/zilla-slab', 'platform/external/google-fruit', 'platform/external/google-java-format', 'platform/external/google-smali', 'platform/external/google-styleguide', 'platform/external/google-tv-pairing-protocol', 'platform/external/google-uuid', 'platform/external/googleapis', 'platform/external/googleapis-enterprise-certificate-proxy', 'platform/external/googleapis-gax-go', 'platform/external/googleapis-go-genproto', 'platform/external/googleclient', 'platform/external/googletest', 'platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java']
+        repo_name: ['platform/external/google-fonts/rubik', 'platform/external/google-fonts/source-sans-pro', 'platform/external/google-fonts/zilla-slab', 'platform/external/google-fruit', 'platform/external/google-java-format', 'platform/external/google-smali', 'platform/external/google-styleguide', 'platform/external/google-tv-pairing-protocol', 'platform/external/google-uuid', 'platform/external/googleapis', 'platform/external/googleapis-enterprise-certificate-proxy', 'platform/external/googleapis-gax-go', 'platform/external/googleapis-go-genproto', 'platform/external/googleclient', 'platform/external/googletest', 'platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go']
 
     steps:
       - name: Maximize build space

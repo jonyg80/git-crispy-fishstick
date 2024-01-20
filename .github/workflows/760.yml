@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/kotlinx.atomicfu', 'platform/external/kotlinx.coroutines', 'platform/external/kotlinx.metadata', 'platform/external/ksoap2', 'platform/external/ksp', 'platform/external/ktfmt', 'platform/external/ktlint', 'platform/external/kythe', 'platform/external/lame', 'platform/external/lcc', 'platform/external/leveldb', 'platform/external/libabigail', 'platform/external/libaom', 'platform/external/libavc', 'platform/external/libbackup', 'platform/external/libbpf', 'platform/external/libbrillo', 'platform/external/libc-test', 'platform/external/libcap', 'platform/external/libcap-ng']
+        repo_name: ['platform/external/kotlinpoet', 'platform/external/kotlinx.atomicfu', 'platform/external/kotlinx.coroutines', 'platform/external/kotlinx.metadata', 'platform/external/ksoap2', 'platform/external/ksp', 'platform/external/ktfmt', 'platform/external/ktlint', 'platform/external/kythe', 'platform/external/lame', 'platform/external/lcc', 'platform/external/leveldb', 'platform/external/libabigail', 'platform/external/libaom', 'platform/external/libavc', 'platform/external/libbackup', 'platform/external/libbpf', 'platform/external/libbrillo', 'platform/external/libc-test', 'platform/external/libcap']
 
     steps:
       - name: Maximize build space
