@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/gradle', 'platform/tools/gradle-recipes', 'platform/tools/idea', 'platform/tools/lint_checks', 'platform/tools/loganalysis', 'platform/tools/metalava', 'platform/tools/motodev', 'platform/tools/multitest_transport', 'platform/tools/ndkports', 'platform/tools/netsim', 'platform/tools/repohooks', 'platform/tools/repohooks-trampoline', 'platform/tools/rr_prebuilt', 'platform/tools/security', 'platform/tools/studio/cloud', 'platform/tools/studio/google/appindexing', 'platform/tools/studio/google/cloud/testing', 'platform/tools/studio/google/cloud/tools', 'platform/tools/studio/google/login', 'platform/tools/studio/google/play']
+        repo_name: ['platform/tools/external/go/src/github.com/golang/protobuf', 'platform/tools/external/go/src/golang.org/x/net', 'platform/tools/external/go/src/golang.org/x/tools', 'platform/tools/external/gradle', 'platform/tools/external_updater', 'platform/tools/google_prebuilts/studio/sdk/remote', 'platform/tools/gpu', 'platform/tools/gradle', 'platform/tools/gradle-recipes', 'platform/tools/idea', 'platform/tools/lint_checks', 'platform/tools/loganalysis', 'platform/tools/metalava', 'platform/tools/motodev', 'platform/tools/multitest_transport', 'platform/tools/ndkports', 'platform/tools/netsim', 'platform/tools/repohooks', 'platform/tools/repohooks-trampoline', 'platform/tools/rr_prebuilt']
 
     steps:
       - name: Maximize build space
