@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/third-party-review', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new', 'platform/external/tinycompress', 'platform/external/tinyobjloader', 'platform/external/tinyxml', 'platform/external/tinyxml2', 'platform/external/tlsdate', 'platform/external/toolchain-utils', 'platform/external/toybox', 'platform/external/tpm2', 'platform/external/tpm2-tss', 'platform/external/trace-cmd', 'platform/external/trappy', 'platform/external/tremolo', 'platform/external/tremor', 'platform/external/truth']
+        repo_name: ['platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new', 'platform/external/tinycompress', 'platform/external/tinyobjloader', 'platform/external/tinyxml', 'platform/external/tinyxml2', 'platform/external/tlsdate', 'platform/external/toolchain-utils', 'platform/external/toybox', 'platform/external/tpm2', 'platform/external/tpm2-tss', 'platform/external/trace-cmd', 'platform/external/trappy', 'platform/external/tremolo', 'platform/external/tremor']
 
     steps:
       - name: Maximize build space
