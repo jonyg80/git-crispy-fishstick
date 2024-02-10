@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/auto', 'platform/external/autoconf', 'platform/external/autotest', 'platform/external/avahi', 'platform/external/avb', 'platform/external/bart', 'platform/external/bazel-skylib', 'platform/external/bazelbuild-apple_support', 'platform/external/bazelbuild-bazel-central-registry', 'platform/external/bazelbuild-kotlin-rules', 'platform/external/bazelbuild-platforms', 'platform/external/bazelbuild-remote-apis', 'platform/external/bazelbuild-rules_android', 'platform/external/bazelbuild-rules_cc', 'platform/external/bazelbuild-rules_fuzzing', 'platform/external/bazelbuild-rules_go', 'platform/external/bazelbuild-rules_java', 'platform/external/bazelbuild-rules_license', 'platform/external/bazelbuild-rules_pkg', 'platform/external/bazelbuild-rules_python']
+        repo_name: ['platform/external/astl', 'platform/external/auto', 'platform/external/autoconf', 'platform/external/autotest', 'platform/external/avahi', 'platform/external/avb', 'platform/external/bart', 'platform/external/bazel-skylib', 'platform/external/bazelbuild-apple_support', 'platform/external/bazelbuild-bazel-central-registry', 'platform/external/bazelbuild-kotlin-rules', 'platform/external/bazelbuild-platforms', 'platform/external/bazelbuild-remote-apis', 'platform/external/bazelbuild-rules_android', 'platform/external/bazelbuild-rules_cc', 'platform/external/bazelbuild-rules_fuzzing', 'platform/external/bazelbuild-rules_go', 'platform/external/bazelbuild-rules_java', 'platform/external/bazelbuild-rules_license', 'platform/external/bazelbuild-rules_pkg']
 
     steps:
       - name: Maximize build space

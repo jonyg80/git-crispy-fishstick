@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/AccountsAndSyncSettings', 'platform/packages/apps/AlarmClock', 'platform/packages/apps/BasicSmsReceiver', 'platform/packages/apps/Benchmark', 'platform/packages/apps/Bluetooth', 'platform/packages/apps/Browser', 'platform/packages/apps/Browser2', 'platform/packages/apps/Calculator', 'platform/packages/apps/Calendar', 'platform/packages/apps/Camera', 'platform/packages/apps/Camera2', 'platform/packages/apps/Car/Calendar', 'platform/packages/apps/Car/CalendarPrebuilt', 'platform/packages/apps/Car/Cluster', 'platform/packages/apps/Car/CompanionDeviceSupport', 'platform/packages/apps/Car/DebuggingRestrictionController', 'platform/packages/apps/Car/Dialer', 'platform/packages/apps/Car/DialerPrebuilt', 'platform/packages/apps/Car/DriverUI', 'platform/packages/apps/Car/DriverUIPrebuilt']
+        repo_name: ['platform/motodev', 'platform/ndk', 'platform/packages/apps/AccountsAndSyncSettings', 'platform/packages/apps/AlarmClock', 'platform/packages/apps/BasicSmsReceiver', 'platform/packages/apps/Benchmark', 'platform/packages/apps/Bluetooth', 'platform/packages/apps/Browser', 'platform/packages/apps/Browser2', 'platform/packages/apps/Calculator', 'platform/packages/apps/Calendar', 'platform/packages/apps/Camera', 'platform/packages/apps/Camera2', 'platform/packages/apps/Car/Calendar', 'platform/packages/apps/Car/CalendarPrebuilt', 'platform/packages/apps/Car/Cluster', 'platform/packages/apps/Car/CompanionDeviceSupport', 'platform/packages/apps/Car/DebuggingRestrictionController', 'platform/packages/apps/Car/Dialer', 'platform/packages/apps/Car/DialerPrebuilt']
 
     steps:
       - name: Maximize build space
