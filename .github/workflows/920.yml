@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct', 'platform/external/ninja', 'platform/external/nist-pkits', 'platform/external/nist-sip', 'platform/external/nos/host/android', 'platform/external/nos/host/generic', 'platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex']
+        repo_name: ['platform/external/nanohttpd', 'platform/external/nanopb-c', 'platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct', 'platform/external/ninja', 'platform/external/nist-pkits', 'platform/external/nist-sip', 'platform/external/nos/host/android', 'platform/external/nos/host/generic', 'platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway']
 
     steps:
       - name: Maximize build space

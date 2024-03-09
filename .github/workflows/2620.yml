@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['tools/manifest', 'tools/platform-compat', 'tools/presubmit-automerger/test1', 'tools/repo', 'trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64']
+        repo_name: ['tools/aospstats', 'tools/fetch_artifact', 'tools/manifest', 'tools/platform-compat', 'tools/presubmit-automerger/test1', 'tools/repo', 'trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d']
 
     steps:
       - name: Maximize build space
