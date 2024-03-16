@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/bazelbuild-rules_license', 'platform/external/bazelbuild-rules_pkg', 'platform/external/bazelbuild-rules_python', 'platform/external/bazelbuild-rules_rust', 'platform/external/bazelbuild-rules_testing', 'platform/external/bc', 'platform/external/bcc', 'platform/external/berkeley-softfloat-3', 'platform/external/berkeley-testfloat-3', 'platform/external/bison', 'platform/external/blktrace', 'platform/external/bloaty', 'platform/external/bluetooth/bluedroid', 'platform/external/bluetooth/bluez', 'platform/external/bluetooth/glib', 'platform/external/bluetooth/hcidump', 'platform/external/bluez', 'platform/external/boost', 'platform/external/boringssl', 'platform/external/bouncycastle']
+        repo_name: ['platform/external/bazelbuild-rules_java', 'platform/external/bazelbuild-rules_license', 'platform/external/bazelbuild-rules_pkg', 'platform/external/bazelbuild-rules_python', 'platform/external/bazelbuild-rules_rust', 'platform/external/bazelbuild-rules_testing', 'platform/external/bc', 'platform/external/bcc', 'platform/external/berkeley-softfloat-3', 'platform/external/berkeley-testfloat-3', 'platform/external/bison', 'platform/external/blktrace', 'platform/external/bloaty', 'platform/external/bluetooth/bluedroid', 'platform/external/bluetooth/bluez', 'platform/external/bluetooth/glib', 'platform/external/bluetooth/hcidump', 'platform/external/bluez', 'platform/external/boost', 'platform/external/boringssl']
 
     steps:
       - name: Maximize build space

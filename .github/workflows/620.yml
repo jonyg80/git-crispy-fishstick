@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/gemmlowp', 'platform/external/genext2fs', 'platform/external/gentoo/integration', 'platform/external/gentoo/overlays/gentoo', 'platform/external/gentoo/portage', 'platform/external/geojson-jackson', 'platform/external/geonames', 'platform/external/gflags', 'platform/external/gfxstream-protocols', 'platform/external/giflib', 'platform/external/glide', 'platform/external/gmock', 'platform/external/go-cmp', 'platform/external/go-creachadair-shell', 'platform/external/go-creachadair-stringset', 'platform/external/go-etree', 'platform/external/go-subcommands', 'platform/external/golang-groupcache', 'platform/external/golang-protobuf', 'platform/external/golang-x-net']
+        repo_name: ['platform/external/gdata', 'platform/external/gemmlowp', 'platform/external/genext2fs', 'platform/external/gentoo/integration', 'platform/external/gentoo/overlays/gentoo', 'platform/external/gentoo/portage', 'platform/external/geojson-jackson', 'platform/external/geonames', 'platform/external/gflags', 'platform/external/gfxstream-protocols', 'platform/external/giflib', 'platform/external/glide', 'platform/external/gmock', 'platform/external/go-cmp', 'platform/external/go-creachadair-shell', 'platform/external/go-creachadair-stringset', 'platform/external/go-etree', 'platform/external/go-subcommands', 'platform/external/golang-groupcache', 'platform/external/golang-protobuf']
 
     steps:
       - name: Maximize build space

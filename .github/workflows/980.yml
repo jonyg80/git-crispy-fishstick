@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/perf_data_converter', 'platform/external/perfetto', 'platform/external/perfmark', 'platform/external/pffft', 'platform/external/piex', 'platform/external/pigweed', 'platform/external/pigz', 'platform/external/ping', 'platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config', 'platform/external/ply', 'platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5', 'platform/external/psimd', 'platform/external/pthreadpool']
+        repo_name: ['platform/external/pdfium', 'platform/external/perf_data_converter', 'platform/external/perfetto', 'platform/external/perfmark', 'platform/external/pffft', 'platform/external/piex', 'platform/external/pigweed', 'platform/external/pigz', 'platform/external/ping', 'platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config', 'platform/external/ply', 'platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5', 'platform/external/psimd']
 
     steps:
       - name: Maximize build space

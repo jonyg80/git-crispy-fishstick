@@ -1,8 +1,8 @@
-name: 2060 Clone and Push
+name: 2660 Clone and Push
 
 on:
   schedule:
-    - cron: '0 7 * * 4' # Runs every week
+    - cron: '0 13 * * 5' # Runs every week
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/services/NetworkRecommendation', 'platform/packages/services/Telecomm', 'platform/packages/services/Telephony', 'platform/packages/wallpapers/Basic', 'platform/packages/wallpapers/Galaxy4', 'platform/packages/wallpapers/HoloSpiral', 'platform/packages/wallpapers/ImageWallpaper', 'platform/packages/wallpapers/LivePicker', 'platform/packages/wallpapers/MagicSmoke', 'platform/packages/wallpapers/MusicVisualization', 'platform/packages/wallpapers/NoiseField', 'platform/packages/wallpapers/PhaseBeam', 'platform/pdk', 'platform/platform_testing', 'platform/prebuilt', 'platform/prebuilts/abi-dumps/ndk', 'platform/prebuilts/abi-dumps/platform', 'platform/prebuilts/abi-dumps/vndk', 'platform/prebuilts/android-emulator', 'platform/prebuilts/android-emulator-build/archive']
+        repo_name: ['trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/vendor/google/aosp']
 
     steps:
       - name: Maximize build space
