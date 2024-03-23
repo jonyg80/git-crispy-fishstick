@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/aadevtools', 'platform/tools/acloud', 'platform/tools/adt/eclipse', 'platform/tools/adt/idea', 'platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk', 'platform/tools/build', 'platform/tools/buildSrc', 'platform/tools/carrier_settings', 'platform/tools/cmake-utils', 'platform/tools/content_addressed_storage/prebuilts', 'platform/tools/content_addressed_storage/src', 'platform/tools/currysrc', 'platform/tools/dctv-tracedb']
+        repo_name: ['platform/test/vts-testcase/fuzz', 'platform/test/vts-testcase/hal', 'platform/test/vts-testcase/hal-trace', 'platform/test/vts-testcase/kernel', 'platform/test/vts-testcase/nbu', 'platform/test/vts-testcase/performance', 'platform/test/vts-testcase/security', 'platform/test/vts-testcase/vndk', 'platform/tools/aadevtools', 'platform/tools/acloud', 'platform/tools/adt/eclipse', 'platform/tools/adt/idea', 'platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk']
 
     steps:
       - name: Maximize build space

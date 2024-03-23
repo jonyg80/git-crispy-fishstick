@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libprotobuf-mutator', 'platform/external/libseccomp-helper', 'platform/external/libselinux', 'platform/external/libsepol', 'platform/external/libsrtp2', 'platform/external/libssh2', 'platform/external/libtextclassifier', 'platform/external/libtraceevent', 'platform/external/libtracefs', 'platform/external/libultrahdr', 'platform/external/libunwind', 'platform/external/libunwind_llvm', 'platform/external/liburing', 'platform/external/libusb', 'platform/external/libusb-compat', 'platform/external/libusb_aah', 'platform/external/libutf', 'platform/external/libuv', 'platform/external/libvncserver', 'platform/external/libvorbis']
+        repo_name: ['platform/external/libpng', 'platform/external/libppp', 'platform/external/libprotobuf-mutator', 'platform/external/libseccomp-helper', 'platform/external/libselinux', 'platform/external/libsepol', 'platform/external/libsrtp2', 'platform/external/libssh2', 'platform/external/libtextclassifier', 'platform/external/libtraceevent', 'platform/external/libtracefs', 'platform/external/libultrahdr', 'platform/external/libunwind', 'platform/external/libunwind_llvm', 'platform/external/liburing', 'platform/external/libusb', 'platform/external/libusb-compat', 'platform/external/libusb_aah', 'platform/external/libutf', 'platform/external/libuv']
 
     steps:
       - name: Maximize build space
