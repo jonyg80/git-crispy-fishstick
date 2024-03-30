@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/typing', 'platform/external/python/uritemplates', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qt', 'platform/external/qt5', 'platform/external/quake', 'platform/external/r8', 'platform/external/rapidjson', 'platform/external/rappor', 'platform/external/regex-re2', 'platform/external/renderscript-intrinsics-replacement-toolkit', 'platform/external/replicaisland', 'platform/external/rmi4utils', 'platform/external/rnnoise', 'platform/external/robolectric', 'platform/external/robolectric-shadows', 'platform/external/roboto-flex-fonts', 'platform/external/roboto-fonts']
+        repo_name: ['platform/external/python/timeout-decorator', 'platform/external/python/typing', 'platform/external/python/uritemplates', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qt', 'platform/external/qt5', 'platform/external/quake', 'platform/external/r8', 'platform/external/rapidjson', 'platform/external/rappor', 'platform/external/regex-re2', 'platform/external/renderscript-intrinsics-replacement-toolkit', 'platform/external/replicaisland', 'platform/external/rmi4utils', 'platform/external/rnnoise', 'platform/external/robolectric', 'platform/external/robolectric-shadows', 'platform/external/roboto-flex-fonts']
 
     steps:
       - name: Maximize build space
