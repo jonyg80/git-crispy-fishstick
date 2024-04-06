@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/mingw', 'toolchain/mpc', 'toolchain/mpc-1.2.1', 'toolchain/mpfr', 'toolchain/mpfr-4.1.0', 'toolchain/nasm', 'toolchain/ndk-kokoro', 'toolchain/ndk_chromite_config', 'toolchain/openmp_llvm', 'toolchain/perl', 'toolchain/pgo-profiles', 'toolchain/polly', 'toolchain/ppl', 'toolchain/prebuilts/ndk-darwin/r21', 'toolchain/prebuilts/ndk-darwin/r23', 'toolchain/prebuilts/ndk-darwin/r25', 'toolchain/prebuilts/ndk/r13', 'toolchain/prebuilts/ndk/r14', 'toolchain/prebuilts/ndk/r15', 'toolchain/prebuilts/ndk/r16']
+        repo_name: ['toolchain/lld', 'toolchain/llvm', 'toolchain/llvm-project', 'toolchain/llvm_android', 'toolchain/m4', 'toolchain/make', 'toolchain/manifest', 'toolchain/mclinker', 'toolchain/mingw', 'toolchain/mpc', 'toolchain/mpc-1.2.1', 'toolchain/mpfr', 'toolchain/mpfr-4.1.0', 'toolchain/nasm', 'toolchain/ndk-kokoro', 'toolchain/ndk_chromite_config', 'toolchain/openmp_llvm', 'toolchain/perl', 'toolchain/pgo-profiles', 'toolchain/polly']
 
     steps:
       - name: Maximize build space
