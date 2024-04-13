@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/bluejay', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/tangorpro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers', 'kernel/google-modules/aoc', 'kernel/google-modules/aoc-ipc', 'kernel/google-modules/bluetooth/broadcom', 'kernel/google-modules/bluetooth/qcom', 'kernel/google-modules/bluetooth/synaptics']
+        repo_name: ['kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/bluejay', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/tangorpro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers', 'kernel/google-modules/aoc', 'kernel/google-modules/aoc-ipc', 'kernel/google-modules/bluetooth/broadcom', 'kernel/google-modules/bluetooth/qcom']
 
     steps:
       - name: Maximize build space

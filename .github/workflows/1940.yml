@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/ImsServiceEntitlement', 'platform/packages/apps/InCallUI', 'platform/packages/apps/KeyChain', 'platform/packages/apps/Launcher', 'platform/packages/apps/Launcher2', 'platform/packages/apps/Launcher3', 'platform/packages/apps/LegacyCamera', 'platform/packages/apps/ManagedProvisioning', 'platform/packages/apps/Messaging', 'platform/packages/apps/Mms', 'platform/packages/apps/Music', 'platform/packages/apps/MusicFX', 'platform/packages/apps/Nfc', 'platform/packages/apps/OnDeviceAppPrediction', 'platform/packages/apps/OneTimeInitializer', 'platform/packages/apps/PackageInstaller', 'platform/packages/apps/Phone', 'platform/packages/apps/PhoneCommon', 'platform/packages/apps/Protips', 'platform/packages/apps/Provision']
+        repo_name: ['platform/packages/apps/Gallery2', 'platform/packages/apps/Gallery3D', 'platform/packages/apps/GlobalSearch', 'platform/packages/apps/GoogleSearch', 'platform/packages/apps/HTMLViewer', 'platform/packages/apps/IM', 'platform/packages/apps/IdentityCredentialSupport', 'platform/packages/apps/ImsServiceEntitlement', 'platform/packages/apps/InCallUI', 'platform/packages/apps/KeyChain', 'platform/packages/apps/Launcher', 'platform/packages/apps/Launcher2', 'platform/packages/apps/Launcher3', 'platform/packages/apps/LegacyCamera', 'platform/packages/apps/ManagedProvisioning', 'platform/packages/apps/Messaging', 'platform/packages/apps/Mms', 'platform/packages/apps/Music', 'platform/packages/apps/MusicFX', 'platform/packages/apps/Nfc']
 
     steps:
       - name: Maximize build space
