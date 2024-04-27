@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/google/apf', 'platform/hardware/google/atv/refDesignRcu/atmosic', 'platform/hardware/google/atv/refDesignRcu/realtek', 'platform/hardware/google/atv/refDesignRcu/telink', 'platform/hardware/google/av', 'platform/hardware/google/camera', 'platform/hardware/google/easel', 'platform/hardware/google/gchips', 'platform/hardware/google/gfxstream', 'platform/hardware/google/graphics/common', 'platform/hardware/google/graphics/gs101', 'platform/hardware/google/graphics/gs201', 'platform/hardware/google/graphics/zuma', 'platform/hardware/google/interfaces', 'platform/hardware/google/pixel', 'platform/hardware/google/pixel-sepolicy', 'platform/hardware/google/trusty', 'platform/hardware/intel/audio_media', 'platform/hardware/intel/bootstub', 'platform/hardware/intel/common/bd_prov']
+        repo_name: ['platform/hardware/google', 'platform/hardware/google/aemu', 'platform/hardware/google/apf', 'platform/hardware/google/atv/refDesignRcu/atmosic', 'platform/hardware/google/atv/refDesignRcu/realtek', 'platform/hardware/google/atv/refDesignRcu/telink', 'platform/hardware/google/av', 'platform/hardware/google/camera', 'platform/hardware/google/easel', 'platform/hardware/google/gchips', 'platform/hardware/google/gfxstream', 'platform/hardware/google/graphics/common', 'platform/hardware/google/graphics/gs101', 'platform/hardware/google/graphics/gs201', 'platform/hardware/google/graphics/zuma', 'platform/hardware/google/interfaces', 'platform/hardware/google/pixel', 'platform/hardware/google/pixel-sepolicy', 'platform/hardware/google/trusty', 'platform/hardware/intel/audio_media']
 
     steps:
       - name: Maximize build space
