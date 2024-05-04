@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libutf', 'platform/external/libuv', 'platform/external/libvncserver', 'platform/external/libvorbis', 'platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt', 'platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-kselftest', 'platform/external/linux-tools-perf', 'platform/external/lisa', 'platform/external/littlemock']
+        repo_name: ['platform/external/libusb', 'platform/external/libusb-compat', 'platform/external/libusb_aah', 'platform/external/libutf', 'platform/external/libuv', 'platform/external/libvncserver', 'platform/external/libvorbis', 'platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt', 'platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-kselftest']
 
     steps:
       - name: Maximize build space

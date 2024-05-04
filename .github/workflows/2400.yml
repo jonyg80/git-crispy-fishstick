@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap', 'platform/system/iot/attestation', 'platform/system/iot/mtdutils', 'platform/system/iot/tools', 'platform/system/keyguard', 'platform/system/keymaster', 'platform/system/keymint', 'platform/system/libartpalette']
+        repo_name: ['platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap', 'platform/system/iot/attestation', 'platform/system/iot/mtdutils']
 
     steps:
       - name: Maximize build space

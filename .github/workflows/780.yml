@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/leveldb', 'platform/external/libabigail', 'platform/external/libaom', 'platform/external/libavc', 'platform/external/libbackup', 'platform/external/libbpf', 'platform/external/libbrillo', 'platform/external/libc-test', 'platform/external/libcap', 'platform/external/libcap-ng', 'platform/external/libchrome', 'platform/external/libchrome-gestures', 'platform/external/libchromeos', 'platform/external/libchromeos-rs', 'platform/external/libconfig', 'platform/external/libconstrainedcrypto', 'platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcxx', 'platform/external/libcxx_35a']
+        repo_name: ['platform/external/kythe', 'platform/external/lame', 'platform/external/lcc', 'platform/external/leveldb', 'platform/external/libabigail', 'platform/external/libaom', 'platform/external/libavc', 'platform/external/libbackup', 'platform/external/libbpf', 'platform/external/libbrillo', 'platform/external/libc-test', 'platform/external/libcap', 'platform/external/libcap-ng', 'platform/external/libchrome', 'platform/external/libchrome-gestures', 'platform/external/libchromeos', 'platform/external/libchromeos-rs', 'platform/external/libconfig', 'platform/external/libconstrainedcrypto', 'platform/external/libcppbor']
 
     steps:
       - name: Maximize build space
