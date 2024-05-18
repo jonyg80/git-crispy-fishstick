@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/memory/libdmabufheap', 'platform/system/memory/libion', 'platform/system/memory/libmeminfo', 'platform/system/memory/libmemtrack', 'platform/system/memory/libmemunreachable', 'platform/system/memory/lmkd', 'platform/system/memory/mm_eventsd', 'platform/system/metricsd', 'platform/system/nativepower', 'platform/system/netd', 'platform/system/nfc', 'platform/system/nvram', 'platform/system/peripheralmanager', 'platform/system/secretkeeper', 'platform/system/security', 'platform/system/sepolicy', 'platform/system/server_configurable_flags', 'platform/system/teeui', 'platform/system/testing/gtest_extras', 'platform/system/timezone']
+        repo_name: ['platform/system/libprocinfo', 'platform/system/librustutils', 'platform/system/libsysprop', 'platform/system/libufdt', 'platform/system/libvintf', 'platform/system/libziparchive', 'platform/system/linkerconfig', 'platform/system/logging', 'platform/system/media', 'platform/system/memory/libdmabufheap', 'platform/system/memory/libion', 'platform/system/memory/libmeminfo', 'platform/system/memory/libmemtrack', 'platform/system/memory/libmemunreachable', 'platform/system/memory/lmkd', 'platform/system/memory/mm_eventsd', 'platform/system/metricsd', 'platform/system/nativepower', 'platform/system/netd', 'platform/system/nfc']
 
     steps:
       - name: Maximize build space

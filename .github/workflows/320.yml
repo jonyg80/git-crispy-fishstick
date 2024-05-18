@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/tegra', 'kernel/tests', 'kernel/x86', 'kernel/x86_64', 'mirror/manifest', 'platform/abi/cpp', 'platform/apisurface', 'platform/art', 'platform/bbuildbot_config', 'platform/bionic', 'platform/bootable/bootloader/legacy', 'platform/bootable/diskinstaller', 'platform/bootable/libbootloader', 'platform/bootable/recovery', 'platform/build', 'platform/build/bazel', 'platform/build/bazel_common_rules', 'platform/build/blueprint', 'platform/build/docker', 'platform/build/kati']
+        repo_name: ['kernel/prebuilts/common-modules/virtual-device/mainline/x86-64', 'kernel/prebuilts/mainline/arm64', 'kernel/prebuilts/mainline/x86-64', 'kernel/samsung', 'kernel/superproject', 'kernel/tegra', 'kernel/tests', 'kernel/x86', 'kernel/x86_64', 'mirror/manifest', 'platform/abi/cpp', 'platform/apisurface', 'platform/art', 'platform/bbuildbot_config', 'platform/bionic', 'platform/bootable/bootloader/legacy', 'platform/bootable/diskinstaller', 'platform/bootable/libbootloader', 'platform/bootable/recovery', 'platform/build']
 
     steps:
       - name: Maximize build space

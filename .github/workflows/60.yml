@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/google/coral-sepolicy', 'device/google/crosshatch', 'device/google/crosshatch-kernel', 'device/google/crosshatch-sepolicy', 'device/google/cuttlefish', 'device/google/cuttlefish_common', 'device/google/cuttlefish_kernel', 'device/google/cuttlefish_prebuilts', 'device/google/cuttlefish_vmm', 'device/google/debugcable', 'device/google/dragon', 'device/google/dragon-kernel', 'device/google/felix', 'device/google/felix-kernel', 'device/google/felix-sepolicy', 'device/google/fuchsia', 'device/google/gs-common', 'device/google/gs101', 'device/google/gs101-sepolicy', 'device/google/gs201']
+        repo_name: ['device/google/contexthub', 'device/google/coral', 'device/google/coral-kernel', 'device/google/coral-sepolicy', 'device/google/crosshatch', 'device/google/crosshatch-kernel', 'device/google/crosshatch-sepolicy', 'device/google/cuttlefish', 'device/google/cuttlefish_common', 'device/google/cuttlefish_kernel', 'device/google/cuttlefish_prebuilts', 'device/google/cuttlefish_vmm', 'device/google/debugcable', 'device/google/dragon', 'device/google/dragon-kernel', 'device/google/felix', 'device/google/felix-kernel', 'device/google/felix-sepolicy', 'device/google/fuchsia', 'device/google/gs-common']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/htc/flounder-kernel', 'device/htc/passion', 'device/htc/passion-common', 'device/htc/sapphire', 'device/huawei/angler', 'device/huawei/angler-kernel', 'device/imagination/creatorci41', 'device/intel/edison', 'device/intel/minnowboard', 'device/lge/bullhead', 'device/lge/bullhead-kernel', 'device/lge/hammerhead', 'device/lge/hammerhead-kernel', 'device/lge/mako', 'device/lge/mako-kernel', 'device/linaro/bootloader/OpenPlatformPkg', 'device/linaro/bootloader/arm-trusted-firmware', 'device/linaro/bootloader/edk2', 'device/linaro/dragonboard', 'device/linaro/dragonboard-kernel']
+        repo_name: ['device/htc/dream', 'device/htc/dream-sapphire', 'device/htc/flounder', 'device/htc/flounder-kernel', 'device/htc/passion', 'device/htc/passion-common', 'device/htc/sapphire', 'device/huawei/angler', 'device/huawei/angler-kernel', 'device/imagination/creatorci41', 'device/intel/edison', 'device/intel/minnowboard', 'device/lge/bullhead', 'device/lge/bullhead-kernel', 'device/lge/hammerhead', 'device/lge/hammerhead-kernel', 'device/lge/mako', 'device/lge/mako-kernel', 'device/linaro/bootloader/OpenPlatformPkg', 'device/linaro/bootloader/arm-trusted-firmware']
 
     steps:
       - name: Maximize build space

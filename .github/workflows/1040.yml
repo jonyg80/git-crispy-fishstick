@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/google-cloud-pubsub', 'platform/external/python/google-gax', 'platform/external/python/googleapis', 'platform/external/python/grpc-google-iam-v1', 'platform/external/python/grpcio', 'platform/external/python/httplib2', 'platform/external/python/ipaddress', 'platform/external/python/jinja', 'platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib', 'platform/external/python/mobly', 'platform/external/python/mock', 'platform/external/python/more-itertools', 'platform/external/python/numpy', 'platform/external/python/oauth2client', 'platform/external/python/olefile', 'platform/external/python/packaging', 'platform/external/python/parse', 'platform/external/python/parse_type']
+        repo_name: ['platform/external/python/futures', 'platform/external/python/gapic-google-cloud-pubsub-v1', 'platform/external/python/google-api-python-client', 'platform/external/python/google-auth', 'platform/external/python/google-auth-httplib2', 'platform/external/python/google-auth-library-python', 'platform/external/python/google-cloud-core', 'platform/external/python/google-cloud-pubsub', 'platform/external/python/google-gax', 'platform/external/python/googleapis', 'platform/external/python/grpc-google-iam-v1', 'platform/external/python/grpcio', 'platform/external/python/httplib2', 'platform/external/python/ipaddress', 'platform/external/python/jinja', 'platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib', 'platform/external/python/mobly', 'platform/external/python/mock']
 
     steps:
       - name: Maximize build space
