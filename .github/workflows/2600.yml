@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/clang-tools-extra', 'toolchain/cloog', 'toolchain/common', 'toolchain/compiler-rt', 'toolchain/expat', 'toolchain/gcc', 'toolchain/gcc-12.2.0', 'toolchain/gdb', 'toolchain/gmp', 'toolchain/gmp-6.2.1', 'toolchain/gold', 'toolchain/isl', 'toolchain/jack', 'toolchain/jack-server', 'toolchain/jdk/build', 'toolchain/jdk/jdk11', 'toolchain/jdk/jdk17', 'toolchain/jdk/jdk21', 'toolchain/jdk/jdk9', 'toolchain/jdk/jdk9_corba']
+        repo_name: ['toolchain/capnproto', 'toolchain/cargo-deny', 'toolchain/cargo-vet', 'toolchain/ccache', 'toolchain/clang', 'toolchain/clang-tools-extra', 'toolchain/cloog', 'toolchain/common', 'toolchain/compiler-rt', 'toolchain/expat', 'toolchain/gcc', 'toolchain/gcc-12.2.0', 'toolchain/gdb', 'toolchain/gmp', 'toolchain/gmp-6.2.1', 'toolchain/gold', 'toolchain/isl', 'toolchain/jack', 'toolchain/jack-server', 'toolchain/jdk/build']
 
     steps:
       - name: Maximize build space
