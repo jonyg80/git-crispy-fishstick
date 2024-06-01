@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/build/bootstrap', 'kernel/common', 'kernel/common-modules/trusty', 'kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/tangorpro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers']
+        repo_name: ['kernel/build/bootstrap', 'kernel/common', 'kernel/common-modules/trusty', 'kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/p11', 'kernel/devices/google/tangorpro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules']
 
     steps:
       - name: Maximize build space

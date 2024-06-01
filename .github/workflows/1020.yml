@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto', 'platform/external/python/astroid', 'platform/external/python/atomicwrites', 'platform/external/python/attrs', 'platform/external/python/bumble', 'platform/external/python/cachetools', 'platform/external/python/cffi', 'platform/external/python/cpython2', 'platform/external/python/cpython3', 'platform/external/python/cryptography', 'platform/external/python/dateutil', 'platform/external/python/dill', 'platform/external/python/enum', 'platform/external/python/enum34']
+        repo_name: ['platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto', 'platform/external/python/astroid', 'platform/external/python/atomicwrites', 'platform/external/python/attrs', 'platform/external/python/bumble', 'platform/external/python/cachetools', 'platform/external/python/cffi', 'platform/external/python/cpython2', 'platform/external/python/cpython3', 'platform/external/python/cryptography', 'platform/external/python/dateutil']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/berkeley-testfloat-3', 'platform/external/bison', 'platform/external/blktrace', 'platform/external/bloaty', 'platform/external/bluetooth/bluedroid', 'platform/external/bluetooth/bluez', 'platform/external/bluetooth/glib', 'platform/external/bluetooth/hcidump', 'platform/external/bluez', 'platform/external/boost', 'platform/external/boringssl', 'platform/external/bouncycastle', 'platform/external/bpftool', 'platform/external/brotli', 'platform/external/bsdiff', 'platform/external/bvb', 'platform/external/bzip2', 'platform/external/c-ares', 'platform/external/caliper', 'platform/external/capstone']
+        repo_name: ['platform/external/bc', 'platform/external/bcc', 'platform/external/berkeley-softfloat-3', 'platform/external/berkeley-testfloat-3', 'platform/external/bison', 'platform/external/blktrace', 'platform/external/bloaty', 'platform/external/bluetooth/bluedroid', 'platform/external/bluetooth/bluez', 'platform/external/bluetooth/glib', 'platform/external/bluetooth/hcidump', 'platform/external/bluez', 'platform/external/boost', 'platform/external/boringssl', 'platform/external/bouncycastle', 'platform/external/bpftool', 'platform/external/brotli', 'platform/external/bsdiff', 'platform/external/bvb', 'platform/external/bzip2']
 
     steps:
       - name: Maximize build space
