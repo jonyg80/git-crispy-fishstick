@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/qcom/sm8150/media', 'platform/hardware/qcom/sm8150/thermal', 'platform/hardware/qcom/sm8150/vr', 'platform/hardware/qcom/sm8150p/gps', 'platform/hardware/qcom/wlan', 'platform/hardware/ril', 'platform/hardware/samsung/nfc', 'platform/hardware/samsung_slsi/exynos5', 'platform/hardware/st/nfc', 'platform/hardware/st/secure_element', 'platform/hardware/st/secure_element2', 'platform/hardware/synaptics/wlan', 'platform/hardware/telink/atv/refDesignRcu', 'platform/hardware/ti/am57x', 'platform/hardware/ti/omap3', 'platform/hardware/ti/omap4-aah', 'platform/hardware/ti/omap4xxx', 'platform/hardware/ti/wlan', 'platform/hardware/ti/wpan', 'platform/libcore']
+        repo_name: ['platform/hardware/qcom/sdm845/thermal', 'platform/hardware/qcom/sdm845/vr', 'platform/hardware/qcom/sensors', 'platform/hardware/qcom/sm7150/display', 'platform/hardware/qcom/sm7150/gps', 'platform/hardware/qcom/sm7150/media', 'platform/hardware/qcom/sm7150/vr', 'platform/hardware/qcom/sm7250/display', 'platform/hardware/qcom/sm7250/gps', 'platform/hardware/qcom/sm7250/media', 'platform/hardware/qcom/sm8150/data/ipacfg-mgr', 'platform/hardware/qcom/sm8150/display', 'platform/hardware/qcom/sm8150/gps', 'platform/hardware/qcom/sm8150/media', 'platform/hardware/qcom/sm8150/thermal', 'platform/hardware/qcom/sm8150/vr', 'platform/hardware/qcom/sm8150p/gps', 'platform/hardware/qcom/wlan', 'platform/hardware/ril', 'platform/hardware/samsung/nfc']
 
     steps:
       - name: Maximize build space
