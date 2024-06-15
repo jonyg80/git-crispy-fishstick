@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/cmockery', 'platform/external/cn-cbor', 'platform/external/codesourcery', 'platform/external/collada', 'platform/external/compiler-rt', 'platform/external/compiler-rt_35a', 'platform/external/connectedappssdk', 'platform/external/conscrypt', 'platform/external/cpu_features', 'platform/external/cpuinfo', 'platform/external/crcalc', 'platform/external/cronet', 'platform/external/cros/system_api', 'platform/external/crosvm', 'platform/external/cryptsetup', 'platform/external/curl', 'platform/external/dagger2', 'platform/external/dbus', 'platform/external/dbus-binding-generator', 'platform/external/deqp']
+        repo_name: ['platform/external/cmake', 'platform/external/cmockery', 'platform/external/cn-cbor', 'platform/external/codesourcery', 'platform/external/collada', 'platform/external/compiler-rt', 'platform/external/compiler-rt_35a', 'platform/external/connectedappssdk', 'platform/external/conscrypt', 'platform/external/cpu_features', 'platform/external/cpuinfo', 'platform/external/crcalc', 'platform/external/cronet', 'platform/external/cros/system_api', 'platform/external/crosvm', 'platform/external/cryptsetup', 'platform/external/curl', 'platform/external/dagger2', 'platform/external/dbus', 'platform/external/dbus-binding-generator']
 
     steps:
       - name: Maximize build space

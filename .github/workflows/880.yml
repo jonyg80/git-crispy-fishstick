@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt', 'platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-kselftest', 'platform/external/linux-tools-perf', 'platform/external/lisa', 'platform/external/littlemock', 'platform/external/lld', 'platform/external/lldb', 'platform/external/lldb-utils', 'platform/external/llvm']
+        repo_name: ['platform/external/libvorbis', 'platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt', 'platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-kselftest', 'platform/external/linux-tools-perf', 'platform/external/lisa', 'platform/external/littlemock', 'platform/external/lld', 'platform/external/lldb', 'platform/external/lldb-utils']
 
     steps:
       - name: Maximize build space

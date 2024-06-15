@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib', 'platform/external/python/mobly', 'platform/external/python/mock', 'platform/external/python/more-itertools', 'platform/external/python/numpy', 'platform/external/python/oauth2client', 'platform/external/python/olefile', 'platform/external/python/packaging', 'platform/external/python/parse', 'platform/external/python/parse_type', 'platform/external/python/pexpect', 'platform/external/python/pluggy', 'platform/external/python/ply', 'platform/external/python/portpicker', 'platform/external/python/proto-google-cloud-pubsub-v1', 'platform/external/python/protobuf', 'platform/external/python/ptyprocess', 'platform/external/python/py']
+        repo_name: ['platform/external/python/jinja', 'platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib', 'platform/external/python/mobly', 'platform/external/python/mock', 'platform/external/python/more-itertools', 'platform/external/python/numpy', 'platform/external/python/oauth2client', 'platform/external/python/olefile', 'platform/external/python/packaging', 'platform/external/python/parse', 'platform/external/python/parse_type', 'platform/external/python/pexpect', 'platform/external/python/pluggy', 'platform/external/python/ply', 'platform/external/python/portpicker', 'platform/external/python/proto-google-cloud-pubsub-v1', 'platform/external/python/protobuf', 'platform/external/python/ptyprocess']
 
     steps:
       - name: Maximize build space

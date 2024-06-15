@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/jdk/jdk11', 'toolchain/jdk/jdk17', 'toolchain/jdk/jdk21', 'toolchain/jdk/jdk9', 'toolchain/jdk/jdk9_corba', 'toolchain/jdk/jdk9_hotspot', 'toolchain/jdk/jdk9_jaxp', 'toolchain/jdk/jdk9_jaxws', 'toolchain/jdk/jdk9_jdk', 'toolchain/jdk/jdk9_langtools', 'toolchain/jdk/jdk9_nashorn', 'toolchain/jill', 'toolchain/libcxx', 'toolchain/libcxxabi', 'toolchain/lld', 'toolchain/llvm', 'toolchain/llvm-project', 'toolchain/llvm_android', 'toolchain/m4', 'toolchain/make']
+        repo_name: ['toolchain/jack-server', 'toolchain/jdk/build', 'toolchain/jdk/jdk11', 'toolchain/jdk/jdk17', 'toolchain/jdk/jdk21', 'toolchain/jdk/jdk9', 'toolchain/jdk/jdk9_corba', 'toolchain/jdk/jdk9_hotspot', 'toolchain/jdk/jdk9_jaxp', 'toolchain/jdk/jdk9_jaxws', 'toolchain/jdk/jdk9_jdk', 'toolchain/jdk/jdk9_langtools', 'toolchain/jdk/jdk9_nashorn', 'toolchain/jill', 'toolchain/libcxx', 'toolchain/libcxxabi', 'toolchain/lld', 'toolchain/llvm', 'toolchain/llvm-project', 'toolchain/llvm_android']
 
     steps:
       - name: Maximize build space
