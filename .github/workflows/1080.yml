@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/py', 'platform/external/python/pyasn1', 'platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser', 'platform/external/python/pyee', 'platform/external/python/pyfakefs', 'platform/external/python/pylint', 'platform/external/python/pyopenssl', 'platform/external/python/pyparsing', 'platform/external/python/pyserial', 'platform/external/python/pytest', 'platform/external/python/python-api-core', 'platform/external/python/pyyaml', 'platform/external/python/requests', 'platform/external/python/rsa', 'platform/external/python/scipy', 'platform/external/python/setuptools', 'platform/external/python/six', 'platform/external/python/timeout-decorator']
+        repo_name: ['platform/external/python/protobuf', 'platform/external/python/ptyprocess', 'platform/external/python/py', 'platform/external/python/pyasn1', 'platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser', 'platform/external/python/pyee', 'platform/external/python/pyfakefs', 'platform/external/python/pylint', 'platform/external/python/pyopenssl', 'platform/external/python/pyparsing', 'platform/external/python/pyserial', 'platform/external/python/pytest', 'platform/external/python/python-api-core', 'platform/external/python/pyyaml', 'platform/external/python/requests', 'platform/external/python/rsa', 'platform/external/python/scipy', 'platform/external/python/setuptools']
 
     steps:
       - name: Maximize build space
