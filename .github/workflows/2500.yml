@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/tools/bpt', 'platform/system/tools/hidl', 'platform/system/tools/mkbootimg', 'platform/system/tools/sysprop', 'platform/system/tools/xsdc', 'platform/system/tpm', 'platform/system/tpm_manager', 'platform/system/trunks', 'platform/system/ucontainer', 'platform/system/unwinding', 'platform/system/update_engine', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root']
+        repo_name: ['platform/system/tools/aidl', 'platform/system/tools/bpt', 'platform/system/tools/hidl', 'platform/system/tools/mkbootimg', 'platform/system/tools/sysprop', 'platform/system/tools/xsdc', 'platform/system/tpm', 'platform/system/tpm_manager', 'platform/system/trunks', 'platform/system/ucontainer', 'platform/system/unwinding', 'platform/system/update_engine', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox']
 
     steps:
       - name: Maximize build space

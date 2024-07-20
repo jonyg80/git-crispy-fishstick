@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/zeroize', 'platform/external/rust/crates/zeroize_derive', 'platform/external/rust/crates/zip', 'platform/external/rust/cxx', 'platform/external/rust/pica', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop', 'platform/external/sandboxed-api', 'platform/external/scapy', 'platform/external/scrypt', 'platform/external/scudo', 'platform/external/sdl2', 'platform/external/sdl2_ttf', 'platform/external/sdv/vsomeip', 'platform/external/seccomp-tests', 'platform/external/selinux', 'platform/external/sepolicy', 'platform/external/setfilters', 'platform/external/setupcompat']
+        repo_name: ['platform/external/rust/crates/zerocopy-derive', 'platform/external/rust/crates/zeroize', 'platform/external/rust/crates/zeroize_derive', 'platform/external/rust/crates/zip', 'platform/external/rust/cxx', 'platform/external/rust/pica', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop', 'platform/external/sandboxed-api', 'platform/external/scapy', 'platform/external/scrypt', 'platform/external/scudo', 'platform/external/sdl2', 'platform/external/sdl2_ttf', 'platform/external/sdv/vsomeip', 'platform/external/seccomp-tests', 'platform/external/selinux', 'platform/external/sepolicy', 'platform/external/setfilters']
 
     steps:
       - name: Maximize build space
