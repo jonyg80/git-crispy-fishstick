@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/developers/samples/android', 'platform/development', 'platform/docs/source.android.com', 'platform/external/AFLplusplus', 'platform/external/ARMComputeLibrary', 'platform/external/AntennaPod/AntennaPod', 'platform/external/AntennaPod/AudioPlayer', 'platform/external/AntennaPod/afollestad', 'platform/external/ComputeLibrary', 'platform/external/FP16', 'platform/external/FXdiv', 'platform/external/GhostAWT', 'platform/external/ImageMagick', 'platform/external/MPAndroidChart', 'platform/external/Mako', 'platform/external/Microsoft-GSL', 'platform/external/Microsoft-unittest-cpp', 'platform/external/OpenCL-CLHPP', 'platform/external/OpenCL-CTS', 'platform/external/OpenCL-Headers']
+        repo_name: ['platform/developers/docs', 'platform/developers/samples/android', 'platform/development', 'platform/docs/source.android.com', 'platform/external/AFLplusplus', 'platform/external/ARMComputeLibrary', 'platform/external/AntennaPod/AntennaPod', 'platform/external/AntennaPod/AudioPlayer', 'platform/external/AntennaPod/afollestad', 'platform/external/ComputeLibrary', 'platform/external/FP16', 'platform/external/FXdiv', 'platform/external/GhostAWT', 'platform/external/ImageMagick', 'platform/external/MPAndroidChart', 'platform/external/Mako', 'platform/external/Microsoft-GSL', 'platform/external/Microsoft-unittest-cpp', 'platform/external/OpenCL-CLHPP', 'platform/external/OpenCL-CTS']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5', 'platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto', 'platform/external/python/astroid', 'platform/external/python/atomicwrites', 'platform/external/python/attrs', 'platform/external/python/bumble', 'platform/external/python/cachetools', 'platform/external/python/cffi']
+        repo_name: ['platform/external/ply', 'platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5', 'platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto', 'platform/external/python/astroid', 'platform/external/python/atomicwrites', 'platform/external/python/attrs']
 
     steps:
       - name: Maximize build space

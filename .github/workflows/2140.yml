@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/services/Mms', 'platform/packages/services/Mtp', 'platform/packages/services/NetworkRecommendation', 'platform/packages/services/Telecomm', 'platform/packages/services/Telephony', 'platform/packages/wallpapers/Basic', 'platform/packages/wallpapers/Galaxy4', 'platform/packages/wallpapers/HoloSpiral', 'platform/packages/wallpapers/ImageWallpaper', 'platform/packages/wallpapers/LivePicker', 'platform/packages/wallpapers/MagicSmoke', 'platform/packages/wallpapers/MusicVisualization', 'platform/packages/wallpapers/NoiseField', 'platform/packages/wallpapers/PhaseBeam', 'platform/pdk', 'platform/platform_testing', 'platform/prebuilt', 'platform/prebuilts/abi-dumps/ndk', 'platform/prebuilts/abi-dumps/platform', 'platform/prebuilts/abi-dumps/vndk']
+        repo_name: ['platform/packages/services/EasService', 'platform/packages/services/Iwlan', 'platform/packages/services/LockAndWipe', 'platform/packages/services/Mms', 'platform/packages/services/Mtp', 'platform/packages/services/NetworkRecommendation', 'platform/packages/services/Telecomm', 'platform/packages/services/Telephony', 'platform/packages/wallpapers/Basic', 'platform/packages/wallpapers/Galaxy4', 'platform/packages/wallpapers/HoloSpiral', 'platform/packages/wallpapers/ImageWallpaper', 'platform/packages/wallpapers/LivePicker', 'platform/packages/wallpapers/MagicSmoke', 'platform/packages/wallpapers/MusicVisualization', 'platform/packages/wallpapers/NoiseField', 'platform/packages/wallpapers/PhaseBeam', 'platform/pdk', 'platform/platform_testing', 'platform/prebuilt']
 
     steps:
       - name: Maximize build space
