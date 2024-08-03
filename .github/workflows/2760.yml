@@ -1,8 +1,8 @@
-name: 2140 Clone and Push
+name: 2760 Clone and Push
 
 on:
   schedule:
-    - cron: '0 11 * * 4' # Runs every week
+    - cron: '0 18 * * 5' # Runs every week
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/screensavers/WebView', 'platform/packages/services/AlternativeNetworkAccess', 'platform/packages/services/BuiltInPrintService', 'platform/packages/services/Car', 'platform/packages/services/DeviceAsWebcam', 'platform/packages/services/EasService', 'platform/packages/services/Iwlan', 'platform/packages/services/LockAndWipe', 'platform/packages/services/Mms', 'platform/packages/services/Mtp', 'platform/packages/services/NetworkRecommendation', 'platform/packages/services/Telecomm', 'platform/packages/services/Telephony', 'platform/packages/wallpapers/Basic', 'platform/packages/wallpapers/Galaxy4', 'platform/packages/wallpapers/HoloSpiral', 'platform/packages/wallpapers/ImageWallpaper', 'platform/packages/wallpapers/LivePicker', 'platform/packages/wallpapers/MagicSmoke', 'platform/packages/wallpapers/MusicVisualization']
+        repo_name: ['trusty/vendor/google/aosp']
 
     steps:
       - name: Maximize build space

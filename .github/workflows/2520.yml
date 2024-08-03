@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root', 'platform/test/dittosuite', 'platform/test/framework', 'platform/test/mlts/benchmark', 'platform/test/mlts/models', 'platform/test/mts', 'platform/test/p2pts', 'platform/test/robolectric-extensions', 'platform/test/sts', 'platform/test/suite_harness', 'platform/test/vti/alert', 'platform/test/vti/dashboard', 'platform/test/vti/fuzz_test_serving']
+        repo_name: ['platform/system/trunks', 'platform/system/ucontainer', 'platform/system/unwinding', 'platform/system/update_engine', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root', 'platform/test/dittosuite', 'platform/test/framework', 'platform/test/mlts/benchmark', 'platform/test/mlts/models', 'platform/test/mts', 'platform/test/p2pts', 'platform/test/robolectric-extensions']
 
     steps:
       - name: Maximize build space

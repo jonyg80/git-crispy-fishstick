@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore', 'platform/external/opencv', 'platform/external/opencv3', 'platform/external/openfst', 'platform/external/openmp_llvm', 'platform/external/openocd', 'platform/external/openscreen', 'platform/external/openssh', 'platform/external/openssl', 'platform/external/openthread', 'platform/external/openvpn', 'platform/external/openwrt-prebuilts', 'platform/external/oprofile', 'platform/external/optee/apps', 'platform/external/oss-fuzz', 'platform/external/ot-br-posix', 'platform/external/ow2-asm', 'platform/external/owasp/java-encoder']
+        repo_name: ['platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore', 'platform/external/opencv', 'platform/external/opencv3', 'platform/external/openfst', 'platform/external/openmp_llvm', 'platform/external/openocd', 'platform/external/openscreen', 'platform/external/openssh', 'platform/external/openssl', 'platform/external/openthread', 'platform/external/openvpn', 'platform/external/openwrt-prebuilts', 'platform/external/oprofile', 'platform/external/optee/apps', 'platform/external/oss-fuzz', 'platform/external/ot-br-posix']
 
     steps:
       - name: Maximize build space
