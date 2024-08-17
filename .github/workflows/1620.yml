@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/subsampling-scale-image-view', 'platform/external/svox', 'platform/external/swiftshader', 'platform/external/swig', 'platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new', 'platform/external/tinycompress']
+        repo_name: ['platform/external/stlport', 'platform/external/strace', 'platform/external/stressapptest', 'platform/external/subsampling-scale-image-view', 'platform/external/svox', 'platform/external/swiftshader', 'platform/external/swig', 'platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink']
 
     steps:
       - name: Maximize build space

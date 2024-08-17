@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java', 'platform/external/grub', 'platform/external/gsoap', 'platform/external/gson', 'platform/external/gtest', 'platform/external/guava', 'platform/external/guice', 'platform/external/gvdb', 'platform/external/gwp_asan', 'platform/external/hamcrest', 'platform/external/harfbuzz', 'platform/external/harfbuzz_ng', 'platform/external/hcidump', 'platform/external/honggfuzz', 'platform/external/horologist']
+        repo_name: ['platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java', 'platform/external/grub', 'platform/external/gsoap', 'platform/external/gson', 'platform/external/gtest', 'platform/external/gturri-jISO8601', 'platform/external/guava', 'platform/external/guice', 'platform/external/gvdb', 'platform/external/gwp_asan', 'platform/external/hamcrest', 'platform/external/harfbuzz', 'platform/external/harfbuzz_ng', 'platform/external/hcidump', 'platform/external/honggfuzz']
 
     steps:
       - name: Maximize build space
