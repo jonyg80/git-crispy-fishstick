@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/google/gs101', 'device/google/gs101-sepolicy', 'device/google/gs201', 'device/google/gs201-sepolicy', 'device/google/lynx', 'device/google/lynx-kernel', 'device/google/lynx-sepolicy', 'device/google/marlin', 'device/google/marlin-kernel', 'device/google/muskie', 'device/google/pantah', 'device/google/pantah-kernel', 'device/google/pantah-sepolicy', 'device/google/phantasm', 'device/google/raviole', 'device/google/raviole-kernel', 'device/google/redbull', 'device/google/redbull-kernel', 'device/google/redbull-sepolicy', 'device/google/redfin']
+        repo_name: ['device/google/felix-sepolicy', 'device/google/fuchsia', 'device/google/gs-common', 'device/google/gs101', 'device/google/gs101-sepolicy', 'device/google/gs201', 'device/google/gs201-sepolicy', 'device/google/lynx', 'device/google/lynx-kernel', 'device/google/lynx-sepolicy', 'device/google/marlin', 'device/google/marlin-kernel', 'device/google/muskie', 'device/google/pantah', 'device/google/pantah-kernel', 'device/google/pantah-sepolicy', 'device/google/phantasm', 'device/google/raviole', 'device/google/raviole-kernel', 'device/google/redbull']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/gentoo/integration', 'platform/external/gentoo/overlays/gentoo', 'platform/external/gentoo/portage', 'platform/external/geojson-jackson', 'platform/external/geonames', 'platform/external/gflags', 'platform/external/gfxstream-protocols', 'platform/external/giflib', 'platform/external/glide', 'platform/external/gmmlib', 'platform/external/gmock', 'platform/external/go-cmp', 'platform/external/go-creachadair-shell', 'platform/external/go-creachadair-stringset', 'platform/external/go-etree', 'platform/external/go-subcommands', 'platform/external/golang-glog', 'platform/external/golang-groupcache', 'platform/external/golang-klauspost-compress', 'platform/external/golang-pkg-xattr']
+        repo_name: ['platform/external/ffmpeg', 'platform/external/fft2d', 'platform/external/fio', 'platform/external/firebase-messaging', 'platform/external/flac', 'platform/external/flashbench', 'platform/external/flashrom', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib', 'platform/external/fonttools', 'platform/external/free-image', 'platform/external/freetype', 'platform/external/fsck_msdos', 'platform/external/fsverity-utils', 'platform/external/ganymed-ssh2', 'platform/external/gcc-demangle', 'platform/external/gdata', 'platform/external/gemmlowp', 'platform/external/genext2fs']
 
     steps:
       - name: Maximize build space

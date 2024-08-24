@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java', 'platform/external/grub', 'platform/external/gsoap', 'platform/external/gson', 'platform/external/gtest', 'platform/external/gturri-jISO8601', 'platform/external/guava', 'platform/external/guice', 'platform/external/gvdb', 'platform/external/gwp_asan', 'platform/external/hamcrest', 'platform/external/harfbuzz', 'platform/external/harfbuzz_ng', 'platform/external/hcidump', 'platform/external/honggfuzz']
+        repo_name: ['platform/external/google-fonts/dancing-script', 'platform/external/google-fonts/fraunces', 'platform/external/google-fonts/karla', 'platform/external/google-fonts/lato', 'platform/external/google-fonts/lustria', 'platform/external/google-fonts/rubik', 'platform/external/google-fonts/source-sans-pro', 'platform/external/google-fonts/zilla-slab', 'platform/external/google-fruit', 'platform/external/google-java-format', 'platform/external/google-smali', 'platform/external/google-styleguide', 'platform/external/google-tv-pairing-protocol', 'platform/external/google-uuid', 'platform/external/googleapis', 'platform/external/googleapis-enterprise-certificate-proxy', 'platform/external/googleapis-gax-go', 'platform/external/googleapis-go-genproto', 'platform/external/googleclient', 'platform/external/googletest']
 
     steps:
       - name: Maximize build space

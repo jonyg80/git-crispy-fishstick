@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/ffmpeg', 'platform/external/fft2d', 'platform/external/fio', 'platform/external/firebase-messaging', 'platform/external/flac', 'platform/external/flashbench', 'platform/external/flashrom', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib', 'platform/external/fonttools', 'platform/external/free-image', 'platform/external/freetype', 'platform/external/fsck_msdos', 'platform/external/fsverity-utils', 'platform/external/ganymed-ssh2', 'platform/external/gcc-demangle', 'platform/external/gdata', 'platform/external/gemmlowp', 'platform/external/genext2fs']
+        repo_name: ['platform/external/emma', 'platform/external/epid-sdk', 'platform/external/erofs-utils', 'platform/external/error_prone', 'platform/external/escapevelocity', 'platform/external/esd', 'platform/external/ethtool', 'platform/external/exfatprogs', 'platform/external/exoplayer', 'platform/external/expat', 'platform/external/extfuse', 'platform/external/eyes-free', 'platform/external/f2fs-tools', 'platform/external/faad', 'platform/external/fastrpc', 'platform/external/fat32lib', 'platform/external/fdlibm', 'platform/external/fec', 'platform/external/federated-compute', 'platform/external/fff']
 
     steps:
       - name: Maximize build space

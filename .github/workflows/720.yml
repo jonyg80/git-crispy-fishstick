@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/horologist', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns', 'platform/external/icing', 'platform/external/icu', 'platform/external/icu4c', 'platform/external/id3lib', 'platform/external/igt-gpu-tools', 'platform/external/image_io', 'platform/external/ims', 'platform/external/ink-stroke-modeler', 'platform/external/intel-media-driver', 'platform/external/iosched', 'platform/external/iperf3', 'platform/external/iproute2', 'platform/external/ipsec-tools', 'platform/external/iptables', 'platform/external/iputils', 'platform/external/iw']
+        repo_name: ['platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java', 'platform/external/grub', 'platform/external/gsoap', 'platform/external/gson', 'platform/external/gtest', 'platform/external/gturri-aXMLRPC', 'platform/external/gturri-jISO8601', 'platform/external/guava', 'platform/external/guice', 'platform/external/gvdb', 'platform/external/gwp_asan', 'platform/external/hamcrest', 'platform/external/harfbuzz', 'platform/external/harfbuzz_ng', 'platform/external/hcidump']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/build/bootstrap', 'kernel/common', 'kernel/common-modules/trusty', 'kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/p11', 'kernel/devices/google/tangorpro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules']
+        repo_name: ['kernel/amlogic-tv-modules/optee_linuxdriver', 'kernel/amlogic-tv-modules/wifi_rtl8822BS', 'kernel/arcvm-modules/common', 'kernel/arm64', 'kernel/build', 'kernel/build/bootstrap', 'kernel/common', 'kernel/common-modules/trusty', 'kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay', 'kernel/devices/google/caimito', 'kernel/devices/google/common', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/lynx', 'kernel/devices/google/p11']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/dbus-binding-generator', 'platform/external/deqp', 'platform/external/deqp-deps/SPIRV-Headers', 'platform/external/deqp-deps/SPIRV-Tools', 'platform/external/deqp-deps/amber', 'platform/external/deqp-deps/glslang', 'platform/external/desugar', 'platform/external/devlib', 'platform/external/dexmaker', 'platform/external/dhcpcd', 'platform/external/dhcpcd-6.8.2', 'platform/external/dlmalloc', 'platform/external/dng_sdk', 'platform/external/dnsmasq', 'platform/external/doclava', 'platform/external/dokka', 'platform/external/donuts', 'platform/external/dosfstools', 'platform/external/double-conversion', 'platform/external/downloader']
+        repo_name: ['platform/external/clearsilver', 'platform/external/cmake', 'platform/external/cmockery', 'platform/external/cn-cbor', 'platform/external/codesourcery', 'platform/external/collada', 'platform/external/compiler-rt', 'platform/external/compiler-rt_35a', 'platform/external/connectedappssdk', 'platform/external/conscrypt', 'platform/external/cpu_features', 'platform/external/cpuinfo', 'platform/external/crcalc', 'platform/external/cronet', 'platform/external/cros/system_api', 'platform/external/crosvm', 'platform/external/cryptsetup', 'platform/external/curl', 'platform/external/dagger2', 'platform/external/dbus']
 
     steps:
       - name: Maximize build space

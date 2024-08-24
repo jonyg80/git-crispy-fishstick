@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm', 'platform/external/sqlite', 'platform/external/squashfs-tools', 'platform/external/srec', 'platform/external/srtp', 'platform/external/stardoc', 'platform/external/starlark-go', 'platform/external/stg']
+        repo_name: ['platform/external/sandboxed-api', 'platform/external/scapy', 'platform/external/scrypt', 'platform/external/scudo', 'platform/external/sdl2', 'platform/external/sdl2_ttf', 'platform/external/sdv/vsomeip', 'platform/external/seccomp-tests', 'platform/external/selinux', 'platform/external/sepolicy', 'platform/external/setfilters', 'platform/external/setupcompat', 'platform/external/setupdesign', 'platform/external/sfntly', 'platform/external/sg3_utils', 'platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags']
 
     steps:
       - name: Maximize build space
