@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/stg', 'platform/external/stlport', 'platform/external/strace', 'platform/external/stressapptest', 'platform/external/subsampling-scale-image-view', 'platform/external/svox', 'platform/external/swiftshader', 'platform/external/swig', 'platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support']
+        repo_name: ['platform/external/selinux', 'platform/external/sepolicy', 'platform/external/setfilters', 'platform/external/setupcompat', 'platform/external/setupdesign', 'platform/external/sfntly', 'platform/external/sg3_utils', 'platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags', 'platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg']
 
     steps:
       - name: Maximize build space

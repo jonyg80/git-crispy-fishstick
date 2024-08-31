@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/st/secure_element2', 'platform/hardware/synaptics/wlan', 'platform/hardware/telink/atv/refDesignRcu', 'platform/hardware/ti/am57x', 'platform/hardware/ti/omap3', 'platform/hardware/ti/omap4-aah', 'platform/hardware/ti/omap4xxx', 'platform/hardware/ti/wlan', 'platform/hardware/ti/wpan', 'platform/libcore', 'platform/libcore-snapshot', 'platform/libcore2', 'platform/libnativehelper', 'platform/manifest', 'platform/media/cts', 'platform/motodev', 'platform/ndk', 'platform/packages/apps/AccountsAndSyncSettings', 'platform/packages/apps/AlarmClock', 'platform/packages/apps/AvatarPicker']
+        repo_name: ['platform/hardware/qcom/sdm710/display', 'platform/hardware/qcom/sdm710/gps', 'platform/hardware/qcom/sdm710/media', 'platform/hardware/qcom/sdm710/thermal', 'platform/hardware/qcom/sdm710/vr', 'platform/hardware/qcom/sdm845/bt', 'platform/hardware/qcom/sdm845/data/ipacfg-mgr', 'platform/hardware/qcom/sdm845/display', 'platform/hardware/qcom/sdm845/gps', 'platform/hardware/qcom/sdm845/media', 'platform/hardware/qcom/sdm845/thermal', 'platform/hardware/qcom/sdm845/vr', 'platform/hardware/qcom/sensors', 'platform/hardware/qcom/sm7150/display', 'platform/hardware/qcom/sm7150/gps', 'platform/hardware/qcom/sm7150/media', 'platform/hardware/qcom/sm7150/vr', 'platform/hardware/qcom/sm7250/display', 'platform/hardware/qcom/sm7250/gps', 'platform/hardware/qcom/sm7250/media']
 
     steps:
       - name: Maximize build space

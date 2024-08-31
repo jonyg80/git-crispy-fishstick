@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/memory/libmemunreachable', 'platform/system/memory/lmkd', 'platform/system/memory/mm_eventsd', 'platform/system/metricsd', 'platform/system/nativepower', 'platform/system/netd', 'platform/system/nfc', 'platform/system/nvram', 'platform/system/peripheralmanager', 'platform/system/secretkeeper', 'platform/system/security', 'platform/system/see/authmgr', 'platform/system/sepolicy', 'platform/system/server_configurable_flags', 'platform/system/teeui', 'platform/system/testing/gtest_extras', 'platform/system/timezone', 'platform/system/tools/aidl', 'platform/system/tools/bpt', 'platform/system/tools/hidl']
+        repo_name: ['platform/system/desktop/ec', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap', 'platform/system/iot/attestation', 'platform/system/iot/mtdutils', 'platform/system/iot/tools', 'platform/system/keyguard', 'platform/system/keymaster', 'platform/system/keymint', 'platform/system/libartpalette', 'platform/system/libbase', 'platform/system/libcppbor', 'platform/system/libfmq']
 
     steps:
       - name: Maximize build space

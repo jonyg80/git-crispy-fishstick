@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ec', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap', 'platform/system/iot/attestation', 'platform/system/iot/mtdutils', 'platform/system/iot/tools', 'platform/system/keyguard', 'platform/system/keymaster']
+        repo_name: ['platform/prebuilts/simpleperf', 'platform/prebuilts/studio/jdk', 'platform/prebuilts/studio/layoutlib', 'platform/prebuilts/studio/skiaparser', 'platform/prebuilts/swig/darwin-x86', 'platform/prebuilts/swig/linux-x86', 'platform/prebuilts/swig/windows-x86', 'platform/prebuilts/tools', 'platform/prebuilts/trusty/sysroot', 'platform/prebuilts/vndk/v27', 'platform/prebuilts/vndk/v28', 'platform/prebuilts/vndk/v29', 'platform/prebuilts/vndk/v30', 'platform/prebuilts/vndk/v31', 'platform/prebuilts/vndk/v32', 'platform/prebuilts/vndk/v33', 'platform/prebuilts/vndk/v34', 'platform/sdk', 'platform/smaratorg', 'platform/superproject']
 
     steps:
       - name: Maximize build space

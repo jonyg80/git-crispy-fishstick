@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java', 'platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd', 'platform/external/zucchini', 'platform/external/zxing', 'platform/frameworks/av', 'platform/frameworks/base', 'platform/frameworks/compile/libbcc', 'platform/frameworks/compile/linkloader', 'platform/frameworks/compile/llvm-ndk-cc', 'platform/frameworks/compile/mclinker', 'platform/frameworks/compile/slang', 'platform/frameworks/data', 'platform/frameworks/data-binding', 'platform/frameworks/ex']
+        repo_name: ['platform/external/v8', 'platform/external/valgrind', 'platform/external/vboot_reference', 'platform/external/virglrenderer', 'platform/external/vixl', 'platform/external/vm_tools/p9', 'platform/external/vogar', 'platform/external/volk', 'platform/external/volley', 'platform/external/vulkan-headers', 'platform/external/vulkan-tools', 'platform/external/vulkan-validation-layers', 'platform/external/walt', 'platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common', 'platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy']
 
     steps:
       - name: Maximize build space

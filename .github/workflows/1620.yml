@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm', 'platform/external/sqlite', 'platform/external/squashfs-tools', 'platform/external/srec', 'platform/external/srtp', 'platform/external/stardoc', 'platform/external/starlark-go']
+        repo_name: ['platform/external/rust/crates/zerocopy', 'platform/external/rust/crates/zerocopy-derive', 'platform/external/rust/crates/zeroize', 'platform/external/rust/crates/zeroize_derive', 'platform/external/rust/crates/zip', 'platform/external/rust/crates/zune-inflate', 'platform/external/rust/cxx', 'platform/external/rust/pica', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop', 'platform/external/sandboxed-api', 'platform/external/scapy', 'platform/external/scrypt', 'platform/external/scudo', 'platform/external/sdk-platform-java', 'platform/external/sdl2', 'platform/external/sdl2_ttf', 'platform/external/sdv/vsomeip', 'platform/external/seccomp-tests']
 
     steps:
       - name: Maximize build space

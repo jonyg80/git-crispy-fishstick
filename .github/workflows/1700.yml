@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common', 'platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy', 'platform/external/webview_support_interfaces', 'platform/external/wmediumd', 'platform/external/wpa_supplicant', 'platform/external/wpa_supplicant_6', 'platform/external/wpa_supplicant_8', 'platform/external/wpantund', 'platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof', 'platform/external/x264', 'platform/external/xdelta3', 'platform/external/xerces-cpp', 'platform/external/xmlrpcpp', 'platform/external/xmlwriter']
+        repo_name: ['platform/external/tlsdate', 'platform/external/toolchain-utils', 'platform/external/toybox', 'platform/external/tpm2', 'platform/external/tpm2-tss', 'platform/external/trace-cmd', 'platform/external/trappy', 'platform/external/tremolo', 'platform/external/tremor', 'platform/external/truth', 'platform/external/turbine', 'platform/external/tz', 'platform/external/u-boot', 'platform/external/ukey2', 'platform/external/unicode', 'platform/external/universal-tween-engine', 'platform/external/usrsctp', 'platform/external/utf8proc', 'platform/external/uwb', 'platform/external/v4l2_codec2']
 
     steps:
       - name: Maximize build space

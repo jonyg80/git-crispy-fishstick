@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/desktop', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64', 'trusty/external/headers', 'trusty/external/musl', 'trusty/external/qemu', 'trusty/external/qemu-keycodemapdb', 'trusty/external/qemu-libslirp', 'trusty/external/qemu-meson', 'trusty/external/trusted-firmware-a', 'trusty/external/trusty', 'trusty/host/aidl', 'trusty/host/common']
+        repo_name: ['toolchain/prebuilts/ndk/r15', 'toolchain/prebuilts/ndk/r16', 'toolchain/prebuilts/ndk/r17', 'toolchain/prebuilts/ndk/r18', 'toolchain/prebuilts/ndk/r19', 'toolchain/prebuilts/ndk/r20', 'toolchain/prebuilts/ndk/r21', 'toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26', 'toolchain/prebuilts/ndk/r27', 'toolchain/prebuilts/ndk/releases', 'toolchain/prebuilts/sysroot/platform/riscv64-linux-android', 'toolchain/python', 'toolchain/rr', 'toolchain/rustc', 'toolchain/sccache', 'toolchain/sed', 'toolchain/valgrind']
 
     steps:
       - name: Maximize build space

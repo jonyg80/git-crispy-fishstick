@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/sandboxed-api', 'platform/external/scapy', 'platform/external/scrypt', 'platform/external/scudo', 'platform/external/sdl2', 'platform/external/sdl2_ttf', 'platform/external/sdv/vsomeip', 'platform/external/seccomp-tests', 'platform/external/selinux', 'platform/external/sepolicy', 'platform/external/setfilters', 'platform/external/setupcompat', 'platform/external/setupdesign', 'platform/external/sfntly', 'platform/external/sg3_utils', 'platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags']
+        repo_name: ['platform/external/rust/crates/virtio-queue', 'platform/external/rust/crates/virtio-vsock', 'platform/external/rust/crates/vm-memory', 'platform/external/rust/crates/vmm-sys-util', 'platform/external/rust/crates/vmm_vhost', 'platform/external/rust/crates/vsock', 'platform/external/rust/crates/vsprintf', 'platform/external/rust/crates/vulkano', 'platform/external/rust/crates/walkdir', 'platform/external/rust/crates/want', 'platform/external/rust/crates/wasi', 'platform/external/rust/crates/weak-table', 'platform/external/rust/crates/webpki', 'platform/external/rust/crates/which', 'platform/external/rust/crates/winapi', 'platform/external/rust/crates/winnow', 'platform/external/rust/crates/x509-cert', 'platform/external/rust/crates/x509-parser', 'platform/external/rust/crates/xml-rs', 'platform/external/rust/crates/yaml-rust']
 
     steps:
       - name: Maximize build space

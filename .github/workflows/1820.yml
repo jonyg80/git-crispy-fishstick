@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/bsp/kernel/marvell/pxa-v3.14', 'platform/hardware/bsp/kernel/mediatek/mt8516-v4.4', 'platform/hardware/bsp/kernel/nxp/imx-v4.1', 'platform/hardware/bsp/kernel/nxp/imx-v4.9', 'platform/hardware/bsp/kernel/qcom', 'platform/hardware/bsp/kernel/qcom/qcom-msm-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm-v4.9', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x09-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x53-v3.18', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.1', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.4', 'platform/hardware/bsp/kernel/rockchip', 'platform/hardware/bsp/kernel/rockchip/rk-v4.4', 'platform/hardware/bsp/qcom', 'platform/hardware/bsp/rockchip', 'platform/hardware/generic/goldfish', 'platform/hardware/google', 'platform/hardware/google/aemu', 'platform/hardware/google/apf', 'platform/hardware/google/atv/refDesignRcu/atmosic']
+        repo_name: ['platform/frameworks/opt/vcard', 'platform/frameworks/opt/widget', 'platform/frameworks/policies/base', 'platform/frameworks/proto_logging', 'platform/frameworks/rs', 'platform/frameworks/support', 'platform/frameworks/support-golden', 'platform/frameworks/testing', 'platform/frameworks/uiautomator', 'platform/frameworks/volley', 'platform/frameworks/webview', 'platform/frameworks/wilhelm', 'platform/gdk', 'platform/hardware/akm', 'platform/hardware/broadcom/libbt', 'platform/hardware/broadcom/wlan', 'platform/hardware/bsp/bootloader/intel/edison-u-boot', 'platform/hardware/bsp/bootloader/nxp/uboot-imx', 'platform/hardware/bsp/bootloader/rockchip/rk-u-boot', 'platform/hardware/bsp/broadcom']
 
     steps:
       - name: Maximize build space

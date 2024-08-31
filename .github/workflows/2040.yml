@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Messaging', 'platform/packages/apps/Mms', 'platform/packages/apps/Music', 'platform/packages/apps/MusicFX', 'platform/packages/apps/Nfc', 'platform/packages/apps/OnDeviceAppPrediction', 'platform/packages/apps/OneTimeInitializer', 'platform/packages/apps/PackageInstaller', 'platform/packages/apps/Phone', 'platform/packages/apps/PhoneCommon', 'platform/packages/apps/Protips', 'platform/packages/apps/Provision', 'platform/packages/apps/QuickAccessWallet', 'platform/packages/apps/QuickSearchBox', 'platform/packages/apps/RemoteProvisioner', 'platform/packages/apps/RetailDemo', 'platform/packages/apps/SafetyRegulatoryInfo', 'platform/packages/apps/SampleLocationAttribution', 'platform/packages/apps/SecureElement', 'platform/packages/apps/Settings']
+        repo_name: ['platform/packages/apps/Car/externallibs', 'platform/packages/apps/Car/libs', 'platform/packages/apps/Car/systemlibs', 'platform/packages/apps/Car/tests', 'platform/packages/apps/CarrierConfig', 'platform/packages/apps/CellBroadcastReceiver', 'platform/packages/apps/CertInstaller', 'platform/packages/apps/Contacts', 'platform/packages/apps/ContactsCommon', 'platform/packages/apps/DeskClock', 'platform/packages/apps/DevCamera', 'platform/packages/apps/Dialer', 'platform/packages/apps/DocumentsUI', 'platform/packages/apps/Email', 'platform/packages/apps/EmergencyInfo', 'platform/packages/apps/ExactCalculator', 'platform/packages/apps/Exchange', 'platform/packages/apps/FMRadio', 'platform/packages/apps/Gallery', 'platform/packages/apps/Gallery2']
 
     steps:
       - name: Maximize build space

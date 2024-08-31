@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/user/desktop', 'trusty/vendor/google/aosp']
+        repo_name: ['toolchain/xz', 'toolchain/yasm', 'tools/aospstats', 'tools/fetch_artifact', 'tools/manifest', 'tools/platform-compat', 'tools/presubmit-automerger/test1', 'tools/repo', 'trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15']
 
     steps:
       - name: Maximize build space

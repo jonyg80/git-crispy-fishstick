@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/intel/common/libstagefrighthw', 'platform/hardware/intel/common/libva', 'platform/hardware/intel/common/libwsbm', 'platform/hardware/intel/common/omx-components', 'platform/hardware/intel/common/utils', 'platform/hardware/intel/common/wrs_omxil_core', 'platform/hardware/intel/img/hwcomposer', 'platform/hardware/intel/img/libdrm', 'platform/hardware/intel/img/psb_headers', 'platform/hardware/intel/img/psb_video', 'platform/hardware/intel/sensors', 'platform/hardware/interfaces', 'platform/hardware/invensense', 'platform/hardware/knowles/athletico/sound_trigger_hal', 'platform/hardware/libhardware', 'platform/hardware/libhardware_legacy', 'platform/hardware/marvell/bt', 'platform/hardware/mediatek', 'platform/hardware/msm7k', 'platform/hardware/nvidia/audio']
+        repo_name: ['platform/hardware/bsp/kernel/qcom/qcom-msm8x09-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x53-v3.18', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.1', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.4', 'platform/hardware/bsp/kernel/rockchip', 'platform/hardware/bsp/kernel/rockchip/rk-v4.4', 'platform/hardware/bsp/qcom', 'platform/hardware/bsp/rockchip', 'platform/hardware/generic/goldfish', 'platform/hardware/google', 'platform/hardware/google/aemu', 'platform/hardware/google/apf', 'platform/hardware/google/atv/refDesignRcu/atmosic', 'platform/hardware/google/atv/refDesignRcu/realtek', 'platform/hardware/google/atv/refDesignRcu/telink', 'platform/hardware/google/av', 'platform/hardware/google/camera', 'platform/hardware/google/easel', 'platform/hardware/google/gchips', 'platform/hardware/google/gfxstream']
 
     steps:
       - name: Maximize build space

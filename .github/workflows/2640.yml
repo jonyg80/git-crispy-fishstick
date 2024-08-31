@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/swing-testing', 'platform/tools/swt', 'platform/tools/test/connectivity', 'platform/tools/test/graphicsbenchmark', 'platform/tools/test/mobly_extensions', 'platform/tools/test/mobly_snippets', 'platform/tools/test/openhst', 'platform/tools/tradefed_cluster', 'platform/tools/tradefederation', 'platform/tools/tradefederation/contrib', 'platform/tools/tradefederation/prebuilts', 'platform/tools/treble', 'platform/tools/trebuchet', 'platform/vendor/htc/dream-open', 'platform/vendor/invensense', 'platform/vendor/sample', 'product/google/common', 'product/google/example-ledflasher', 'tee/optee/ta/keymint', 'toolchain/android_rust']
+        repo_name: ['platform/tools/emulator', 'platform/tools/external/bazelbuild-rules-kotlin', 'platform/tools/external/fat32lib', 'platform/tools/external/go/src/github.com/go-gl-legacy/gl', 'platform/tools/external/go/src/github.com/go-gl/glfw', 'platform/tools/external/go/src/github.com/golang/protobuf', 'platform/tools/external/go/src/golang.org/x/net', 'platform/tools/external/go/src/golang.org/x/tools', 'platform/tools/external/gradle', 'platform/tools/external_updater', 'platform/tools/google_prebuilts/studio/sdk/remote', 'platform/tools/gpu', 'platform/tools/gradle', 'platform/tools/gradle-recipes', 'platform/tools/idea', 'platform/tools/lint_checks', 'platform/tools/loganalysis', 'platform/tools/metalava', 'platform/tools/motodev', 'platform/tools/multitest_transport']
 
     steps:
       - name: Maximize build space
