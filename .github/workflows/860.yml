@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libchromeos-rs', 'platform/external/libconfig', 'platform/external/libconstrainedcrypto', 'platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi', 'platform/external/libcxxabi_35a', 'platform/external/libcxxrt', 'platform/external/libdaemon', 'platform/external/libdav1d', 'platform/external/libdivsufsort', 'platform/external/libdrm', 'platform/external/libedit', 'platform/external/libepoxy', 'platform/external/libese', 'platform/external/libevent', 'platform/external/libexif', 'platform/external/libffi']
+        repo_name: ['platform/external/libconfig', 'platform/external/libconstrainedcrypto', 'platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi', 'platform/external/libcxxabi_35a', 'platform/external/libcxxrt', 'platform/external/libdaemon', 'platform/external/libdav1d', 'platform/external/libdivsufsort', 'platform/external/libdrm', 'platform/external/libedit', 'platform/external/libepoxy', 'platform/external/libese', 'platform/external/libevent', 'platform/external/libexif', 'platform/external/libffi', 'platform/external/libfuse']
 
     steps:
       - name: Maximize build space

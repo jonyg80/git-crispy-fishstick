@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk', 'platform/tools/build', 'platform/tools/buildSrc', 'platform/tools/camera', 'platform/tools/carrier_settings', 'platform/tools/cmake-utils', 'platform/tools/content_addressed_storage/prebuilts', 'platform/tools/content_addressed_storage/src', 'platform/tools/currysrc', 'platform/tools/dctv-tracedb', 'platform/tools/deviceinfra/prebuilts', 'platform/tools/dexter', 'platform/tools/doc_generation', 'platform/tools/dokka-devsite-plugin']
+        repo_name: ['platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk', 'platform/tools/build', 'platform/tools/buildSrc', 'platform/tools/camera', 'platform/tools/carrier_settings', 'platform/tools/cmake-utils', 'platform/tools/content_addressed_storage/prebuilts', 'platform/tools/content_addressed_storage/src', 'platform/tools/currysrc', 'platform/tools/dctv-tracedb', 'platform/tools/deviceinfra/prebuilts', 'platform/tools/dexter', 'platform/tools/doc_generation']
 
     steps:
       - name: Maximize build space

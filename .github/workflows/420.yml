@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/TestParameterInjector', 'platform/external/ThrowTheSwitch-Unity', 'platform/external/XNNPACK', 'platform/external/aac', 'platform/external/abi-compliance-checker', 'platform/external/abi-dumper', 'platform/external/abseil-cpp', 'platform/external/accessibility-test-framework', 'platform/external/accompanist', 'platform/external/actionbarsherlock', 'platform/external/adeb', 'platform/external/adhd', 'platform/external/adt-infra', 'platform/external/aehd', 'platform/external/aes', 'platform/external/alsa-lib', 'platform/external/android-clat', 'platform/external/android-cmake', 'platform/external/android-key-attestation', 'platform/external/android-kotlin-demo']
+        repo_name: ['platform/external/ThrowTheSwitch-Unity', 'platform/external/XNNPACK', 'platform/external/aac', 'platform/external/abi-compliance-checker', 'platform/external/abi-dumper', 'platform/external/abseil-cpp', 'platform/external/accessibility-test-framework', 'platform/external/accompanist', 'platform/external/actionbarsherlock', 'platform/external/adeb', 'platform/external/adhd', 'platform/external/adt-infra', 'platform/external/aehd', 'platform/external/aes', 'platform/external/alsa-lib', 'platform/external/android-clat', 'platform/external/android-cmake', 'platform/external/android-key-attestation', 'platform/external/android-kotlin-demo', 'platform/external/android-mock']
 
     steps:
       - name: Maximize build space

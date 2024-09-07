@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/iputils', 'platform/external/iw', 'platform/external/jack', 'platform/external/jackson-annotations', 'platform/external/jackson-core', 'platform/external/jackson-databind', 'platform/external/jacoco', 'platform/external/jarjar', 'platform/external/javaparser', 'platform/external/javapoet', 'platform/external/javasqlite', 'platform/external/javassist', 'platform/external/jazzer-api', 'platform/external/jcommander', 'platform/external/jdiff', 'platform/external/jemalloc', 'platform/external/jemalloc_new', 'platform/external/jenkins-hash', 'platform/external/jetbrains/JetBrainsRuntime', 'platform/external/jetbrains/intellij-kotlin']
+        repo_name: ['platform/external/iw', 'platform/external/jack', 'platform/external/jackson-annotations', 'platform/external/jackson-core', 'platform/external/jackson-databind', 'platform/external/jacoco', 'platform/external/jarjar', 'platform/external/javaparser', 'platform/external/javapoet', 'platform/external/javasqlite', 'platform/external/javassist', 'platform/external/jazzer-api', 'platform/external/jcommander', 'platform/external/jdiff', 'platform/external/jemalloc', 'platform/external/jemalloc_new', 'platform/external/jenkins-hash', 'platform/external/jetbrains/JetBrainsRuntime', 'platform/external/jetbrains/intellij-kotlin', 'platform/external/jetbrains/intellij-rust']
 
     steps:
       - name: Maximize build space
