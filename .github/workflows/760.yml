@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/honggfuzz', 'platform/external/horologist', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns', 'platform/external/icing', 'platform/external/icu', 'platform/external/icu4c', 'platform/external/id3lib', 'platform/external/igt-gpu-tools', 'platform/external/image_io', 'platform/external/ims', 'platform/external/ink-stroke-modeler', 'platform/external/intel-media-driver', 'platform/external/iosched', 'platform/external/iperf3', 'platform/external/iproute2', 'platform/external/ipsec-tools', 'platform/external/iptables', 'platform/external/iputils']
+        repo_name: ['platform/external/hamcrest', 'platform/external/harfbuzz', 'platform/external/harfbuzz_ng', 'platform/external/hcidump', 'platform/external/honggfuzz', 'platform/external/horologist', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns', 'platform/external/icing', 'platform/external/icu', 'platform/external/icu4c', 'platform/external/id3lib', 'platform/external/igt-gpu-tools', 'platform/external/image_io', 'platform/external/ims', 'platform/external/ink-stroke-modeler', 'platform/external/intel-media-driver', 'platform/external/iosched', 'platform/external/iperf3']
 
     steps:
       - name: Maximize build space

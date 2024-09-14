@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/StorageManager', 'platform/packages/apps/Sync', 'platform/packages/apps/SystemUIGo', 'platform/packages/apps/TV', 'platform/packages/apps/Tag', 'platform/packages/apps/Terminal', 'platform/packages/apps/Test/connectivity', 'platform/packages/apps/ThemePicker', 'platform/packages/apps/TimeZoneData', 'platform/packages/apps/TimeZoneUpdater', 'platform/packages/apps/Traceur', 'platform/packages/apps/TvFeedbackConsent', 'platform/packages/apps/TvSettings', 'platform/packages/apps/TvSystemUI', 'platform/packages/apps/UnifiedEmail', 'platform/packages/apps/UniversalMediaPlayer', 'platform/packages/apps/Updater', 'platform/packages/apps/VideoEditor', 'platform/packages/apps/VoiceDialer', 'platform/packages/apps/WallpaperPicker']
+        repo_name: ['platform/packages/apps/SampleLocationAttribution', 'platform/packages/apps/SecureElement', 'platform/packages/apps/Settings', 'platform/packages/apps/SettingsIntelligence', 'platform/packages/apps/SmartCardService', 'platform/packages/apps/SoundRecorder', 'platform/packages/apps/SpareParts', 'platform/packages/apps/SpeechRecorder', 'platform/packages/apps/Stk', 'platform/packages/apps/StorageManager', 'platform/packages/apps/Sync', 'platform/packages/apps/SystemUIGo', 'platform/packages/apps/TV', 'platform/packages/apps/Tag', 'platform/packages/apps/Terminal', 'platform/packages/apps/Test/connectivity', 'platform/packages/apps/ThemePicker', 'platform/packages/apps/TimeZoneData', 'platform/packages/apps/TimeZoneUpdater', 'platform/packages/apps/Traceur']
 
     steps:
       - name: Maximize build space

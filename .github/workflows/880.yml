@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libgav1', 'platform/external/libgdx', 'platform/external/libgsm', 'platform/external/libhevc', 'platform/external/libiio', 'platform/external/libiota', 'platform/external/libjpeg-turbo', 'platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd', 'platform/external/libmojo', 'platform/external/libmonet', 'platform/external/libmpeg2', 'platform/external/libmtp', 'platform/external/libnetfilter_conntrack', 'platform/external/libnfc-nci', 'platform/external/libnfc-nxp', 'platform/external/libnfnetlink']
+        repo_name: ['platform/external/libevent', 'platform/external/libexif', 'platform/external/libffi', 'platform/external/libfuse', 'platform/external/libgav1', 'platform/external/libgdx', 'platform/external/libgsm', 'platform/external/libhevc', 'platform/external/libiio', 'platform/external/libiota', 'platform/external/libjpeg-turbo', 'platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd', 'platform/external/libmojo', 'platform/external/libmonet', 'platform/external/libmpeg2', 'platform/external/libmtp']
 
     steps:
       - name: Maximize build space
