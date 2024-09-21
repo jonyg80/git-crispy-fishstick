@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/qcom/msm8998', 'platform/hardware/qcom/msm8x09', 'platform/hardware/qcom/msm8x26', 'platform/hardware/qcom/msm8x27', 'platform/hardware/qcom/msm8x74', 'platform/hardware/qcom/msm8x84', 'platform/hardware/qcom/neuralnetworks/hvxservice', 'platform/hardware/qcom/power', 'platform/hardware/qcom/sdm710/data/ipacfg-mgr', 'platform/hardware/qcom/sdm710/display', 'platform/hardware/qcom/sdm710/gps', 'platform/hardware/qcom/sdm710/media', 'platform/hardware/qcom/sdm710/thermal', 'platform/hardware/qcom/sdm710/vr', 'platform/hardware/qcom/sdm845/bt', 'platform/hardware/qcom/sdm845/data/ipacfg-mgr', 'platform/hardware/qcom/sdm845/display', 'platform/hardware/qcom/sdm845/gps', 'platform/hardware/qcom/sdm845/media', 'platform/hardware/qcom/sdm845/thermal']
+        repo_name: ['platform/hardware/qcom/msm8996', 'platform/hardware/qcom/msm8998', 'platform/hardware/qcom/msm8x09', 'platform/hardware/qcom/msm8x26', 'platform/hardware/qcom/msm8x27', 'platform/hardware/qcom/msm8x74', 'platform/hardware/qcom/msm8x84', 'platform/hardware/qcom/neuralnetworks/hvxservice', 'platform/hardware/qcom/power', 'platform/hardware/qcom/sdm710/data/ipacfg-mgr', 'platform/hardware/qcom/sdm710/display', 'platform/hardware/qcom/sdm710/gps', 'platform/hardware/qcom/sdm710/media', 'platform/hardware/qcom/sdm710/thermal', 'platform/hardware/qcom/sdm710/vr', 'platform/hardware/qcom/sdm845/bt', 'platform/hardware/qcom/sdm845/data/ipacfg-mgr', 'platform/hardware/qcom/sdm845/display', 'platform/hardware/qcom/sdm845/gps', 'platform/hardware/qcom/sdm845/media']
 
     steps:
       - name: Maximize build space

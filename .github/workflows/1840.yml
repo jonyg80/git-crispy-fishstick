@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/wilhelm', 'platform/gdk', 'platform/hardware/akm', 'platform/hardware/broadcom/libbt', 'platform/hardware/broadcom/wlan', 'platform/hardware/bsp/bootloader/intel/edison-u-boot', 'platform/hardware/bsp/bootloader/nxp/uboot-imx', 'platform/hardware/bsp/bootloader/rockchip/rk-u-boot', 'platform/hardware/bsp/broadcom', 'platform/hardware/bsp/freescale', 'platform/hardware/bsp/imagination', 'platform/hardware/bsp/intel', 'platform/hardware/bsp/kernel/common/v4.1', 'platform/hardware/bsp/kernel/common/v4.4', 'platform/hardware/bsp/kernel/freescale', 'platform/hardware/bsp/kernel/freescale/picoimx-3.14', 'platform/hardware/bsp/kernel/imagination/v4.1', 'platform/hardware/bsp/kernel/intel', 'platform/hardware/bsp/kernel/intel/broxton-v4.4', 'platform/hardware/bsp/kernel/intel/edison-v3.10']
+        repo_name: ['platform/frameworks/webview', 'platform/frameworks/wilhelm', 'platform/gdk', 'platform/hardware/akm', 'platform/hardware/broadcom/libbt', 'platform/hardware/broadcom/wlan', 'platform/hardware/bsp/bootloader/intel/edison-u-boot', 'platform/hardware/bsp/bootloader/nxp/uboot-imx', 'platform/hardware/bsp/bootloader/rockchip/rk-u-boot', 'platform/hardware/bsp/broadcom', 'platform/hardware/bsp/freescale', 'platform/hardware/bsp/imagination', 'platform/hardware/bsp/intel', 'platform/hardware/bsp/kernel/common/v4.1', 'platform/hardware/bsp/kernel/common/v4.4', 'platform/hardware/bsp/kernel/freescale', 'platform/hardware/bsp/kernel/freescale/picoimx-3.14', 'platform/hardware/bsp/kernel/imagination/v4.1', 'platform/hardware/bsp/kernel/intel', 'platform/hardware/bsp/kernel/intel/broxton-v4.4']
 
     steps:
       - name: Maximize build space

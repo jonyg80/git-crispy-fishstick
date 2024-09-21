@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/dbus-binding-generator', 'platform/external/deqp', 'platform/external/deqp-deps/SPIRV-Headers', 'platform/external/deqp-deps/SPIRV-Tools', 'platform/external/deqp-deps/amber', 'platform/external/deqp-deps/glslang', 'platform/external/desugar', 'platform/external/devlib', 'platform/external/dexmaker', 'platform/external/dhcpcd', 'platform/external/dhcpcd-6.8.2', 'platform/external/dlmalloc', 'platform/external/dng_sdk', 'platform/external/dnsmasq', 'platform/external/doclava', 'platform/external/dokka', 'platform/external/donuts', 'platform/external/dosfstools', 'platform/external/double-conversion', 'platform/external/downloader']
+        repo_name: ['platform/external/dbus', 'platform/external/dbus-binding-generator', 'platform/external/deqp', 'platform/external/deqp-deps/SPIRV-Headers', 'platform/external/deqp-deps/SPIRV-Tools', 'platform/external/deqp-deps/amber', 'platform/external/deqp-deps/glslang', 'platform/external/desugar', 'platform/external/devlib', 'platform/external/dexmaker', 'platform/external/dhcpcd', 'platform/external/dhcpcd-6.8.2', 'platform/external/dlmalloc', 'platform/external/dng_sdk', 'platform/external/dnsmasq', 'platform/external/doclava', 'platform/external/dokka', 'platform/external/donuts', 'platform/external/dosfstools', 'platform/external/double-conversion']
 
     steps:
       - name: Maximize build space
