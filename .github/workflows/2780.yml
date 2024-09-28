@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26', 'toolchain/prebuilts/ndk/r27', 'toolchain/prebuilts/ndk/releases', 'toolchain/prebuilts/sysroot/platform/riscv64-linux-android', 'toolchain/python', 'toolchain/rr', 'toolchain/rustc', 'toolchain/sccache', 'toolchain/sed', 'toolchain/valgrind', 'toolchain/xz', 'toolchain/yasm', 'tools/aospstats', 'tools/fetch_artifact', 'tools/manifest', 'tools/platform-compat', 'tools/presubmit-automerger/test1']
+        repo_name: ['toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26', 'toolchain/prebuilts/ndk/r27', 'toolchain/prebuilts/ndk/releases', 'toolchain/prebuilts/sysroot/platform/riscv64-linux-android', 'toolchain/python', 'toolchain/riscv_gnu_toolchain', 'toolchain/rr', 'toolchain/rustc', 'toolchain/sccache', 'toolchain/sed', 'toolchain/valgrind', 'toolchain/xz', 'toolchain/yasm', 'tools/aospstats', 'tools/fetch_artifact', 'tools/manifest', 'tools/platform-compat']
 
     steps:
       - name: Maximize build space
