@@ -2,7 +2,7 @@ name: 1720 Clone and Push
 
 on:
   schedule:
-    - cron: '0 14 * * 3' # Runs every week
+    # - cron: '0 14 * * 3' # Runs every week
   workflow_dispatch:
 
 
