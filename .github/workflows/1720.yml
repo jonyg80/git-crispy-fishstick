@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/turbine', 'platform/external/tz', 'platform/external/u-boot', 'platform/external/ukey2', 'platform/external/unicode', 'platform/external/universal-tween-engine', 'platform/external/usrsctp', 'platform/external/utf8proc', 'platform/external/uwb', 'platform/external/v4l2_codec2', 'platform/external/v8', 'platform/external/valgrind', 'platform/external/vboot_reference', 'platform/external/virglrenderer', 'platform/external/vixl', 'platform/external/vm_tools/p9', 'platform/external/vogar', 'platform/external/volk', 'platform/external/volley', 'platform/external/vulkan-headers']
+        repo_name: ['platform/external/tremor', 'platform/external/truth', 'platform/external/turbine', 'platform/external/tz', 'platform/external/u-boot', 'platform/external/ukey2', 'platform/external/unicode', 'platform/external/universal-tween-engine', 'platform/external/usrsctp', 'platform/external/utf8proc', 'platform/external/uwb', 'platform/external/v4l2_codec2', 'platform/external/v8', 'platform/external/valgrind', 'platform/external/vboot_reference', 'platform/external/virglrenderer', 'platform/external/vixl', 'platform/external/vm_tools/p9', 'platform/external/vogar', 'platform/external/volk']
 
     steps:
       - name: Maximize build space
