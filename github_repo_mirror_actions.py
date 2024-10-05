@@ -36,7 +36,7 @@ for i in range(0,len(project_names),20):
 
 on:
   schedule:
-    - cron: '0 {hour} * * {week}' # Runs every week
+    # - cron: '0 {hour} * * {week}' # Runs every week
   workflow_dispatch:
 
 
