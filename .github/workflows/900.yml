@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libmtp', 'platform/external/libnetfilter_conntrack', 'platform/external/libnfc-nci', 'platform/external/libnfc-nxp', 'platform/external/libnfnetlink', 'platform/external/libnl', 'platform/external/libnl-headers', 'platform/external/libogg', 'platform/external/libopus', 'platform/external/liboqs', 'platform/external/libpalmrejection', 'platform/external/libpcap', 'platform/external/libpciaccess', 'platform/external/libphonenumber', 'platform/external/libpng', 'platform/external/libppp', 'platform/external/libprotobuf-mutator', 'platform/external/libseccomp-helper', 'platform/external/libselinux', 'platform/external/libsepol']
+        repo_name: ['platform/external/libmpeg2', 'platform/external/libmtp', 'platform/external/libnetfilter_conntrack', 'platform/external/libnfc-nci', 'platform/external/libnfc-nxp', 'platform/external/libnfnetlink', 'platform/external/libnl', 'platform/external/libnl-headers', 'platform/external/libogg', 'platform/external/libopus', 'platform/external/liboqs', 'platform/external/libpalmrejection', 'platform/external/libpcap', 'platform/external/libpciaccess', 'platform/external/libphonenumber', 'platform/external/libpng', 'platform/external/libppp', 'platform/external/libprotobuf-mutator', 'platform/external/libseccomp-helper', 'platform/external/libselinux']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ec', 'platform/system/dmesgd', 'platform/system/extras']
+        repo_name: ['platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/desktop/adb-dbc-bridge']
 
     steps:
       - name: Maximize build space

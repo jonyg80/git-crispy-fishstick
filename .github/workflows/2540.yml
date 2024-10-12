@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap', 'platform/system/iot/attestation', 'platform/system/iot/mtdutils', 'platform/system/iot/tools', 'platform/system/keyguard', 'platform/system/keymaster', 'platform/system/keymint', 'platform/system/libartpalette', 'platform/system/libbase', 'platform/system/libcppbor', 'platform/system/libfmq', 'platform/system/libhidl', 'platform/system/libhwbinder', 'platform/system/libprocinfo']
+        repo_name: ['platform/system/desktop/ec', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap', 'platform/system/iot/attestation', 'platform/system/iot/mtdutils', 'platform/system/iot/tools', 'platform/system/keyguard', 'platform/system/keymaster', 'platform/system/keymint', 'platform/system/libartpalette', 'platform/system/libbase', 'platform/system/libcppbor', 'platform/system/libfmq']
 
     steps:
       - name: Maximize build space

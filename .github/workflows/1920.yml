@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/libhardware_legacy', 'platform/hardware/marvell/bt', 'platform/hardware/mediatek', 'platform/hardware/msm7k', 'platform/hardware/nvidia/audio', 'platform/hardware/nvidia/tegra124', 'platform/hardware/nxp/keymint', 'platform/hardware/nxp/nfc', 'platform/hardware/nxp/secure_element', 'platform/hardware/nxp/uwb', 'platform/hardware/nxp/weaver', 'platform/hardware/qcom/audio', 'platform/hardware/qcom/bootctrl', 'platform/hardware/qcom/bt', 'platform/hardware/qcom/camera', 'platform/hardware/qcom/data/ipacfg-mgr', 'platform/hardware/qcom/display', 'platform/hardware/qcom/gps', 'platform/hardware/qcom/keymaster', 'platform/hardware/qcom/media']
+        repo_name: ['platform/hardware/knowles/athletico/sound_trigger_hal', 'platform/hardware/libhardware', 'platform/hardware/libhardware_legacy', 'platform/hardware/marvell/bt', 'platform/hardware/mediatek', 'platform/hardware/msm7k', 'platform/hardware/nvidia/audio', 'platform/hardware/nvidia/tegra124', 'platform/hardware/nxp/keymint', 'platform/hardware/nxp/nfc', 'platform/hardware/nxp/secure_element', 'platform/hardware/nxp/uwb', 'platform/hardware/nxp/weaver', 'platform/hardware/qcom/audio', 'platform/hardware/qcom/bootctrl', 'platform/hardware/qcom/bt', 'platform/hardware/qcom/camera', 'platform/hardware/qcom/data/ipacfg-mgr', 'platform/hardware/qcom/display', 'platform/hardware/qcom/gps']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/ContactsCommon', 'platform/packages/apps/DeskClock', 'platform/packages/apps/DevCamera', 'platform/packages/apps/Dialer', 'platform/packages/apps/DocumentsUI', 'platform/packages/apps/Email', 'platform/packages/apps/EmergencyInfo', 'platform/packages/apps/ExactCalculator', 'platform/packages/apps/Exchange', 'platform/packages/apps/FMRadio', 'platform/packages/apps/Gallery', 'platform/packages/apps/Gallery2', 'platform/packages/apps/Gallery3D', 'platform/packages/apps/GlobalSearch', 'platform/packages/apps/GoogleSearch', 'platform/packages/apps/HTMLViewer', 'platform/packages/apps/IM', 'platform/packages/apps/IdentityCredentialSupport', 'platform/packages/apps/ImsServiceEntitlement', 'platform/packages/apps/InCallUI']
+        repo_name: ['platform/packages/apps/CertInstaller', 'platform/packages/apps/Contacts', 'platform/packages/apps/ContactsCommon', 'platform/packages/apps/DeskClock', 'platform/packages/apps/DevCamera', 'platform/packages/apps/DeviceDiagnostics', 'platform/packages/apps/Dialer', 'platform/packages/apps/DocumentsUI', 'platform/packages/apps/Email', 'platform/packages/apps/EmergencyInfo', 'platform/packages/apps/ExactCalculator', 'platform/packages/apps/Exchange', 'platform/packages/apps/FMRadio', 'platform/packages/apps/Gallery', 'platform/packages/apps/Gallery2', 'platform/packages/apps/Gallery3D', 'platform/packages/apps/GlobalSearch', 'platform/packages/apps/GoogleSearch', 'platform/packages/apps/HTMLViewer', 'platform/packages/apps/IM']
 
     steps:
       - name: Maximize build space
