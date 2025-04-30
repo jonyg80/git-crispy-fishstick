@@ -35,8 +35,8 @@ for i in range(0,len(project_names),20):
             f"""name: {i} Clone and Push
 
 on:
-  # schedule:
-    # - cron: '0 {hour} * * {week}' # Runs every week
+  schedule:
+    - cron: '0 {hour} * * {week}' # Runs every week
   workflow_dispatch:
 
 
