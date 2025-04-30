@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4', 'platform/external/okio', 'platform/external/one-true-awk', 'platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore', 'platform/external/opencv', 'platform/external/opencv3', 'platform/external/openfst']
+        repo_name: ['platform/external/minigbm', 'platform/external/minijail', 'platform/external/mksh', 'platform/external/mmc-utils', 'platform/external/mobile-data-download', 'platform/external/mobly-bundled-snippets', 'platform/external/mobly-snippet-lib', 'platform/external/mock', 'platform/external/mockftpserver', 'platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modp_b64', 'platform/external/moltenvk', 'platform/external/moshi', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpdecimal', 'platform/external/mpg123', 'platform/external/ms-tpm-20-ref']
 
     steps:
       - name: Maximize build space

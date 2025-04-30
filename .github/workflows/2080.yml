@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/IdentityCredentialSupport', 'platform/packages/apps/ImsServiceEntitlement', 'platform/packages/apps/InCallUI', 'platform/packages/apps/KeyChain', 'platform/packages/apps/Launcher', 'platform/packages/apps/Launcher2', 'platform/packages/apps/Launcher3', 'platform/packages/apps/LegacyCamera', 'platform/packages/apps/ManagedProvisioning', 'platform/packages/apps/Messaging', 'platform/packages/apps/Mms', 'platform/packages/apps/Multiuser', 'platform/packages/apps/Music', 'platform/packages/apps/MusicFX', 'platform/packages/apps/Nfc', 'platform/packages/apps/OnDeviceAppPrediction', 'platform/packages/apps/OneTimeInitializer', 'platform/packages/apps/PackageInstaller', 'platform/packages/apps/Phone', 'platform/packages/apps/PhoneCommon']
+        repo_name: ['platform/packages/apps/Browser', 'platform/packages/apps/Browser2', 'platform/packages/apps/Calculator', 'platform/packages/apps/Calendar', 'platform/packages/apps/Camera', 'platform/packages/apps/Camera2', 'platform/packages/apps/Car/BugReport', 'platform/packages/apps/Car/BugReportPrebuilt', 'platform/packages/apps/Car/Calendar', 'platform/packages/apps/Car/CalendarPrebuilt', 'platform/packages/apps/Car/Cluster', 'platform/packages/apps/Car/CompanionDeviceSupport', 'platform/packages/apps/Car/Dashcam', 'platform/packages/apps/Car/DataSubscriptionReference', 'platform/packages/apps/Car/DebuggingRestrictionController', 'platform/packages/apps/Car/Dialer', 'platform/packages/apps/Car/DialerPrebuilt', 'platform/packages/apps/Car/DriverUI', 'platform/packages/apps/Car/DriverUIPrebuilt', 'platform/packages/apps/Car/Hvac']
 
     steps:
       - name: Maximize build space

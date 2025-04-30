@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/google-fonts/barlow', 'platform/external/google-fonts/big-shoulders-text', 'platform/external/google-fonts/carrois-gothic-sc', 'platform/external/google-fonts/coming-soon', 'platform/external/google-fonts/cutive-mono', 'platform/external/google-fonts/dancing-script', 'platform/external/google-fonts/fraunces', 'platform/external/google-fonts/karla', 'platform/external/google-fonts/lato', 'platform/external/google-fonts/lustria', 'platform/external/google-fonts/rubik', 'platform/external/google-fonts/source-sans-pro', 'platform/external/google-fonts/zilla-slab', 'platform/external/google-fruit', 'platform/external/google-java-format', 'platform/external/google-smali', 'platform/external/google-styleguide', 'platform/external/google-tv-pairing-protocol', 'platform/external/google-uuid', 'platform/external/googleapis']
+        repo_name: ['platform/external/gfxstream-protocols', 'platform/external/giflib', 'platform/external/glide', 'platform/external/gmmlib', 'platform/external/gmock', 'platform/external/go-cmp', 'platform/external/go-creachadair-shell', 'platform/external/go-creachadair-stringset', 'platform/external/go-etree', 'platform/external/go-subcommands', 'platform/external/golang-glog', 'platform/external/golang-groupcache', 'platform/external/golang-klauspost-compress', 'platform/external/golang-pkg-xattr', 'platform/external/golang-protobuf', 'platform/external/golang-x-net', 'platform/external/golang-x-oauth2', 'platform/external/golang-x-sync', 'platform/external/golang-x-sys', 'platform/external/golang-x-text']
 
     steps:
       - name: Maximize build space

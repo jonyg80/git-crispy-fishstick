@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/test/robolectric-extensions', 'platform/test/sts', 'platform/test/suite_harness', 'platform/test/vti/alert', 'platform/test/vti/dashboard', 'platform/test/vti/fuzz_test_serving', 'platform/test/vti/test_serving', 'platform/test/vts', 'platform/test/vts-testcase/fuzz', 'platform/test/vts-testcase/hal', 'platform/test/vts-testcase/hal-trace', 'platform/test/vts-testcase/kernel', 'platform/test/vts-testcase/nbu', 'platform/test/vts-testcase/performance', 'platform/test/vts-testcase/security', 'platform/test/vts-testcase/vndk', 'platform/tools/aadevtools', 'platform/tools/acloud', 'platform/tools/adt/eclipse', 'platform/tools/adt/idea']
+        repo_name: ['platform/system/desktop/ec', 'platform/system/desktop/fingerprint', 'platform/system/desktop/intel-pmt', 'platform/system/desktop/security', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap', 'platform/system/iot/attestation', 'platform/system/iot/mtdutils', 'platform/system/iot/tools', 'platform/system/keyguard', 'platform/system/keymaster', 'platform/system/keymint', 'platform/system/libartpalette']
 
     steps:
       - name: Maximize build space

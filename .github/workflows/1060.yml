@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/pciutils', 'platform/external/pcre', 'platform/external/pdfium', 'platform/external/perf_data_converter', 'platform/external/perfetto', 'platform/external/perfmark', 'platform/external/pffft', 'platform/external/piex', 'platform/external/pigweed', 'platform/external/pigz', 'platform/external/ping', 'platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config', 'platform/external/ply', 'platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite']
+        repo_name: ['platform/external/nos/host/generic', 'platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4', 'platform/external/okio', 'platform/external/one-true-awk', 'platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore']
 
     steps:
       - name: Maximize build space

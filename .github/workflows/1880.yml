@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/bsp/qcom', 'platform/hardware/bsp/rockchip', 'platform/hardware/generic/goldfish', 'platform/hardware/google', 'platform/hardware/google/aemu', 'platform/hardware/google/apf', 'platform/hardware/google/atv/refDesignRcu/atmosic', 'platform/hardware/google/atv/refDesignRcu/realtek', 'platform/hardware/google/atv/refDesignRcu/telink', 'platform/hardware/google/av', 'platform/hardware/google/camera', 'platform/hardware/google/easel', 'platform/hardware/google/gchips', 'platform/hardware/google/gfxstream', 'platform/hardware/google/graphics/common', 'platform/hardware/google/graphics/gs101', 'platform/hardware/google/graphics/gs201', 'platform/hardware/google/graphics/zuma', 'platform/hardware/google/graphics/zumapro', 'platform/hardware/google/interfaces']
+        repo_name: ['platform/frameworks/opt/com.google.android', 'platform/frameworks/opt/com.google.android.googlelogin', 'platform/frameworks/opt/datetimepicker', 'platform/frameworks/opt/emoji', 'platform/frameworks/opt/gamedevicets', 'platform/frameworks/opt/gamesdk', 'platform/frameworks/opt/inputconnectioncommon', 'platform/frameworks/opt/inputmethodcommon', 'platform/frameworks/opt/localepicker', 'platform/frameworks/opt/mailcommon', 'platform/frameworks/opt/mms', 'platform/frameworks/opt/net/ethernet', 'platform/frameworks/opt/net/ike', 'platform/frameworks/opt/net/ims', 'platform/frameworks/opt/net/lowpan', 'platform/frameworks/opt/net/voip', 'platform/frameworks/opt/net/wifi', 'platform/frameworks/opt/photoviewer', 'platform/frameworks/opt/setupwizard', 'platform/frameworks/opt/sherpa']
 
     steps:
       - name: Maximize build space

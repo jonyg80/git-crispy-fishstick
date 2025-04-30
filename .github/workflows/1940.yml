@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/qcom/keymaster', 'platform/hardware/qcom/media', 'platform/hardware/qcom/msm8960', 'platform/hardware/qcom/msm8994', 'platform/hardware/qcom/msm8996', 'platform/hardware/qcom/msm8998', 'platform/hardware/qcom/msm8x09', 'platform/hardware/qcom/msm8x26', 'platform/hardware/qcom/msm8x27', 'platform/hardware/qcom/msm8x74', 'platform/hardware/qcom/msm8x84', 'platform/hardware/qcom/neuralnetworks/hvxservice', 'platform/hardware/qcom/power', 'platform/hardware/qcom/sdm710/data/ipacfg-mgr', 'platform/hardware/qcom/sdm710/display', 'platform/hardware/qcom/sdm710/gps', 'platform/hardware/qcom/sdm710/media', 'platform/hardware/qcom/sdm710/thermal', 'platform/hardware/qcom/sdm710/vr', 'platform/hardware/qcom/sdm845/bt']
+        repo_name: ['platform/hardware/bsp/kernel/qcom', 'platform/hardware/bsp/kernel/qcom/qcom-msm-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm-v4.9', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x09-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x53-v3.18', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.1', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.4', 'platform/hardware/bsp/kernel/rockchip', 'platform/hardware/bsp/kernel/rockchip/rk-v4.4', 'platform/hardware/bsp/qcom', 'platform/hardware/bsp/rockchip', 'platform/hardware/generic/goldfish', 'platform/hardware/google', 'platform/hardware/google/aemu', 'platform/hardware/google/apf', 'platform/hardware/google/atv/refDesignRcu/atmosic', 'platform/hardware/google/atv/refDesignRcu/realtek', 'platform/hardware/google/atv/refDesignRcu/telink', 'platform/hardware/google/av', 'platform/hardware/google/camera']
 
     steps:
       - name: Maximize build space

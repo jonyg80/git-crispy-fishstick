@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/ml', 'platform/frameworks/multidex', 'platform/frameworks/native', 'platform/frameworks/opt/bitmap', 'platform/frameworks/opt/bluetooth', 'platform/frameworks/opt/calendar', 'platform/frameworks/opt/car/services', 'platform/frameworks/opt/car/setupwizard', 'platform/frameworks/opt/carddav', 'platform/frameworks/opt/chips', 'platform/frameworks/opt/colorpicker', 'platform/frameworks/opt/com.google.android', 'platform/frameworks/opt/com.google.android.googlelogin', 'platform/frameworks/opt/datetimepicker', 'platform/frameworks/opt/emoji', 'platform/frameworks/opt/gamedevicets', 'platform/frameworks/opt/gamesdk', 'platform/frameworks/opt/inputconnectioncommon', 'platform/frameworks/opt/inputmethodcommon', 'platform/frameworks/opt/localepicker']
+        repo_name: ['platform/external/v4l-utils', 'platform/external/v4l2_codec2', 'platform/external/v8', 'platform/external/valgrind', 'platform/external/vboot_reference', 'platform/external/virglrenderer', 'platform/external/virtio-media', 'platform/external/vixl', 'platform/external/vm_tools/p9', 'platform/external/vogar', 'platform/external/volk', 'platform/external/volley', 'platform/external/vulkan-headers', 'platform/external/vulkan-tools', 'platform/external/vulkan-validation-layers', 'platform/external/walt', 'platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common', 'platform/external/webkit']
 
     steps:
       - name: Maximize build space

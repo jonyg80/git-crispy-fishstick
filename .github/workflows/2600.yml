@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/trunks', 'platform/system/ucontainer', 'platform/system/unwinding', 'platform/system/update_engine', 'platform/system/usb_info_tools', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root', 'platform/test/dittosuite', 'platform/test/framework', 'platform/test/mlts/benchmark', 'platform/test/mlts/models', 'platform/test/mts', 'platform/test/p2pts']
+        repo_name: ['platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/cros-codecs', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ap']
 
     steps:
       - name: Maximize build space

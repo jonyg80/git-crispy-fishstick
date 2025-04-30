@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/google/debugcable', 'device/google/dragon', 'device/google/dragon-kernel', 'device/google/felix', 'device/google/felix-kernel', 'device/google/felix-kernels/5.10', 'device/google/felix-sepolicy', 'device/google/fuchsia', 'device/google/gs-common', 'device/google/gs101', 'device/google/gs101-sepolicy', 'device/google/gs201', 'device/google/gs201-sepolicy', 'device/google/lynx', 'device/google/lynx-kernel', 'device/google/lynx-kernels/5.10', 'device/google/lynx-sepolicy', 'device/google/marlin', 'device/google/marlin-kernel', 'device/google/muskie']
+        repo_name: ['device/google/cuttlefish_prebuilts', 'device/google/cuttlefish_vmm', 'device/google/debugcable', 'device/google/dragon', 'device/google/dragon-kernel', 'device/google/felix', 'device/google/felix-kernel', 'device/google/felix-kernels/5.10', 'device/google/felix-kernels/6.1', 'device/google/felix-sepolicy', 'device/google/fuchsia', 'device/google/gs-common', 'device/google/gs101', 'device/google/gs101-sepolicy', 'device/google/gs201', 'device/google/gs201-sepolicy', 'device/google/lynx', 'device/google/lynx-kernel', 'device/google/lynx-kernels/5.10', 'device/google/lynx-kernels/6.1']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/sound/mcu', 'kernel/google-modules/sound/mcu_mic_codec', 'kernel/google-modules/touch/common', 'kernel/google-modules/touch/focaltech_touch', 'kernel/google-modules/touch/fts_touch', 'kernel/google-modules/touch/goodix_touch', 'kernel/google-modules/touch/himax_touch', 'kernel/google-modules/touch/novatek_touch', 'kernel/google-modules/touch/parade_touch', 'kernel/google-modules/touch/sec_touch', 'kernel/google-modules/touch/synaptics_touch', 'kernel/google-modules/trusty', 'kernel/google-modules/typec', 'kernel/google-modules/uwb', 'kernel/google-modules/uwb-diags', 'kernel/google-modules/uwb/qorvo/dw3000', 'kernel/google-modules/uwb/qorvo/qm35', 'kernel/google-modules/video/gchips', 'kernel/google-modules/wlan/bcmdhd/bcm43752', 'kernel/google-modules/wlan/bcmdhd/bcm4383']
+        repo_name: ['kernel/google-modules/lwis', 'kernel/google-modules/misc', 'kernel/google-modules/nanohub', 'kernel/google-modules/nfc', 'kernel/google-modules/perf', 'kernel/google-modules/power/mitigation', 'kernel/google-modules/power/reset', 'kernel/google-modules/radio/samsung/s5300', 'kernel/google-modules/radio/samsung/s5400', 'kernel/google-modules/raviole-device', 'kernel/google-modules/rotary-encoders', 'kernel/google-modules/sensors/hall_sensor', 'kernel/google-modules/soc/gs', 'kernel/google-modules/soc/msm', 'kernel/google-modules/sound/mcu', 'kernel/google-modules/sound/mcu_mic_codec', 'kernel/google-modules/touch/common', 'kernel/google-modules/touch/common_wearable', 'kernel/google-modules/touch/focaltech_touch', 'kernel/google-modules/touch/fts_touch']
 
     steps:
       - name: Maximize build space

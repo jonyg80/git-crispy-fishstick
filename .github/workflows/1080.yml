@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/protobuf2.5', 'platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto', 'platform/external/python/astroid', 'platform/external/python/atomicwrites', 'platform/external/python/attrs', 'platform/external/python/bumble', 'platform/external/python/cachetools', 'platform/external/python/cffi', 'platform/external/python/cpython2', 'platform/external/python/cpython3', 'platform/external/python/cryptography']
+        repo_name: ['platform/external/opencv', 'platform/external/opencv3', 'platform/external/openfst', 'platform/external/openmp_llvm', 'platform/external/openocd', 'platform/external/openscreen', 'platform/external/openssh', 'platform/external/openssl', 'platform/external/openthread', 'platform/external/openvpn', 'platform/external/openwrt-prebuilts', 'platform/external/oprofile', 'platform/external/optee/apps', 'platform/external/oss-fuzz', 'platform/external/ot-br-posix', 'platform/external/ow2-asm', 'platform/external/owasp/java-encoder', 'platform/external/owasp/sanitizer', 'platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces']
 
     steps:
       - name: Maximize build space

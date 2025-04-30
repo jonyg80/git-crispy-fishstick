@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/google/accessory/adk2012_demo', 'device/google/accessory/arduino', 'device/google/accessory/demokit', 'device/google/akita', 'device/google/akita-kernel', 'device/google/akita-kernels/5.15', 'device/google/akita-sepolicy', 'device/google/atv', 'device/google/barbet', 'device/google/barbet-kernel', 'device/google/barbet-sepolicy', 'device/google/bluejay', 'device/google/bluejay-kernel', 'device/google/bluejay-kernels/5.10', 'device/google/bluejay-sepolicy', 'device/google/bonito', 'device/google/bonito-kernel', 'device/google/bonito-sepolicy', 'device/google/bramble', 'device/google/bramble-kernel']
+        repo_name: ['device/google/accessory/adk2012_demo', 'device/google/accessory/arduino', 'device/google/accessory/demokit', 'device/google/akita', 'device/google/akita-kernel', 'device/google/akita-kernels/5.15', 'device/google/akita-kernels/6.1', 'device/google/akita-sepolicy', 'device/google/atv', 'device/google/barbet', 'device/google/barbet-kernel', 'device/google/barbet-sepolicy', 'device/google/bluejay', 'device/google/bluejay-kernel', 'device/google/bluejay-kernels/5.10', 'device/google/bluejay-kernels/6.1', 'device/google/bluejay-sepolicy', 'device/google/bonito', 'device/google/bonito-kernel', 'device/google/bonito-sepolicy']
 
     steps:
       - name: Maximize build space

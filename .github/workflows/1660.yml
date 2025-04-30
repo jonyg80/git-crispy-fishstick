@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/sg3_utils', 'platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags', 'platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm']
+        repo_name: ['platform/external/rust/crates/uniffi_checksum_derive', 'platform/external/rust/crates/uniffi_core', 'platform/external/rust/crates/uniffi_macros', 'platform/external/rust/crates/uniffi_meta', 'platform/external/rust/crates/unsafe-libyaml', 'platform/external/rust/crates/untrusted', 'platform/external/rust/crates/url', 'platform/external/rust/crates/userfaultfd', 'platform/external/rust/crates/userfaultfd-sys', 'platform/external/rust/crates/utf-8', 'platform/external/rust/crates/uuid', 'platform/external/rust/crates/v4l2r', 'platform/external/rust/crates/version_check', 'platform/external/rust/crates/vhost', 'platform/external/rust/crates/vhost-device-vsock', 'platform/external/rust/crates/vhost-user-backend', 'platform/external/rust/crates/virtio-bindings', 'platform/external/rust/crates/virtio-drivers', 'platform/external/rust/crates/virtio-queue', 'platform/external/rust/crates/virtio-vsock']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/anes', 'platform/external/rust/crates/annotate-snippets', 'platform/external/rust/crates/anyhow', 'platform/external/rust/crates/arbitrary', 'platform/external/rust/crates/arc-swap', 'platform/external/rust/crates/argh', 'platform/external/rust/crates/argh_derive', 'platform/external/rust/crates/argh_shared', 'platform/external/rust/crates/arrayvec', 'platform/external/rust/crates/ash', 'platform/external/rust/crates/asn1-rs', 'platform/external/rust/crates/asn1-rs-derive', 'platform/external/rust/crates/asn1-rs-impl', 'platform/external/rust/crates/async-stream', 'platform/external/rust/crates/async-stream-impl', 'platform/external/rust/crates/async-task', 'platform/external/rust/crates/async-trait', 'platform/external/rust/crates/atomic', 'platform/external/rust/crates/atomic-polyfill', 'platform/external/rust/crates/atty']
+        repo_name: ['platform/external/python/requests', 'platform/external/python/rsa', 'platform/external/python/scipy', 'platform/external/python/setuptools', 'platform/external/python/six', 'platform/external/python/timeout-decorator', 'platform/external/python/typing', 'platform/external/python/typing_extensions', 'platform/external/python/uritemplates', 'platform/external/python/watchdog', 'platform/external/pytorch', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qt', 'platform/external/qt5', 'platform/external/quake', 'platform/external/r8', 'platform/external/rapidjson', 'platform/external/rappor']
 
     steps:
       - name: Maximize build space

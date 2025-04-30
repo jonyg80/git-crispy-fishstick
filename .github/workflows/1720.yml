@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/trappy', 'platform/external/tremolo', 'platform/external/tremor', 'platform/external/truth', 'platform/external/turbine', 'platform/external/tz', 'platform/external/u-boot', 'platform/external/ukey2', 'platform/external/unicode', 'platform/external/universal-tween-engine', 'platform/external/usrsctp', 'platform/external/utf8proc', 'platform/external/uwb', 'platform/external/v4l2_codec2', 'platform/external/v8', 'platform/external/valgrind', 'platform/external/vboot_reference', 'platform/external/virglrenderer', 'platform/external/vixl', 'platform/external/vm_tools/p9']
+        repo_name: ['platform/external/sepolicy', 'platform/external/setfilters', 'platform/external/setupcompat', 'platform/external/setupdesign', 'platform/external/sfntly', 'platform/external/sg3_utils', 'platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags', 'platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp', 'platform/external/sl4a', 'platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml']
 
     steps:
       - name: Maximize build space

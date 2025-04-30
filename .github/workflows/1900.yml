@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/google/pixel', 'platform/hardware/google/pixel-sepolicy', 'platform/hardware/google/trusty', 'platform/hardware/intel/audio_media', 'platform/hardware/intel/bootstub', 'platform/hardware/intel/common/bd_prov', 'platform/hardware/intel/common/libmix', 'platform/hardware/intel/common/libstagefrighthw', 'platform/hardware/intel/common/libva', 'platform/hardware/intel/common/libwsbm', 'platform/hardware/intel/common/omx-components', 'platform/hardware/intel/common/utils', 'platform/hardware/intel/common/wrs_omxil_core', 'platform/hardware/intel/img/hwcomposer', 'platform/hardware/intel/img/libdrm', 'platform/hardware/intel/img/psb_headers', 'platform/hardware/intel/img/psb_video', 'platform/hardware/intel/sensors', 'platform/hardware/interfaces', 'platform/hardware/invensense']
+        repo_name: ['platform/frameworks/opt/telephony', 'platform/frameworks/opt/timezonepicker', 'platform/frameworks/opt/tv/tvsystem', 'platform/frameworks/opt/vcard', 'platform/frameworks/opt/widget', 'platform/frameworks/policies/base', 'platform/frameworks/proto_logging', 'platform/frameworks/rs', 'platform/frameworks/support', 'platform/frameworks/support-golden', 'platform/frameworks/testing', 'platform/frameworks/uiautomator', 'platform/frameworks/volley', 'platform/frameworks/webview', 'platform/frameworks/wilhelm', 'platform/gdk', 'platform/hardware/akm', 'platform/hardware/broadcom/libbt', 'platform/hardware/broadcom/wlan', 'platform/hardware/bsp/bootloader/intel/edison-u-boot']
 
     steps:
       - name: Maximize build space

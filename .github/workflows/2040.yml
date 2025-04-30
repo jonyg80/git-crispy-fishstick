@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Car/Overview', 'platform/packages/apps/Car/Provision', 'platform/packages/apps/Car/Radio', 'platform/packages/apps/Car/RadioPrebuilt', 'platform/packages/apps/Car/References', 'platform/packages/apps/Car/RotaryController', 'platform/packages/apps/Car/Settings', 'platform/packages/apps/Car/SettingsIntelligence', 'platform/packages/apps/Car/Stream', 'platform/packages/apps/Car/SystemUI', 'platform/packages/apps/Car/SystemUpdater', 'platform/packages/apps/Car/Templates', 'platform/packages/apps/Car/UserManagement', 'platform/packages/apps/Car/VoiceControl', 'platform/packages/apps/Car/externallibs', 'platform/packages/apps/Car/libs', 'platform/packages/apps/Car/systemlibs', 'platform/packages/apps/Car/tests', 'platform/packages/apps/CarrierConfig', 'platform/packages/apps/CellBroadcastReceiver']
+        repo_name: ['platform/hardware/qcom/sm7150/vr', 'platform/hardware/qcom/sm7250/display', 'platform/hardware/qcom/sm7250/gps', 'platform/hardware/qcom/sm7250/media', 'platform/hardware/qcom/sm8150/data/ipacfg-mgr', 'platform/hardware/qcom/sm8150/display', 'platform/hardware/qcom/sm8150/gps', 'platform/hardware/qcom/sm8150/media', 'platform/hardware/qcom/sm8150/thermal', 'platform/hardware/qcom/sm8150/vr', 'platform/hardware/qcom/sm8150p/gps', 'platform/hardware/qcom/wlan', 'platform/hardware/ril', 'platform/hardware/samsung/nfc', 'platform/hardware/samsung_slsi/exynos5', 'platform/hardware/st/nfc', 'platform/hardware/st/secure_element', 'platform/hardware/st/secure_element2', 'platform/hardware/synaptics/wlan', 'platform/hardware/telink/atv/refDesignRcu']
 
     steps:
       - name: Maximize build space

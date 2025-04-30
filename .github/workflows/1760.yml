@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof', 'platform/external/x264', 'platform/external/xdelta3', 'platform/external/xerces-cpp', 'platform/external/xmlrpcpp', 'platform/external/xmlwriter', 'platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java', 'platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd', 'platform/external/zucchini', 'platform/external/zxing', 'platform/frameworks/av', 'platform/frameworks/base', 'platform/frameworks/compile/libbcc']
+        repo_name: ['platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/threetenbp', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tink-java', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new', 'platform/external/tinycompress', 'platform/external/tinyobjloader', 'platform/external/tinyxml', 'platform/external/tinyxml2']
 
     steps:
       - name: Maximize build space

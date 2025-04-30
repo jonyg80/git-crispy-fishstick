@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/build/abfs', 'platform/build/bazel', 'platform/build/bazel_common_rules', 'platform/build/blueprint', 'platform/build/docker', 'platform/build/kati', 'platform/build/orchestrator', 'platform/build/pesto', 'platform/build/release', 'platform/build/soong', 'platform/build/trunk_release', 'platform/compatibility/cdd', 'platform/cts', 'platform/dalvik', 'platform/dalvik-snapshot', 'platform/dalvik2', 'platform/developers/build', 'platform/developers/demos', 'platform/developers/docs', 'platform/developers/samples/android']
+        repo_name: ['kernel/prebuilts/mainline/arm64', 'kernel/prebuilts/mainline/x86-64', 'kernel/samsung', 'kernel/superproject', 'kernel/tegra', 'kernel/tests', 'kernel/x86', 'kernel/x86_64', 'mirror/manifest', 'platform/abi/cpp', 'platform/apisurface', 'platform/art', 'platform/bbuildbot_config', 'platform/bionic', 'platform/bootable/bootloader/legacy', 'platform/bootable/deprecated-ota', 'platform/bootable/diskinstaller', 'platform/bootable/libbootloader', 'platform/bootable/recovery', 'platform/build']
 
     steps:
       - name: Maximize build space

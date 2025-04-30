@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/desktop/adb-dbc-bridge']
+        repo_name: ['platform/prebuilts/libprotobuf/darwin-x86', 'platform/prebuilts/libprotobuf/linux', 'platform/prebuilts/libprotobuf/linux-x86', 'platform/prebuilts/libprotobuf/windows', 'platform/prebuilts/libprotobuf/windows-x86', 'platform/prebuilts/libs/libedit', 'platform/prebuilts/manifest-merger', 'platform/prebuilts/maven_repo/android', 'platform/prebuilts/maven_repo/bumptech', 'platform/prebuilts/maven_repo/google-play-service-client-libraries-3p', 'platform/prebuilts/misc', 'platform/prebuilts/module_sdk/AdServices', 'platform/prebuilts/module_sdk/AppSearch', 'platform/prebuilts/module_sdk/Bluetooth', 'platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity', 'platform/prebuilts/module_sdk/CrashRecovery', 'platform/prebuilts/module_sdk/DeviceLock', 'platform/prebuilts/module_sdk/HealthFitness', 'platform/prebuilts/module_sdk/IPsec']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/knowles/athletico/sound_trigger_hal', 'platform/hardware/libhardware', 'platform/hardware/libhardware_legacy', 'platform/hardware/marvell/bt', 'platform/hardware/mediatek', 'platform/hardware/msm7k', 'platform/hardware/nvidia/audio', 'platform/hardware/nvidia/tegra124', 'platform/hardware/nxp/keymint', 'platform/hardware/nxp/nfc', 'platform/hardware/nxp/secure_element', 'platform/hardware/nxp/uwb', 'platform/hardware/nxp/weaver', 'platform/hardware/qcom/audio', 'platform/hardware/qcom/bootctrl', 'platform/hardware/qcom/bt', 'platform/hardware/qcom/camera', 'platform/hardware/qcom/data/ipacfg-mgr', 'platform/hardware/qcom/display', 'platform/hardware/qcom/gps']
+        repo_name: ['platform/hardware/bsp/bootloader/nxp/uboot-imx', 'platform/hardware/bsp/bootloader/rockchip/rk-u-boot', 'platform/hardware/bsp/broadcom', 'platform/hardware/bsp/freescale', 'platform/hardware/bsp/imagination', 'platform/hardware/bsp/intel', 'platform/hardware/bsp/kernel/common/v4.1', 'platform/hardware/bsp/kernel/common/v4.4', 'platform/hardware/bsp/kernel/freescale', 'platform/hardware/bsp/kernel/freescale/picoimx-3.14', 'platform/hardware/bsp/kernel/imagination/v4.1', 'platform/hardware/bsp/kernel/intel', 'platform/hardware/bsp/kernel/intel/broxton-v4.4', 'platform/hardware/bsp/kernel/intel/edison-v3.10', 'platform/hardware/bsp/kernel/intel/edison-v4.4', 'platform/hardware/bsp/kernel/intel/minnowboard-v3.14', 'platform/hardware/bsp/kernel/marvell/pxa-v3.14', 'platform/hardware/bsp/kernel/mediatek/mt8516-v4.4', 'platform/hardware/bsp/kernel/nxp/imx-v4.1', 'platform/hardware/bsp/kernel/nxp/imx-v4.9']
 
     steps:
       - name: Maximize build space

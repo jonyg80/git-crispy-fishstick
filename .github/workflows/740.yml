@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/googleapis-enterprise-certificate-proxy', 'platform/external/googleapis-gax-go', 'platform/external/googleapis-go-genproto', 'platform/external/googleclient', 'platform/external/googletest', 'platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java', 'platform/external/grub', 'platform/external/gsc-utils', 'platform/external/gsoap', 'platform/external/gson', 'platform/external/gtest', 'platform/external/gturri-aXMLRPC', 'platform/external/gturri-jISO8601', 'platform/external/guava', 'platform/external/guice']
+        repo_name: ['platform/external/golang-x-tools', 'platform/external/google-api-go-client', 'platform/external/google-api-services-storage', 'platform/external/google-auth-library-java', 'platform/external/google-benchmark', 'platform/external/google-breakpad', 'platform/external/google-cloud-go', 'platform/external/google-cloud-java', 'platform/external/google-diff-match-patch', 'platform/external/google-fonts/arbutus-slab', 'platform/external/google-fonts/arvo', 'platform/external/google-fonts/barlow', 'platform/external/google-fonts/big-shoulders-text', 'platform/external/google-fonts/carrois-gothic-sc', 'platform/external/google-fonts/coming-soon', 'platform/external/google-fonts/cutive-mono', 'platform/external/google-fonts/dancing-script', 'platform/external/google-fonts/fraunces', 'platform/external/google-fonts/karla', 'platform/external/google-fonts/lato']
 
     steps:
       - name: Maximize build space
