@@ -1,8 +1,8 @@
 name: 140 Clone and Push
 
 on:
-  # schedule:
-    # - cron: '0 7 * * 0' # Runs every week
+  schedule:
+    - cron: '0 7 * * 0' # Runs every week
   workflow_dispatch:
 
 

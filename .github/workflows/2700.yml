@@ -1,8 +1,8 @@
 name: 2700 Clone and Push
 
 on:
-  # schedule:
-    # - cron: '0 15 * * 5' # Runs every week
+  schedule:
+    - cron: '0 15 * * 5' # Runs every week
   workflow_dispatch:
 
 

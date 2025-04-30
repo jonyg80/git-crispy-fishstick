@@ -1,8 +1,8 @@
 name: 1900 Clone and Push
 
 on:
-  # schedule:
-    # - cron: '0 23 * * 3' # Runs every week
+  schedule:
+    - cron: '0 23 * * 3' # Runs every week
   workflow_dispatch:
 
 

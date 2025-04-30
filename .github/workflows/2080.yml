@@ -1,8 +1,8 @@
 name: 2080 Clone and Push
 
 on:
-  # schedule:
-    # - cron: '0 8 * * 4' # Runs every week
+  schedule:
+    - cron: '0 8 * * 4' # Runs every week
   workflow_dispatch:
 
 
