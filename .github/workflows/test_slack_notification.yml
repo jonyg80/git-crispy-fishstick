@@ -2,6 +2,9 @@ name: Test Slack Notification
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/test_slack_notification.yml
 
 jobs:
   test:
@@ -16,6 +19,8 @@ jobs:
         if: failure()
         uses: slackapi/slack-github-action@v2
         with:
+          # Specify the webhook type
+          channel-type: "webhook"
           # For posting a rich message using Block Kit
           payload: |
             {
