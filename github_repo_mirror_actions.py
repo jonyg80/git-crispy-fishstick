@@ -84,71 +84,26 @@ jobs:
         with:
           webhook: ${{{{ secrets.SLACK_WEBHOOK_URL }}}}
           webhook-type: incoming-webhook
-          # For posting a rich message using Block Kit
           payload: |
-            {
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "❌ Workflow Failed",
-                    "emoji": true
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Job:*\n${{{{ github.job }}}}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Workflow:*\n${{{{ github.workflow }}}}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n${{{{ github.repository }}}}"
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*Failed Step:* ${{{{ github.step }}}}"
-                  }
-                },
-                {
-                  "type": "actions",
-                  "elements": [
-                    {
-                      "type": "button",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "View Job Details",
-                        "emoji": true
-                      },
-                      "url": "${{{{ github.server_url }}}}/${{{{ github.repository }}}}/actions/runs/${{{{ github.run_id }}}}",
-                      "style": "danger"
-                    }
-                  ]
-                },
-                {
-                  "type": "divider"
-                },
-                {
-                  "type": "context",
-                  "elements": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "Triggered by: ${{{{ github.actor }}}} | Branch: ${{{{ github.ref_name }}}}"
-                    }
-                  ]
-                }
-              ]
-            }
+            text: "❌ GitHub Actions Workflow Failed"
+            blocks:
+              - type: section
+                text:
+                  type: mrkdwn
+                  text: "*Workflow Failure Details:*"
+              - type: section
+                text:
+                  type: mrkdwn
+                  text: "Job *${{{{ github.job }}}}* failed in workflow *${{{{ github.workflow }}}}*"
+                fields:
+                  - type: mrkdwn
+                    text: "*Repository*\n${{{{ github.repository }}}}"
+                  - type: mrkdwn
+                    text: "*Branch*\n${{{{ github.ref_name }}}}"
+              - type: section
+                text:
+                  type: mrkdwn
+                  text: "<${{{{ github.server_url }}}}/${{{{ github.repository }}}}/actions/runs/${{{{ github.run_id }}}}|View Job Details> :warning:"
 """)
 
     # Increment hour by 2 for each workflow, reset to 0 if hour >= 24, and increment day
