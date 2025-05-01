@@ -66,12 +66,17 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{{{ matrix.repo_name }}}} ${{{{ matrix.repo_name }}}}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{{{ matrix.repo_name }}}}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git
+          for i in {1..3}; do
+            git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git && break || sleep 30;
+          done
 """)
 
     # Increment hour and week
