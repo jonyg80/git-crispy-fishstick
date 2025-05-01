@@ -63,11 +63,9 @@ jobs:
                   text: "Job *${{ github.job }}* failed in workflow *${{ github.workflow }}*"
                 fields:
                   - type: mrkdwn
-                    text: "*Repository*
-${{ github.repository }}"
+                    text: "*Repository* ${{ github.repository }}"
                   - type: mrkdwn
-                    text: "*Branch*
-${{ github.ref_name }}"
+                    text: "*Branch* ${{ github.ref_name }}"
               - type: section
                 text:
                   type: mrkdwn
