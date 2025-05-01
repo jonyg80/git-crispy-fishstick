@@ -74,7 +74,7 @@ jobs:
           cd ${{{{ matrix.repo_name }}}}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          for i in {1..3}; do
+          for i in {{1..3}}; do
             git push --mirror https://${{{{ secrets.GitUsername }}}}:${{{{ secrets.GitToken }}}}@${{{{ secrets.GitURL }}}}/${{{{ matrix.repo_name }}}}.git && break || sleep 30;
           done
 """)

@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 0 * * 6"
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/github_repo_mirror_automatic_update.yaml"
+      - "github_repo_mirror_actions.py"
 
 jobs:
   build:
