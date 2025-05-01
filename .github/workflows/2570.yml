@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/sdk', 'platform/prebuilts/simpleperf', 'platform/prebuilts/studio/jdk', 'platform/prebuilts/studio/layoutlib', 'platform/prebuilts/studio/skiaparser', 'platform/prebuilts/swig/darwin-x86', 'platform/prebuilts/swig/linux-x86', 'platform/prebuilts/swig/windows-x86', 'platform/prebuilts/tools', 'platform/prebuilts/trusty/sysroot', 'platform/prebuilts/vndk/v27', 'platform/prebuilts/vndk/v28', 'platform/prebuilts/vndk/v29']
+        repo_name: ['platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/sdk', 'platform/prebuilts/simpleperf', 'platform/prebuilts/studio/jdk']
 
     steps:
       - name: Maximize build space

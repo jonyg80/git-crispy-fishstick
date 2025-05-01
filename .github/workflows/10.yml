@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/asus/grouper', 'device/asus/tilapia', 'device/casio/koi-uboot', 'device/common', 'device/freescale/picoimx', 'device/generic/arm64', 'device/generic/armv7-a', 'device/generic/armv7-a-neon', 'device/generic/art', 'device/generic/brillo', 'device/generic/car', 'device/generic/common', 'device/generic/goldfish', 'device/generic/goldfish-opengl', 'device/generic/mini-emulator-arm64', 'device/generic/mini-emulator-armv7-a-neon', 'device/generic/mini-emulator-mips', 'device/generic/mini-emulator-mips64', 'device/generic/mini-emulator-x86', 'device/generic/mini-emulator-x86_64']
+        repo_name: ['device/asus/grouper', 'device/asus/tilapia', 'device/casio/koi-uboot', 'device/common', 'device/freescale/picoimx', 'device/generic/arm64', 'device/generic/armv7-a', 'device/generic/armv7-a-neon', 'device/generic/art', 'device/generic/brillo']
 
     steps:
       - name: Maximize build space

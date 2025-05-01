@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/google/barbet-kernel', 'device/google/barbet-sepolicy', 'device/google/bluejay', 'device/google/bluejay-kernel', 'device/google/bluejay-kernels/5.10', 'device/google/bluejay-kernels/6.1', 'device/google/bluejay-sepolicy', 'device/google/bonito', 'device/google/bonito-kernel', 'device/google/bonito-sepolicy', 'device/google/bramble', 'device/google/bramble-kernel', 'device/google/bramble-sepolicy', 'device/google/caimito', 'device/google/caimito-kernels/6.1', 'device/google/caimito-sepolicy', 'device/google/comet', 'device/google/comet-kernels/6.1', 'device/google/comet-sepolicy', 'device/google/common/etm']
+        repo_name: ['device/google/barbet-kernel', 'device/google/barbet-sepolicy', 'device/google/bluejay', 'device/google/bluejay-kernel', 'device/google/bluejay-kernels/5.10', 'device/google/bluejay-kernels/6.1', 'device/google/bluejay-sepolicy', 'device/google/bonito', 'device/google/bonito-kernel', 'device/google/bonito-sepolicy']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy', 'platform/external/webview_support_interfaces', 'platform/external/wmediumd', 'platform/external/wpa_supplicant', 'platform/external/wpa_supplicant_6', 'platform/external/wpa_supplicant_8', 'platform/external/wpantund', 'platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof', 'platform/external/x264', 'platform/external/xdelta3', 'platform/external/xerces-cpp', 'platform/external/xmlrpcpp', 'platform/external/xmlwriter', 'platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java']
+        repo_name: ['platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy', 'platform/external/webview_support_interfaces', 'platform/external/wmediumd', 'platform/external/wpa_supplicant', 'platform/external/wpa_supplicant_6', 'platform/external/wpa_supplicant_8', 'platform/external/wpantund']
 
     steps:
       - name: Maximize build space

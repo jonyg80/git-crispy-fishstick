@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['accessories/manifest', 'assets/android-studio-ux-assets', 'brillo/manifest', 'device/amlogic/yukawa', 'device/amlogic/yukawa-kernel', 'device/asus/deb', 'device/asus/flo', 'device/asus/flo-kernel', 'device/asus/fugu', 'device/asus/fugu-kernel', 'device/asus/grouper', 'device/asus/tilapia', 'device/casio/koi-uboot', 'device/common', 'device/freescale/picoimx', 'device/generic/arm64', 'device/generic/armv7-a', 'device/generic/armv7-a-neon', 'device/generic/art', 'device/generic/brillo']
+        repo_name: ['accessories/manifest', 'assets/android-studio-ux-assets', 'brillo/manifest', 'device/amlogic/yukawa', 'device/amlogic/yukawa-kernel', 'device/asus/deb', 'device/asus/flo', 'device/asus/flo-kernel', 'device/asus/fugu', 'device/asus/fugu-kernel']
 
     steps:
       - name: Maximize build space

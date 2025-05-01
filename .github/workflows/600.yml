@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/cibu-fonts', 'platform/external/clang', 'platform/external/clang-tools-extra', 'platform/external/clang_35a', 'platform/external/cldr', 'platform/external/clearsilver', 'platform/external/clpeak', 'platform/external/cmake', 'platform/external/cmockery', 'platform/external/cn-cbor', 'platform/external/codesourcery', 'platform/external/collada', 'platform/external/compiler-rt', 'platform/external/compiler-rt_35a', 'platform/external/compose-hero-benchmarks/pokedex-views', 'platform/external/compose-hero-benchmarks/poxedex-compose', 'platform/external/connectedappssdk', 'platform/external/conscrypt', 'platform/external/coreboot', 'platform/external/cpu_features']
+        repo_name: ['platform/external/cibu-fonts', 'platform/external/clang', 'platform/external/clang-tools-extra', 'platform/external/clang_35a', 'platform/external/cldr', 'platform/external/clearsilver', 'platform/external/clpeak', 'platform/external/cmake', 'platform/external/cmockery', 'platform/external/cn-cbor']
 
     steps:
       - name: Maximize build space

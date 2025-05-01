@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/anonymous-counting-tokens', 'platform/external/ant-glob', 'platform/external/antlr', 'platform/external/apache-apr', 'platform/external/apache-apr-util', 'platform/external/apache-commons-bcel', 'platform/external/apache-commons-compress', 'platform/external/apache-commons-io', 'platform/external/apache-commons-lang', 'platform/external/apache-commons-math', 'platform/external/apache-harmony', 'platform/external/apache-http', 'platform/external/apache-log4cxx', 'platform/external/apache-qp', 'platform/external/apache-velocity-engine', 'platform/external/apache-xml', 'platform/external/apple-coreaudiosamples', 'platform/external/archive-patcher', 'platform/external/arduino', 'platform/external/arduino-ide']
+        repo_name: ['platform/external/anonymous-counting-tokens', 'platform/external/ant-glob', 'platform/external/antlr', 'platform/external/apache-apr', 'platform/external/apache-apr-util', 'platform/external/apache-commons-bcel', 'platform/external/apache-commons-compress', 'platform/external/apache-commons-io', 'platform/external/apache-commons-lang', 'platform/external/apache-commons-math']
 
     steps:
       - name: Maximize build space

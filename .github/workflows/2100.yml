@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Car/Hvac', 'platform/packages/apps/Car/LatinIME', 'platform/packages/apps/Car/Launcher', 'platform/packages/apps/Car/LensPicker', 'platform/packages/apps/Car/LinkViewer', 'platform/packages/apps/Car/LocalMediaPlayer', 'platform/packages/apps/Car/Media', 'platform/packages/apps/Car/MediaPrebuilt', 'platform/packages/apps/Car/Messenger', 'platform/packages/apps/Car/MessengerPrebuilt', 'platform/packages/apps/Car/MultiDisplay', 'platform/packages/apps/Car/Notification', 'platform/packages/apps/Car/Overview', 'platform/packages/apps/Car/Provision', 'platform/packages/apps/Car/Radio', 'platform/packages/apps/Car/RadioPrebuilt', 'platform/packages/apps/Car/References', 'platform/packages/apps/Car/RotaryController', 'platform/packages/apps/Car/RotaryImePrebuilt', 'platform/packages/apps/Car/Settings']
+        repo_name: ['platform/packages/apps/Car/Hvac', 'platform/packages/apps/Car/LatinIME', 'platform/packages/apps/Car/Launcher', 'platform/packages/apps/Car/LensPicker', 'platform/packages/apps/Car/LinkViewer', 'platform/packages/apps/Car/LocalMediaPlayer', 'platform/packages/apps/Car/Media', 'platform/packages/apps/Car/MediaPrebuilt', 'platform/packages/apps/Car/Messenger', 'platform/packages/apps/Car/MessengerPrebuilt']
 
     steps:
       - name: Maximize build space

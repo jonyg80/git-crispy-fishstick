@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay', 'kernel/devices/google/caimito', 'kernel/devices/google/comet', 'kernel/devices/google/common', 'kernel/devices/google/eos', 'kernel/devices/google/felix', 'kernel/devices/google/gs101', 'kernel/devices/google/gs201', 'kernel/devices/google/lynx', 'kernel/devices/google/p11', 'kernel/devices/google/pantah', 'kernel/devices/google/raviole', 'kernel/devices/google/seluna', 'kernel/devices/google/tangorpro', 'kernel/devices/google/tegu']
+        repo_name: ['kernel/common-modules/virtual-device', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay', 'kernel/devices/google/caimito', 'kernel/devices/google/comet', 'kernel/devices/google/common', 'kernel/devices/google/eos']
 
     steps:
       - name: Maximize build space

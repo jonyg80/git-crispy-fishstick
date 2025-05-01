@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/devices/google/felix', 'kernel/devices/google/gs101', 'kernel/devices/google/gs201', 'kernel/devices/google/lynx', 'kernel/devices/google/p11', 'kernel/devices/google/pantah', 'kernel/devices/google/raviole', 'kernel/devices/google/seluna', 'kernel/devices/google/tangorpro', 'kernel/devices/google/tegu', 'kernel/devices/google/zuma', 'kernel/devices/google/zumapro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers', 'kernel/google-modules/aoc']
+        repo_name: ['kernel/devices/google/felix', 'kernel/devices/google/gs101', 'kernel/devices/google/gs201', 'kernel/devices/google/lynx', 'kernel/devices/google/p11', 'kernel/devices/google/pantah', 'kernel/devices/google/raviole', 'kernel/devices/google/seluna', 'kernel/devices/google/tangorpro', 'kernel/devices/google/tegu']
 
     steps:
       - name: Maximize build space

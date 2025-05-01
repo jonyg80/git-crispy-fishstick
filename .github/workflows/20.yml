@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/generic/car', 'device/generic/common', 'device/generic/goldfish', 'device/generic/goldfish-opengl', 'device/generic/mini-emulator-arm64', 'device/generic/mini-emulator-armv7-a-neon', 'device/generic/mini-emulator-mips', 'device/generic/mini-emulator-mips64', 'device/generic/mini-emulator-x86', 'device/generic/mini-emulator-x86_64', 'device/generic/mips', 'device/generic/mips64', 'device/generic/opengl-transport', 'device/generic/qemu', 'device/generic/trusty', 'device/generic/uml', 'device/generic/vulkan-cereal', 'device/generic/x86', 'device/generic/x86_64', 'device/google/accessory/adk2012']
+        repo_name: ['device/generic/car', 'device/generic/common', 'device/generic/goldfish', 'device/generic/goldfish-opengl', 'device/generic/mini-emulator-arm64', 'device/generic/mini-emulator-armv7-a-neon', 'device/generic/mini-emulator-mips', 'device/generic/mini-emulator-mips64', 'device/generic/mini-emulator-x86', 'device/generic/mini-emulator-x86_64']
 
     steps:
       - name: Maximize build space

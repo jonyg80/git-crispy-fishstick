@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/exfatprogs', 'platform/external/exoplayer', 'platform/external/expat', 'platform/external/extfuse', 'platform/external/eyes-free', 'platform/external/f2fs-tools', 'platform/external/faad', 'platform/external/fastrpc', 'platform/external/fat32lib', 'platform/external/fbjni', 'platform/external/fdlibm', 'platform/external/fec', 'platform/external/federated-compute', 'platform/external/fff', 'platform/external/ffmpeg', 'platform/external/fft2d', 'platform/external/fhir/spec/r4', 'platform/external/fio', 'platform/external/firebase-messaging', 'platform/external/flac']
+        repo_name: ['platform/external/exfatprogs', 'platform/external/exoplayer', 'platform/external/expat', 'platform/external/extfuse', 'platform/external/eyes-free', 'platform/external/f2fs-tools', 'platform/external/faad', 'platform/external/fastrpc', 'platform/external/fat32lib', 'platform/external/fbjni']
 
     steps:
       - name: Maximize build space

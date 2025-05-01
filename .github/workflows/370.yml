@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/prebuilts/common-modules/virtual-device/5.4/arm64', 'kernel/prebuilts/common-modules/virtual-device/5.4/x86-64', 'kernel/prebuilts/common-modules/virtual-device/6.1/arm64', 'kernel/prebuilts/common-modules/virtual-device/6.1/x86-64', 'kernel/prebuilts/common-modules/virtual-device/6.12/arm64', 'kernel/prebuilts/common-modules/virtual-device/6.12/x86-64', 'kernel/prebuilts/common-modules/virtual-device/6.6/arm64', 'kernel/prebuilts/common-modules/virtual-device/6.6/x86-64', 'kernel/prebuilts/common-modules/virtual-device/mainline/arm64', 'kernel/prebuilts/common-modules/virtual-device/mainline/x86-64', 'kernel/prebuilts/mainline/arm64', 'kernel/prebuilts/mainline/x86-64', 'kernel/samsung', 'kernel/superproject', 'kernel/tegra', 'kernel/tests', 'kernel/x86', 'kernel/x86_64', 'mirror/manifest', 'platform/abi/cpp']
+        repo_name: ['kernel/prebuilts/common-modules/virtual-device/5.4/arm64', 'kernel/prebuilts/common-modules/virtual-device/5.4/x86-64', 'kernel/prebuilts/common-modules/virtual-device/6.1/arm64', 'kernel/prebuilts/common-modules/virtual-device/6.1/x86-64', 'kernel/prebuilts/common-modules/virtual-device/6.12/arm64', 'kernel/prebuilts/common-modules/virtual-device/6.12/x86-64', 'kernel/prebuilts/common-modules/virtual-device/6.6/arm64', 'kernel/prebuilts/common-modules/virtual-device/6.6/x86-64', 'kernel/prebuilts/common-modules/virtual-device/mainline/arm64', 'kernel/prebuilts/common-modules/virtual-device/mainline/x86-64']
 
     steps:
       - name: Maximize build space

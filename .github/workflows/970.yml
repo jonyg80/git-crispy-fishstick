@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/liburing', 'platform/external/libusb', 'platform/external/libusb-compat', 'platform/external/libusb_aah', 'platform/external/libutf', 'platform/external/libuv', 'platform/external/libva', 'platform/external/libva-utils', 'platform/external/libvncserver', 'platform/external/libvorbis', 'platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2', 'platform/external/libxslt']
+        repo_name: ['platform/external/liburing', 'platform/external/libusb', 'platform/external/libusb-compat', 'platform/external/libusb_aah', 'platform/external/libutf', 'platform/external/libuv', 'platform/external/libva', 'platform/external/libva-utils', 'platform/external/libvncserver', 'platform/external/libvorbis']
 
     steps:
       - name: Maximize build space

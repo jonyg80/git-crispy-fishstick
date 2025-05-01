@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/display/watch/mcu-offload', 'kernel/google-modules/edgetpu', 'kernel/google-modules/edgetpu/abrolhos', 'kernel/google-modules/edgetpu/janeiro', 'kernel/google-modules/fingerprint/fpc', 'kernel/google-modules/fingerprint/goodix', 'kernel/google-modules/fingerprint/qcom/qfs4008', 'kernel/google-modules/gpu', 'kernel/google-modules/gxp/gs201', 'kernel/google-modules/i3c/exynos', 'kernel/google-modules/lwis', 'kernel/google-modules/misc', 'kernel/google-modules/nanohub', 'kernel/google-modules/nfc', 'kernel/google-modules/perf', 'kernel/google-modules/power/mitigation', 'kernel/google-modules/power/reset', 'kernel/google-modules/radio/samsung/s5300', 'kernel/google-modules/radio/samsung/s5400', 'kernel/google-modules/raviole-device']
+        repo_name: ['kernel/google-modules/display/watch/mcu-offload', 'kernel/google-modules/edgetpu', 'kernel/google-modules/edgetpu/abrolhos', 'kernel/google-modules/edgetpu/janeiro', 'kernel/google-modules/fingerprint/fpc', 'kernel/google-modules/fingerprint/goodix', 'kernel/google-modules/fingerprint/qcom/qfs4008', 'kernel/google-modules/gpu', 'kernel/google-modules/gxp/gs201', 'kernel/google-modules/i3c/exynos']
 
     steps:
       - name: Maximize build space

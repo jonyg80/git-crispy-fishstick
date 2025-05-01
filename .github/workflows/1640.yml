@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/tracing', 'platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash', 'platform/external/rust/crates/ucd-trie', 'platform/external/rust/crates/ucs2', 'platform/external/rust/crates/uds', 'platform/external/rust/crates/uefi', 'platform/external/rust/crates/uefi-macros', 'platform/external/rust/crates/uefi-raw', 'platform/external/rust/crates/uguid', 'platform/external/rust/crates/unicode-bidi', 'platform/external/rust/crates/unicode-ident', 'platform/external/rust/crates/unicode-normalization', 'platform/external/rust/crates/unicode-segmentation', 'platform/external/rust/crates/unicode-width', 'platform/external/rust/crates/unicode-xid']
+        repo_name: ['platform/external/rust/crates/tracing', 'platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash', 'platform/external/rust/crates/ucd-trie', 'platform/external/rust/crates/ucs2', 'platform/external/rust/crates/uds']
 
     steps:
       - name: Maximize build space

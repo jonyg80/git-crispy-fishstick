@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/lge/bullhead-kernel', 'device/lge/hammerhead', 'device/lge/hammerhead-kernel', 'device/lge/mako', 'device/lge/mako-kernel', 'device/linaro/bootloader/OpenPlatformPkg', 'device/linaro/bootloader/arm-trusted-firmware', 'device/linaro/bootloader/edk2', 'device/linaro/dragonboard', 'device/linaro/dragonboard-kernel', 'device/linaro/hikey', 'device/linaro/hikey-kernel', 'device/linaro/poplar', 'device/linaro/poplar-kernel', 'device/mediatek/wembley-sepolicy', 'device/moto/common', 'device/moto/shamu', 'device/moto/shamu-kernel', 'device/moto/stingray', 'device/moto/wingray']
+        repo_name: ['device/lge/bullhead-kernel', 'device/lge/hammerhead', 'device/lge/hammerhead-kernel', 'device/lge/mako', 'device/lge/mako-kernel', 'device/linaro/bootloader/OpenPlatformPkg', 'device/linaro/bootloader/arm-trusted-firmware', 'device/linaro/bootloader/edk2', 'device/linaro/dragonboard', 'device/linaro/dragonboard-kernel']
 
     steps:
       - name: Maximize build space

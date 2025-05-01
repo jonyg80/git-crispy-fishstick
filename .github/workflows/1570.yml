@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/sec1', 'platform/external/rust/crates/semver', 'platform/external/rust/crates/serde', 'platform/external/rust/crates/serde-xml-rs', 'platform/external/rust/crates/serde_cbor', 'platform/external/rust/crates/serde_derive', 'platform/external/rust/crates/serde_json', 'platform/external/rust/crates/serde_spanned', 'platform/external/rust/crates/serde_test', 'platform/external/rust/crates/serde_yaml', 'platform/external/rust/crates/sharded-slab', 'platform/external/rust/crates/shared_child', 'platform/external/rust/crates/shared_library', 'platform/external/rust/crates/shlex', 'platform/external/rust/crates/siphasher', 'platform/external/rust/crates/slab', 'platform/external/rust/crates/smallvec', 'platform/external/rust/crates/smccc', 'platform/external/rust/crates/smoltcp', 'platform/external/rust/crates/socket2']
+        repo_name: ['platform/external/rust/crates/sec1', 'platform/external/rust/crates/semver', 'platform/external/rust/crates/serde', 'platform/external/rust/crates/serde-xml-rs', 'platform/external/rust/crates/serde_cbor', 'platform/external/rust/crates/serde_derive', 'platform/external/rust/crates/serde_json', 'platform/external/rust/crates/serde_spanned', 'platform/external/rust/crates/serde_test', 'platform/external/rust/crates/serde_yaml']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/pin-project-internal', 'platform/external/rust/crates/pin-project-lite', 'platform/external/rust/crates/pin-utils', 'platform/external/rust/crates/pkcs1', 'platform/external/rust/crates/pkcs8', 'platform/external/rust/crates/pkg-config', 'platform/external/rust/crates/plotters', 'platform/external/rust/crates/plotters-backend', 'platform/external/rust/crates/plotters-svg', 'platform/external/rust/crates/poll_token_derive', 'platform/external/rust/crates/portable-atomic', 'platform/external/rust/crates/postcard', 'platform/external/rust/crates/ppv-lite86', 'platform/external/rust/crates/predicates', 'platform/external/rust/crates/predicates-core', 'platform/external/rust/crates/predicates-tree', 'platform/external/rust/crates/prettyplease', 'platform/external/rust/crates/proc-macro-error', 'platform/external/rust/crates/proc-macro-error-attr', 'platform/external/rust/crates/proc-macro-hack']
+        repo_name: ['platform/external/rust/crates/pin-project-internal', 'platform/external/rust/crates/pin-project-lite', 'platform/external/rust/crates/pin-utils', 'platform/external/rust/crates/pkcs1', 'platform/external/rust/crates/pkcs8', 'platform/external/rust/crates/pkg-config', 'platform/external/rust/crates/plotters', 'platform/external/rust/crates/plotters-backend', 'platform/external/rust/crates/plotters-svg', 'platform/external/rust/crates/poll_token_derive']
 
     steps:
       - name: Maximize build space

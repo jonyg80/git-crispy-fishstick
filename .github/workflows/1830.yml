@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof', 'platform/external/x264', 'platform/external/xdelta3', 'platform/external/xerces-cpp', 'platform/external/xmlrpcpp', 'platform/external/xmlwriter', 'platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java', 'platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd', 'platform/external/zucchini', 'platform/external/zxing', 'platform/frameworks/av', 'platform/frameworks/base', 'platform/frameworks/compile/libbcc']
+        repo_name: ['platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof', 'platform/external/x264', 'platform/external/xdelta3', 'platform/external/xerces-cpp', 'platform/external/xmlrpcpp', 'platform/external/xmlwriter', 'platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java']
 
     steps:
       - name: Maximize build space

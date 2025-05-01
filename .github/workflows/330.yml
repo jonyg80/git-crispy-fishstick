@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/msm-modules/data-kernel', 'kernel/msm-modules/datarmnet', 'kernel/msm-modules/datarmnet-ext', 'kernel/msm-modules/fts_touch', 'kernel/msm-modules/fts_touch_s5', 'kernel/msm-modules/graphics', 'kernel/msm-modules/mm', 'kernel/msm-modules/mmrm', 'kernel/msm-modules/modem', 'kernel/msm-modules/qca-wfi-host-cmn', 'kernel/msm-modules/qcacld', 'kernel/msm-modules/sec_touch', 'kernel/msm-modules/securemsm', 'kernel/msm-modules/touch', 'kernel/msm-modules/wlan', 'kernel/msm-modules/wlan-fw-api', 'kernel/msm-modules/wlan-platform', 'kernel/omap', 'kernel/prebuilts/4.19/arm64', 'kernel/prebuilts/5.10/arm64']
+        repo_name: ['kernel/msm-modules/data-kernel', 'kernel/msm-modules/datarmnet', 'kernel/msm-modules/datarmnet-ext', 'kernel/msm-modules/fts_touch', 'kernel/msm-modules/fts_touch_s5', 'kernel/msm-modules/graphics', 'kernel/msm-modules/mm', 'kernel/msm-modules/mmrm', 'kernel/msm-modules/modem', 'kernel/msm-modules/qca-wfi-host-cmn']
 
     steps:
       - name: Maximize build space
