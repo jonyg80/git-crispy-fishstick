@@ -13,7 +13,7 @@ project_names = [p.get("name") for p in root.findall("project")]
 
 
 hour = 0
-week = 0
+day = 1
 
 def create_matrix_array(project_names, start):
   matrix_array = []
@@ -27,7 +27,7 @@ def create_matrix_array(project_names, start):
 
 # Create yml files using project names as variable
 # for repo_name in project_names:
-for i in range(0,len(project_names),20):
+for i in range(0, len(project_names), 10):
     # change / to _ in repo_name
     # file_name = repo_name.replace("/", "_")
     with open(".github/workflows/"+ str(i) + ".yml", "w", encoding="utf-8") as f:
@@ -36,7 +36,7 @@ for i in range(0,len(project_names),20):
 
 on:
   schedule:
-    - cron: '0 {hour} * * {week}' # Runs every week
+    - cron: '0 {hour} {day} * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -79,17 +79,11 @@ jobs:
           done
 """)
 
-    # Increment hour and week
-    if hour >= 23 and week >= 6:
+    # Increment hour by 2 for each workflow, reset to 0 if hour >= 24, and increment day
+    hour += 2
+    if hour >= 24:
         hour = 0
-        week = 0
-    elif hour >= 23:
-        hour = 0
-        week += 1
-    else:
-        hour += 1
-
-    
+        day += 1
 
 # Print confirmation message
 print("Text files created successfully!")
