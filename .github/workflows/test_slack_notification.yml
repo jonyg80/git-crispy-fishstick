@@ -16,14 +16,68 @@ jobs:
         if: failure()
         uses: slackapi/slack-github-action@v2
         with:
+          # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "Job *${{ github.job }}* failed in workflow *${{ github.workflow }}*.",
-              "attachments": [
+              "blocks": [
                 {
-                  "title": "View Job",
-                  "title_link": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                  "color": "#FF0000"
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "❌ Workflow Failed",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Job:*\n${{ github.job }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Workflow:*\n${{ github.workflow }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Repository:*\n${{ github.repository }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Failed Step:* Simulate Failure"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Job Details",
+                        "emoji": true
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                      "style": "danger"
+                    }
+                  ]
+                },
+                {
+                  "type": "divider"
+                },
+                {
+                  "type": "context",
+                  "elements": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "Triggered by: ${{ github.actor }} | Branch: ${{ github.ref_name }}"
+                    }
+                  ]
                 }
               ]
             }
