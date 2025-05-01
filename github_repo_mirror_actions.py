@@ -17,7 +17,7 @@ day = 1
 
 def create_matrix_array(project_names, start):
   matrix_array = []
-  for j in range(start, start+20):
+  for j in range(start, start+10):
     matrix_array.append(project_names[j])
     if j == len(project_names)-1:
       break
