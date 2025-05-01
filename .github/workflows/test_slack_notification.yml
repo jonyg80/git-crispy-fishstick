@@ -54,7 +54,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Failed Step:* Simulate Failure"
+                    "text": "*Failed Step:* ${{ toJson(steps) }} :x:"
                   }
                 },
                 {
