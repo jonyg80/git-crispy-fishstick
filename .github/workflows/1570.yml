@@ -1,0 +1,45 @@
+name: 1570 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 2 14 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/rust/crates/sec1', 'platform/external/rust/crates/semver', 'platform/external/rust/crates/serde', 'platform/external/rust/crates/serde-xml-rs', 'platform/external/rust/crates/serde_cbor', 'platform/external/rust/crates/serde_derive', 'platform/external/rust/crates/serde_json', 'platform/external/rust/crates/serde_spanned', 'platform/external/rust/crates/serde_test', 'platform/external/rust/crates/serde_yaml', 'platform/external/rust/crates/sharded-slab', 'platform/external/rust/crates/shared_child', 'platform/external/rust/crates/shared_library', 'platform/external/rust/crates/shlex', 'platform/external/rust/crates/siphasher', 'platform/external/rust/crates/slab', 'platform/external/rust/crates/smallvec', 'platform/external/rust/crates/smccc', 'platform/external/rust/crates/smoltcp', 'platform/external/rust/crates/socket2']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

@@ -2,7 +2,7 @@ name: 2560 Clone and Push
 
 on:
   schedule:
-    - cron: '0 8 * * 5' # Runs every week
+    - cron: '0 8 22 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/ninja/linux-x86', 'platform/prebuilts/ninja/windows-x86', 'platform/prebuilts/protobuf', 'platform/prebuilts/python/darwin-x86', 'platform/prebuilts/python/darwin-x86/2.7.5', 'platform/prebuilts/python/linux-x86', 'platform/prebuilts/python/linux-x86/2.7.5', 'platform/prebuilts/python/windows-x86', 'platform/prebuilts/qemu-kernel', 'platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/sdk', 'platform/prebuilts/simpleperf', 'platform/prebuilts/studio/jdk', 'platform/prebuilts/studio/layoutlib']
+        repo_name: ['platform/prebuilts/ninja/darwin-x86', 'platform/prebuilts/ninja/linux-x86', 'platform/prebuilts/ninja/windows-x86', 'platform/prebuilts/protobuf', 'platform/prebuilts/python/darwin-x86', 'platform/prebuilts/python/darwin-x86/2.7.5', 'platform/prebuilts/python/linux-x86', 'platform/prebuilts/python/linux-x86/2.7.5', 'platform/prebuilts/python/windows-x86', 'platform/prebuilts/qemu-kernel', 'platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/sdk', 'platform/prebuilts/simpleperf', 'platform/prebuilts/studio/jdk']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

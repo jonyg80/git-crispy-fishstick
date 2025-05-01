@@ -2,7 +2,7 @@ name: 2520 Clone and Push
 
 on:
   schedule:
-    - cron: '0 6 * * 5' # Runs every week
+    - cron: '0 0 22 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/libprotobuf/darwin-x86', 'platform/prebuilts/libprotobuf/linux', 'platform/prebuilts/libprotobuf/linux-x86', 'platform/prebuilts/libprotobuf/windows', 'platform/prebuilts/libprotobuf/windows-x86', 'platform/prebuilts/libs/libedit', 'platform/prebuilts/manifest-merger', 'platform/prebuilts/maven_repo/android', 'platform/prebuilts/maven_repo/bumptech', 'platform/prebuilts/maven_repo/google-play-service-client-libraries-3p', 'platform/prebuilts/misc', 'platform/prebuilts/module_sdk/AdServices', 'platform/prebuilts/module_sdk/AppSearch', 'platform/prebuilts/module_sdk/Bluetooth', 'platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity', 'platform/prebuilts/module_sdk/CrashRecovery', 'platform/prebuilts/module_sdk/DeviceLock', 'platform/prebuilts/module_sdk/HealthFitness', 'platform/prebuilts/module_sdk/IPsec']
+        repo_name: ['platform/prebuilts/libprotobuf/darwin', 'platform/prebuilts/libprotobuf/darwin-x86', 'platform/prebuilts/libprotobuf/linux', 'platform/prebuilts/libprotobuf/linux-x86', 'platform/prebuilts/libprotobuf/windows', 'platform/prebuilts/libprotobuf/windows-x86', 'platform/prebuilts/libs/libedit', 'platform/prebuilts/manifest-merger', 'platform/prebuilts/maven_repo/android', 'platform/prebuilts/maven_repo/bumptech', 'platform/prebuilts/maven_repo/google-play-service-client-libraries-3p', 'platform/prebuilts/misc', 'platform/prebuilts/module_sdk/AdServices', 'platform/prebuilts/module_sdk/AppSearch', 'platform/prebuilts/module_sdk/Bluetooth', 'platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity', 'platform/prebuilts/module_sdk/CrashRecovery', 'platform/prebuilts/module_sdk/DeviceLock', 'platform/prebuilts/module_sdk/HealthFitness']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

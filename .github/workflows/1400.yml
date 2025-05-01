@@ -2,7 +2,7 @@ name: 1400 Clone and Push
 
 on:
   schedule:
-    - cron: '0 22 * * 2' # Runs every week
+    - cron: '0 16 12 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/httparse', 'platform/external/rust/crates/httpdate', 'platform/external/rust/crates/hyper', 'platform/external/rust/crates/hyper-timeout', 'platform/external/rust/crates/icu_capi', 'platform/external/rust/crates/ident_case', 'platform/external/rust/crates/idna', 'platform/external/rust/crates/indexmap', 'platform/external/rust/crates/inflector', 'platform/external/rust/crates/ini', 'platform/external/rust/crates/inotify', 'platform/external/rust/crates/inotify-sys', 'platform/external/rust/crates/instant', 'platform/external/rust/crates/intrusive-collections', 'platform/external/rust/crates/ipnet', 'platform/external/rust/crates/itertools', 'platform/external/rust/crates/itoa', 'platform/external/rust/crates/jni', 'platform/external/rust/crates/jni-sys', 'platform/external/rust/crates/json5']
+        repo_name: ['platform/external/rust/crates/http-body', 'platform/external/rust/crates/httparse', 'platform/external/rust/crates/httpdate', 'platform/external/rust/crates/hyper', 'platform/external/rust/crates/hyper-timeout', 'platform/external/rust/crates/icu_capi', 'platform/external/rust/crates/ident_case', 'platform/external/rust/crates/idna', 'platform/external/rust/crates/indexmap', 'platform/external/rust/crates/inflector', 'platform/external/rust/crates/ini', 'platform/external/rust/crates/inotify', 'platform/external/rust/crates/inotify-sys', 'platform/external/rust/crates/instant', 'platform/external/rust/crates/intrusive-collections', 'platform/external/rust/crates/ipnet', 'platform/external/rust/crates/itertools', 'platform/external/rust/crates/itoa', 'platform/external/rust/crates/jni', 'platform/external/rust/crates/jni-sys']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

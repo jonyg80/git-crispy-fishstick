@@ -2,7 +2,7 @@ name: 1520 Clone and Push
 
 on:
   schedule:
-    - cron: '0 4 * * 3' # Runs every week
+    - cron: '0 16 13 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/postcard', 'platform/external/rust/crates/ppv-lite86', 'platform/external/rust/crates/predicates', 'platform/external/rust/crates/predicates-core', 'platform/external/rust/crates/predicates-tree', 'platform/external/rust/crates/prettyplease', 'platform/external/rust/crates/proc-macro-error', 'platform/external/rust/crates/proc-macro-error-attr', 'platform/external/rust/crates/proc-macro-hack', 'platform/external/rust/crates/proc-macro-nested', 'platform/external/rust/crates/proc-macro2', 'platform/external/rust/crates/protobuf', 'platform/external/rust/crates/protobuf-codegen', 'platform/external/rust/crates/protobuf-json-mapping', 'platform/external/rust/crates/protobuf-parse', 'platform/external/rust/crates/protobuf-support', 'platform/external/rust/crates/psci', 'platform/external/rust/crates/ptr_meta', 'platform/external/rust/crates/ptr_meta_derive', 'platform/external/rust/crates/quiche']
+        repo_name: ['platform/external/rust/crates/portable-atomic', 'platform/external/rust/crates/postcard', 'platform/external/rust/crates/ppv-lite86', 'platform/external/rust/crates/predicates', 'platform/external/rust/crates/predicates-core', 'platform/external/rust/crates/predicates-tree', 'platform/external/rust/crates/prettyplease', 'platform/external/rust/crates/proc-macro-error', 'platform/external/rust/crates/proc-macro-error-attr', 'platform/external/rust/crates/proc-macro-hack', 'platform/external/rust/crates/proc-macro-nested', 'platform/external/rust/crates/proc-macro2', 'platform/external/rust/crates/protobuf', 'platform/external/rust/crates/protobuf-codegen', 'platform/external/rust/crates/protobuf-json-mapping', 'platform/external/rust/crates/protobuf-parse', 'platform/external/rust/crates/protobuf-support', 'platform/external/rust/crates/psci', 'platform/external/rust/crates/ptr_meta', 'platform/external/rust/crates/ptr_meta_derive']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

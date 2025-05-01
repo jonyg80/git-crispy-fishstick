@@ -2,7 +2,7 @@ name: 2220 Clone and Push
 
 on:
   schedule:
-    - cron: '0 15 * * 4' # Runs every week
+    - cron: '0 12 19 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/modules/Bluetooth', 'platform/packages/modules/BootPrebuilt/5.10/arm64', 'platform/packages/modules/BootPrebuilt/5.4/arm64', 'platform/packages/modules/CaptivePortalLogin', 'platform/packages/modules/CellBroadcastService', 'platform/packages/modules/ConfigInfrastructure', 'platform/packages/modules/Connectivity', 'platform/packages/modules/CrashRecovery', 'platform/packages/modules/Cronet', 'platform/packages/modules/DeviceLock', 'platform/packages/modules/DnsResolver', 'platform/packages/modules/ExtServices', 'platform/packages/modules/GeoTZ', 'platform/packages/modules/Gki', 'platform/packages/modules/HealthFitness', 'platform/packages/modules/IPsec', 'platform/packages/modules/ImsMedia', 'platform/packages/modules/IntentResolver', 'platform/packages/modules/Media', 'platform/packages/modules/MediaSwCodec']
+        repo_name: ['platform/packages/modules/ArtPrebuilt', 'platform/packages/modules/Bluetooth', 'platform/packages/modules/BootPrebuilt/5.10/arm64', 'platform/packages/modules/BootPrebuilt/5.4/arm64', 'platform/packages/modules/CaptivePortalLogin', 'platform/packages/modules/CellBroadcastService', 'platform/packages/modules/ConfigInfrastructure', 'platform/packages/modules/Connectivity', 'platform/packages/modules/CrashRecovery', 'platform/packages/modules/Cronet', 'platform/packages/modules/DeviceLock', 'platform/packages/modules/DnsResolver', 'platform/packages/modules/ExtServices', 'platform/packages/modules/GeoTZ', 'platform/packages/modules/Gki', 'platform/packages/modules/HealthFitness', 'platform/packages/modules/IPsec', 'platform/packages/modules/ImsMedia', 'platform/packages/modules/IntentResolver', 'platform/packages/modules/Media']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

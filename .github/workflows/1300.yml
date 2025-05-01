@@ -2,7 +2,7 @@ name: 1300 Clone and Push
 
 on:
   schedule:
-    - cron: '0 17 * * 2' # Runs every week
+    - cron: '0 20 11 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/codespan-reporting', 'platform/external/rust/crates/combine', 'platform/external/rust/crates/command-fds', 'platform/external/rust/crates/compiler_builtins', 'platform/external/rust/crates/config', 'platform/external/rust/crates/configparser', 'platform/external/rust/crates/const-oid', 'platform/external/rust/crates/const_fn', 'platform/external/rust/crates/cortex-a', 'platform/external/rust/crates/coset', 'platform/external/rust/crates/cov-mark', 'platform/external/rust/crates/crc32fast', 'platform/external/rust/crates/criterion', 'platform/external/rust/crates/criterion-plot', 'platform/external/rust/crates/critical-section', 'platform/external/rust/crates/crossbeam-channel', 'platform/external/rust/crates/crossbeam-deque', 'platform/external/rust/crates/crossbeam-epoch', 'platform/external/rust/crates/crossbeam-queue', 'platform/external/rust/crates/crossbeam-utils']
+        repo_name: ['platform/external/rust/crates/cobs', 'platform/external/rust/crates/codespan-reporting', 'platform/external/rust/crates/combine', 'platform/external/rust/crates/command-fds', 'platform/external/rust/crates/compiler_builtins', 'platform/external/rust/crates/config', 'platform/external/rust/crates/configparser', 'platform/external/rust/crates/const-oid', 'platform/external/rust/crates/const_fn', 'platform/external/rust/crates/cortex-a', 'platform/external/rust/crates/coset', 'platform/external/rust/crates/cov-mark', 'platform/external/rust/crates/crc32fast', 'platform/external/rust/crates/criterion', 'platform/external/rust/crates/criterion-plot', 'platform/external/rust/crates/critical-section', 'platform/external/rust/crates/crossbeam-channel', 'platform/external/rust/crates/crossbeam-deque', 'platform/external/rust/crates/crossbeam-epoch', 'platform/external/rust/crates/crossbeam-queue']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

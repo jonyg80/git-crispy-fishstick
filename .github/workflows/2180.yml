@@ -2,7 +2,7 @@ name: 2180 Clone and Push
 
 on:
   schedule:
-    - cron: '0 13 * * 4' # Runs every week
+    - cron: '0 4 19 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/SampleLocationAttribution', 'platform/packages/apps/SecureElement', 'platform/packages/apps/Settings', 'platform/packages/apps/SettingsIntelligence', 'platform/packages/apps/SmartCardService', 'platform/packages/apps/SoundRecorder', 'platform/packages/apps/SpareParts', 'platform/packages/apps/SpeechRecorder', 'platform/packages/apps/Stk', 'platform/packages/apps/StorageManager', 'platform/packages/apps/Sync', 'platform/packages/apps/SystemUIGo', 'platform/packages/apps/TV', 'platform/packages/apps/Tag', 'platform/packages/apps/Terminal', 'platform/packages/apps/Test/connectivity', 'platform/packages/apps/ThemePicker', 'platform/packages/apps/TimeZoneData', 'platform/packages/apps/TimeZoneUpdater', 'platform/packages/apps/Traceur']
+        repo_name: ['platform/packages/apps/SafetyRegulatoryInfo', 'platform/packages/apps/SampleLocationAttribution', 'platform/packages/apps/SecureElement', 'platform/packages/apps/Settings', 'platform/packages/apps/SettingsIntelligence', 'platform/packages/apps/SmartCardService', 'platform/packages/apps/SoundRecorder', 'platform/packages/apps/SpareParts', 'platform/packages/apps/SpeechRecorder', 'platform/packages/apps/Stk', 'platform/packages/apps/StorageManager', 'platform/packages/apps/Sync', 'platform/packages/apps/SystemUIGo', 'platform/packages/apps/TV', 'platform/packages/apps/Tag', 'platform/packages/apps/Terminal', 'platform/packages/apps/Test/connectivity', 'platform/packages/apps/ThemePicker', 'platform/packages/apps/TimeZoneData', 'platform/packages/apps/TimeZoneUpdater']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

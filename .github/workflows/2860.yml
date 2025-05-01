@@ -2,7 +2,7 @@ name: 2860 Clone and Push
 
 on:
   schedule:
-    - cron: '0 23 * * 5' # Runs every week
+    - cron: '0 20 24 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/polly', 'toolchain/ppl', 'toolchain/prebuilts/ndk-darwin/r21', 'toolchain/prebuilts/ndk-darwin/r23', 'toolchain/prebuilts/ndk-darwin/r25', 'toolchain/prebuilts/ndk-darwin/r27', 'toolchain/prebuilts/ndk/r13', 'toolchain/prebuilts/ndk/r14', 'toolchain/prebuilts/ndk/r15', 'toolchain/prebuilts/ndk/r16', 'toolchain/prebuilts/ndk/r17', 'toolchain/prebuilts/ndk/r18', 'toolchain/prebuilts/ndk/r19', 'toolchain/prebuilts/ndk/r20', 'toolchain/prebuilts/ndk/r21', 'toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26', 'toolchain/prebuilts/ndk/r27']
+        repo_name: ['toolchain/pgo-profiles', 'toolchain/polly', 'toolchain/ppl', 'toolchain/prebuilts/ndk-darwin/r21', 'toolchain/prebuilts/ndk-darwin/r23', 'toolchain/prebuilts/ndk-darwin/r25', 'toolchain/prebuilts/ndk-darwin/r27', 'toolchain/prebuilts/ndk/r13', 'toolchain/prebuilts/ndk/r14', 'toolchain/prebuilts/ndk/r15', 'toolchain/prebuilts/ndk/r16', 'toolchain/prebuilts/ndk/r17', 'toolchain/prebuilts/ndk/r18', 'toolchain/prebuilts/ndk/r19', 'toolchain/prebuilts/ndk/r20', 'toolchain/prebuilts/ndk/r21', 'toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

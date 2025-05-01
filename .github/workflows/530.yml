@@ -1,0 +1,45 @@
+name: 530 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 10 5 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/blktrace', 'platform/external/bloaty', 'platform/external/bluetooth/bluedroid', 'platform/external/bluetooth/bluez', 'platform/external/bluetooth/glib', 'platform/external/bluetooth/hcidump', 'platform/external/bluez', 'platform/external/boost', 'platform/external/boringssl', 'platform/external/bouncycastle', 'platform/external/bpftool', 'platform/external/brotli', 'platform/external/bsdiff', 'platform/external/bvb', 'platform/external/bzip2', 'platform/external/c-ares', 'platform/external/caliper', 'platform/external/capstone', 'platform/external/catch2', 'platform/external/cblas']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

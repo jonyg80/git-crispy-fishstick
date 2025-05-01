@@ -2,7 +2,7 @@ name: 2900 Clone and Push
 
 on:
   schedule:
-    - cron: '0 1 * * 6' # Runs every week
+    - cron: '0 4 25 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/common', 'trusty/device/desktop', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64', 'trusty/external/headers', 'trusty/external/musl', 'trusty/external/qemu']
+        repo_name: ['trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/common', 'trusty/device/desktop', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64', 'trusty/external/headers', 'trusty/external/musl']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

@@ -1,0 +1,45 @@
+name: 2010 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 18 17 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/hardware/qcom/gps', 'platform/hardware/qcom/keymaster', 'platform/hardware/qcom/media', 'platform/hardware/qcom/msm8960', 'platform/hardware/qcom/msm8994', 'platform/hardware/qcom/msm8996', 'platform/hardware/qcom/msm8998', 'platform/hardware/qcom/msm8x09', 'platform/hardware/qcom/msm8x26', 'platform/hardware/qcom/msm8x27', 'platform/hardware/qcom/msm8x74', 'platform/hardware/qcom/msm8x84', 'platform/hardware/qcom/neuralnetworks/hvxservice', 'platform/hardware/qcom/power', 'platform/hardware/qcom/sdm710/data/ipacfg-mgr', 'platform/hardware/qcom/sdm710/display', 'platform/hardware/qcom/sdm710/gps', 'platform/hardware/qcom/sdm710/media', 'platform/hardware/qcom/sdm710/thermal', 'platform/hardware/qcom/sdm710/vr']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

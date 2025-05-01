@@ -2,7 +2,7 @@ name: 920 Clone and Push
 
 on:
   schedule:
-    - cron: '0 22 * * 1' # Runs every week
+    - cron: '0 16 8 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libese', 'platform/external/libevent', 'platform/external/libexif', 'platform/external/libffi', 'platform/external/libfuse', 'platform/external/libgav1', 'platform/external/libgdx', 'platform/external/libgsm', 'platform/external/libhevc', 'platform/external/libiio', 'platform/external/libiota', 'platform/external/libjpeg-turbo', 'platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd', 'platform/external/libmojo', 'platform/external/libmonet', 'platform/external/libmpeg2']
+        repo_name: ['platform/external/libepoxy', 'platform/external/libese', 'platform/external/libevent', 'platform/external/libexif', 'platform/external/libffi', 'platform/external/libfuse', 'platform/external/libgav1', 'platform/external/libgdx', 'platform/external/libgsm', 'platform/external/libhevc', 'platform/external/libiio', 'platform/external/libiota', 'platform/external/libjpeg-turbo', 'platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd', 'platform/external/libmojo', 'platform/external/libmonet']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

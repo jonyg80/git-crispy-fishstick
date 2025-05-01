@@ -2,7 +2,7 @@ name: 2240 Clone and Push
 
 on:
   schedule:
-    - cron: '0 16 * * 4' # Runs every week
+    - cron: '0 16 19 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/modules/ModuleMetadata', 'platform/packages/modules/NetworkPermissionConfig', 'platform/packages/modules/NetworkStack', 'platform/packages/modules/NeuralNetworks', 'platform/packages/modules/Nfc', 'platform/packages/modules/OnDevicePersonalization', 'platform/packages/modules/Permission', 'platform/packages/modules/PermissionController', 'platform/packages/modules/Profiling', 'platform/packages/modules/RemoteKeyProvisioning', 'platform/packages/modules/RuntimeI18n', 'platform/packages/modules/SEPolicy', 'platform/packages/modules/Scheduling', 'platform/packages/modules/SdkExtensions', 'platform/packages/modules/Sharesheet', 'platform/packages/modules/StatsD', 'platform/packages/modules/Telephony', 'platform/packages/modules/TestModule', 'platform/packages/modules/Tethering', 'platform/packages/modules/ThreadNetwork']
+        repo_name: ['platform/packages/modules/MediaSwCodec', 'platform/packages/modules/ModuleMetadata', 'platform/packages/modules/NetworkPermissionConfig', 'platform/packages/modules/NetworkStack', 'platform/packages/modules/NeuralNetworks', 'platform/packages/modules/Nfc', 'platform/packages/modules/OnDevicePersonalization', 'platform/packages/modules/Permission', 'platform/packages/modules/PermissionController', 'platform/packages/modules/Profiling', 'platform/packages/modules/RemoteKeyProvisioning', 'platform/packages/modules/RuntimeI18n', 'platform/packages/modules/SEPolicy', 'platform/packages/modules/Scheduling', 'platform/packages/modules/SdkExtensions', 'platform/packages/modules/Sharesheet', 'platform/packages/modules/StatsD', 'platform/packages/modules/Telephony', 'platform/packages/modules/TestModule', 'platform/packages/modules/Tethering']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

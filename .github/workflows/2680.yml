@@ -2,7 +2,7 @@ name: 2680 Clone and Push
 
 on:
   schedule:
-    - cron: '0 14 * * 5' # Runs every week
+    - cron: '0 8 23 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/tools/hidl', 'platform/system/tools/mkbootimg', 'platform/system/tools/sysprop', 'platform/system/tools/xsdc', 'platform/system/tpm', 'platform/system/tpm_manager', 'platform/system/trunks', 'platform/system/ucontainer', 'platform/system/unwinding', 'platform/system/update_engine', 'platform/system/usb_info_tools', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/system/zygote', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox']
+        repo_name: ['platform/system/tools/bpt', 'platform/system/tools/hidl', 'platform/system/tools/mkbootimg', 'platform/system/tools/sysprop', 'platform/system/tools/xsdc', 'platform/system/tpm', 'platform/system/tpm_manager', 'platform/system/trunks', 'platform/system/ucontainer', 'platform/system/unwinding', 'platform/system/update_engine', 'platform/system/usb_info_tools', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/system/zygote', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

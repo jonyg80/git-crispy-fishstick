@@ -1,0 +1,45 @@
+name: 1090 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 2 10 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/openvpn', 'platform/external/openwrt-prebuilts', 'platform/external/oprofile', 'platform/external/optee/apps', 'platform/external/oss-fuzz', 'platform/external/ot-br-posix', 'platform/external/ow2-asm', 'platform/external/owasp/java-encoder', 'platform/external/owasp/sanitizer', 'platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils', 'platform/external/pcre', 'platform/external/pdfium', 'platform/external/perf_data_converter', 'platform/external/perfetto', 'platform/external/perfmark']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

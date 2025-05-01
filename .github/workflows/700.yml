@@ -2,7 +2,7 @@ name: 700 Clone and Push
 
 on:
   schedule:
-    - cron: '0 11 * * 1' # Runs every week
+    - cron: '0 20 6 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/flashrom', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib', 'platform/external/fonttools', 'platform/external/free-image', 'platform/external/freetype', 'platform/external/fsck_msdos', 'platform/external/fsverity-utils', 'platform/external/ganymed-ssh2', 'platform/external/gcc-demangle', 'platform/external/gdata', 'platform/external/gemmlowp', 'platform/external/genext2fs', 'platform/external/gentoo/integration', 'platform/external/gentoo/overlays/gentoo', 'platform/external/gentoo/portage', 'platform/external/geojson-jackson', 'platform/external/geonames', 'platform/external/gflags']
+        repo_name: ['platform/external/flashbench', 'platform/external/flashrom', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib', 'platform/external/fonttools', 'platform/external/free-image', 'platform/external/freetype', 'platform/external/fsck_msdos', 'platform/external/fsverity-utils', 'platform/external/ganymed-ssh2', 'platform/external/gcc-demangle', 'platform/external/gdata', 'platform/external/gemmlowp', 'platform/external/genext2fs', 'platform/external/gentoo/integration', 'platform/external/gentoo/overlays/gentoo', 'platform/external/gentoo/portage', 'platform/external/geojson-jackson', 'platform/external/geonames']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

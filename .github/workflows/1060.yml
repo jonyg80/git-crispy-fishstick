@@ -2,7 +2,7 @@ name: 1060 Clone and Push
 
 on:
   schedule:
-    - cron: '0 5 * * 2' # Runs every week
+    - cron: '0 20 9 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/nos/host/generic', 'platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4', 'platform/external/okio', 'platform/external/one-true-awk', 'platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java', 'platform/external/opencore']
+        repo_name: ['platform/external/nos/host/android', 'platform/external/nos/host/generic', 'platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4', 'platform/external/okio', 'platform/external/one-true-awk', 'platform/external/open-dice', 'platform/external/open-vcdiff', 'platform/external/opencensus-go', 'platform/external/opencensus-java']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

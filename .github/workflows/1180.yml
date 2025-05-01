@@ -2,7 +2,7 @@ name: 1180 Clone and Push
 
 on:
   schedule:
-    - cron: '0 11 * * 2' # Runs every week
+    - cron: '0 20 10 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/ply', 'platform/external/python/portpicker', 'platform/external/python/proto-google-cloud-pubsub-v1', 'platform/external/python/protobuf', 'platform/external/python/ptyprocess', 'platform/external/python/py', 'platform/external/python/pyasn1', 'platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser', 'platform/external/python/pyee', 'platform/external/python/pyfakefs', 'platform/external/python/pyhsslms', 'platform/external/python/pylint', 'platform/external/python/pyopenssl', 'platform/external/python/pyparsing', 'platform/external/python/pyserial', 'platform/external/python/pytest', 'platform/external/python/python-api-core', 'platform/external/python/pyyaml']
+        repo_name: ['platform/external/python/pluggy', 'platform/external/python/ply', 'platform/external/python/portpicker', 'platform/external/python/proto-google-cloud-pubsub-v1', 'platform/external/python/protobuf', 'platform/external/python/ptyprocess', 'platform/external/python/py', 'platform/external/python/pyasn1', 'platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser', 'platform/external/python/pyee', 'platform/external/python/pyfakefs', 'platform/external/python/pyhsslms', 'platform/external/python/pylint', 'platform/external/python/pyopenssl', 'platform/external/python/pyparsing', 'platform/external/python/pyserial', 'platform/external/python/pytest', 'platform/external/python/python-api-core']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

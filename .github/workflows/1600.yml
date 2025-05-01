@@ -2,7 +2,7 @@ name: 1600 Clone and Push
 
 on:
   schedule:
-    - cron: '0 8 * * 3' # Runs every week
+    - cron: '0 8 14 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/syn-mid', 'platform/external/rust/crates/sync_wrapper', 'platform/external/rust/crates/synstructure', 'platform/external/rust/crates/tempfile', 'platform/external/rust/crates/termcolor', 'platform/external/rust/crates/terminal-size', 'platform/external/rust/crates/termtree', 'platform/external/rust/crates/textwrap', 'platform/external/rust/crates/thiserror', 'platform/external/rust/crates/thiserror-impl', 'platform/external/rust/crates/thread_local', 'platform/external/rust/crates/threadpool', 'platform/external/rust/crates/tikv-jemalloc-sys', 'platform/external/rust/crates/tikv-jemallocator', 'platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl', 'platform/external/rust/crates/tinyjson', 'platform/external/rust/crates/tinytemplate', 'platform/external/rust/crates/tinyvec']
+        repo_name: ['platform/external/rust/crates/syn', 'platform/external/rust/crates/syn-mid', 'platform/external/rust/crates/sync_wrapper', 'platform/external/rust/crates/synstructure', 'platform/external/rust/crates/tempfile', 'platform/external/rust/crates/termcolor', 'platform/external/rust/crates/terminal-size', 'platform/external/rust/crates/termtree', 'platform/external/rust/crates/textwrap', 'platform/external/rust/crates/thiserror', 'platform/external/rust/crates/thiserror-impl', 'platform/external/rust/crates/thread_local', 'platform/external/rust/crates/threadpool', 'platform/external/rust/crates/tikv-jemalloc-sys', 'platform/external/rust/crates/tikv-jemallocator', 'platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl', 'platform/external/rust/crates/tinyjson', 'platform/external/rust/crates/tinytemplate']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

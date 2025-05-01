@@ -2,7 +2,7 @@ name: 720 Clone and Push
 
 on:
   schedule:
-    - cron: '0 12 * * 1' # Runs every week
+    - cron: '0 0 7 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/gfxstream-protocols', 'platform/external/giflib', 'platform/external/glide', 'platform/external/gmmlib', 'platform/external/gmock', 'platform/external/go-cmp', 'platform/external/go-creachadair-shell', 'platform/external/go-creachadair-stringset', 'platform/external/go-etree', 'platform/external/go-subcommands', 'platform/external/golang-glog', 'platform/external/golang-groupcache', 'platform/external/golang-klauspost-compress', 'platform/external/golang-pkg-xattr', 'platform/external/golang-protobuf', 'platform/external/golang-x-net', 'platform/external/golang-x-oauth2', 'platform/external/golang-x-sync', 'platform/external/golang-x-sys', 'platform/external/golang-x-text']
+        repo_name: ['platform/external/gflags', 'platform/external/gfxstream-protocols', 'platform/external/giflib', 'platform/external/glide', 'platform/external/gmmlib', 'platform/external/gmock', 'platform/external/go-cmp', 'platform/external/go-creachadair-shell', 'platform/external/go-creachadair-stringset', 'platform/external/go-etree', 'platform/external/go-subcommands', 'platform/external/golang-glog', 'platform/external/golang-groupcache', 'platform/external/golang-klauspost-compress', 'platform/external/golang-pkg-xattr', 'platform/external/golang-protobuf', 'platform/external/golang-x-net', 'platform/external/golang-x-oauth2', 'platform/external/golang-x-sync', 'platform/external/golang-x-sys']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

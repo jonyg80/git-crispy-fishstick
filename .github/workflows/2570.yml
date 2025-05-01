@@ -1,0 +1,45 @@
+name: 2570 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 10 22 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client', 'platform/prebuilts/renderscript/host/darwin-x86', 'platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/sdk', 'platform/prebuilts/simpleperf', 'platform/prebuilts/studio/jdk', 'platform/prebuilts/studio/layoutlib', 'platform/prebuilts/studio/skiaparser', 'platform/prebuilts/swig/darwin-x86', 'platform/prebuilts/swig/linux-x86', 'platform/prebuilts/swig/windows-x86', 'platform/prebuilts/tools', 'platform/prebuilts/trusty/sysroot', 'platform/prebuilts/vndk/v27', 'platform/prebuilts/vndk/v28', 'platform/prebuilts/vndk/v29']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

@@ -2,7 +2,7 @@ name: 1920 Clone and Push
 
 on:
   schedule:
-    - cron: '0 0 * * 4' # Runs every week
+    - cron: '0 0 17 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/bsp/bootloader/nxp/uboot-imx', 'platform/hardware/bsp/bootloader/rockchip/rk-u-boot', 'platform/hardware/bsp/broadcom', 'platform/hardware/bsp/freescale', 'platform/hardware/bsp/imagination', 'platform/hardware/bsp/intel', 'platform/hardware/bsp/kernel/common/v4.1', 'platform/hardware/bsp/kernel/common/v4.4', 'platform/hardware/bsp/kernel/freescale', 'platform/hardware/bsp/kernel/freescale/picoimx-3.14', 'platform/hardware/bsp/kernel/imagination/v4.1', 'platform/hardware/bsp/kernel/intel', 'platform/hardware/bsp/kernel/intel/broxton-v4.4', 'platform/hardware/bsp/kernel/intel/edison-v3.10', 'platform/hardware/bsp/kernel/intel/edison-v4.4', 'platform/hardware/bsp/kernel/intel/minnowboard-v3.14', 'platform/hardware/bsp/kernel/marvell/pxa-v3.14', 'platform/hardware/bsp/kernel/mediatek/mt8516-v4.4', 'platform/hardware/bsp/kernel/nxp/imx-v4.1', 'platform/hardware/bsp/kernel/nxp/imx-v4.9']
+        repo_name: ['platform/hardware/bsp/bootloader/intel/edison-u-boot', 'platform/hardware/bsp/bootloader/nxp/uboot-imx', 'platform/hardware/bsp/bootloader/rockchip/rk-u-boot', 'platform/hardware/bsp/broadcom', 'platform/hardware/bsp/freescale', 'platform/hardware/bsp/imagination', 'platform/hardware/bsp/intel', 'platform/hardware/bsp/kernel/common/v4.1', 'platform/hardware/bsp/kernel/common/v4.4', 'platform/hardware/bsp/kernel/freescale', 'platform/hardware/bsp/kernel/freescale/picoimx-3.14', 'platform/hardware/bsp/kernel/imagination/v4.1', 'platform/hardware/bsp/kernel/intel', 'platform/hardware/bsp/kernel/intel/broxton-v4.4', 'platform/hardware/bsp/kernel/intel/edison-v3.10', 'platform/hardware/bsp/kernel/intel/edison-v4.4', 'platform/hardware/bsp/kernel/intel/minnowboard-v3.14', 'platform/hardware/bsp/kernel/marvell/pxa-v3.14', 'platform/hardware/bsp/kernel/mediatek/mt8516-v4.4', 'platform/hardware/bsp/kernel/nxp/imx-v4.1']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

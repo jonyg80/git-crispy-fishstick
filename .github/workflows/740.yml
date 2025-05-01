@@ -2,7 +2,7 @@ name: 740 Clone and Push
 
 on:
   schedule:
-    - cron: '0 13 * * 1' # Runs every week
+    - cron: '0 4 7 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/golang-x-tools', 'platform/external/google-api-go-client', 'platform/external/google-api-services-storage', 'platform/external/google-auth-library-java', 'platform/external/google-benchmark', 'platform/external/google-breakpad', 'platform/external/google-cloud-go', 'platform/external/google-cloud-java', 'platform/external/google-diff-match-patch', 'platform/external/google-fonts/arbutus-slab', 'platform/external/google-fonts/arvo', 'platform/external/google-fonts/barlow', 'platform/external/google-fonts/big-shoulders-text', 'platform/external/google-fonts/carrois-gothic-sc', 'platform/external/google-fonts/coming-soon', 'platform/external/google-fonts/cutive-mono', 'platform/external/google-fonts/dancing-script', 'platform/external/google-fonts/fraunces', 'platform/external/google-fonts/karla', 'platform/external/google-fonts/lato']
+        repo_name: ['platform/external/golang-x-text', 'platform/external/golang-x-tools', 'platform/external/google-api-go-client', 'platform/external/google-api-services-storage', 'platform/external/google-auth-library-java', 'platform/external/google-benchmark', 'platform/external/google-breakpad', 'platform/external/google-cloud-go', 'platform/external/google-cloud-java', 'platform/external/google-diff-match-patch', 'platform/external/google-fonts/arbutus-slab', 'platform/external/google-fonts/arvo', 'platform/external/google-fonts/barlow', 'platform/external/google-fonts/big-shoulders-text', 'platform/external/google-fonts/carrois-gothic-sc', 'platform/external/google-fonts/coming-soon', 'platform/external/google-fonts/cutive-mono', 'platform/external/google-fonts/dancing-script', 'platform/external/google-fonts/fraunces', 'platform/external/google-fonts/karla']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

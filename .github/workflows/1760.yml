@@ -2,7 +2,7 @@ name: 1760 Clone and Push
 
 on:
   schedule:
-    - cron: '0 16 * * 3' # Runs every week
+    - cron: '0 16 15 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/threetenbp', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tink-java', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new', 'platform/external/tinycompress', 'platform/external/tinyobjloader', 'platform/external/tinyxml', 'platform/external/tinyxml2']
+        repo_name: ['platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow', 'platform/external/tesseract', 'platform/external/testng', 'platform/external/tflite-support', 'platform/external/third-party-review', 'platform/external/threetenbp', 'platform/external/timezone-boundary-builder', 'platform/external/timezonepicker-support', 'platform/external/tink', 'platform/external/tink-java', 'platform/external/tinyalsa', 'platform/external/tinyalsa_new', 'platform/external/tinycompress', 'platform/external/tinyobjloader', 'platform/external/tinyxml']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

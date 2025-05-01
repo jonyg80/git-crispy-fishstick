@@ -2,7 +2,7 @@ name: 2600 Clone and Push
 
 on:
   schedule:
-    - cron: '0 10 * * 5' # Runs every week
+    - cron: '0 16 22 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/cros-codecs', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ap']
+        repo_name: ['platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/cros-codecs', 'platform/system/desktop/adb-dbc-bridge']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

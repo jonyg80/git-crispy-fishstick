@@ -1,0 +1,45 @@
+name: 470 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 22 4 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['platform/external/anonymous-counting-tokens', 'platform/external/ant-glob', 'platform/external/antlr', 'platform/external/apache-apr', 'platform/external/apache-apr-util', 'platform/external/apache-commons-bcel', 'platform/external/apache-commons-compress', 'platform/external/apache-commons-io', 'platform/external/apache-commons-lang', 'platform/external/apache-commons-math', 'platform/external/apache-harmony', 'platform/external/apache-http', 'platform/external/apache-log4cxx', 'platform/external/apache-qp', 'platform/external/apache-velocity-engine', 'platform/external/apache-xml', 'platform/external/apple-coreaudiosamples', 'platform/external/archive-patcher', 'platform/external/arduino', 'platform/external/arduino-ide']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

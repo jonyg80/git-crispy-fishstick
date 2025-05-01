@@ -2,7 +2,7 @@ name: 2920 Clone and Push
 
 on:
   schedule:
-    - cron: '0 2 * * 6' # Runs every week
+    - cron: '0 8 25 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/external/qemu-keycodemapdb', 'trusty/external/qemu-libslirp', 'trusty/external/qemu-meson', 'trusty/external/trusted-firmware-a', 'trusty/external/trusty', 'trusty/host/aidl', 'trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/user/desktop', 'trusty/vendor/google/aosp']
+        repo_name: ['trusty/external/qemu', 'trusty/external/qemu-keycodemapdb', 'trusty/external/qemu-libslirp', 'trusty/external/qemu-meson', 'trusty/external/trusted-firmware-a', 'trusty/external/trusty', 'trusty/host/aidl', 'trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/user/desktop', 'trusty/vendor/google/aosp']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

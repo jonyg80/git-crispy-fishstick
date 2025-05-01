@@ -1,0 +1,45 @@
+name: 2830 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 14 24 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['toolchain/jdk/jdk21', 'toolchain/jdk/jdk9', 'toolchain/jdk/jdk9_corba', 'toolchain/jdk/jdk9_hotspot', 'toolchain/jdk/jdk9_jaxp', 'toolchain/jdk/jdk9_jaxws', 'toolchain/jdk/jdk9_jdk', 'toolchain/jdk/jdk9_langtools', 'toolchain/jdk/jdk9_nashorn', 'toolchain/jill', 'toolchain/libcxx', 'toolchain/libcxxabi', 'toolchain/lld', 'toolchain/llvm', 'toolchain/llvm-project', 'toolchain/llvm_android', 'toolchain/m4', 'toolchain/make', 'toolchain/manifest', 'toolchain/mclinker']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

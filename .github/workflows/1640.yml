@@ -2,7 +2,7 @@ name: 1640 Clone and Push
 
 on:
   schedule:
-    - cron: '0 10 * * 3' # Runs every week
+    - cron: '0 16 14 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash', 'platform/external/rust/crates/ucd-trie', 'platform/external/rust/crates/ucs2', 'platform/external/rust/crates/uds', 'platform/external/rust/crates/uefi', 'platform/external/rust/crates/uefi-macros', 'platform/external/rust/crates/uefi-raw', 'platform/external/rust/crates/uguid', 'platform/external/rust/crates/unicode-bidi', 'platform/external/rust/crates/unicode-ident', 'platform/external/rust/crates/unicode-normalization', 'platform/external/rust/crates/unicode-segmentation', 'platform/external/rust/crates/unicode-width', 'platform/external/rust/crates/unicode-xid', 'platform/external/rust/crates/uniffi']
+        repo_name: ['platform/external/rust/crates/tracing', 'platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash', 'platform/external/rust/crates/ucd-trie', 'platform/external/rust/crates/ucs2', 'platform/external/rust/crates/uds', 'platform/external/rust/crates/uefi', 'platform/external/rust/crates/uefi-macros', 'platform/external/rust/crates/uefi-raw', 'platform/external/rust/crates/uguid', 'platform/external/rust/crates/unicode-bidi', 'platform/external/rust/crates/unicode-ident', 'platform/external/rust/crates/unicode-normalization', 'platform/external/rust/crates/unicode-segmentation', 'platform/external/rust/crates/unicode-width', 'platform/external/rust/crates/unicode-xid']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done

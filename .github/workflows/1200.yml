@@ -2,7 +2,7 @@ name: 1200 Clone and Push
 
 on:
   schedule:
-    - cron: '0 12 * * 2' # Runs every week
+    - cron: '0 0 11 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/requests', 'platform/external/python/rsa', 'platform/external/python/scipy', 'platform/external/python/setuptools', 'platform/external/python/six', 'platform/external/python/timeout-decorator', 'platform/external/python/typing', 'platform/external/python/typing_extensions', 'platform/external/python/uritemplates', 'platform/external/python/watchdog', 'platform/external/pytorch', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qt', 'platform/external/qt5', 'platform/external/quake', 'platform/external/r8', 'platform/external/rapidjson', 'platform/external/rappor']
+        repo_name: ['platform/external/python/pyyaml', 'platform/external/python/requests', 'platform/external/python/rsa', 'platform/external/python/scipy', 'platform/external/python/setuptools', 'platform/external/python/six', 'platform/external/python/timeout-decorator', 'platform/external/python/typing', 'platform/external/python/typing_extensions', 'platform/external/python/uritemplates', 'platform/external/python/watchdog', 'platform/external/pytorch', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qt', 'platform/external/qt5', 'platform/external/quake', 'platform/external/r8', 'platform/external/rapidjson']
 
     steps:
       - name: Maximize build space
@@ -32,9 +32,14 @@ jobs:
       - name: Git clone
         run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
 
-      - name: Push
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push with retry
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+          for i in {1..3}; do
+            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
+          done
