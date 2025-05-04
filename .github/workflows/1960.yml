@@ -35,14 +35,12 @@ jobs:
       - name: Increase Git buffer size
         run: git config --global http.postBuffer 157286400
 
-      - name: Push with retry
+      - name: Push
         run: |
           cd ${{ matrix.repo_name }}
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          for i in {1..3}; do
-            git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git && break || sleep 30;
-          done
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
 
       - name: Notify Slack on failure
         if: failure()
