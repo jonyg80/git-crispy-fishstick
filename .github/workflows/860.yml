@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/jmonkeyengine', 'platform/external/jpeg', 'platform/external/jsilver', 'platform/external/jsmn', 'platform/external/json-schema-validator', 'platform/external/jsoncpp', 'platform/external/jsoup', 'platform/external/jsoup-1p-stubs', 'platform/external/jspecify', 'platform/external/jsr305']
+        repo_name: ['platform/external/jmdns', 'platform/external/jmonkeyengine', 'platform/external/jpeg', 'platform/external/jsilver', 'platform/external/jsmn', 'platform/external/json-schema-validator', 'platform/external/jsoncpp', 'platform/external/jsoup', 'platform/external/jsoup-1p-stubs', 'platform/external/jspecify']
 
     steps:
       - name: Maximize build space

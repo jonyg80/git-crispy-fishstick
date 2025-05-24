@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/quiche', 'platform/external/rust/crates/quickcheck', 'platform/external/rust/crates/quote', 'platform/external/rust/crates/rand', 'platform/external/rust/crates/rand_chacha', 'platform/external/rust/crates/rand_core', 'platform/external/rust/crates/rand_hc', 'platform/external/rust/crates/rand_xorshift', 'platform/external/rust/crates/rayon', 'platform/external/rust/crates/rayon-core']
+        repo_name: ['platform/external/rust/crates/ptr_meta_derive', 'platform/external/rust/crates/quiche', 'platform/external/rust/crates/quickcheck', 'platform/external/rust/crates/quote', 'platform/external/rust/crates/rand', 'platform/external/rust/crates/rand_chacha', 'platform/external/rust/crates/rand_core', 'platform/external/rust/crates/rand_hc', 'platform/external/rust/crates/rand_xorshift', 'platform/external/rust/crates/rayon']
 
     steps:
       - name: Maximize build space

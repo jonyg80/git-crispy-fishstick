@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/googleapis', 'platform/external/python/grpc-google-iam-v1', 'platform/external/python/grpcio', 'platform/external/python/httplib2', 'platform/external/python/ipaddress', 'platform/external/python/jinja', 'platform/external/python/liboqs-python', 'platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib']
+        repo_name: ['platform/external/python/google-gax', 'platform/external/python/googleapis', 'platform/external/python/grpc-google-iam-v1', 'platform/external/python/grpcio', 'platform/external/python/httplib2', 'platform/external/python/ipaddress', 'platform/external/python/jinja', 'platform/external/python/liboqs-python', 'platform/external/python/mako', 'platform/external/python/markupsafe']
 
     steps:
       - name: Maximize build space

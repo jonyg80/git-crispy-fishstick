@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/devices/google/zuma', 'kernel/devices/google/zumapro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers', 'kernel/google-modules/aoc']
+        repo_name: ['kernel/devices/google/tegu', 'kernel/devices/google/zuma', 'kernel/devices/google/zumapro', 'kernel/exynos', 'kernel/exynos-modules/config', 'kernel/exynos-modules/devicetree', 'kernel/exynos-modules/drivers', 'kernel/goldfish', 'kernel/goldfish-modules', 'kernel/google-modules/amplifiers']
 
     steps:
       - name: Maximize build space

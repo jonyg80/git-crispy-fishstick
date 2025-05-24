@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/OpenCSD', 'platform/external/Reactive-Extensions/RxCpp', 'platform/external/SPIRV-Reflect', 'platform/external/TestParameterInjector', 'platform/external/ThrowTheSwitch-Unity', 'platform/external/XNNPACK', 'platform/external/aac', 'platform/external/abi-compliance-checker', 'platform/external/abi-dumper', 'platform/external/abseil-cpp']
+        repo_name: ['platform/external/OpenCL-ICD-Loader', 'platform/external/OpenCSD', 'platform/external/Reactive-Extensions/RxCpp', 'platform/external/SPIRV-Reflect', 'platform/external/TestParameterInjector', 'platform/external/ThrowTheSwitch-Unity', 'platform/external/XNNPACK', 'platform/external/aac', 'platform/external/abi-compliance-checker', 'platform/external/abi-dumper']
 
     steps:
       - name: Maximize build space

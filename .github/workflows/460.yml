@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/android-cmake', 'platform/external/android-key-attestation', 'platform/external/android-kotlin-demo', 'platform/external/android-mock', 'platform/external/android-nn-driver', 'platform/external/android-studio-gradle-test', 'platform/external/android_onboarding', 'platform/external/androidplot', 'platform/external/angle', 'platform/external/annotation-tools']
+        repo_name: ['platform/external/android-clat', 'platform/external/android-cmake', 'platform/external/android-key-attestation', 'platform/external/android-kotlin-demo', 'platform/external/android-mock', 'platform/external/android-nn-driver', 'platform/external/android-studio-gradle-test', 'platform/external/android_onboarding', 'platform/external/androidplot', 'platform/external/angle']
 
     steps:
       - name: Maximize build space

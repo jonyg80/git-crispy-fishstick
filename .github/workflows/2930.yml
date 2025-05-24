@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/user/desktop', 'trusty/vendor/google/aosp']
+        repo_name: ['trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/user/desktop', 'trusty/vendor/google/aosp']
 
     steps:
       - name: Maximize build space

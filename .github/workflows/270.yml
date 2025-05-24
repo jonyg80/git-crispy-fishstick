@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/rotary-encoders', 'kernel/google-modules/sensors/hall_sensor', 'kernel/google-modules/soc/gs', 'kernel/google-modules/soc/msm', 'kernel/google-modules/sound/mcu', 'kernel/google-modules/sound/mcu_mic_codec', 'kernel/google-modules/touch/common', 'kernel/google-modules/touch/common_wearable', 'kernel/google-modules/touch/focaltech_touch', 'kernel/google-modules/touch/fts_touch']
+        repo_name: ['kernel/google-modules/raviole-device', 'kernel/google-modules/rotary-encoders', 'kernel/google-modules/sensors/hall_sensor', 'kernel/google-modules/soc/gs', 'kernel/google-modules/soc/msm', 'kernel/google-modules/sound/mcu', 'kernel/google-modules/sound/mcu_mic_codec', 'kernel/google-modules/touch/common', 'kernel/google-modules/touch/common_wearable', 'kernel/google-modules/touch/focaltech_touch']
 
     steps:
       - name: Maximize build space

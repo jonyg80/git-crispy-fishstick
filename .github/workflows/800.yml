@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/honggfuzz', 'platform/external/horologist', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns', 'platform/external/iamf_tools', 'platform/external/icing', 'platform/external/icu', 'platform/external/icu4c', 'platform/external/id3lib']
+        repo_name: ['platform/external/hcidump', 'platform/external/honggfuzz', 'platform/external/horologist', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns', 'platform/external/iamf_tools', 'platform/external/icing', 'platform/external/icu', 'platform/external/icu4c']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/aoc-ipc', 'kernel/google-modules/bluetooth/broadcom', 'kernel/google-modules/bluetooth/qcom', 'kernel/google-modules/bluetooth/synaptics', 'kernel/google-modules/bms', 'kernel/google-modules/display', 'kernel/google-modules/display/common', 'kernel/google-modules/display/panels/caimito', 'kernel/google-modules/display/panels/tegu', 'kernel/google-modules/display/samsung']
+        repo_name: ['kernel/google-modules/aoc', 'kernel/google-modules/aoc-ipc', 'kernel/google-modules/bluetooth/broadcom', 'kernel/google-modules/bluetooth/qcom', 'kernel/google-modules/bluetooth/synaptics', 'kernel/google-modules/bms', 'kernel/google-modules/display', 'kernel/google-modules/display/common', 'kernel/google-modules/display/panels/caimito', 'kernel/google-modules/display/panels/tegu']
 
     steps:
       - name: Maximize build space

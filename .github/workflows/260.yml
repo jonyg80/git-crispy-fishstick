@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/lwis', 'kernel/google-modules/misc', 'kernel/google-modules/nanohub', 'kernel/google-modules/nfc', 'kernel/google-modules/perf', 'kernel/google-modules/power/mitigation', 'kernel/google-modules/power/reset', 'kernel/google-modules/radio/samsung/s5300', 'kernel/google-modules/radio/samsung/s5400', 'kernel/google-modules/raviole-device']
+        repo_name: ['kernel/google-modules/i3c/exynos', 'kernel/google-modules/lwis', 'kernel/google-modules/misc', 'kernel/google-modules/nanohub', 'kernel/google-modules/nfc', 'kernel/google-modules/perf', 'kernel/google-modules/power/mitigation', 'kernel/google-modules/power/reset', 'kernel/google-modules/radio/samsung/s5300', 'kernel/google-modules/radio/samsung/s5400']
 
     steps:
       - name: Maximize build space

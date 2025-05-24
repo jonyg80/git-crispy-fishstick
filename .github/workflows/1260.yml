@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/async-stream-impl', 'platform/external/rust/crates/async-task', 'platform/external/rust/crates/async-trait', 'platform/external/rust/crates/atomic', 'platform/external/rust/crates/atomic-polyfill', 'platform/external/rust/crates/atty', 'platform/external/rust/crates/axum', 'platform/external/rust/crates/axum-core', 'platform/external/rust/crates/base64', 'platform/external/rust/crates/bencher']
+        repo_name: ['platform/external/rust/crates/async-stream', 'platform/external/rust/crates/async-stream-impl', 'platform/external/rust/crates/async-task', 'platform/external/rust/crates/async-trait', 'platform/external/rust/crates/atomic', 'platform/external/rust/crates/atomic-polyfill', 'platform/external/rust/crates/atty', 'platform/external/rust/crates/axum', 'platform/external/rust/crates/axum-core', 'platform/external/rust/crates/base64']
 
     steps:
       - name: Maximize build space

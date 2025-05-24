@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/msm-extra', 'kernel/msm-extra/audio-devicetree', 'kernel/msm-extra/bt-devicetree', 'kernel/msm-extra/camera-devicetree', 'kernel/msm-extra/camera-kernel', 'kernel/msm-extra/config', 'kernel/msm-extra/data-devicetree', 'kernel/msm-extra/dataipa', 'kernel/msm-extra/devicetree', 'kernel/msm-extra/display-devicetree']
+        repo_name: ['kernel/msm', 'kernel/msm-extra', 'kernel/msm-extra/audio-devicetree', 'kernel/msm-extra/bt-devicetree', 'kernel/msm-extra/camera-devicetree', 'kernel/msm-extra/camera-kernel', 'kernel/msm-extra/config', 'kernel/msm-extra/data-devicetree', 'kernel/msm-extra/dataipa', 'kernel/msm-extra/devicetree']
 
     steps:
       - name: Maximize build space

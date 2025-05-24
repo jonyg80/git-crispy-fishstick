@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/regex', 'platform/external/rust/crates/regex-automata', 'platform/external/rust/crates/regex-syntax', 'platform/external/rust/crates/remain', 'platform/external/rust/crates/remove_dir_all', 'platform/external/rust/crates/ring', 'platform/external/rust/crates/ron', 'platform/external/rust/crates/rusb', 'platform/external/rust/crates/rusqlite', 'platform/external/rust/crates/rust-stemmers']
+        repo_name: ['platform/external/rust/crates/rayon-core', 'platform/external/rust/crates/regex', 'platform/external/rust/crates/regex-automata', 'platform/external/rust/crates/regex-syntax', 'platform/external/rust/crates/remain', 'platform/external/rust/crates/remove_dir_all', 'platform/external/rust/crates/ring', 'platform/external/rust/crates/ron', 'platform/external/rust/crates/rusb', 'platform/external/rust/crates/rusqlite']
 
     steps:
       - name: Maximize build space

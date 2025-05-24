@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modp_b64', 'platform/external/moltenvk', 'platform/external/moshi', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpdecimal', 'platform/external/mpg123']
+        repo_name: ['platform/external/mockftpserver', 'platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modp_b64', 'platform/external/moltenvk', 'platform/external/moshi', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpdecimal']
 
     steps:
       - name: Maximize build space

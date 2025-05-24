@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['product/google/common', 'product/google/example-ledflasher', 'tee/optee/ta/keymint', 'toolchain/android_rust', 'toolchain/avr-libc', 'toolchain/benchmark', 'toolchain/binutils', 'toolchain/build', 'toolchain/capnproto', 'toolchain/cargo-deny']
+        repo_name: ['platform/vendor/sample', 'product/google/common', 'product/google/example-ledflasher', 'tee/optee/ta/keymint', 'toolchain/android_rust', 'toolchain/avr-libc', 'toolchain/benchmark', 'toolchain/binutils', 'toolchain/build', 'toolchain/capnproto']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/bincode', 'platform/external/rust/crates/bindgen', 'platform/external/rust/crates/bindgen-cli', 'platform/external/rust/crates/bit_field', 'platform/external/rust/crates/bitflags', 'platform/external/rust/crates/bitreader', 'platform/external/rust/crates/bstr', 'platform/external/rust/crates/buddy_system_allocator', 'platform/external/rust/crates/bytemuck', 'platform/external/rust/crates/bytemuck_derive']
+        repo_name: ['platform/external/rust/crates/bencher', 'platform/external/rust/crates/bincode', 'platform/external/rust/crates/bindgen', 'platform/external/rust/crates/bindgen-cli', 'platform/external/rust/crates/bit_field', 'platform/external/rust/crates/bitflags', 'platform/external/rust/crates/bitreader', 'platform/external/rust/crates/bstr', 'platform/external/rust/crates/buddy_system_allocator', 'platform/external/rust/crates/bytemuck']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/PackageInstaller', 'platform/packages/apps/Phone', 'platform/packages/apps/PhoneCommon', 'platform/packages/apps/PrivateSpace', 'platform/packages/apps/Protips', 'platform/packages/apps/Provision', 'platform/packages/apps/QuickAccessWallet', 'platform/packages/apps/QuickSearchBox', 'platform/packages/apps/RemoteProvisioner', 'platform/packages/apps/RetailDemo']
+        repo_name: ['platform/packages/apps/OneTimeInitializer', 'platform/packages/apps/PackageInstaller', 'platform/packages/apps/Phone', 'platform/packages/apps/PhoneCommon', 'platform/packages/apps/PrivateSpace', 'platform/packages/apps/Protips', 'platform/packages/apps/Provision', 'platform/packages/apps/QuickAccessWallet', 'platform/packages/apps/QuickSearchBox', 'platform/packages/apps/RemoteProvisioner']
 
     steps:
       - name: Maximize build space

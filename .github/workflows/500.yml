@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/avahi', 'platform/external/avb', 'platform/external/aws-crt-java', 'platform/external/aws-eventstream-java', 'platform/external/aws-sdk-java-v2', 'platform/external/bart', 'platform/external/bazel-contrib-bazel_features', 'platform/external/bazel-skylib', 'platform/external/bazelbuild-apple_support', 'platform/external/bazelbuild-bazel-central-registry']
+        repo_name: ['platform/external/autotest', 'platform/external/avahi', 'platform/external/avb', 'platform/external/aws-crt-java', 'platform/external/aws-eventstream-java', 'platform/external/aws-sdk-java-v2', 'platform/external/bart', 'platform/external/bazel-contrib-bazel_features', 'platform/external/bazel-skylib', 'platform/external/bazelbuild-apple_support']
 
     steps:
       - name: Maximize build space

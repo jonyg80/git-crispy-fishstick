@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/bpftool', 'platform/external/brotli', 'platform/external/bsdiff', 'platform/external/bvb', 'platform/external/bzip2', 'platform/external/c-ares', 'platform/external/caliper', 'platform/external/capstone', 'platform/external/catch2', 'platform/external/cblas']
+        repo_name: ['platform/external/bouncycastle', 'platform/external/bpftool', 'platform/external/brotli', 'platform/external/bsdiff', 'platform/external/bvb', 'platform/external/bzip2', 'platform/external/c-ares', 'platform/external/caliper', 'platform/external/capstone', 'platform/external/catch2']
 
     steps:
       - name: Maximize build space

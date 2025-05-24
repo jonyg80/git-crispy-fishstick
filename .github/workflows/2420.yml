@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/fullsdk/build-tools/22-darwin', 'platform/prebuilts/fullsdk/build-tools/22-linux', 'platform/prebuilts/fullsdk/build-tools/22-windows', 'platform/prebuilts/fullsdk/platforms', 'platform/prebuilts/fullsdk/platforms/android-21', 'platform/prebuilts/fullsdk/platforms/android-26', 'platform/prebuilts/fullsdk/platforms/android-28', 'platform/prebuilts/fullsdk/platforms/android-29', 'platform/prebuilts/fullsdk/platforms/android-30', 'platform/prebuilts/fullsdk/platforms/android-31']
+        repo_name: ['platform/prebuilts/fullsdk/build-tools/21-linux', 'platform/prebuilts/fullsdk/build-tools/22-darwin', 'platform/prebuilts/fullsdk/build-tools/22-linux', 'platform/prebuilts/fullsdk/build-tools/22-windows', 'platform/prebuilts/fullsdk/platforms', 'platform/prebuilts/fullsdk/platforms/android-21', 'platform/prebuilts/fullsdk/platforms/android-26', 'platform/prebuilts/fullsdk/platforms/android-28', 'platform/prebuilts/fullsdk/platforms/android-29', 'platform/prebuilts/fullsdk/platforms/android-30']
 
     steps:
       - name: Maximize build space

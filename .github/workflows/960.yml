@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libselinux', 'platform/external/libsepol', 'platform/external/libsrtp2', 'platform/external/libssh2', 'platform/external/libtextclassifier', 'platform/external/libtraceevent', 'platform/external/libtracefs', 'platform/external/libultrahdr', 'platform/external/libunwind', 'platform/external/libunwind_llvm']
+        repo_name: ['platform/external/libseccomp-helper', 'platform/external/libselinux', 'platform/external/libsepol', 'platform/external/libsrtp2', 'platform/external/libssh2', 'platform/external/libtextclassifier', 'platform/external/libtraceevent', 'platform/external/libtracefs', 'platform/external/libultrahdr', 'platform/external/libunwind']
 
     steps:
       - name: Maximize build space

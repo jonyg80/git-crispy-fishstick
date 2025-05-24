@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/GoogleSearch', 'platform/packages/apps/HTMLViewer', 'platform/packages/apps/IM', 'platform/packages/apps/IdentityCredentialSupport', 'platform/packages/apps/ImsServiceEntitlement', 'platform/packages/apps/InCallUI', 'platform/packages/apps/KeyChain', 'platform/packages/apps/Launcher', 'platform/packages/apps/Launcher2', 'platform/packages/apps/Launcher3']
+        repo_name: ['platform/packages/apps/GlobalSearch', 'platform/packages/apps/GoogleSearch', 'platform/packages/apps/HTMLViewer', 'platform/packages/apps/IM', 'platform/packages/apps/IdentityCredentialSupport', 'platform/packages/apps/ImsServiceEntitlement', 'platform/packages/apps/InCallUI', 'platform/packages/apps/KeyChain', 'platform/packages/apps/Launcher', 'platform/packages/apps/Launcher2']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct', 'platform/external/ninja', 'platform/external/nist-pkits', 'platform/external/nist-sip']
+        repo_name: ['platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct', 'platform/external/ninja', 'platform/external/nist-pkits']
 
     steps:
       - name: Maximize build space

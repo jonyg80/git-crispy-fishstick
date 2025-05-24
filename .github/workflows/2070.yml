@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/libnativehelper', 'platform/manifest', 'platform/media/cts', 'platform/motodev', 'platform/ndk', 'platform/packages/apps/AccountsAndSyncSettings', 'platform/packages/apps/AlarmClock', 'platform/packages/apps/AvatarPicker', 'platform/packages/apps/BasicSmsReceiver', 'platform/packages/apps/Benchmark']
+        repo_name: ['platform/libcore2', 'platform/libnativehelper', 'platform/manifest', 'platform/media/cts', 'platform/motodev', 'platform/ndk', 'platform/packages/apps/AccountsAndSyncSettings', 'platform/packages/apps/AlarmClock', 'platform/packages/apps/AvatarPicker', 'platform/packages/apps/BasicSmsReceiver']
 
     steps:
       - name: Maximize build space

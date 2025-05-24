@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/build/trunk_release', 'platform/compatibility/cdd', 'platform/cts', 'platform/dalvik', 'platform/dalvik-snapshot', 'platform/dalvik2', 'platform/developers/build', 'platform/developers/demos', 'platform/developers/docs', 'platform/developers/samples/android']
+        repo_name: ['platform/build/soong', 'platform/build/trunk_release', 'platform/compatibility/cdd', 'platform/cts', 'platform/dalvik', 'platform/dalvik-snapshot', 'platform/dalvik2', 'platform/developers/build', 'platform/developers/demos', 'platform/developers/docs']
 
     steps:
       - name: Maximize build space
