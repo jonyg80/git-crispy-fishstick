@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/TimeZoneUpdater', 'platform/packages/apps/Traceur', 'platform/packages/apps/TvFeedbackConsent', 'platform/packages/apps/TvSettings', 'platform/packages/apps/TvSystemUI', 'platform/packages/apps/UnifiedEmail', 'platform/packages/apps/UniversalMediaPlayer', 'platform/packages/apps/Updater', 'platform/packages/apps/VideoEditor', 'platform/packages/apps/VoiceDialer']
+        repo_name: ['platform/packages/apps/ThemePicker', 'platform/packages/apps/TimeZoneData', 'platform/packages/apps/TimeZoneUpdater', 'platform/packages/apps/Traceur', 'platform/packages/apps/TvFeedbackConsent', 'platform/packages/apps/TvSettings', 'platform/packages/apps/TvSystemUI', 'platform/packages/apps/UnifiedEmail', 'platform/packages/apps/UniversalMediaPlayer', 'platform/packages/apps/Updater']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/modules/vndk', 'platform/packages/providers/ApplicationsProvider', 'platform/packages/providers/BlockedNumberProvider', 'platform/packages/providers/BookmarkProvider', 'platform/packages/providers/CalendarProvider', 'platform/packages/providers/CallLogProvider', 'platform/packages/providers/ContactsKeysProvider', 'platform/packages/providers/ContactsProvider', 'platform/packages/providers/DownloadProvider', 'platform/packages/providers/DrmProvider']
+        repo_name: ['platform/packages/modules/common', 'platform/packages/modules/desktop/Serviceability', 'platform/packages/modules/vndk', 'platform/packages/providers/ApplicationsProvider', 'platform/packages/providers/BlockedNumberProvider', 'platform/packages/providers/BookmarkProvider', 'platform/packages/providers/CalendarProvider', 'platform/packages/providers/CallLogProvider', 'platform/packages/providers/ContactsKeysProvider', 'platform/packages/providers/ContactsProvider']
 
     steps:
       - name: Maximize build space

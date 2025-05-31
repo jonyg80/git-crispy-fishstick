@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/maven_repo/bumptech', 'platform/prebuilts/maven_repo/google-play-service-client-libraries-3p', 'platform/prebuilts/misc', 'platform/prebuilts/module_sdk/AdServices', 'platform/prebuilts/module_sdk/AppSearch', 'platform/prebuilts/module_sdk/Bluetooth', 'platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity', 'platform/prebuilts/module_sdk/CrashRecovery', 'platform/prebuilts/module_sdk/DeviceLock']
+        repo_name: ['platform/prebuilts/manifest-merger', 'platform/prebuilts/maven_repo/android', 'platform/prebuilts/maven_repo/bumptech', 'platform/prebuilts/maven_repo/google-play-service-client-libraries-3p', 'platform/prebuilts/misc', 'platform/prebuilts/module_sdk/AdServices', 'platform/prebuilts/module_sdk/AppSearch', 'platform/prebuilts/module_sdk/Bluetooth', 'platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/interfaces', 'platform/hardware/invensense', 'platform/hardware/knowles/athletico/sound_trigger_hal', 'platform/hardware/libhardware', 'platform/hardware/libhardware_legacy', 'platform/hardware/marvell/bt', 'platform/hardware/mediatek', 'platform/hardware/msm7k', 'platform/hardware/nvidia/audio', 'platform/hardware/nvidia/tegra124']
+        repo_name: ['platform/hardware/intel/img/psb_video', 'platform/hardware/intel/sensors', 'platform/hardware/interfaces', 'platform/hardware/invensense', 'platform/hardware/knowles/athletico/sound_trigger_hal', 'platform/hardware/libhardware', 'platform/hardware/libhardware_legacy', 'platform/hardware/marvell/bt', 'platform/hardware/mediatek', 'platform/hardware/msm7k']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/tokio-stream', 'platform/external/rust/crates/tokio-test', 'platform/external/rust/crates/tokio-util', 'platform/external/rust/crates/tokio-vsock', 'platform/external/rust/crates/toml', 'platform/external/rust/crates/toml_datetime', 'platform/external/rust/crates/toml_edit', 'platform/external/rust/crates/tonic', 'platform/external/rust/crates/tower', 'platform/external/rust/crates/tower-layer']
+        repo_name: ['platform/external/rust/crates/tokio-openssl', 'platform/external/rust/crates/tokio-stream', 'platform/external/rust/crates/tokio-test', 'platform/external/rust/crates/tokio-util', 'platform/external/rust/crates/tokio-vsock', 'platform/external/rust/crates/toml', 'platform/external/rust/crates/toml_datetime', 'platform/external/rust/crates/toml_edit', 'platform/external/rust/crates/tonic', 'platform/external/rust/crates/tower']
 
     steps:
       - name: Maximize build space

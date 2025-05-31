@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/compile/libbcc', 'platform/frameworks/compile/linkloader', 'platform/frameworks/compile/llvm-ndk-cc', 'platform/frameworks/compile/mclinker', 'platform/frameworks/compile/slang', 'platform/frameworks/data', 'platform/frameworks/data-binding', 'platform/frameworks/ex', 'platform/frameworks/hardware/interfaces', 'platform/frameworks/janktesthelper']
+        repo_name: ['platform/frameworks/av', 'platform/frameworks/base', 'platform/frameworks/compile/libbcc', 'platform/frameworks/compile/linkloader', 'platform/frameworks/compile/llvm-ndk-cc', 'platform/frameworks/compile/mclinker', 'platform/frameworks/compile/slang', 'platform/frameworks/data', 'platform/frameworks/data-binding', 'platform/frameworks/ex']
 
     steps:
       - name: Maximize build space

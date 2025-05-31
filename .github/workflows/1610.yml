@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/thiserror', 'platform/external/rust/crates/thiserror-impl', 'platform/external/rust/crates/thread_local', 'platform/external/rust/crates/threadpool', 'platform/external/rust/crates/tikv-jemalloc-sys', 'platform/external/rust/crates/tikv-jemallocator', 'platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl', 'platform/external/rust/crates/tinyjson']
+        repo_name: ['platform/external/rust/crates/textwrap', 'platform/external/rust/crates/thiserror', 'platform/external/rust/crates/thiserror-impl', 'platform/external/rust/crates/thread_local', 'platform/external/rust/crates/threadpool', 'platform/external/rust/crates/tikv-jemalloc-sys', 'platform/external/rust/crates/tikv-jemallocator', 'platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl']
 
     steps:
       - name: Maximize build space

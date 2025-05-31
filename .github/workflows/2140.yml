@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Dialer', 'platform/packages/apps/DocumentsUI', 'platform/packages/apps/Email', 'platform/packages/apps/EmergencyInfo', 'platform/packages/apps/ExactCalculator', 'platform/packages/apps/Exchange', 'platform/packages/apps/FMRadio', 'platform/packages/apps/Gallery', 'platform/packages/apps/Gallery2', 'platform/packages/apps/Gallery3D']
+        repo_name: ['platform/packages/apps/DevCamera', 'platform/packages/apps/DeviceDiagnostics', 'platform/packages/apps/Dialer', 'platform/packages/apps/DocumentsUI', 'platform/packages/apps/Email', 'platform/packages/apps/EmergencyInfo', 'platform/packages/apps/ExactCalculator', 'platform/packages/apps/Exchange', 'platform/packages/apps/FMRadio', 'platform/packages/apps/Gallery']
 
     steps:
       - name: Maximize build space

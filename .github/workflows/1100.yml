@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils', 'platform/external/pcre', 'platform/external/pdfium', 'platform/external/perf_data_converter', 'platform/external/perfetto']
+        repo_name: ['platform/external/owasp/sanitizer', 'platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils', 'platform/external/pcre', 'platform/external/pdfium', 'platform/external/perf_data_converter']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6', 'platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.7', 'platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8', 'platform/prebuilts/gcc/linux-x86/x86/i686-android-linux-4.4.3', 'platform/prebuilts/gcc/linux-x86/x86/i686-android-linux-4.6', 'platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6', 'platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7', 'platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7', 'platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8', 'platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9']
+        repo_name: ['platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9', 'platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.4.3', 'platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6', 'platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.7', 'platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8', 'platform/prebuilts/gcc/linux-x86/x86/i686-android-linux-4.4.3', 'platform/prebuilts/gcc/linux-x86/x86/i686-android-linux-4.6', 'platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6', 'platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.7', 'platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/cmake/darwin-x86', 'platform/prebuilts/cmake/linux-x86', 'platform/prebuilts/cmake/windows-x86', 'platform/prebuilts/cmdline-tools', 'platform/prebuilts/deqp', 'platform/prebuilts/devtools', 'platform/prebuilts/eclipse', 'platform/prebuilts/eclipse-build-deps', 'platform/prebuilts/eclipse-build-deps-sources', 'platform/prebuilts/fuchsia_sdk']
+        repo_name: ['platform/prebuilts/clang/linux-x86/mips/3.3', 'platform/prebuilts/clang/linux-x86/x86/3.3', 'platform/prebuilts/cmake/darwin-x86', 'platform/prebuilts/cmake/linux-x86', 'platform/prebuilts/cmake/windows-x86', 'platform/prebuilts/cmdline-tools', 'platform/prebuilts/deqp', 'platform/prebuilts/devtools', 'platform/prebuilts/eclipse', 'platform/prebuilts/eclipse-build-deps']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/minikin', 'platform/frameworks/ml', 'platform/frameworks/multidex', 'platform/frameworks/native', 'platform/frameworks/opt/bitmap', 'platform/frameworks/opt/bluetooth', 'platform/frameworks/opt/calendar', 'platform/frameworks/opt/car/services', 'platform/frameworks/opt/car/setupwizard', 'platform/frameworks/opt/carddav']
+        repo_name: ['platform/frameworks/media/libvideoeditor', 'platform/frameworks/mff', 'platform/frameworks/minikin', 'platform/frameworks/ml', 'platform/frameworks/multidex', 'platform/frameworks/native', 'platform/frameworks/opt/bitmap', 'platform/frameworks/opt/bluetooth', 'platform/frameworks/opt/calendar', 'platform/frameworks/opt/car/services']
 
     steps:
       - name: Maximize build space

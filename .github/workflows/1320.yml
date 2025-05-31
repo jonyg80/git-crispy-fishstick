@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/crossbeam-queue', 'platform/external/rust/crates/crossbeam-utils', 'platform/external/rust/crates/csv', 'platform/external/rust/crates/csv-core', 'platform/external/rust/crates/darling', 'platform/external/rust/crates/darling_core', 'platform/external/rust/crates/darling_macro', 'platform/external/rust/crates/dashmap', 'platform/external/rust/crates/data-encoding', 'platform/external/rust/crates/debug_tree']
+        repo_name: ['platform/external/rust/crates/crossbeam-epoch', 'platform/external/rust/crates/crossbeam-queue', 'platform/external/rust/crates/crossbeam-utils', 'platform/external/rust/crates/csv', 'platform/external/rust/crates/csv-core', 'platform/external/rust/crates/darling', 'platform/external/rust/crates/darling_core', 'platform/external/rust/crates/darling_macro', 'platform/external/rust/crates/dashmap', 'platform/external/rust/crates/data-encoding']
 
     steps:
       - name: Maximize build space
