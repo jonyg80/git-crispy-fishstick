@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/superproject', 'platform/system/acpi/bert_collector', 'platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs']
+        repo_name: ['platform/smaratorg', 'platform/superproject', 'platform/system/acpi/bert_collector', 'platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf']
 
     steps:
       - name: Maximize build space

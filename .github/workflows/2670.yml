@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/nfc', 'platform/system/nvram', 'platform/system/peripheralmanager', 'platform/system/secretkeeper', 'platform/system/secure_element', 'platform/system/security', 'platform/system/see/authmgr', 'platform/system/sepolicy', 'platform/system/server_configurable_flags', 'platform/system/teeui']
+        repo_name: ['platform/system/netd', 'platform/system/nfc', 'platform/system/nvram', 'platform/system/peripheralmanager', 'platform/system/secretkeeper', 'platform/system/secure_element', 'platform/system/security', 'platform/system/see/authmgr', 'platform/system/sepolicy', 'platform/system/server_configurable_flags']
 
     steps:
       - name: Maximize build space

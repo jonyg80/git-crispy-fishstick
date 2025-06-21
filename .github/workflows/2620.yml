@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/crash_reporter', 'platform/system/cros-codecs', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ap', 'platform/system/desktop/ec', 'platform/system/desktop/fingerprint', 'platform/system/desktop/intel-pmt', 'platform/system/desktop/security', 'platform/system/dmesgd', 'platform/system/extras']
+        repo_name: ['platform/system/core', 'platform/system/crash_reporter', 'platform/system/cros-codecs', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ap', 'platform/system/desktop/ec', 'platform/system/desktop/fingerprint', 'platform/system/desktop/intel-pmt', 'platform/system/desktop/security', 'platform/system/dmesgd']
 
     steps:
       - name: Maximize build space
