@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd']
+        repo_name: ['platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt', 'platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond']
 
     steps:
       - name: Maximize build space

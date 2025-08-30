@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/module_sdk/Permission', 'platform/prebuilts/module_sdk/Profiling', 'platform/prebuilts/module_sdk/RemoteKeyProvisioning', 'platform/prebuilts/module_sdk/Scheduling', 'platform/prebuilts/module_sdk/SdkExtensions', 'platform/prebuilts/module_sdk/StatsD', 'platform/prebuilts/module_sdk/ThreadNetwork', 'platform/prebuilts/module_sdk/UprobeStats', 'platform/prebuilts/module_sdk/Uwb', 'platform/prebuilts/module_sdk/WebViewBootstrap']
+        repo_name: ['platform/prebuilts/module_sdk/OnDevicePersonalization', 'platform/prebuilts/module_sdk/Permission', 'platform/prebuilts/module_sdk/Profiling', 'platform/prebuilts/module_sdk/RemoteKeyProvisioning', 'platform/prebuilts/module_sdk/Scheduling', 'platform/prebuilts/module_sdk/SdkExtensions', 'platform/prebuilts/module_sdk/StatsD', 'platform/prebuilts/module_sdk/ThreadNetwork', 'platform/prebuilts/module_sdk/UprobeStats', 'platform/prebuilts/module_sdk/Uwb']
 
     steps:
       - name: Maximize build space

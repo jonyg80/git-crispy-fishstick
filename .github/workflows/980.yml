@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libvorbis', 'platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon', 'platform/external/libxml2']
+        repo_name: ['platform/external/libvncserver', 'platform/external/libvorbis', 'platform/external/libvpx', 'platform/external/libvterm', 'platform/external/libweave', 'platform/external/libwebm', 'platform/external/libwebsockets', 'platform/external/libxaac', 'platform/external/libxcam', 'platform/external/libxkbcommon']
 
     steps:
       - name: Maximize build space

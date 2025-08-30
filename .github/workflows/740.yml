@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/golang-x-sys', 'platform/external/golang-x-text', 'platform/external/golang-x-tools', 'platform/external/google-api-go-client', 'platform/external/google-api-services-storage', 'platform/external/google-auth-library-java', 'platform/external/google-benchmark', 'platform/external/google-breakpad', 'platform/external/google-cloud-go', 'platform/external/google-cloud-java']
+        repo_name: ['platform/external/golang-x-sync', 'platform/external/golang-x-sys', 'platform/external/golang-x-text', 'platform/external/golang-x-tools', 'platform/external/google-api-go-client', 'platform/external/google-api-services-storage', 'platform/external/google-auth-library-java', 'platform/external/google-benchmark', 'platform/external/google-breakpad', 'platform/external/google-cloud-go']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/openssl', 'platform/external/openthread', 'platform/external/openvpn', 'platform/external/openwrt-prebuilts', 'platform/external/oprofile', 'platform/external/optee/apps', 'platform/external/oss-fuzz', 'platform/external/ot-br-posix', 'platform/external/ow2-asm', 'platform/external/owasp/java-encoder']
+        repo_name: ['platform/external/openssh', 'platform/external/openssl', 'platform/external/openthread', 'platform/external/openvpn', 'platform/external/openwrt-prebuilts', 'platform/external/oprofile', 'platform/external/optee/apps', 'platform/external/oss-fuzz', 'platform/external/ot-br-posix', 'platform/external/ow2-asm']
 
     steps:
       - name: Maximize build space

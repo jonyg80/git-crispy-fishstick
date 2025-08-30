@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/modules/Telephony', 'platform/packages/modules/TestModule', 'platform/packages/modules/Tethering', 'platform/packages/modules/ThreadNetwork', 'platform/packages/modules/UprobeStats', 'platform/packages/modules/Uwb', 'platform/packages/modules/Virtualization', 'platform/packages/modules/WebViewBootstrap', 'platform/packages/modules/Wifi', 'platform/packages/modules/adb']
+        repo_name: ['platform/packages/modules/StatsD', 'platform/packages/modules/Telephony', 'platform/packages/modules/TestModule', 'platform/packages/modules/Tethering', 'platform/packages/modules/ThreadNetwork', 'platform/packages/modules/UprobeStats', 'platform/packages/modules/Uwb', 'platform/packages/modules/Virtualization', 'platform/packages/modules/WebViewBootstrap', 'platform/packages/modules/Wifi']
 
     steps:
       - name: Maximize build space

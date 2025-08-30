@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/lldb-utils', 'platform/external/llvm', 'platform/external/llvm-libc', 'platform/external/llvm_35a', 'platform/external/lmfit', 'platform/external/login-items-ae', 'platform/external/lohit-fonts', 'platform/external/lottie', 'platform/external/ltp', 'platform/external/ltrace']
+        repo_name: ['platform/external/lldb', 'platform/external/lldb-utils', 'platform/external/llvm', 'platform/external/llvm-libc', 'platform/external/llvm_35a', 'platform/external/lmfit', 'platform/external/login-items-ae', 'platform/external/lohit-fonts', 'platform/external/lottie', 'platform/external/ltp']
 
     steps:
       - name: Maximize build space

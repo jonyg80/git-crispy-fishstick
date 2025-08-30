@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/bytemuck', 'platform/external/rust/crates/bytemuck_derive', 'platform/external/rust/crates/byteorder', 'platform/external/rust/crates/bytes', 'platform/external/rust/crates/bzip2', 'platform/external/rust/crates/bzip2-sys', 'platform/external/rust/crates/camino', 'platform/external/rust/crates/cast', 'platform/external/rust/crates/cbindgen', 'platform/external/rust/crates/cc']
+        repo_name: ['platform/external/rust/crates/buddy_system_allocator', 'platform/external/rust/crates/bytemuck', 'platform/external/rust/crates/bytemuck_derive', 'platform/external/rust/crates/byteorder', 'platform/external/rust/crates/bytes', 'platform/external/rust/crates/bzip2', 'platform/external/rust/crates/bzip2-sys', 'platform/external/rust/crates/camino', 'platform/external/rust/crates/cast', 'platform/external/rust/crates/cbindgen']
 
     steps:
       - name: Maximize build space

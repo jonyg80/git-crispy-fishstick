@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/virtio-drivers', 'platform/external/rust/crates/virtio-queue', 'platform/external/rust/crates/virtio-vsock', 'platform/external/rust/crates/vm-memory', 'platform/external/rust/crates/vmm-sys-util', 'platform/external/rust/crates/vmm_vhost', 'platform/external/rust/crates/vsock', 'platform/external/rust/crates/vsprintf', 'platform/external/rust/crates/vulkano', 'platform/external/rust/crates/walkdir']
+        repo_name: ['platform/external/rust/crates/virtio-bindings', 'platform/external/rust/crates/virtio-drivers', 'platform/external/rust/crates/virtio-queue', 'platform/external/rust/crates/virtio-vsock', 'platform/external/rust/crates/vm-memory', 'platform/external/rust/crates/vmm-sys-util', 'platform/external/rust/crates/vmm_vhost', 'platform/external/rust/crates/vsock', 'platform/external/rust/crates/vsprintf', 'platform/external/rust/crates/vulkano']
 
     steps:
       - name: Maximize build space

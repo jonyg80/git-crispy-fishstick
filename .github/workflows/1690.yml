@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/want', 'platform/external/rust/crates/wasi', 'platform/external/rust/crates/weak-table', 'platform/external/rust/crates/webpki', 'platform/external/rust/crates/which', 'platform/external/rust/crates/winapi', 'platform/external/rust/crates/winnow', 'platform/external/rust/crates/x509-cert', 'platform/external/rust/crates/x509-parser', 'platform/external/rust/crates/xml-rs']
+        repo_name: ['platform/external/rust/crates/walkdir', 'platform/external/rust/crates/want', 'platform/external/rust/crates/wasi', 'platform/external/rust/crates/weak-table', 'platform/external/rust/crates/webpki', 'platform/external/rust/crates/which', 'platform/external/rust/crates/winapi', 'platform/external/rust/crates/winnow', 'platform/external/rust/crates/x509-cert', 'platform/external/rust/crates/x509-parser']
 
     steps:
       - name: Maximize build space

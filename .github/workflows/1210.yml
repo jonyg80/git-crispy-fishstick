@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/typing_extensions', 'platform/external/python/uritemplates', 'platform/external/python/watchdog', 'platform/external/pytorch', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qt', 'platform/external/qt5', 'platform/external/quake']
+        repo_name: ['platform/external/python/typing', 'platform/external/python/typing_extensions', 'platform/external/python/uritemplates', 'platform/external/python/watchdog', 'platform/external/pytorch', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qt', 'platform/external/qt5']
 
     steps:
       - name: Maximize build space

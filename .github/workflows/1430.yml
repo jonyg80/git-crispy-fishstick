@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/libloading', 'platform/external/rust/crates/libm', 'platform/external/rust/crates/libsqlite3-sys', 'platform/external/rust/crates/libtest-mimic', 'platform/external/rust/crates/libusb1-sys', 'platform/external/rust/crates/libz-sys', 'platform/external/rust/crates/linked-hash-map', 'platform/external/rust/crates/linkme', 'platform/external/rust/crates/linkme-impl', 'platform/external/rust/crates/litrs']
+        repo_name: ['platform/external/rust/crates/libfuzzer-sys', 'platform/external/rust/crates/libloading', 'platform/external/rust/crates/libm', 'platform/external/rust/crates/libsqlite3-sys', 'platform/external/rust/crates/libtest-mimic', 'platform/external/rust/crates/libusb1-sys', 'platform/external/rust/crates/libz-sys', 'platform/external/rust/crates/linked-hash-map', 'platform/external/rust/crates/linkme', 'platform/external/rust/crates/linkme-impl']
 
     steps:
       - name: Maximize build space

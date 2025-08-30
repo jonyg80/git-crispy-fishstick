@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/tower-layer', 'platform/external/rust/crates/tower-service', 'platform/external/rust/crates/tracing', 'platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash', 'platform/external/rust/crates/ucd-trie']
+        repo_name: ['platform/external/rust/crates/tower', 'platform/external/rust/crates/tower-layer', 'platform/external/rust/crates/tower-service', 'platform/external/rust/crates/tracing', 'platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash']
 
     steps:
       - name: Maximize build space

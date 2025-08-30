@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/google/atv/refDesignRcu/realtek', 'platform/hardware/google/atv/refDesignRcu/telink', 'platform/hardware/google/av', 'platform/hardware/google/camera', 'platform/hardware/google/display/common', 'platform/hardware/google/easel', 'platform/hardware/google/gchips', 'platform/hardware/google/gfxstream', 'platform/hardware/google/graphics/common', 'platform/hardware/google/graphics/gs101']
+        repo_name: ['platform/hardware/google/atv/refDesignRcu/atmosic', 'platform/hardware/google/atv/refDesignRcu/realtek', 'platform/hardware/google/atv/refDesignRcu/telink', 'platform/hardware/google/av', 'platform/hardware/google/camera', 'platform/hardware/google/display/common', 'platform/hardware/google/easel', 'platform/hardware/google/gchips', 'platform/hardware/google/gfxstream', 'platform/hardware/google/graphics/common']
 
     steps:
       - name: Maximize build space

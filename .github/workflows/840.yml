@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/jenkins-hash', 'platform/external/jetbrains/JetBrainsRuntime', 'platform/external/jetbrains/intellij-kotlin', 'platform/external/jetbrains/intellij-rust', 'platform/external/jetbrains/jcef', 'platform/external/jetbrains/jdk8u', 'platform/external/jetbrains/jdk8u_corba', 'platform/external/jetbrains/jdk8u_hotspot', 'platform/external/jetbrains/jdk8u_jaxp', 'platform/external/jetbrains/jdk8u_jaxws']
+        repo_name: ['platform/external/jemalloc_new', 'platform/external/jenkins-hash', 'platform/external/jetbrains/JetBrainsRuntime', 'platform/external/jetbrains/intellij-kotlin', 'platform/external/jetbrains/intellij-rust', 'platform/external/jetbrains/jcef', 'platform/external/jetbrains/jdk8u', 'platform/external/jetbrains/jdk8u_corba', 'platform/external/jetbrains/jdk8u_hotspot', 'platform/external/jetbrains/jdk8u_jaxp']
 
     steps:
       - name: Maximize build space

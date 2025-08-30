@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/jsr305', 'platform/external/jsr330', 'platform/external/junit', 'platform/external/junit-params', 'platform/external/kernel-headers', 'platform/external/kmod', 'platform/external/kotlin-compose-compiler', 'platform/external/kotlin.metadata', 'platform/external/kotlinc', 'platform/external/kotlinpoet']
+        repo_name: ['platform/external/jspecify', 'platform/external/jsr305', 'platform/external/jsr330', 'platform/external/junit', 'platform/external/junit-params', 'platform/external/kernel-headers', 'platform/external/kmod', 'platform/external/kotlin-compose-compiler', 'platform/external/kotlin.metadata', 'platform/external/kotlinc']
 
     steps:
       - name: Maximize build space
