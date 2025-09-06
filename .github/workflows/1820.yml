@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/walt', 'platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common', 'platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy', 'platform/external/webview_support_interfaces', 'platform/external/wmediumd']
+        repo_name: ['platform/external/vulkan-validation-layers', 'platform/external/walt', 'platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common', 'platform/external/webkit', 'platform/external/webp', 'platform/external/webrtc', 'platform/external/webrtc_legacy', 'platform/external/webview_support_interfaces']
 
     steps:
       - name: Maximize build space

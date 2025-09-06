@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/bsp/kernel/raspberrypi/pi-v4.1', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.4', 'platform/hardware/bsp/kernel/rockchip', 'platform/hardware/bsp/kernel/rockchip/rk-v4.4', 'platform/hardware/bsp/qcom', 'platform/hardware/bsp/rockchip', 'platform/hardware/generic/goldfish', 'platform/hardware/google', 'platform/hardware/google/aemu', 'platform/hardware/google/apf']
+        repo_name: ['platform/hardware/bsp/kernel/qcom/qcom-msm8x53-v3.18', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.1', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.4', 'platform/hardware/bsp/kernel/rockchip', 'platform/hardware/bsp/kernel/rockchip/rk-v4.4', 'platform/hardware/bsp/qcom', 'platform/hardware/bsp/rockchip', 'platform/hardware/generic/goldfish', 'platform/hardware/google', 'platform/hardware/google/aemu']
 
     steps:
       - name: Maximize build space

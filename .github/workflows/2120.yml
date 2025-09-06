@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Car/References', 'platform/packages/apps/Car/RotaryController', 'platform/packages/apps/Car/RotaryImePrebuilt', 'platform/packages/apps/Car/Settings', 'platform/packages/apps/Car/SettingsIntelligence', 'platform/packages/apps/Car/Stream', 'platform/packages/apps/Car/SystemUI', 'platform/packages/apps/Car/SystemUpdater', 'platform/packages/apps/Car/Templates', 'platform/packages/apps/Car/UserManagement']
+        repo_name: ['platform/packages/apps/Car/RadioPrebuilt', 'platform/packages/apps/Car/References', 'platform/packages/apps/Car/RotaryController', 'platform/packages/apps/Car/RotaryImePrebuilt', 'platform/packages/apps/Car/Settings', 'platform/packages/apps/Car/SettingsIntelligence', 'platform/packages/apps/Car/Stream', 'platform/packages/apps/Car/SystemUI', 'platform/packages/apps/Car/SystemUpdater', 'platform/packages/apps/Car/Templates']
 
     steps:
       - name: Maximize build space

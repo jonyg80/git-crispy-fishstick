@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/ti/wpan', 'platform/libcore', 'platform/libcore-snapshot', 'platform/libcore2', 'platform/libnativehelper', 'platform/manifest', 'platform/media/cts', 'platform/motodev', 'platform/ndk', 'platform/packages/apps/AccountsAndSyncSettings']
+        repo_name: ['platform/hardware/ti/wlan', 'platform/hardware/ti/wpan', 'platform/libcore', 'platform/libcore-snapshot', 'platform/libcore2', 'platform/libnativehelper', 'platform/manifest', 'platform/media/cts', 'platform/motodev', 'platform/ndk']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/boot-artifacts', 'platform/prebuilts/build-artifacts', 'platform/prebuilts/build-artifacts2', 'platform/prebuilts/build-artifacts3', 'platform/prebuilts/build-tools', 'platform/prebuilts/bundletool', 'platform/prebuilts/checkcolor', 'platform/prebuilts/checkstyle', 'platform/prebuilts/clack', 'platform/prebuilts/clang-tools']
+        repo_name: ['platform/prebuilts/bazel/windows-x86_64', 'platform/prebuilts/boot-artifacts', 'platform/prebuilts/build-artifacts', 'platform/prebuilts/build-artifacts2', 'platform/prebuilts/build-artifacts3', 'platform/prebuilts/build-tools', 'platform/prebuilts/bundletool', 'platform/prebuilts/checkcolor', 'platform/prebuilts/checkstyle', 'platform/prebuilts/clack']
 
     steps:
       - name: Maximize build space

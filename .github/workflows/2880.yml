@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/prebuilts/ndk/r21', 'toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26', 'toolchain/prebuilts/ndk/r27', 'toolchain/prebuilts/ndk/releases', 'toolchain/prebuilts/sysroot/platform/riscv64-linux-android', 'toolchain/python', 'toolchain/riscv_gnu_toolchain']
+        repo_name: ['toolchain/prebuilts/ndk/r19', 'toolchain/prebuilts/ndk/r20', 'toolchain/prebuilts/ndk/r21', 'toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25', 'toolchain/prebuilts/ndk/r26', 'toolchain/prebuilts/ndk/r27', 'toolchain/prebuilts/ndk/releases', 'toolchain/prebuilts/sysroot/platform/riscv64-linux-android']
 
     steps:
       - name: Maximize build space

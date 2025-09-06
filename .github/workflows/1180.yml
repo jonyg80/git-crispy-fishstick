@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/parse', 'platform/external/python/parse_type', 'platform/external/python/pexpect', 'platform/external/python/pluggy', 'platform/external/python/ply', 'platform/external/python/portpicker', 'platform/external/python/proto-google-cloud-pubsub-v1', 'platform/external/python/protobuf', 'platform/external/python/ptyprocess', 'platform/external/python/py']
+        repo_name: ['platform/external/python/packaging', 'platform/external/python/parse', 'platform/external/python/parse_type', 'platform/external/python/pexpect', 'platform/external/python/pluggy', 'platform/external/python/ply', 'platform/external/python/portpicker', 'platform/external/python/proto-google-cloud-pubsub-v1', 'platform/external/python/protobuf', 'platform/external/python/ptyprocess']
 
     steps:
       - name: Maximize build space

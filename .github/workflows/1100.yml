@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/owasp/java-encoder', 'platform/external/owasp/sanitizer', 'platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils', 'platform/external/pcre', 'platform/external/pdfium']
+        repo_name: ['platform/external/ow2-asm', 'platform/external/owasp/java-encoder', 'platform/external/owasp/sanitizer', 'platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils', 'platform/external/pcre']
 
     steps:
       - name: Maximize build space

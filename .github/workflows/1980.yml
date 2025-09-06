@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/intel/common/bd_prov', 'platform/hardware/intel/common/libmix', 'platform/hardware/intel/common/libstagefrighthw', 'platform/hardware/intel/common/libva', 'platform/hardware/intel/common/libwsbm', 'platform/hardware/intel/common/omx-components', 'platform/hardware/intel/common/utils', 'platform/hardware/intel/common/wrs_omxil_core', 'platform/hardware/intel/img/hwcomposer', 'platform/hardware/intel/img/libdrm']
+        repo_name: ['platform/hardware/intel/bootstub', 'platform/hardware/intel/common/bd_prov', 'platform/hardware/intel/common/libmix', 'platform/hardware/intel/common/libstagefrighthw', 'platform/hardware/intel/common/libva', 'platform/hardware/intel/common/libwsbm', 'platform/hardware/intel/common/omx-components', 'platform/hardware/intel/common/utils', 'platform/hardware/intel/common/wrs_omxil_core', 'platform/hardware/intel/img/hwcomposer']
 
     steps:
       - name: Maximize build space

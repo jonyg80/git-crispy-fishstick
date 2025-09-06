@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/num_enum', 'platform/external/rust/crates/num_enum_derive', 'platform/external/rust/crates/object', 'platform/external/rust/crates/octets', 'platform/external/rust/crates/oid-registry', 'platform/external/rust/crates/once_cell', 'platform/external/rust/crates/oneshot-uniffi', 'platform/external/rust/crates/oorandom', 'platform/external/rust/crates/openmls', 'platform/external/rust/crates/openmls_traits']
+        repo_name: ['platform/external/rust/crates/num_cpus', 'platform/external/rust/crates/num_enum', 'platform/external/rust/crates/num_enum_derive', 'platform/external/rust/crates/object', 'platform/external/rust/crates/octets', 'platform/external/rust/crates/oid-registry', 'platform/external/rust/crates/once_cell', 'platform/external/rust/crates/oneshot-uniffi', 'platform/external/rust/crates/oorandom', 'platform/external/rust/crates/openmls']
 
     steps:
       - name: Maximize build space

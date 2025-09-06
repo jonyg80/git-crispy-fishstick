@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/google-breakpad/darwin-x86', 'platform/prebuilts/google-breakpad/linux-x86', 'platform/prebuilts/google-breakpad/windows-x86', 'platform/prebuilts/gradle-plugin', 'platform/prebuilts/jdk/jdk11', 'platform/prebuilts/jdk/jdk17', 'platform/prebuilts/jdk/jdk21', 'platform/prebuilts/jdk/jdk8', 'platform/prebuilts/jdk/jdk9', 'platform/prebuilts/ktlint']
+        repo_name: ['platform/prebuilts/go/windows-x86', 'platform/prebuilts/google-breakpad/darwin-x86', 'platform/prebuilts/google-breakpad/linux-x86', 'platform/prebuilts/google-breakpad/windows-x86', 'platform/prebuilts/gradle-plugin', 'platform/prebuilts/jdk/jdk11', 'platform/prebuilts/jdk/jdk17', 'platform/prebuilts/jdk/jdk21', 'platform/prebuilts/jdk/jdk8', 'platform/prebuilts/jdk/jdk9']
 
     steps:
       - name: Maximize build space

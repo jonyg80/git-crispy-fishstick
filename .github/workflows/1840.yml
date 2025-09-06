@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/xmlwriter', 'platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java', 'platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd', 'platform/external/zucchini']
+        repo_name: ['platform/external/xmlrpcpp', 'platform/external/xmlwriter', 'platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java', 'platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd']
 
     steps:
       - name: Maximize build space

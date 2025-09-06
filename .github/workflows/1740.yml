@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm', 'platform/external/sqlite']
+        repo_name: ['platform/external/slf4j', 'platform/external/smack', 'platform/external/smali', 'platform/external/smaratorg', 'platform/external/snakeyaml', 'platform/external/sonic', 'platform/external/sonivox', 'platform/external/spdx-tools', 'platform/external/speex', 'platform/external/spirv-llvm']
 
     steps:
       - name: Maximize build space

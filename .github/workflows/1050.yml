@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/nanoprintf', 'platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos', 'platform/external/nfacct']
+        repo_name: ['platform/external/nanopb-c', 'platform/external/nanoprintf', 'platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven', 'platform/external/newfs_msdos']
 
     steps:
       - name: Maximize build space

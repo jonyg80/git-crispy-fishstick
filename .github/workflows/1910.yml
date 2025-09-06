@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/policies/base', 'platform/frameworks/proto_logging', 'platform/frameworks/rs', 'platform/frameworks/support', 'platform/frameworks/support-golden', 'platform/frameworks/testing', 'platform/frameworks/uiautomator', 'platform/frameworks/volley', 'platform/frameworks/webview', 'platform/frameworks/wilhelm']
+        repo_name: ['platform/frameworks/opt/widget', 'platform/frameworks/policies/base', 'platform/frameworks/proto_logging', 'platform/frameworks/rs', 'platform/frameworks/support', 'platform/frameworks/support-golden', 'platform/frameworks/testing', 'platform/frameworks/uiautomator', 'platform/frameworks/volley', 'platform/frameworks/webview']
 
     steps:
       - name: Maximize build space

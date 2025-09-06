@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity', 'platform/prebuilts/module_sdk/CrashRecovery', 'platform/prebuilts/module_sdk/DeviceLock', 'platform/prebuilts/module_sdk/HealthFitness', 'platform/prebuilts/module_sdk/IPsec', 'platform/prebuilts/module_sdk/Media', 'platform/prebuilts/module_sdk/MediaProvider', 'platform/prebuilts/module_sdk/NeuralNetworks', 'platform/prebuilts/module_sdk/Nfc']
+        repo_name: ['platform/prebuilts/module_sdk/Bluetooth', 'platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity', 'platform/prebuilts/module_sdk/CrashRecovery', 'platform/prebuilts/module_sdk/DeviceLock', 'platform/prebuilts/module_sdk/HealthFitness', 'platform/prebuilts/module_sdk/IPsec', 'platform/prebuilts/module_sdk/Media', 'platform/prebuilts/module_sdk/MediaProvider', 'platform/prebuilts/module_sdk/NeuralNetworks']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/google/graphics/gs101', 'platform/hardware/google/graphics/gs201', 'platform/hardware/google/graphics/zuma', 'platform/hardware/google/graphics/zumapro', 'platform/hardware/google/interfaces', 'platform/hardware/google/pixel', 'platform/hardware/google/pixel-sepolicy', 'platform/hardware/google/trusty', 'platform/hardware/intel/audio_media', 'platform/hardware/intel/bootstub']
+        repo_name: ['platform/hardware/google/graphics/common', 'platform/hardware/google/graphics/gs101', 'platform/hardware/google/graphics/gs201', 'platform/hardware/google/graphics/zuma', 'platform/hardware/google/graphics/zumapro', 'platform/hardware/google/interfaces', 'platform/hardware/google/pixel', 'platform/hardware/google/pixel-sepolicy', 'platform/hardware/google/trusty', 'platform/hardware/intel/audio_media']
 
     steps:
       - name: Maximize build space
