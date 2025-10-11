@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/desktop/security', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager', 'platform/system/incremental_delivery', 'platform/system/iorap']
+        repo_name: ['platform/system/desktop/fingerprint', 'platform/system/desktop/intel-pmt', 'platform/system/desktop/security', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper', 'platform/system/gsid', 'platform/system/hardware/interfaces', 'platform/system/hwservicemanager']
 
     steps:
       - name: Maximize build space

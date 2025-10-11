@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/python', 'toolchain/riscv_gnu_toolchain', 'toolchain/rr', 'toolchain/rustc', 'toolchain/sccache', 'toolchain/sed', 'toolchain/valgrind', 'toolchain/xz', 'toolchain/yasm', 'tools/aospstats']
+        repo_name: ['toolchain/prebuilts/ndk/releases', 'toolchain/prebuilts/sysroot/platform/riscv64-linux-android', 'toolchain/python', 'toolchain/riscv_gnu_toolchain', 'toolchain/rr', 'toolchain/rustc', 'toolchain/sccache', 'toolchain/sed', 'toolchain/valgrind', 'toolchain/xz']
 
     steps:
       - name: Maximize build space

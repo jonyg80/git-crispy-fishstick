@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/dagger2', 'platform/external/dbus', 'platform/external/dbus-binding-generator', 'platform/external/deqp', 'platform/external/deqp-deps/SPIRV-Headers', 'platform/external/deqp-deps/SPIRV-Tools', 'platform/external/deqp-deps/amber', 'platform/external/deqp-deps/glslang', 'platform/external/desugar', 'platform/external/devlib']
+        repo_name: ['platform/external/curl', 'platform/external/dagger2', 'platform/external/dbus', 'platform/external/dbus-binding-generator', 'platform/external/deqp', 'platform/external/deqp-deps/SPIRV-Headers', 'platform/external/deqp-deps/SPIRV-Tools', 'platform/external/deqp-deps/amber', 'platform/external/deqp-deps/glslang', 'platform/external/desugar']
 
     steps:
       - name: Maximize build space

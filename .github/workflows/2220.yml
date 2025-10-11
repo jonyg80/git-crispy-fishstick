@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/inputmethods/PinyinIME', 'platform/packages/modules/ANGLE', 'platform/packages/modules/AdServices', 'platform/packages/modules/ApiExtensions', 'platform/packages/modules/AppSearch', 'platform/packages/modules/ArtPrebuilt', 'platform/packages/modules/Bluetooth', 'platform/packages/modules/BootPrebuilt/5.10/arm64', 'platform/packages/modules/BootPrebuilt/5.4/arm64', 'platform/packages/modules/CaptivePortalLogin']
+        repo_name: ['platform/packages/inputmethods/OpenWnn', 'platform/packages/inputmethods/PinyinIME', 'platform/packages/modules/ANGLE', 'platform/packages/modules/AdServices', 'platform/packages/modules/ApiExtensions', 'platform/packages/modules/AppSearch', 'platform/packages/modules/ArtPrebuilt', 'platform/packages/modules/Bluetooth', 'platform/packages/modules/BootPrebuilt/5.10/arm64', 'platform/packages/modules/BootPrebuilt/5.4/arm64']
 
     steps:
       - name: Maximize build space

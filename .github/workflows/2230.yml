@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/modules/CellBroadcastService', 'platform/packages/modules/ConfigInfrastructure', 'platform/packages/modules/Connectivity', 'platform/packages/modules/CrashRecovery', 'platform/packages/modules/Cronet', 'platform/packages/modules/DeviceLock', 'platform/packages/modules/DnsResolver', 'platform/packages/modules/ExtServices', 'platform/packages/modules/GeoTZ', 'platform/packages/modules/Gki']
+        repo_name: ['platform/packages/modules/CaptivePortalLogin', 'platform/packages/modules/CellBroadcastService', 'platform/packages/modules/ConfigInfrastructure', 'platform/packages/modules/Connectivity', 'platform/packages/modules/CrashRecovery', 'platform/packages/modules/Cronet', 'platform/packages/modules/DeviceLock', 'platform/packages/modules/DnsResolver', 'platform/packages/modules/ExtServices', 'platform/packages/modules/GeoTZ']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/wallpapers/Galaxy4', 'platform/packages/wallpapers/HoloSpiral', 'platform/packages/wallpapers/ImageWallpaper', 'platform/packages/wallpapers/LivePicker', 'platform/packages/wallpapers/MagicSmoke', 'platform/packages/wallpapers/MusicVisualization', 'platform/packages/wallpapers/NoiseField', 'platform/packages/wallpapers/PhaseBeam', 'platform/pdk', 'platform/platform_testing']
+        repo_name: ['platform/packages/wallpapers/Basic', 'platform/packages/wallpapers/Galaxy4', 'platform/packages/wallpapers/HoloSpiral', 'platform/packages/wallpapers/ImageWallpaper', 'platform/packages/wallpapers/LivePicker', 'platform/packages/wallpapers/MagicSmoke', 'platform/packages/wallpapers/MusicVisualization', 'platform/packages/wallpapers/NoiseField', 'platform/packages/wallpapers/PhaseBeam', 'platform/pdk']
 
     steps:
       - name: Maximize build space

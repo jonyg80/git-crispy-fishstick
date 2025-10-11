@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/common']
+        repo_name: ['trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram', 'trusty/app/sample', 'trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64']
 
     steps:
       - name: Maximize build space

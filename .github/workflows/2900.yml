@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['tools/fetch_artifact', 'tools/manifest', 'tools/platform-compat', 'tools/presubmit-automerger/test1', 'tools/repo', 'tools/superproject', 'trusty/app/authmgr', 'trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui']
+        repo_name: ['toolchain/yasm', 'tools/aospstats', 'tools/fetch_artifact', 'tools/manifest', 'tools/platform-compat', 'tools/presubmit-automerger/test1', 'tools/repo', 'tools/superproject', 'trusty/app/authmgr', 'trusty/app/avb']
 
     steps:
       - name: Maximize build space

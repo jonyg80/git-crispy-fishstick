@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/catch2', 'platform/external/cblas', 'platform/external/cbor-java', 'platform/external/cef', 'platform/external/ceres-solver', 'platform/external/checkpolicy', 'platform/external/checkstyle', 'platform/external/cherry', 'platform/external/chromite', 'platform/external/chromium']
+        repo_name: ['platform/external/capstone', 'platform/external/catch2', 'platform/external/cblas', 'platform/external/cbor-java', 'platform/external/cef', 'platform/external/ceres-solver', 'platform/external/checkpolicy', 'platform/external/checkstyle', 'platform/external/cherry', 'platform/external/chromite']
 
     steps:
       - name: Maximize build space

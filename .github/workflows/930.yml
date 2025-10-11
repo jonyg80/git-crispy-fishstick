@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libgsm', 'platform/external/libhevc', 'platform/external/libiio', 'platform/external/libiota', 'platform/external/libjpeg-turbo', 'platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd']
+        repo_name: ['platform/external/libgdx', 'platform/external/libgsm', 'platform/external/libhevc', 'platform/external/libiio', 'platform/external/libiota', 'platform/external/libjpeg-turbo', 'platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf']
 
     steps:
       - name: Maximize build space

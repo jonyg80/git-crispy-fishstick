@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/qcom/bootctrl', 'platform/hardware/qcom/bt', 'platform/hardware/qcom/camera', 'platform/hardware/qcom/data/ipacfg-mgr', 'platform/hardware/qcom/display', 'platform/hardware/qcom/gps', 'platform/hardware/qcom/keymaster', 'platform/hardware/qcom/media', 'platform/hardware/qcom/msm8960', 'platform/hardware/qcom/msm8994']
+        repo_name: ['platform/hardware/qcom/audio', 'platform/hardware/qcom/bootctrl', 'platform/hardware/qcom/bt', 'platform/hardware/qcom/camera', 'platform/hardware/qcom/data/ipacfg-mgr', 'platform/hardware/qcom/display', 'platform/hardware/qcom/gps', 'platform/hardware/qcom/keymaster', 'platform/hardware/qcom/media', 'platform/hardware/qcom/msm8960']
 
     steps:
       - name: Maximize build space

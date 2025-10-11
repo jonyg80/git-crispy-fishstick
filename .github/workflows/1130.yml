@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto', 'platform/external/python/astroid']
+        repo_name: ['platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow', 'platform/external/python/absl-py', 'platform/external/python/apitools', 'platform/external/python/appdirs', 'platform/external/python/asn1crypto']
 
     steps:
       - name: Maximize build space

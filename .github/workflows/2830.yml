@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/gold', 'toolchain/isl', 'toolchain/jack', 'toolchain/jack-server', 'toolchain/jdk/build', 'toolchain/jdk/jdk11', 'toolchain/jdk/jdk17', 'toolchain/jdk/jdk21', 'toolchain/jdk/jdk9', 'toolchain/jdk/jdk9_corba']
+        repo_name: ['toolchain/gmp', 'toolchain/gmp-6.2.1', 'toolchain/gold', 'toolchain/isl', 'toolchain/jack', 'toolchain/jack-server', 'toolchain/jdk/build', 'toolchain/jdk/jdk11', 'toolchain/jdk/jdk17', 'toolchain/jdk/jdk21']
 
     steps:
       - name: Maximize build space

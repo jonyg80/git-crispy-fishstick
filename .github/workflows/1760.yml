@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/subsampling-scale-image-view', 'platform/external/svox', 'platform/external/swiftshader', 'platform/external/swig', 'platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump', 'platform/external/tensorflow']
+        repo_name: ['platform/external/stressapptest', 'platform/external/subsampling-scale-image-view', 'platform/external/svox', 'platform/external/swiftshader', 'platform/external/swig', 'platform/external/syslinux', 'platform/external/syspatch', 'platform/external/syzkaller', 'platform/external/tagsoup', 'platform/external/tcpdump']
 
     steps:
       - name: Maximize build space

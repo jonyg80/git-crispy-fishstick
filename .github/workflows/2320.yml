@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilt', 'platform/prebuilts/abi-dumps/ndk', 'platform/prebuilts/abi-dumps/platform', 'platform/prebuilts/abi-dumps/vndk', 'platform/prebuilts/android-emulator', 'platform/prebuilts/android-emulator-build/archive', 'platform/prebuilts/android-emulator-build/common', 'platform/prebuilts/android-emulator-build/curl', 'platform/prebuilts/android-emulator-build/mesa', 'platform/prebuilts/android-emulator-build/mesa-deps']
+        repo_name: ['platform/platform_testing', 'platform/prebuilt', 'platform/prebuilts/abi-dumps/ndk', 'platform/prebuilts/abi-dumps/platform', 'platform/prebuilts/abi-dumps/vndk', 'platform/prebuilts/android-emulator', 'platform/prebuilts/android-emulator-build/archive', 'platform/prebuilts/android-emulator-build/common', 'platform/prebuilts/android-emulator-build/curl', 'platform/prebuilts/android-emulator-build/mesa']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/bazelbuild-apple_support', 'platform/external/bazelbuild-bazel-central-registry', 'platform/external/bazelbuild-kotlin-rules', 'platform/external/bazelbuild-platforms', 'platform/external/bazelbuild-remote-apis', 'platform/external/bazelbuild-remote-apis-sdks', 'platform/external/bazelbuild-rules_android', 'platform/external/bazelbuild-rules_cc', 'platform/external/bazelbuild-rules_fuzzing', 'platform/external/bazelbuild-rules_go']
+        repo_name: ['platform/external/bazel-skylib', 'platform/external/bazelbuild-apple_support', 'platform/external/bazelbuild-bazel-central-registry', 'platform/external/bazelbuild-kotlin-rules', 'platform/external/bazelbuild-platforms', 'platform/external/bazelbuild-remote-apis', 'platform/external/bazelbuild-remote-apis-sdks', 'platform/external/bazelbuild-rules_android', 'platform/external/bazelbuild-rules_cc', 'platform/external/bazelbuild-rules_fuzzing']
 
     steps:
       - name: Maximize build space

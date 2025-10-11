@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/unicode', 'platform/external/universal-tween-engine', 'platform/external/usb-ids', 'platform/external/usrsctp', 'platform/external/utf8proc', 'platform/external/uwb', 'platform/external/v4l-utils', 'platform/external/v4l2_codec2', 'platform/external/v8', 'platform/external/valgrind']
+        repo_name: ['platform/external/ukey2', 'platform/external/unicode', 'platform/external/universal-tween-engine', 'platform/external/usb-ids', 'platform/external/usrsctp', 'platform/external/utf8proc', 'platform/external/uwb', 'platform/external/v4l-utils', 'platform/external/v4l2_codec2', 'platform/external/v8']
 
     steps:
       - name: Maximize build space

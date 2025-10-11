@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/ktlint', 'platform/prebuilts/libedit/darwin-x86', 'platform/prebuilts/libedit/linux-x86', 'platform/prebuilts/libglog/darwin-x86', 'platform/prebuilts/libglog/linux-x86', 'platform/prebuilts/libglog/windows-x86', 'platform/prebuilts/libprotobuf/darwin', 'platform/prebuilts/libprotobuf/darwin-x86', 'platform/prebuilts/libprotobuf/linux', 'platform/prebuilts/libprotobuf/linux-x86']
+        repo_name: ['platform/prebuilts/jdk/jdk8', 'platform/prebuilts/jdk/jdk9', 'platform/prebuilts/ktlint', 'platform/prebuilts/libedit/darwin-x86', 'platform/prebuilts/libedit/linux-x86', 'platform/prebuilts/libglog/darwin-x86', 'platform/prebuilts/libglog/linux-x86', 'platform/prebuilts/libglog/windows-x86', 'platform/prebuilts/libprotobuf/darwin', 'platform/prebuilts/libprotobuf/darwin-x86']
 
     steps:
       - name: Maximize build space

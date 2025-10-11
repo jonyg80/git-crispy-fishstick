@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/providers/ContactsKeysProvider', 'platform/packages/providers/ContactsProvider', 'platform/packages/providers/DownloadProvider', 'platform/packages/providers/DrmProvider', 'platform/packages/providers/GoogleContactsProvider', 'platform/packages/providers/GoogleSubscribedFeedsProvider', 'platform/packages/providers/ImProvider', 'platform/packages/providers/ManagementProvider', 'platform/packages/providers/MediaProvider', 'platform/packages/providers/PartnerBookmarksProvider']
+        repo_name: ['platform/packages/providers/CallLogProvider', 'platform/packages/providers/ContactsKeysProvider', 'platform/packages/providers/ContactsProvider', 'platform/packages/providers/DownloadProvider', 'platform/packages/providers/DrmProvider', 'platform/packages/providers/GoogleContactsProvider', 'platform/packages/providers/GoogleSubscribedFeedsProvider', 'platform/packages/providers/ImProvider', 'platform/packages/providers/ManagementProvider', 'platform/packages/providers/MediaProvider']
 
     steps:
       - name: Maximize build space

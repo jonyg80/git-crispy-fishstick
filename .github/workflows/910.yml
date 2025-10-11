@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libcups', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi', 'platform/external/libcxxabi_35a', 'platform/external/libcxxrt', 'platform/external/libdaemon', 'platform/external/libdav1d', 'platform/external/libdisplay-info', 'platform/external/libdivsufsort']
+        repo_name: ['platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi', 'platform/external/libcxxabi_35a', 'platform/external/libcxxrt', 'platform/external/libdaemon', 'platform/external/libdav1d', 'platform/external/libdisplay-info']
 
     steps:
       - name: Maximize build space

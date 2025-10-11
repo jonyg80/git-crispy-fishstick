@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/jetbrains/jdk8u_jaxws', 'platform/external/jetbrains/jdk8u_jdk', 'platform/external/jetbrains/jdk8u_jfx', 'platform/external/jetbrains/jdk8u_langtools', 'platform/external/jetbrains/jdk8u_nashorn', 'platform/external/jetbrains/kotlin', 'platform/external/jetpack-camera-app', 'platform/external/jetty', 'platform/external/jhead', 'platform/external/jimfs']
+        repo_name: ['platform/external/jetbrains/jdk8u_jaxp', 'platform/external/jetbrains/jdk8u_jaxws', 'platform/external/jetbrains/jdk8u_jdk', 'platform/external/jetbrains/jdk8u_jfx', 'platform/external/jetbrains/jdk8u_langtools', 'platform/external/jetbrains/jdk8u_nashorn', 'platform/external/jetbrains/kotlin', 'platform/external/jetpack-camera-app', 'platform/external/jetty', 'platform/external/jhead']
 
     steps:
       - name: Maximize build space

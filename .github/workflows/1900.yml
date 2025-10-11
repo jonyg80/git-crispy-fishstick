@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/opt/net/lowpan', 'platform/frameworks/opt/net/voip', 'platform/frameworks/opt/net/wifi', 'platform/frameworks/opt/photoviewer', 'platform/frameworks/opt/setupwizard', 'platform/frameworks/opt/sherpa', 'platform/frameworks/opt/telephony', 'platform/frameworks/opt/timezonepicker', 'platform/frameworks/opt/tv/tvsystem', 'platform/frameworks/opt/vcard']
+        repo_name: ['platform/frameworks/opt/net/ims', 'platform/frameworks/opt/net/lowpan', 'platform/frameworks/opt/net/voip', 'platform/frameworks/opt/net/wifi', 'platform/frameworks/opt/photoviewer', 'platform/frameworks/opt/setupwizard', 'platform/frameworks/opt/sherpa', 'platform/frameworks/opt/telephony', 'platform/frameworks/opt/timezonepicker', 'platform/frameworks/opt/tv/tvsystem']
 
     steps:
       - name: Maximize build space

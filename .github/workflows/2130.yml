@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Car/UserManagement', 'platform/packages/apps/Car/VoiceControl', 'platform/packages/apps/Car/externallibs', 'platform/packages/apps/Car/libs', 'platform/packages/apps/Car/systemlibs', 'platform/packages/apps/Car/tests', 'platform/packages/apps/CarrierConfig', 'platform/packages/apps/CellBroadcastReceiver', 'platform/packages/apps/CertInstaller', 'platform/packages/apps/Contacts']
+        repo_name: ['platform/packages/apps/Car/Templates', 'platform/packages/apps/Car/UserManagement', 'platform/packages/apps/Car/VoiceControl', 'platform/packages/apps/Car/externallibs', 'platform/packages/apps/Car/libs', 'platform/packages/apps/Car/systemlibs', 'platform/packages/apps/Car/tests', 'platform/packages/apps/CarrierConfig', 'platform/packages/apps/CellBroadcastReceiver', 'platform/packages/apps/CertInstaller']
 
     steps:
       - name: Maximize build space
