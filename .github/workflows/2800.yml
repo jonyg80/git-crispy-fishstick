@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/tradefed_cluster', 'platform/tools/tradefederation', 'platform/tools/tradefederation/contrib', 'platform/tools/tradefederation/prebuilts', 'platform/tools/treble', 'platform/tools/trebuchet', 'platform/vendor/htc/dream-open', 'platform/vendor/invensense', 'platform/vendor/sample', 'product/google/common']
+        repo_name: ['platform/tools/test/openhst', 'platform/tools/tradefed_cluster', 'platform/tools/tradefederation', 'platform/tools/tradefederation/contrib', 'platform/tools/tradefederation/prebuilts', 'platform/tools/treble', 'platform/tools/trebuchet', 'platform/vendor/htc/dream-open', 'platform/vendor/invensense', 'platform/vendor/sample']
 
     steps:
       - name: Maximize build space

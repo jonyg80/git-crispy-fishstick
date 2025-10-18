@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/system/zygote', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root']
+        repo_name: ['platform/system/usb_info_tools', 'platform/system/vold', 'platform/system/weaved', 'platform/system/webservd', 'platform/system/wifi', 'platform/system/wlan/ti', 'platform/system/zygote', 'platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox']
 
     steps:
       - name: Maximize build space

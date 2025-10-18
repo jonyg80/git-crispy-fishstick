@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/memory/mm_eventsd', 'platform/system/memory/mmd', 'platform/system/metricsd', 'platform/system/nativepower', 'platform/system/netd', 'platform/system/nfc', 'platform/system/nvram', 'platform/system/peripheralmanager', 'platform/system/secretkeeper', 'platform/system/secure_element']
+        repo_name: ['platform/system/memory/lmkd', 'platform/system/memory/mm_eventsd', 'platform/system/memory/mmd', 'platform/system/metricsd', 'platform/system/nativepower', 'platform/system/netd', 'platform/system/nfc', 'platform/system/nvram', 'platform/system/peripheralmanager', 'platform/system/secretkeeper']
 
     steps:
       - name: Maximize build space

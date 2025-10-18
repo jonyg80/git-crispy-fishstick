@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/mpc', 'toolchain/mpc-1.2.1', 'toolchain/mpfr', 'toolchain/mpfr-4.1.0', 'toolchain/nasm', 'toolchain/ndk-kokoro', 'toolchain/ndk_chromite_config', 'toolchain/openmp_llvm', 'toolchain/perl', 'toolchain/pgo-profiles']
+        repo_name: ['toolchain/mingw', 'toolchain/mpc', 'toolchain/mpc-1.2.1', 'toolchain/mpfr', 'toolchain/mpfr-4.1.0', 'toolchain/nasm', 'toolchain/ndk-kokoro', 'toolchain/ndk_chromite_config', 'toolchain/openmp_llvm', 'toolchain/perl']
 
     steps:
       - name: Maximize build space
