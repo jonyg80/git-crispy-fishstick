@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/vndk/v32', 'platform/prebuilts/vndk/v33', 'platform/prebuilts/vndk/v34', 'platform/sdk', 'platform/smaratorg', 'platform/superproject', 'platform/system/acpi/bert_collector', 'platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd']
+        repo_name: ['platform/prebuilts/vndk/v28', 'platform/prebuilts/vndk/v29', 'platform/prebuilts/vndk/v30', 'platform/prebuilts/vndk/v31', 'platform/prebuilts/vndk/v32', 'platform/prebuilts/vndk/v33', 'platform/prebuilts/vndk/v34', 'platform/sdk', 'platform/smaratorg', 'platform/superproject']
 
     steps:
       - name: Maximize build space

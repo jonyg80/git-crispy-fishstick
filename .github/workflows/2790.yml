@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/studio/google/play', 'platform/tools/studio/google/samples', 'platform/tools/studio/google/services', 'platform/tools/studio/translation', 'platform/tools/swing-testing', 'platform/tools/swt', 'platform/tools/test/connectivity', 'platform/tools/test/graphicsbenchmark', 'platform/tools/test/mobly_extensions', 'platform/tools/test/mobly_snippets']
+        repo_name: ['platform/tools/studio/google/appindexing', 'platform/tools/studio/google/cloud/testing', 'platform/tools/studio/google/cloud/tools', 'platform/tools/studio/google/login', 'platform/tools/studio/google/play', 'platform/tools/studio/google/samples', 'platform/tools/studio/google/services', 'platform/tools/studio/translation', 'platform/tools/swing-testing', 'platform/tools/swt']
 
     steps:
       - name: Maximize build space
