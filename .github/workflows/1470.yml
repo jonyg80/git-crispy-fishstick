@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/mockall_derive', 'platform/external/rust/crates/moveit', 'platform/external/rust/crates/named-lock', 'platform/external/rust/crates/nix', 'platform/external/rust/crates/no-panic', 'platform/external/rust/crates/nom', 'platform/external/rust/crates/num-bigint', 'platform/external/rust/crates/num-complex', 'platform/external/rust/crates/num-derive', 'platform/external/rust/crates/num-integer']
+        repo_name: ['platform/external/rust/crates/lz4_flex', 'platform/external/rust/crates/macaddr', 'platform/external/rust/crates/managed', 'platform/external/rust/crates/maplit', 'platform/external/rust/crates/matches', 'platform/external/rust/crates/matchit', 'platform/external/rust/crates/maybe-async', 'platform/external/rust/crates/memchr', 'platform/external/rust/crates/memmap2', 'platform/external/rust/crates/memoffset']
 
     steps:
       - name: Maximize build space

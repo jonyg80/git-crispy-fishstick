@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/bsp/kernel/qcom/qcom-msm8x09-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x53-v3.18', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.1', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.4', 'platform/hardware/bsp/kernel/rockchip', 'platform/hardware/bsp/kernel/rockchip/rk-v4.4', 'platform/hardware/bsp/qcom', 'platform/hardware/bsp/rockchip', 'platform/hardware/generic/goldfish', 'platform/hardware/google']
+        repo_name: ['platform/hardware/bsp/bootloader/intel/edison-u-boot', 'platform/hardware/bsp/bootloader/nxp/uboot-imx', 'platform/hardware/bsp/bootloader/rockchip/rk-u-boot', 'platform/hardware/bsp/broadcom', 'platform/hardware/bsp/freescale', 'platform/hardware/bsp/imagination', 'platform/hardware/bsp/intel', 'platform/hardware/bsp/kernel/common/v4.1', 'platform/hardware/bsp/kernel/common/v4.4', 'platform/hardware/bsp/kernel/freescale']
 
     steps:
       - name: Maximize build space

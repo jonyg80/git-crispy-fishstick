@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/ltp', 'platform/external/ltrace', 'platform/external/lua', 'platform/external/lvm2', 'platform/external/lz4', 'platform/external/lzma', 'platform/external/lzop', 'platform/external/marisa-trie', 'platform/external/markdown', 'platform/external/mbedtls']
+        repo_name: ['platform/external/libyuv', 'platform/external/licenseclassifier', 'platform/external/linux-firmware', 'platform/external/linux-kselftest', 'platform/external/linux-tools-perf', 'platform/external/lisa', 'platform/external/littlemock', 'platform/external/lld', 'platform/external/lldb', 'platform/external/lldb-utils']
 
     steps:
       - name: Maximize build space

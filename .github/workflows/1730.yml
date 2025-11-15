@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/sfntly', 'platform/external/sg3_utils', 'platform/external/shaderc/glslang', 'platform/external/shaderc/shaderc', 'platform/external/shaderc/spirv-headers', 'platform/external/shaderc/spirv-tools', 'platform/external/shflags', 'platform/external/sil-fonts', 'platform/external/skia', 'platform/external/skqp']
+        repo_name: ['platform/external/rust/crates/zeroize', 'platform/external/rust/crates/zeroize_derive', 'platform/external/rust/crates/zip', 'platform/external/rust/crates/zune-inflate', 'platform/external/rust/cros-libva', 'platform/external/rust/cxx', 'platform/external/rust/pica', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop']
 
     steps:
       - name: Maximize build space

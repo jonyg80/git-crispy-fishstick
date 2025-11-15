@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config', 'platform/external/ply', 'platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5']
+        repo_name: ['platform/external/ot-br-posix', 'platform/external/ow2-asm', 'platform/external/owasp/java-encoder', 'platform/external/owasp/sanitizer', 'platform/external/pandora/avatar', 'platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils']
 
     steps:
       - name: Maximize build space

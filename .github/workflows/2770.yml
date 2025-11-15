@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/external/gradle', 'platform/tools/external_updater', 'platform/tools/google_prebuilts/studio/sdk/remote', 'platform/tools/gpu', 'platform/tools/gpu-profiler/idea', 'platform/tools/gradle', 'platform/tools/gradle-recipes', 'platform/tools/idea', 'platform/tools/lint_checks', 'platform/tools/loganalysis']
+        repo_name: ['platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk', 'platform/tools/build', 'platform/tools/buildSrc']
 
     steps:
       - name: Maximize build space

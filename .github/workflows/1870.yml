@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/libs/net', 'platform/frameworks/libs/service_entitlement', 'platform/frameworks/libs/systemui', 'platform/frameworks/media/libvideoeditor', 'platform/frameworks/mff', 'platform/frameworks/minikin', 'platform/frameworks/ml', 'platform/frameworks/multidex', 'platform/frameworks/native', 'platform/frameworks/opt/bitmap']
+        repo_name: ['platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd', 'platform/external/zucchini', 'platform/external/zxing', 'platform/frameworks/av', 'platform/frameworks/base', 'platform/frameworks/compile/libbcc']
 
     steps:
       - name: Maximize build space

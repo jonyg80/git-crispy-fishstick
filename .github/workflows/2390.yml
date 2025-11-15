@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/deqp', 'platform/prebuilts/devtools', 'platform/prebuilts/eclipse', 'platform/prebuilts/eclipse-build-deps', 'platform/prebuilts/eclipse-build-deps-sources', 'platform/prebuilts/fuchsia_sdk', 'platform/prebuilts/fullsdk-darwin/build-tools', 'platform/prebuilts/fullsdk-darwin/build-tools/27.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/28.0.2', 'platform/prebuilts/fullsdk-darwin/build-tools/28.0.3']
+        repo_name: ['platform/prebuilts/clang/darwin-x86/3.1', 'platform/prebuilts/clang/darwin-x86/3.2', 'platform/prebuilts/clang/darwin-x86/arm/3.3', 'platform/prebuilts/clang/darwin-x86/host/3.3', 'platform/prebuilts/clang/darwin-x86/host/3.4', 'platform/prebuilts/clang/darwin-x86/host/3.5', 'platform/prebuilts/clang/darwin-x86/host/3.6', 'platform/prebuilts/clang/darwin-x86/mips/3.3', 'platform/prebuilts/clang/darwin-x86/sdk/3.5', 'platform/prebuilts/clang/darwin-x86/x86/3.3']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/acpi/bert_collector', 'platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs', 'platform/system/bt']
+        repo_name: ['platform/prebuilts/renderscript/host/linux-x86', 'platform/prebuilts/renderscript/host/windows-x86', 'platform/prebuilts/runtime', 'platform/prebuilts/rust', 'platform/prebuilts/rust-toolchain/darwin', 'platform/prebuilts/rust-toolchain/linux-musl-x86', 'platform/prebuilts/rust-toolchain/linux-x86', 'platform/prebuilts/rust-toolchain/windows-x86', 'platform/prebuilts/sdk', 'platform/prebuilts/simpleperf']
 
     steps:
       - name: Maximize build space

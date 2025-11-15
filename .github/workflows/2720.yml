@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/test/p2pts', 'platform/test/robolectric-extensions', 'platform/test/sts', 'platform/test/suite_harness', 'platform/test/vti/alert', 'platform/test/vti/dashboard', 'platform/test/vti/fuzz_test_serving', 'platform/test/vti/test_serving', 'platform/test/vts', 'platform/test/vts-testcase/fuzz']
+        repo_name: ['platform/system/timezone', 'platform/system/tools/aidl', 'platform/system/tools/bpt', 'platform/system/tools/hidl', 'platform/system/tools/mkbootimg', 'platform/system/tools/sysprop', 'platform/system/tools/xsdc', 'platform/system/tpm', 'platform/system/tpm_manager', 'platform/system/trunks']
 
     steps:
       - name: Maximize build space

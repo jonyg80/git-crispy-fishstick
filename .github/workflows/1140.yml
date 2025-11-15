@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/astroid', 'platform/external/python/atomicwrites', 'platform/external/python/attrs', 'platform/external/python/bumble', 'platform/external/python/cachetools', 'platform/external/python/cffi', 'platform/external/python/cpython2', 'platform/external/python/cpython3', 'platform/external/python/cryptography', 'platform/external/python/dateutil']
+        repo_name: ['platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config', 'platform/external/ply', 'platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5']
 
     steps:
       - name: Maximize build space

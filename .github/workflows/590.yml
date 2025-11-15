@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/chromium_org/third_party/sfntly/cpp/src', 'platform/external/chromium_org/third_party/skia', 'platform/external/chromium_org/third_party/skia/gyp', 'platform/external/chromium_org/third_party/skia/include', 'platform/external/chromium_org/third_party/skia/src', 'platform/external/chromium_org/third_party/smhasher/src', 'platform/external/chromium_org/third_party/usrsctp/usrsctplib', 'platform/external/chromium_org/third_party/webrtc', 'platform/external/chromium_org/third_party/yasm/source/patched-yasm', 'platform/external/chromium_org/tools/grit']
+        repo_name: ['platform/external/chromium_org/third_party/libyuv', 'platform/external/chromium_org/third_party/mesa/src', 'platform/external/chromium_org/third_party/openmax_dl', 'platform/external/chromium_org/third_party/openssl', 'platform/external/chromium_org/third_party/opus/src', 'platform/external/chromium_org/third_party/ots', 'platform/external/chromium_org/third_party/sfntly/cpp/src', 'platform/external/chromium_org/third_party/skia', 'platform/external/chromium_org/third_party/skia/gyp', 'platform/external/chromium_org/third_party/skia/include']
 
     steps:
       - name: Maximize build space

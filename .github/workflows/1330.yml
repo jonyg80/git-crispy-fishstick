@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/darling_macro', 'platform/external/rust/crates/dashmap', 'platform/external/rust/crates/data-encoding', 'platform/external/rust/crates/debug_tree', 'platform/external/rust/crates/der', 'platform/external/rust/crates/der-oid-macro', 'platform/external/rust/crates/der-parser', 'platform/external/rust/crates/der_derive', 'platform/external/rust/crates/derive-getters', 'platform/external/rust/crates/derive_arbitrary']
+        repo_name: ['platform/external/rust/crates/codespan-reporting', 'platform/external/rust/crates/combine', 'platform/external/rust/crates/command-fds', 'platform/external/rust/crates/compiler_builtins', 'platform/external/rust/crates/config', 'platform/external/rust/crates/configparser', 'platform/external/rust/crates/const-oid', 'platform/external/rust/crates/const_fn', 'platform/external/rust/crates/cortex-a', 'platform/external/rust/crates/coset']
 
     steps:
       - name: Maximize build space

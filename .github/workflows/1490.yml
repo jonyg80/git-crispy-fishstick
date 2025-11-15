@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/openmls', 'platform/external/rust/crates/openmls_traits', 'platform/external/rust/crates/openssl', 'platform/external/rust/crates/openssl-macros', 'platform/external/rust/crates/os_str_bytes', 'platform/external/rust/crates/ouroboros', 'platform/external/rust/crates/ouroboros_macro', 'platform/external/rust/crates/p9', 'platform/external/rust/crates/p9_wire_format_derive', 'platform/external/rust/crates/parking_lot']
+        repo_name: ['platform/external/rust/crates/mls-rs-core', 'platform/external/rust/crates/mls-rs-crypto-traits', 'platform/external/rust/crates/mls-rs-uniffi', 'platform/external/rust/crates/mockall', 'platform/external/rust/crates/mockall_derive', 'platform/external/rust/crates/moveit', 'platform/external/rust/crates/named-lock', 'platform/external/rust/crates/nix', 'platform/external/rust/crates/no-panic', 'platform/external/rust/crates/nom']
 
     steps:
       - name: Maximize build space

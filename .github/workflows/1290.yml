@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/cast', 'platform/external/rust/crates/cbindgen', 'platform/external/rust/crates/cc', 'platform/external/rust/crates/cesu8', 'platform/external/rust/crates/cexpr', 'platform/external/rust/crates/cfg-if', 'platform/external/rust/crates/chrono', 'platform/external/rust/crates/ciborium', 'platform/external/rust/crates/ciborium-io', 'platform/external/rust/crates/ciborium-ll']
+        repo_name: ['platform/external/rust/crates/async-task', 'platform/external/rust/crates/async-trait', 'platform/external/rust/crates/atomic', 'platform/external/rust/crates/atomic-polyfill', 'platform/external/rust/crates/atty', 'platform/external/rust/crates/axum', 'platform/external/rust/crates/axum-core', 'platform/external/rust/crates/base64', 'platform/external/rust/crates/bencher', 'platform/external/rust/crates/bincode']
 
     steps:
       - name: Maximize build space

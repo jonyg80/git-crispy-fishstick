@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash', 'platform/external/rust/crates/ucd-trie', 'platform/external/rust/crates/ucs2', 'platform/external/rust/crates/uds', 'platform/external/rust/crates/uefi', 'platform/external/rust/crates/uefi-macros', 'platform/external/rust/crates/uefi-raw', 'platform/external/rust/crates/uguid', 'platform/external/rust/crates/unicode-bidi']
+        repo_name: ['platform/external/rust/crates/tinyvec_macros', 'platform/external/rust/crates/tinyvec_string', 'platform/external/rust/crates/tls_codec', 'platform/external/rust/crates/tls_codec_derive', 'platform/external/rust/crates/tokio', 'platform/external/rust/crates/tokio-io-timeout', 'platform/external/rust/crates/tokio-macros', 'platform/external/rust/crates/tokio-openssl', 'platform/external/rust/crates/tokio-stream', 'platform/external/rust/crates/tokio-test']
 
     steps:
       - name: Maximize build space

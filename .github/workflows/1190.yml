@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/ptyprocess', 'platform/external/python/py', 'platform/external/python/pyasn1', 'platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser', 'platform/external/python/pyee', 'platform/external/python/pyfakefs', 'platform/external/python/pyhsslms', 'platform/external/python/pylint']
+        repo_name: ['platform/external/python/ipaddress', 'platform/external/python/jinja', 'platform/external/python/liboqs-python', 'platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib', 'platform/external/python/mobly', 'platform/external/python/mock', 'platform/external/python/more-itertools', 'platform/external/python/numpy']
 
     steps:
       - name: Maximize build space

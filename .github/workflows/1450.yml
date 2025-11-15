@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/matches', 'platform/external/rust/crates/matchit', 'platform/external/rust/crates/maybe-async', 'platform/external/rust/crates/memchr', 'platform/external/rust/crates/memmap2', 'platform/external/rust/crates/memoffset', 'platform/external/rust/crates/merge', 'platform/external/rust/crates/merge_derive', 'platform/external/rust/crates/miette', 'platform/external/rust/crates/miette-derive']
+        repo_name: ['platform/external/rust/crates/kernlog', 'platform/external/rust/crates/lazy_static', 'platform/external/rust/crates/lazycell', 'platform/external/rust/crates/libbpf-rs', 'platform/external/rust/crates/libbpf-sys', 'platform/external/rust/crates/libc', 'platform/external/rust/crates/libfuzzer-sys', 'platform/external/rust/crates/libloading', 'platform/external/rust/crates/libm', 'platform/external/rust/crates/libsqlite3-sys']
 
     steps:
       - name: Maximize build space

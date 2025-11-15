@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/webview_support_interfaces', 'platform/external/wmediumd', 'platform/external/wpa_supplicant', 'platform/external/wpa_supplicant_6', 'platform/external/wpa_supplicant_8', 'platform/external/wpantund', 'platform/external/wuffs-mirror-release-c', 'platform/external/wycheproof', 'platform/external/x264', 'platform/external/xdelta3']
+        repo_name: ['platform/external/uwb', 'platform/external/v4l-utils', 'platform/external/v4l2_codec2', 'platform/external/v8', 'platform/external/valgrind', 'platform/external/vboot_reference', 'platform/external/virglrenderer', 'platform/external/virtio-media', 'platform/external/vixl', 'platform/external/vm_tools/p9']
 
     steps:
       - name: Maximize build space

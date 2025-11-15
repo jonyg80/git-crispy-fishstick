@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/icu', 'platform/external/icu4c', 'platform/external/id3lib', 'platform/external/igt-gpu-tools', 'platform/external/image_io', 'platform/external/ims', 'platform/external/ink-stroke-modeler', 'platform/external/intel-media-driver', 'platform/external/intellij-plugins', 'platform/external/iosched']
+        repo_name: ['platform/external/harfbuzz_ng', 'platform/external/hcidump', 'platform/external/honggfuzz', 'platform/external/horologist', 'platform/external/hplip', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns', 'platform/external/iamf_tools', 'platform/external/icing']
 
     steps:
       - name: Maximize build space

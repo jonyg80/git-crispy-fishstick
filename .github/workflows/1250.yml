@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/android_logger', 'platform/external/rust/crates/anes', 'platform/external/rust/crates/annotate-snippets', 'platform/external/rust/crates/anyhow', 'platform/external/rust/crates/arbitrary', 'platform/external/rust/crates/arc-swap', 'platform/external/rust/crates/argh', 'platform/external/rust/crates/argh_derive', 'platform/external/rust/crates/argh_shared', 'platform/external/rust/crates/arrayvec']
+        repo_name: ['platform/external/redhat-developer/lsp4ij', 'platform/external/regex-re2', 'platform/external/renderscript-intrinsics-replacement-toolkit', 'platform/external/replicaisland', 'platform/external/rmi4utils', 'platform/external/rnnoise', 'platform/external/robolectric', 'platform/external/robolectric-shadows', 'platform/external/roboto-flex-fonts', 'platform/external/roboto-fonts']
 
     steps:
       - name: Maximize build space

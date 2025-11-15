@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/libsysprop', 'platform/system/libufdt', 'platform/system/liburingutils', 'platform/system/libvintf', 'platform/system/libziparchive', 'platform/system/linkerconfig', 'platform/system/logging', 'platform/system/media', 'platform/system/memory/amemdiff', 'platform/system/memory/libdmabufheap']
+        repo_name: ['platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ap', 'platform/system/desktop/ec', 'platform/system/desktop/fingerprint', 'platform/system/desktop/intel-pmt', 'platform/system/desktop/security', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/gatekeeper']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/fullsdk-darwin/build-tools/29.0.0', 'platform/prebuilts/fullsdk-darwin/build-tools/29.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/30.0.2', 'platform/prebuilts/fullsdk-darwin/build-tools/30.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/31.0.0', 'platform/prebuilts/fullsdk-darwin/build-tools/32.0.0', 'platform/prebuilts/fullsdk-darwin/build-tools/32.1.0', 'platform/prebuilts/fullsdk-darwin/cmdline-tools', 'platform/prebuilts/fullsdk-darwin/platform-tools', 'platform/prebuilts/fullsdk-darwin/tools']
+        repo_name: ['platform/prebuilts/clang/host/darwin-universal', 'platform/prebuilts/clang/host/darwin-x86', 'platform/prebuilts/clang/host/linux-x86', 'platform/prebuilts/clang/host/windows-x86', 'platform/prebuilts/clang/host/windows-x86_32', 'platform/prebuilts/clang/linux-x86/3.1', 'platform/prebuilts/clang/linux-x86/3.2', 'platform/prebuilts/clang/linux-x86/arm/3.3', 'platform/prebuilts/clang/linux-x86/host/3.3', 'platform/prebuilts/clang/linux-x86/host/3.4']
 
     steps:
       - name: Maximize build space

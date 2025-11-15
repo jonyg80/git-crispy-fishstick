@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/jinja', 'platform/external/python/liboqs-python', 'platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib', 'platform/external/python/mobly', 'platform/external/python/mock', 'platform/external/python/more-itertools', 'platform/external/python/numpy', 'platform/external/python/oauth2client']
+        repo_name: ['platform/external/python/dateutil', 'platform/external/python/dill', 'platform/external/python/ecdsa', 'platform/external/python/enum', 'platform/external/python/enum34', 'platform/external/python/funcsigs', 'platform/external/python/future', 'platform/external/python/futures', 'platform/external/python/gapic-google-cloud-pubsub-v1', 'platform/external/python/google-api-python-client']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl', 'platform/external/rust/crates/tinyjson', 'platform/external/rust/crates/tinytemplate', 'platform/external/rust/crates/tinyvec', 'platform/external/rust/crates/tinyvec_macros', 'platform/external/rust/crates/tinyvec_string', 'platform/external/rust/crates/tls_codec', 'platform/external/rust/crates/tls_codec_derive']
+        repo_name: ['platform/external/rust/crates/spki', 'platform/external/rust/crates/stable_deref_trait', 'platform/external/rust/crates/standback', 'platform/external/rust/crates/static_assertions', 'platform/external/rust/crates/strsim', 'platform/external/rust/crates/structopt', 'platform/external/rust/crates/structopt-derive', 'platform/external/rust/crates/strum', 'platform/external/rust/crates/strum_macros', 'platform/external/rust/crates/syn']
 
     steps:
       - name: Maximize build space

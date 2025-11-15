@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/host/aidl', 'trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/user/desktop']
+        repo_name: ['tools/repo', 'tools/superproject', 'trusty/app/authmgr', 'trusty/app/avb', 'trusty/app/cast-auth', 'trusty/app/confirmationui', 'trusty/app/gatekeeper', 'trusty/app/keymaster', 'trusty/app/keymint', 'trusty/app/nvram']
 
     steps:
       - name: Maximize build space

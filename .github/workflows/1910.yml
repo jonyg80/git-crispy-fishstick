@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/opt/vcard', 'platform/frameworks/opt/widget', 'platform/frameworks/policies/base', 'platform/frameworks/proto_logging', 'platform/frameworks/rs', 'platform/frameworks/support', 'platform/frameworks/support-golden', 'platform/frameworks/testing', 'platform/frameworks/uiautomator', 'platform/frameworks/volley']
+        repo_name: ['platform/frameworks/opt/colorpicker', 'platform/frameworks/opt/com.google.android', 'platform/frameworks/opt/com.google.android.googlelogin', 'platform/frameworks/opt/datetimepicker', 'platform/frameworks/opt/emoji', 'platform/frameworks/opt/gamedevicets', 'platform/frameworks/opt/gamesdk', 'platform/frameworks/opt/inputconnectioncommon', 'platform/frameworks/opt/inputmethodcommon', 'platform/frameworks/opt/localepicker']
 
     steps:
       - name: Maximize build space

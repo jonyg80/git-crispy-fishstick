@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/google/gfxstream', 'platform/hardware/google/graphics/common', 'platform/hardware/google/graphics/gs101', 'platform/hardware/google/graphics/gs201', 'platform/hardware/google/graphics/zuma', 'platform/hardware/google/graphics/zumapro', 'platform/hardware/google/interfaces', 'platform/hardware/google/pixel', 'platform/hardware/google/pixel-sepolicy', 'platform/hardware/google/trusty']
+        repo_name: ['platform/hardware/bsp/kernel/nxp/imx-v4.9', 'platform/hardware/bsp/kernel/qcom', 'platform/hardware/bsp/kernel/qcom/qcom-msm-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm-v4.9', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x09-v3.10', 'platform/hardware/bsp/kernel/qcom/qcom-msm8x53-v3.18', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.1', 'platform/hardware/bsp/kernel/raspberrypi/pi-v4.4', 'platform/hardware/bsp/kernel/rockchip', 'platform/hardware/bsp/kernel/rockchip/rk-v4.4']
 
     steps:
       - name: Maximize build space

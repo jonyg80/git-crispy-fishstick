@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/modules/NeuralNetworks', 'platform/packages/modules/Nfc', 'platform/packages/modules/OnDevicePersonalization', 'platform/packages/modules/Permission', 'platform/packages/modules/PermissionController', 'platform/packages/modules/Profiling', 'platform/packages/modules/RemoteKeyProvisioning', 'platform/packages/modules/RuntimeI18n', 'platform/packages/modules/SEPolicy', 'platform/packages/modules/Scheduling']
+        repo_name: ['platform/packages/modules/ApiExtensions', 'platform/packages/modules/AppSearch', 'platform/packages/modules/ArtPrebuilt', 'platform/packages/modules/Bluetooth', 'platform/packages/modules/BootPrebuilt/5.10/arm64', 'platform/packages/modules/BootPrebuilt/5.4/arm64', 'platform/packages/modules/CaptivePortalLogin', 'platform/packages/modules/CellBroadcastService', 'platform/packages/modules/ConfigInfrastructure', 'platform/packages/modules/Connectivity']
 
     steps:
       - name: Maximize build space

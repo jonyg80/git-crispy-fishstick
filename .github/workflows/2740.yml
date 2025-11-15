@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/adt/idea', 'platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk', 'platform/tools/build']
+        repo_name: ['platform/test/AfwTestHarness', 'platform/test/app_compat/csuite', 'platform/test/catbox', 'platform/test/cts-root', 'platform/test/dittosuite', 'platform/test/framework', 'platform/test/mlts/benchmark', 'platform/test/mlts/models', 'platform/test/mts', 'platform/test/p2pts']
 
     steps:
       - name: Maximize build space

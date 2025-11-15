@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/toml_edit', 'platform/external/rust/crates/tonic', 'platform/external/rust/crates/tower', 'platform/external/rust/crates/tower-layer', 'platform/external/rust/crates/tower-service', 'platform/external/rust/crates/tracing', 'platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock']
+        repo_name: ['platform/external/rust/crates/thread_local', 'platform/external/rust/crates/threadpool', 'platform/external/rust/crates/tikv-jemalloc-sys', 'platform/external/rust/crates/tikv-jemallocator', 'platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl', 'platform/external/rust/crates/tinyjson', 'platform/external/rust/crates/tinytemplate', 'platform/external/rust/crates/tinyvec']
 
     steps:
       - name: Maximize build space

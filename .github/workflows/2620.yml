@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/bvb', 'platform/system/ca-certificates', 'platform/system/chre', 'platform/system/connectivity/apmanager', 'platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter']
+        repo_name: ['platform/prebuilts/studio/jdk', 'platform/prebuilts/studio/layoutlib', 'platform/prebuilts/studio/skiaparser', 'platform/prebuilts/swig/darwin-x86', 'platform/prebuilts/swig/linux-x86', 'platform/prebuilts/swig/windows-x86', 'platform/prebuilts/tools', 'platform/prebuilts/trusty/sysroot', 'platform/prebuilts/vndk/v27', 'platform/prebuilts/vndk/v28']
 
     steps:
       - name: Maximize build space

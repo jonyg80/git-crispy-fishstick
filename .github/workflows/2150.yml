@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Exchange', 'platform/packages/apps/FMRadio', 'platform/packages/apps/Gallery', 'platform/packages/apps/Gallery2', 'platform/packages/apps/Gallery3D', 'platform/packages/apps/GlobalSearch', 'platform/packages/apps/GoogleSearch', 'platform/packages/apps/HTMLViewer', 'platform/packages/apps/IM', 'platform/packages/apps/IdentityCredentialSupport']
+        repo_name: ['platform/packages/apps/Car/Settings', 'platform/packages/apps/Car/SettingsIntelligence', 'platform/packages/apps/Car/Stream', 'platform/packages/apps/Car/SystemUI', 'platform/packages/apps/Car/SystemUpdater', 'platform/packages/apps/Car/Templates', 'platform/packages/apps/Car/UserManagement', 'platform/packages/apps/Car/VoiceControl', 'platform/packages/apps/Car/externallibs', 'platform/packages/apps/Car/libs']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/rand_core', 'platform/external/rust/crates/rand_hc', 'platform/external/rust/crates/rand_xorshift', 'platform/external/rust/crates/rayon', 'platform/external/rust/crates/rayon-core', 'platform/external/rust/crates/regex', 'platform/external/rust/crates/regex-automata', 'platform/external/rust/crates/regex-syntax', 'platform/external/rust/crates/remain', 'platform/external/rust/crates/remove_dir_all']
+        repo_name: ['platform/external/rust/crates/postcard', 'platform/external/rust/crates/ppv-lite86', 'platform/external/rust/crates/predicates', 'platform/external/rust/crates/predicates-core', 'platform/external/rust/crates/predicates-tree', 'platform/external/rust/crates/prettyplease', 'platform/external/rust/crates/proc-macro-error', 'platform/external/rust/crates/proc-macro-error-attr', 'platform/external/rust/crates/proc-macro-hack', 'platform/external/rust/crates/proc-macro-nested']
 
     steps:
       - name: Maximize build space

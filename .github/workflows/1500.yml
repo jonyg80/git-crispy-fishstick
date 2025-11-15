@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/parking_lot_core', 'platform/external/rust/crates/paste', 'platform/external/rust/crates/paste-impl', 'platform/external/rust/crates/pathdiff', 'platform/external/rust/crates/pdl-compiler', 'platform/external/rust/crates/pdl-runtime', 'platform/external/rust/crates/peeking_take_while', 'platform/external/rust/crates/percent-encoding', 'platform/external/rust/crates/percore', 'platform/external/rust/crates/pest']
+        repo_name: ['platform/external/rust/crates/num-bigint', 'platform/external/rust/crates/num-complex', 'platform/external/rust/crates/num-derive', 'platform/external/rust/crates/num-integer', 'platform/external/rust/crates/num-traits', 'platform/external/rust/crates/num_cpus', 'platform/external/rust/crates/num_enum', 'platform/external/rust/crates/num_enum_derive', 'platform/external/rust/crates/object', 'platform/external/rust/crates/octets']
 
     steps:
       - name: Maximize build space

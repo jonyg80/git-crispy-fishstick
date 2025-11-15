@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/xerces-cpp', 'platform/external/xmlrpcpp', 'platform/external/xmlwriter', 'platform/external/xmp_toolkit', 'platform/external/xz-embedded', 'platform/external/xz-java', 'platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli']
+        repo_name: ['platform/external/vogar', 'platform/external/volk', 'platform/external/volley', 'platform/external/vulkan-headers', 'platform/external/vulkan-tools', 'platform/external/vulkan-validation-layers', 'platform/external/walt', 'platform/external/wayland', 'platform/external/wayland-protocols', 'platform/external/weave-common']
 
     steps:
       - name: Maximize build space

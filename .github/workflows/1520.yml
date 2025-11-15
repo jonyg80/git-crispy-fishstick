@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/pkg-config', 'platform/external/rust/crates/plotters', 'platform/external/rust/crates/plotters-backend', 'platform/external/rust/crates/plotters-svg', 'platform/external/rust/crates/poll_token_derive', 'platform/external/rust/crates/portable-atomic', 'platform/external/rust/crates/postcard', 'platform/external/rust/crates/ppv-lite86', 'platform/external/rust/crates/predicates', 'platform/external/rust/crates/predicates-core']
+        repo_name: ['platform/external/rust/crates/ouroboros_macro', 'platform/external/rust/crates/p9', 'platform/external/rust/crates/p9_wire_format_derive', 'platform/external/rust/crates/parking_lot', 'platform/external/rust/crates/parking_lot_core', 'platform/external/rust/crates/paste', 'platform/external/rust/crates/paste-impl', 'platform/external/rust/crates/pathdiff', 'platform/external/rust/crates/pdl-compiler', 'platform/external/rust/crates/pdl-runtime']
 
     steps:
       - name: Maximize build space

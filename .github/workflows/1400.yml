@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/hermit-abi', 'platform/external/rust/crates/hex', 'platform/external/rust/crates/hickory-proto', 'platform/external/rust/crates/hound', 'platform/external/rust/crates/http', 'platform/external/rust/crates/http-body', 'platform/external/rust/crates/httparse', 'platform/external/rust/crates/httpdate', 'platform/external/rust/crates/hyper', 'platform/external/rust/crates/hyper-timeout']
+        repo_name: ['platform/external/rust/crates/futures-task', 'platform/external/rust/crates/futures-test', 'platform/external/rust/crates/futures-util', 'platform/external/rust/crates/fxhash', 'platform/external/rust/crates/gbm', 'platform/external/rust/crates/gdbstub', 'platform/external/rust/crates/gdbstub_arch', 'platform/external/rust/crates/getrandom', 'platform/external/rust/crates/gimli', 'platform/external/rust/crates/glam']
 
     steps:
       - name: Maximize build space

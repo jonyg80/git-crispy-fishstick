@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/androidx/javascript-for-kotlin', 'platform/prebuilts/androidx/konan', 'platform/prebuilts/androidx/studio', 'platform/prebuilts/androidx/traceprocessor', 'platform/prebuilts/androidx/webgpu', 'platform/prebuilts/androidx/xr', 'platform/prebuilts/asuite', 'platform/prebuilts/au-generator', 'platform/prebuilts/bazel/common', 'platform/prebuilts/bazel/darwin-x86_64']
+        repo_name: ['platform/packages/wallpapers/HoloSpiral', 'platform/packages/wallpapers/ImageWallpaper', 'platform/packages/wallpapers/LivePicker', 'platform/packages/wallpapers/MagicSmoke', 'platform/packages/wallpapers/MusicVisualization', 'platform/packages/wallpapers/NoiseField', 'platform/packages/wallpapers/PhaseBeam', 'platform/pdk', 'platform/platform_testing', 'platform/prebuilt']
 
     steps:
       - name: Maximize build space

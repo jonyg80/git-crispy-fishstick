@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/ring', 'platform/external/rust/crates/ron', 'platform/external/rust/crates/rusb', 'platform/external/rust/crates/rusqlite', 'platform/external/rust/crates/rust-stemmers', 'platform/external/rust/crates/rustc-demangle', 'platform/external/rust/crates/rustc-demangle-capi', 'platform/external/rust/crates/rustc-hash', 'platform/external/rust/crates/rustc_version', 'platform/external/rust/crates/rusticata-macros']
+        repo_name: ['platform/external/rust/crates/proc-macro2', 'platform/external/rust/crates/protobuf', 'platform/external/rust/crates/protobuf-codegen', 'platform/external/rust/crates/protobuf-json-mapping', 'platform/external/rust/crates/protobuf-parse', 'platform/external/rust/crates/protobuf-support', 'platform/external/rust/crates/psci', 'platform/external/rust/crates/ptr_meta', 'platform/external/rust/crates/ptr_meta_derive', 'platform/external/rust/crates/quiche']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libdivsufsort', 'platform/external/libdrm', 'platform/external/libedit', 'platform/external/libepoxy', 'platform/external/libese', 'platform/external/libevent', 'platform/external/libexif', 'platform/external/libffi', 'platform/external/libfuse', 'platform/external/libgav1']
+        repo_name: ['platform/external/libchromeos-rs', 'platform/external/libconfig', 'platform/external/libconstrainedcrypto', 'platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcupsfilters', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi', 'platform/external/libcxxabi_35a']
 
     steps:
       - name: Maximize build space

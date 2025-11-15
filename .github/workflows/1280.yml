@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/bitreader', 'platform/external/rust/crates/bstr', 'platform/external/rust/crates/buddy_system_allocator', 'platform/external/rust/crates/bytemuck', 'platform/external/rust/crates/bytemuck_derive', 'platform/external/rust/crates/byteorder', 'platform/external/rust/crates/bytes', 'platform/external/rust/crates/bzip2', 'platform/external/rust/crates/bzip2-sys', 'platform/external/rust/crates/camino']
+        repo_name: ['platform/external/rust/crates/argh', 'platform/external/rust/crates/argh_derive', 'platform/external/rust/crates/argh_shared', 'platform/external/rust/crates/arrayvec', 'platform/external/rust/crates/ash', 'platform/external/rust/crates/asn1-rs', 'platform/external/rust/crates/asn1-rs-derive', 'platform/external/rust/crates/asn1-rs-impl', 'platform/external/rust/crates/async-stream', 'platform/external/rust/crates/async-stream-impl']
 
     steps:
       - name: Maximize build space

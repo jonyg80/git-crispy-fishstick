@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/futures-channel', 'platform/external/rust/crates/futures-core', 'platform/external/rust/crates/futures-executor', 'platform/external/rust/crates/futures-io', 'platform/external/rust/crates/futures-macro', 'platform/external/rust/crates/futures-sink', 'platform/external/rust/crates/futures-task', 'platform/external/rust/crates/futures-test', 'platform/external/rust/crates/futures-util', 'platform/external/rust/crates/fxhash']
+        repo_name: ['platform/external/rust/crates/drm-ffi', 'platform/external/rust/crates/drm-fourcc', 'platform/external/rust/crates/either', 'platform/external/rust/crates/enum-as-inner', 'platform/external/rust/crates/enumn', 'platform/external/rust/crates/env_logger', 'platform/external/rust/crates/epoll', 'platform/external/rust/crates/equivalent', 'platform/external/rust/crates/errno', 'platform/external/rust/crates/etherparse']
 
     steps:
       - name: Maximize build space

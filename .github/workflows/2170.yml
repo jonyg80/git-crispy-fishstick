@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Multiuser', 'platform/packages/apps/Music', 'platform/packages/apps/MusicFX', 'platform/packages/apps/Nfc', 'platform/packages/apps/OnDeviceAppPrediction', 'platform/packages/apps/OneTimeInitializer', 'platform/packages/apps/PackageInstaller', 'platform/packages/apps/Phone', 'platform/packages/apps/PhoneCommon', 'platform/packages/apps/PrivateSpace']
+        repo_name: ['platform/packages/apps/Dialer', 'platform/packages/apps/DocumentsUI', 'platform/packages/apps/Email', 'platform/packages/apps/EmergencyInfo', 'platform/packages/apps/ExactCalculator', 'platform/packages/apps/Exchange', 'platform/packages/apps/EyeDropper', 'platform/packages/apps/FMRadio', 'platform/packages/apps/Gallery', 'platform/packages/apps/Gallery2']
 
     steps:
       - name: Maximize build space

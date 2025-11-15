@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi', 'platform/external/libcxxabi_35a', 'platform/external/libcxxrt', 'platform/external/libdaemon', 'platform/external/libdav1d', 'platform/external/libdisplay-info']
+        repo_name: ['platform/external/libbackup', 'platform/external/libbpf', 'platform/external/libbrillo', 'platform/external/libc-test', 'platform/external/libcamera', 'platform/external/libcap', 'platform/external/libcap-ng', 'platform/external/libchrome', 'platform/external/libchrome-gestures', 'platform/external/libchromeos']
 
     steps:
       - name: Maximize build space

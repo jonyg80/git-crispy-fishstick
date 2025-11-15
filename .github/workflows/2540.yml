@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/module_sdk/AdServices', 'platform/prebuilts/module_sdk/AppSearch', 'platform/prebuilts/module_sdk/Bluetooth', 'platform/prebuilts/module_sdk/ConfigInfrastructure', 'platform/prebuilts/module_sdk/Connectivity', 'platform/prebuilts/module_sdk/CrashRecovery', 'platform/prebuilts/module_sdk/DeviceLock', 'platform/prebuilts/module_sdk/HealthFitness', 'platform/prebuilts/module_sdk/IPsec', 'platform/prebuilts/module_sdk/Media']
+        repo_name: ['platform/prebuilts/google-breakpad/darwin-x86', 'platform/prebuilts/google-breakpad/linux-x86', 'platform/prebuilts/google-breakpad/windows-x86', 'platform/prebuilts/gradle-plugin', 'platform/prebuilts/jdk/jdk11', 'platform/prebuilts/jdk/jdk17', 'platform/prebuilts/jdk/jdk21', 'platform/prebuilts/jdk/jdk25', 'platform/prebuilts/jdk/jdk8', 'platform/prebuilts/jdk/jdk9']
 
     steps:
       - name: Maximize build space

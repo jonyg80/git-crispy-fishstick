@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/nanohttpd', 'platform/external/nanopb-c', 'platform/external/nanoprintf', 'platform/external/nasm', 'platform/external/naver-fonts', 'platform/external/ncurses', 'platform/external/neon_2_sse', 'platform/external/netcat', 'platform/external/netperf', 'platform/external/neven']
+        repo_name: ['platform/external/mock', 'platform/external/mockftpserver', 'platform/external/mockito', 'platform/external/mockito-kotlin', 'platform/external/mockwebserver', 'platform/external/modelcontextprotocol/kotlin-sdk', 'platform/external/modp_b64', 'platform/external/moltenvk', 'platform/external/moshi', 'platform/external/mp4parser']
 
     steps:
       - name: Maximize build space

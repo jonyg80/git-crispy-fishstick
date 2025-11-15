@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/module_sdk/MediaProvider', 'platform/prebuilts/module_sdk/NeuralNetworks', 'platform/prebuilts/module_sdk/Nfc', 'platform/prebuilts/module_sdk/OnDevicePersonalization', 'platform/prebuilts/module_sdk/Permission', 'platform/prebuilts/module_sdk/Profiling', 'platform/prebuilts/module_sdk/RemoteKeyProvisioning', 'platform/prebuilts/module_sdk/Scheduling', 'platform/prebuilts/module_sdk/SdkExtensions', 'platform/prebuilts/module_sdk/StatsD']
+        repo_name: ['platform/prebuilts/ktlint', 'platform/prebuilts/libedit/darwin-x86', 'platform/prebuilts/libedit/linux-x86', 'platform/prebuilts/libglog/darwin-x86', 'platform/prebuilts/libglog/linux-x86', 'platform/prebuilts/libglog/windows-x86', 'platform/prebuilts/libprotobuf/darwin', 'platform/prebuilts/libprotobuf/darwin-x86', 'platform/prebuilts/libprotobuf/linux', 'platform/prebuilts/libprotobuf/linux-x86']
 
     steps:
       - name: Maximize build space
