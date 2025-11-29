@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/jackson-databind', 'platform/external/jacoco', 'platform/external/jakarta.inject', 'platform/external/jarjar', 'platform/external/javaparser', 'platform/external/javapoet', 'platform/external/javasqlite', 'platform/external/javassist', 'platform/external/jazzer-api', 'platform/external/jcommander']
+        repo_name: ['platform/external/jackson-annotations', 'platform/external/jackson-core', 'platform/external/jackson-databind', 'platform/external/jacoco', 'platform/external/jakarta.inject', 'platform/external/jarjar', 'platform/external/javaparser', 'platform/external/javapoet', 'platform/external/javasqlite', 'platform/external/javassist']
 
     steps:
       - name: Maximize build space

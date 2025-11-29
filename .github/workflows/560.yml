@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/ceres-solver', 'platform/external/checkpolicy', 'platform/external/checkstyle', 'platform/external/cherry', 'platform/external/chromite', 'platform/external/chromium', 'platform/external/chromium-crossbench', 'platform/external/chromium-libpac', 'platform/external/chromium-trace', 'platform/external/chromium-web-tests']
+        repo_name: ['platform/external/cef', 'platform/external/ceres-solver', 'platform/external/checkpolicy', 'platform/external/checkstyle', 'platform/external/cherry', 'platform/external/chromite', 'platform/external/chromium', 'platform/external/chromium-crossbench', 'platform/external/chromium-libpac', 'platform/external/chromium-trace']
 
     steps:
       - name: Maximize build space

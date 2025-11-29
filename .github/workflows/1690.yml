@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/uniffi_checksum_derive', 'platform/external/rust/crates/uniffi_core', 'platform/external/rust/crates/uniffi_macros', 'platform/external/rust/crates/uniffi_meta', 'platform/external/rust/crates/unsafe-libyaml', 'platform/external/rust/crates/untrusted', 'platform/external/rust/crates/url', 'platform/external/rust/crates/userfaultfd', 'platform/external/rust/crates/userfaultfd-sys', 'platform/external/rust/crates/utf-8']
+        repo_name: ['platform/external/rust/crates/unicode-normalization', 'platform/external/rust/crates/unicode-segmentation', 'platform/external/rust/crates/unicode-width', 'platform/external/rust/crates/unicode-xid', 'platform/external/rust/crates/uniffi', 'platform/external/rust/crates/uniffi_checksum_derive', 'platform/external/rust/crates/uniffi_core', 'platform/external/rust/crates/uniffi_macros', 'platform/external/rust/crates/uniffi_meta', 'platform/external/rust/crates/unsafe-libyaml']
 
     steps:
       - name: Maximize build space

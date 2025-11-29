@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/zeroize', 'platform/external/rust/crates/zeroize_derive', 'platform/external/rust/crates/zip', 'platform/external/rust/crates/zune-inflate', 'platform/external/rust/cros-libva', 'platform/external/rust/cxx', 'platform/external/rust/pica', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop']
+        repo_name: ['platform/external/rust/crates/x509-parser', 'platform/external/rust/crates/xml-rs', 'platform/external/rust/crates/yaml-rust', 'platform/external/rust/crates/zerocopy', 'platform/external/rust/crates/zerocopy-derive', 'platform/external/rust/crates/zeroize', 'platform/external/rust/crates/zeroize_derive', 'platform/external/rust/crates/zip', 'platform/external/rust/crates/zune-inflate', 'platform/external/rust/cros-libva']
 
     steps:
       - name: Maximize build space

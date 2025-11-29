@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/dateutil', 'platform/external/python/dill', 'platform/external/python/ecdsa', 'platform/external/python/enum', 'platform/external/python/enum34', 'platform/external/python/funcsigs', 'platform/external/python/future', 'platform/external/python/futures', 'platform/external/python/gapic-google-cloud-pubsub-v1', 'platform/external/python/google-api-python-client']
+        repo_name: ['platform/external/python/cpplint', 'platform/external/python/cpython2', 'platform/external/python/cpython3', 'platform/external/python/cryptography', 'platform/external/python/dateutil', 'platform/external/python/dill', 'platform/external/python/ecdsa', 'platform/external/python/enum', 'platform/external/python/enum34', 'platform/external/python/funcsigs']
 
     steps:
       - name: Maximize build space

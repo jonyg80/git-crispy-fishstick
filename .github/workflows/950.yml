@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd', 'platform/external/libmojo', 'platform/external/libmonet', 'platform/external/libmpeg2', 'platform/external/libmtp', 'platform/external/libnetfilter_conntrack']
+        repo_name: ['platform/external/libiota', 'platform/external/libjpeg-turbo', 'platform/external/libjxl', 'platform/external/libkmsxx', 'platform/external/liblc3', 'platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd', 'platform/external/libmojo', 'platform/external/libmonet']
 
     steps:
       - name: Maximize build space

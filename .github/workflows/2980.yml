@@ -1,8 +1,8 @@
-name: 1370 Clone and Push
+name: 2980 Clone and Push
 
 on:
   schedule:
-    - cron: '0 10 12 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+    - cron: '0 20 25 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
   workflow_dispatch:
 
 
@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/dlmalloc', 'platform/external/rust/crates/document-features', 'platform/external/rust/crates/downcast', 'platform/external/rust/crates/downcast-rs', 'platform/external/rust/crates/drm', 'platform/external/rust/crates/drm-ffi', 'platform/external/rust/crates/drm-fourcc', 'platform/external/rust/crates/either', 'platform/external/rust/crates/enum-as-inner', 'platform/external/rust/crates/enumn']
+        repo_name: ['trusty/host/common', 'trusty/interfaces', 'trusty/lib', 'trusty/lk/common', 'trusty/lk/nxp', 'trusty/lk/trusty', 'trusty/manifest', 'trusty/prebuilts/aosp', 'trusty/user/desktop', 'trusty/vendor/google/aosp']
 
     steps:
       - name: Maximize build space

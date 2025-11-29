@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/ktfmt', 'platform/external/ktlint', 'platform/external/kythe', 'platform/external/lame', 'platform/external/lcc', 'platform/external/leakcanary2', 'platform/external/leveldb', 'platform/external/libabigail', 'platform/external/libaom', 'platform/external/libavc']
+        repo_name: ['platform/external/ksoap2', 'platform/external/ksp', 'platform/external/ktfmt', 'platform/external/ktlint', 'platform/external/kythe', 'platform/external/lame', 'platform/external/lcc', 'platform/external/leakcanary2', 'platform/external/leveldb', 'platform/external/libabigail']
 
     steps:
       - name: Maximize build space

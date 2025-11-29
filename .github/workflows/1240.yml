@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qpdf', 'platform/external/qt', 'platform/external/qt5', 'platform/external/quake', 'platform/external/r8', 'platform/external/rapidjson', 'platform/external/rappor']
+        repo_name: ['platform/external/python/uritemplates', 'platform/external/python/watchdog', 'platform/external/pytorch', 'platform/external/qdl', 'platform/external/qemu', 'platform/external/qemu-android', 'platform/external/qemu-pc-bios', 'platform/external/qpdf', 'platform/external/qt', 'platform/external/qt5']
 
     steps:
       - name: Maximize build space

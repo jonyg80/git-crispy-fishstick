@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/harfbuzz_ng', 'platform/external/hcidump', 'platform/external/honggfuzz', 'platform/external/horologist', 'platform/external/hplip', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns', 'platform/external/iamf_tools', 'platform/external/icing']
+        repo_name: ['platform/external/hamcrest', 'platform/external/harfbuzz', 'platform/external/harfbuzz_ng', 'platform/external/hcidump', 'platform/external/honggfuzz', 'platform/external/horologist', 'platform/external/hplip', 'platform/external/hsqldb', 'platform/external/hyphenation', 'platform/external/hyphenation-patterns']
 
     steps:
       - name: Maximize build space

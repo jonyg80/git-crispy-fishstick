@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/bazelbuild-rules_shell', 'platform/external/bazelbuild-rules_testing', 'platform/external/bc', 'platform/external/bcc', 'platform/external/berkeley-softfloat-3', 'platform/external/berkeley-testfloat-3', 'platform/external/bison', 'platform/external/blktrace', 'platform/external/bloaty', 'platform/external/bluetooth/bluedroid']
+        repo_name: ['platform/external/bazelbuild-rules_rust', 'platform/external/bazelbuild-rules_shell', 'platform/external/bazelbuild-rules_testing', 'platform/external/bc', 'platform/external/bcc', 'platform/external/berkeley-softfloat-3', 'platform/external/berkeley-testfloat-3', 'platform/external/bison', 'platform/external/blktrace', 'platform/external/bloaty']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/icu', 'platform/external/icu4c', 'platform/external/id3lib', 'platform/external/igt-gpu-tools', 'platform/external/image_io', 'platform/external/ims', 'platform/external/ink-stroke-modeler', 'platform/external/intel-media-driver', 'platform/external/intel-pmt-metadata', 'platform/external/intellij-plugins']
+        repo_name: ['platform/external/iamf_tools', 'platform/external/icing', 'platform/external/icu', 'platform/external/icu4c', 'platform/external/id3lib', 'platform/external/igt-gpu-tools', 'platform/external/image_io', 'platform/external/ims', 'platform/external/ink-stroke-modeler', 'platform/external/intel-media-driver']
 
     steps:
       - name: Maximize build space
