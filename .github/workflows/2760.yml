@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/test/mts', 'platform/test/p2pts', 'platform/test/robolectric-extensions', 'platform/test/sts', 'platform/test/suite_harness', 'platform/test/vti/alert', 'platform/test/vti/dashboard', 'platform/test/vti/fuzz_test_serving', 'platform/test/vti/test_serving', 'platform/test/vts']
+        repo_name: ['platform/test/dittosuite', 'platform/test/framework', 'platform/test/graphics', 'platform/test/mlts/benchmark', 'platform/test/mlts/models', 'platform/test/mts', 'platform/test/p2pts', 'platform/test/robolectric-extensions', 'platform/test/sts', 'platform/test/suite_harness']
 
     steps:
       - name: Maximize build space

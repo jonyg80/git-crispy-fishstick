@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/llvm_android', 'toolchain/m4', 'toolchain/make', 'toolchain/manifest', 'toolchain/mclinker', 'toolchain/mingw', 'toolchain/mpc', 'toolchain/mpc-1.2.1', 'toolchain/mpfr', 'toolchain/mpfr-4.1.0']
+        repo_name: ['toolchain/libcxx', 'toolchain/libcxxabi', 'toolchain/lld', 'toolchain/llvm', 'toolchain/llvm-project', 'toolchain/llvm_android', 'toolchain/m4', 'toolchain/make', 'toolchain/manifest', 'toolchain/mclinker']
 
     steps:
       - name: Maximize build space
