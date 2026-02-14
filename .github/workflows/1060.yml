@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/moltenvk', 'platform/external/moshi', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpdecimal', 'platform/external/mpg123', 'platform/external/ms-tpm-20-ref', 'platform/external/mtools', 'platform/external/mtpd', 'platform/external/musl']
+        repo_name: ['platform/external/modelcontextprotocol/kotlin-sdk', 'platform/external/modp_b64', 'platform/external/moltenvk', 'platform/external/moshi', 'platform/external/mp4parser', 'platform/external/mp4v2', 'platform/external/mpdecimal', 'platform/external/mpg123', 'platform/external/ms-tpm-20-ref', 'platform/external/mtools']
 
     steps:
       - name: Maximize build space

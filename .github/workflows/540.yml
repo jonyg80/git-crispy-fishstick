@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/bluetooth/bluedroid', 'platform/external/bluetooth/bluez', 'platform/external/bluetooth/glib', 'platform/external/bluetooth/hcidump', 'platform/external/bluez', 'platform/external/boost', 'platform/external/boringssl', 'platform/external/bouncycastle', 'platform/external/bpftool', 'platform/external/brotli']
+        repo_name: ['platform/external/bloaty', 'platform/external/bluetooth/bluedroid', 'platform/external/bluetooth/bluez', 'platform/external/bluetooth/glib', 'platform/external/bluetooth/hcidump', 'platform/external/bluez', 'platform/external/boost', 'platform/external/boringssl', 'platform/external/bouncycastle', 'platform/external/bpftool']
 
     steps:
       - name: Maximize build space

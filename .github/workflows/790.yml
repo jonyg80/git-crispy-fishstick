@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/googletest', 'platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/gradle-profiler', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java', 'platform/external/grub', 'platform/external/gsc-utils']
+        repo_name: ['platform/external/googleapis-go-genproto', 'platform/external/googleclient', 'platform/external/googletest', 'platform/external/gptfdisk', 'platform/external/gradle-perf-android-large', 'platform/external/gradle-perf-android-medium', 'platform/external/gradle-profiler', 'platform/external/grpc-grpc', 'platform/external/grpc-grpc-go', 'platform/external/grpc-grpc-java']
 
     steps:
       - name: Maximize build space

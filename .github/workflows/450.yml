@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/XNNPACK', 'platform/external/aac', 'platform/external/abi-compliance-checker', 'platform/external/abi-dumper', 'platform/external/abseil-cpp', 'platform/external/accessibility-test-framework', 'platform/external/accompanist', 'platform/external/actionbarsherlock', 'platform/external/adeb', 'platform/external/adhd']
+        repo_name: ['platform/external/XMP-Toolkit-SDK', 'platform/external/XNNPACK', 'platform/external/aac', 'platform/external/abi-compliance-checker', 'platform/external/abi-dumper', 'platform/external/abseil-cpp', 'platform/external/accessibility-test-framework', 'platform/external/accompanist', 'platform/external/actionbarsherlock', 'platform/external/adeb']
 
     steps:
       - name: Maximize build space

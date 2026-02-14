@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/common', 'trusty/device/desktop', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64', 'trusty/external/headers', 'trusty/external/musl']
+        repo_name: ['trusty/app/secretkeeper', 'trusty/app/storage', 'trusty/device/arm/generic-arm64', 'trusty/device/arm/vexpress-a15', 'trusty/device/common', 'trusty/device/desktop', 'trusty/device/nxp/imx6ul', 'trusty/device/nxp/imx7d', 'trusty/device/nxp/imx8m', 'trusty/device/x86/generic-x86_64']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/display/samsung', 'kernel/google-modules/display/watch/mcu-offload', 'kernel/google-modules/edgetpu', 'kernel/google-modules/edgetpu/abrolhos', 'kernel/google-modules/edgetpu/janeiro', 'kernel/google-modules/fingerprint/fpc', 'kernel/google-modules/fingerprint/goodix', 'kernel/google-modules/fingerprint/qcom/qfs4008', 'kernel/google-modules/gpu', 'kernel/google-modules/gxp/gs201']
+        repo_name: ['kernel/google-modules/display/panels/tegu', 'kernel/google-modules/display/samsung', 'kernel/google-modules/display/watch/mcu-offload', 'kernel/google-modules/edgetpu', 'kernel/google-modules/edgetpu/abrolhos', 'kernel/google-modules/edgetpu/janeiro', 'kernel/google-modules/fingerprint/fpc', 'kernel/google-modules/fingerprint/goodix', 'kernel/google-modules/fingerprint/qcom/qfs4008', 'kernel/google-modules/gpu']
 
     steps:
       - name: Maximize build space

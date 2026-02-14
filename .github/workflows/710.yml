@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/fio', 'platform/external/firebase-messaging', 'platform/external/flac', 'platform/external/flashbench', 'platform/external/flashrom', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib', 'platform/external/fonttools', 'platform/external/free-image']
+        repo_name: ['platform/external/fft2d', 'platform/external/fhir/spec/r4', 'platform/external/fio', 'platform/external/firebase-messaging', 'platform/external/flac', 'platform/external/flashbench', 'platform/external/flashrom', 'platform/external/flatbuffers', 'platform/external/flex', 'platform/external/fmtlib']
 
     steps:
       - name: Maximize build space

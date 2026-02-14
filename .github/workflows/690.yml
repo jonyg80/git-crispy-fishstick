@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/esd', 'platform/external/ethtool', 'platform/external/executorch', 'platform/external/exfatprogs', 'platform/external/exoplayer', 'platform/external/expat', 'platform/external/extfuse', 'platform/external/eyes-free', 'platform/external/f2fs-tools', 'platform/external/faad']
+        repo_name: ['platform/external/error_prone', 'platform/external/escapevelocity', 'platform/external/esd', 'platform/external/ethtool', 'platform/external/executorch', 'platform/external/exfatprogs', 'platform/external/exoplayer', 'platform/external/expat', 'platform/external/extfuse', 'platform/external/eyes-free']
 
     steps:
       - name: Maximize build space

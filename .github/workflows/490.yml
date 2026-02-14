@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/apache-xml', 'platform/external/apple-coreaudiosamples', 'platform/external/archive-patcher', 'platform/external/arduino', 'platform/external/arduino-ide', 'platform/external/argp-standalone', 'platform/external/arm-neon-tests', 'platform/external/arm-optimized-routines', 'platform/external/arm-trusted-firmware', 'platform/external/armnn']
+        repo_name: ['platform/external/apache-velocity-engine', 'platform/external/apache-xml', 'platform/external/apple-coreaudiosamples', 'platform/external/archive-patcher', 'platform/external/arduino', 'platform/external/arduino-ide', 'platform/external/argp-standalone', 'platform/external/arm-neon-tests', 'platform/external/arm-optimized-routines', 'platform/external/arm-trusted-firmware']
 
     steps:
       - name: Maximize build space

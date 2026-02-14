@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/dlmalloc', 'platform/external/rust/crates/document-features', 'platform/external/rust/crates/downcast', 'platform/external/rust/crates/downcast-rs', 'platform/external/rust/crates/drm', 'platform/external/rust/crates/drm-ffi', 'platform/external/rust/crates/drm-fourcc', 'platform/external/rust/crates/either', 'platform/external/rust/crates/enum-as-inner', 'platform/external/rust/crates/enumn']
+        repo_name: ['platform/external/rust/crates/derive_arbitrary', 'platform/external/rust/crates/displaydoc', 'platform/external/rust/crates/dlmalloc', 'platform/external/rust/crates/document-features', 'platform/external/rust/crates/downcast', 'platform/external/rust/crates/downcast-rs', 'platform/external/rust/crates/drm', 'platform/external/rust/crates/drm-ffi', 'platform/external/rust/crates/drm-fourcc', 'platform/external/rust/crates/either']
 
     steps:
       - name: Maximize build space

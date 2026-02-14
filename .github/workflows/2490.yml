@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8', 'platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9', 'platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6', 'platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7', 'platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9', 'platform/prebuilts/gcc/darwin-x86/host/headers']
+        repo_name: ['platform/prebuilts/fullsdk/sources/android-TPS', 'platform/prebuilts/gas/linux-x86', 'platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8', 'platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9', 'platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6', 'platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7', 'platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7', 'platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8']
 
     steps:
       - name: Maximize build space

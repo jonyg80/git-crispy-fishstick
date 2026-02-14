@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/logging', 'platform/system/media', 'platform/system/memory/amemdiff', 'platform/system/memory/libdmabufheap', 'platform/system/memory/libion', 'platform/system/memory/libmeminfo', 'platform/system/memory/libmemtrack', 'platform/system/memory/libmemunreachable', 'platform/system/memory/lmkd', 'platform/system/memory/mm_eventsd']
+        repo_name: ['platform/system/libziparchive', 'platform/system/linkerconfig', 'platform/system/logging', 'platform/system/media', 'platform/system/memory/amemdiff', 'platform/system/memory/libdmabufheap', 'platform/system/memory/libion', 'platform/system/memory/libmeminfo', 'platform/system/memory/libmemtrack', 'platform/system/memory/libmemunreachable']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/bsp/kernel/intel/broxton-v4.4', 'platform/hardware/bsp/kernel/intel/edison-v3.10', 'platform/hardware/bsp/kernel/intel/edison-v4.4', 'platform/hardware/bsp/kernel/intel/minnowboard-v3.14', 'platform/hardware/bsp/kernel/marvell/pxa-v3.14', 'platform/hardware/bsp/kernel/mediatek/mt8516-v4.4', 'platform/hardware/bsp/kernel/nxp/imx-v4.1', 'platform/hardware/bsp/kernel/nxp/imx-v4.9', 'platform/hardware/bsp/kernel/qcom', 'platform/hardware/bsp/kernel/qcom/qcom-msm-v3.10']
+        repo_name: ['platform/hardware/bsp/kernel/imagination/v4.1', 'platform/hardware/bsp/kernel/intel', 'platform/hardware/bsp/kernel/intel/broxton-v4.4', 'platform/hardware/bsp/kernel/intel/edison-v3.10', 'platform/hardware/bsp/kernel/intel/edison-v4.4', 'platform/hardware/bsp/kernel/intel/minnowboard-v3.14', 'platform/hardware/bsp/kernel/marvell/pxa-v3.14', 'platform/hardware/bsp/kernel/mediatek/mt8516-v4.4', 'platform/hardware/bsp/kernel/nxp/imx-v4.1', 'platform/hardware/bsp/kernel/nxp/imx-v4.9']
 
     steps:
       - name: Maximize build space

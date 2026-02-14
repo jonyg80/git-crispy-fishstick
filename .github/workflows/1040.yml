@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/mdnsresponder', 'platform/external/mesa3d', 'platform/external/messageformat', 'platform/external/mime-support', 'platform/external/minidns', 'platform/external/minigbm', 'platform/external/minijail', 'platform/external/mksh', 'platform/external/ml_dtypes', 'platform/external/mmc-utils']
+        repo_name: ['platform/external/markdown', 'platform/external/mbedtls', 'platform/external/mdnsresponder', 'platform/external/mesa3d', 'platform/external/messageformat', 'platform/external/mime-support', 'platform/external/minidns', 'platform/external/minigbm', 'platform/external/minijail', 'platform/external/mksh']
 
     steps:
       - name: Maximize build space

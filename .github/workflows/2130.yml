@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Car/Dashcam', 'platform/packages/apps/Car/DataSubscriptionReference', 'platform/packages/apps/Car/DebuggingRestrictionController', 'platform/packages/apps/Car/Dialer', 'platform/packages/apps/Car/DialerPrebuilt', 'platform/packages/apps/Car/DriverUI', 'platform/packages/apps/Car/DriverUIPrebuilt', 'platform/packages/apps/Car/Hvac', 'platform/packages/apps/Car/LatinIME', 'platform/packages/apps/Car/Launcher']
+        repo_name: ['platform/packages/apps/Car/Cluster', 'platform/packages/apps/Car/CompanionDeviceSupport', 'platform/packages/apps/Car/Dashcam', 'platform/packages/apps/Car/DataSubscriptionReference', 'platform/packages/apps/Car/DebuggingRestrictionController', 'platform/packages/apps/Car/Dialer', 'platform/packages/apps/Car/DialerPrebuilt', 'platform/packages/apps/Car/DriverUI', 'platform/packages/apps/Car/DriverUIPrebuilt', 'platform/packages/apps/Car/Hvac']
 
     steps:
       - name: Maximize build space

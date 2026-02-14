@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/astc-codec', 'platform/external/astl', 'platform/external/auto', 'platform/external/autoconf', 'platform/external/automotive-design-compose-protos', 'platform/external/autotest', 'platform/external/avahi', 'platform/external/avb', 'platform/external/aws-crt-java', 'platform/external/aws-eventstream-java']
+        repo_name: ['platform/external/armnn', 'platform/external/astc-codec', 'platform/external/astl', 'platform/external/auto', 'platform/external/autoconf', 'platform/external/automotive-design-compose-protos', 'platform/external/autotest', 'platform/external/avahi', 'platform/external/avb', 'platform/external/aws-crt-java']
 
     steps:
       - name: Maximize build space

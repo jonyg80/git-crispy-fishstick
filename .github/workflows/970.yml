@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libopus', 'platform/external/liboqs', 'platform/external/libpalmrejection', 'platform/external/libpcap', 'platform/external/libpciaccess', 'platform/external/libphonenumber', 'platform/external/libpng', 'platform/external/libppd', 'platform/external/libppp', 'platform/external/libprotobuf-mutator']
+        repo_name: ['platform/external/libogg', 'platform/external/libopenapv', 'platform/external/libopus', 'platform/external/liboqs', 'platform/external/libpalmrejection', 'platform/external/libpcap', 'platform/external/libpciaccess', 'platform/external/libphonenumber', 'platform/external/libpng', 'platform/external/libppd']
 
     steps:
       - name: Maximize build space

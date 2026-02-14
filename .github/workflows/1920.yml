@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/opt/datetimepicker', 'platform/frameworks/opt/emoji', 'platform/frameworks/opt/gamedevicets', 'platform/frameworks/opt/gamesdk', 'platform/frameworks/opt/inputconnectioncommon', 'platform/frameworks/opt/inputmethodcommon', 'platform/frameworks/opt/localepicker', 'platform/frameworks/opt/mailcommon', 'platform/frameworks/opt/mms', 'platform/frameworks/opt/net/ethernet']
+        repo_name: ['platform/frameworks/opt/com.google.android', 'platform/frameworks/opt/com.google.android.googlelogin', 'platform/frameworks/opt/datetimepicker', 'platform/frameworks/opt/emoji', 'platform/frameworks/opt/gamedevicets', 'platform/frameworks/opt/gamesdk', 'platform/frameworks/opt/inputconnectioncommon', 'platform/frameworks/opt/inputmethodcommon', 'platform/frameworks/opt/localepicker', 'platform/frameworks/opt/mailcommon']
 
     steps:
       - name: Maximize build space

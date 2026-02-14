@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/android-studio-gradle-test', 'platform/external/android_onboarding', 'platform/external/androidplot', 'platform/external/angle', 'platform/external/annotation-tools', 'platform/external/anonymous-counting-tokens', 'platform/external/ant-glob', 'platform/external/antlr', 'platform/external/apache-apr', 'platform/external/apache-apr-util']
+        repo_name: ['platform/external/android-nn-driver', 'platform/external/android-studio-gradle-test', 'platform/external/android_onboarding', 'platform/external/androidplot', 'platform/external/angle', 'platform/external/annotation-tools', 'platform/external/anonymous-counting-tokens', 'platform/external/ant-glob', 'platform/external/antlr', 'platform/external/apache-apr']
 
     steps:
       - name: Maximize build space

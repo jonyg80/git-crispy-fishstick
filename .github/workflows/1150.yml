@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5', 'platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin', 'platform/external/python', 'platform/external/python/Pillow']
+        repo_name: ['platform/external/ppp', 'platform/external/private-join-and-compute', 'platform/external/proguard', 'platform/external/protobuf', 'platform/external/protobuf-javalite', 'platform/external/protobuf2.5', 'platform/external/psimd', 'platform/external/pthreadpool', 'platform/external/pthreads', 'platform/external/puffin']
 
     steps:
       - name: Maximize build space

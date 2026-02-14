@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/aws-sdk-java-v2', 'platform/external/bart', 'platform/external/bazel-contrib-bazel_features', 'platform/external/bazel-contrib-rules_devicetree', 'platform/external/bazel-contrib-supply-chain', 'platform/external/bazel-skylib', 'platform/external/bazelbuild-apple_support', 'platform/external/bazelbuild-bazel-central-registry', 'platform/external/bazelbuild-kotlin-rules', 'platform/external/bazelbuild-platforms']
+        repo_name: ['platform/external/aws-eventstream-java', 'platform/external/aws-sdk-java-v2', 'platform/external/bart', 'platform/external/bazel-contrib-bazel_features', 'platform/external/bazel-contrib-rules_devicetree', 'platform/external/bazel-contrib-supply-chain', 'platform/external/bazel-skylib', 'platform/external/bazelbuild-apple_support', 'platform/external/bazelbuild-bazel-central-registry', 'platform/external/bazelbuild-kotlin-rules']
 
     steps:
       - name: Maximize build space

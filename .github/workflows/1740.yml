@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/cxx', 'platform/external/rust/ninja-to-soong', 'platform/external/rust/pica', 'platform/external/rust/rutabaga_gfx', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop', 'platform/external/sandboxed-api', 'platform/external/scapy', 'platform/external/scrypt']
+        repo_name: ['platform/external/rust/crates/zune-inflate', 'platform/external/rust/cros-libva', 'platform/external/rust/cxx', 'platform/external/rust/ninja-to-soong', 'platform/external/rust/pica', 'platform/external/rust/rutabaga_gfx', 'platform/external/ruy', 'platform/external/s2-geometry-library-java', 'platform/external/safe-iop', 'platform/external/sandboxed-api']
 
     steps:
       - name: Maximize build space

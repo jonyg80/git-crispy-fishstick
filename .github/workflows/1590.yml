@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/ron', 'platform/external/rust/crates/rusb', 'platform/external/rust/crates/rusqlite', 'platform/external/rust/crates/rust-stemmers', 'platform/external/rust/crates/rustc-demangle', 'platform/external/rust/crates/rustc-demangle-capi', 'platform/external/rust/crates/rustc-hash', 'platform/external/rust/crates/rustc_version', 'platform/external/rust/crates/rusticata-macros', 'platform/external/rust/crates/rustix']
+        repo_name: ['platform/external/rust/crates/remove_dir_all', 'platform/external/rust/crates/ring', 'platform/external/rust/crates/ron', 'platform/external/rust/crates/rusb', 'platform/external/rust/crates/rusqlite', 'platform/external/rust/crates/rust-stemmers', 'platform/external/rust/crates/rustc-demangle', 'platform/external/rust/crates/rustc-demangle-capi', 'platform/external/rust/crates/rustc-hash', 'platform/external/rust/crates/rustc_version']
 
     steps:
       - name: Maximize build space

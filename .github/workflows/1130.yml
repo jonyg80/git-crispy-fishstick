@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils', 'platform/external/pcre', 'platform/external/pdfium', 'platform/external/perf_data_converter', 'platform/external/perfetto', 'platform/external/perfmark', 'platform/external/pffft', 'platform/external/piex']
+        repo_name: ['platform/external/pandora/bt-test-interfaces', 'platform/external/pandora/mmi2grpc', 'platform/external/parameter-framework', 'platform/external/patchelf', 'platform/external/pciutils', 'platform/external/pcre', 'platform/external/pdfium', 'platform/external/perf_data_converter', 'platform/external/perfetto', 'platform/external/perfmark']
 
     steps:
       - name: Maximize build space

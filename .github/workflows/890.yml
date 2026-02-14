@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/kernel-headers', 'platform/external/kmod', 'platform/external/kotlin-compose-compiler', 'platform/external/kotlin.metadata', 'platform/external/kotlinc', 'platform/external/kotlinpoet', 'platform/external/kotlinx.atomicfu', 'platform/external/kotlinx.coroutines', 'platform/external/kotlinx.metadata', 'platform/external/kotlinx.serialization']
+        repo_name: ['platform/external/junit-params', 'platform/external/jxmpp', 'platform/external/kernel-headers', 'platform/external/kmod', 'platform/external/kotlin-compose-compiler', 'platform/external/kotlin.metadata', 'platform/external/kotlinc', 'platform/external/kotlinpoet', 'platform/external/kotlinx.atomicfu', 'platform/external/kotlinx.coroutines']
 
     steps:
       - name: Maximize build space

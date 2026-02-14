@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/uwb-diags', 'kernel/google-modules/uwb/qorvo/dw3000', 'kernel/google-modules/uwb/qorvo/qm35', 'kernel/google-modules/video/gchips', 'kernel/google-modules/wlan/bcmdhd/bcm43752', 'kernel/google-modules/wlan/bcmdhd/bcm4383', 'kernel/google-modules/wlan/bcmdhd/bcm4389', 'kernel/google-modules/wlan/bcmdhd/bcm4390', 'kernel/google-modules/wlan/bcmdhd/bcm4398', 'kernel/google-modules/wlan/qcom/wcn6740/cnss2']
+        repo_name: ['kernel/google-modules/uwb', 'kernel/google-modules/uwb-diags', 'kernel/google-modules/uwb/qorvo/dw3000', 'kernel/google-modules/uwb/qorvo/qm35', 'kernel/google-modules/video/gchips', 'kernel/google-modules/wlan/bcmdhd/bcm43752', 'kernel/google-modules/wlan/bcmdhd/bcm4383', 'kernel/google-modules/wlan/bcmdhd/bcm4389', 'kernel/google-modules/wlan/bcmdhd/bcm4390', 'kernel/google-modules/wlan/bcmdhd/bcm4398']
 
     steps:
       - name: Maximize build space

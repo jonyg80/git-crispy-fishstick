@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/wlan/qcom/wcn6740/wlan', 'kernel/google-modules/wlan/syna/dhd43752p', 'kernel/google-modules/wlan/syna/dhd4381', 'kernel/google-modules/wlan/wlan_ptracker', 'kernel/gs', 'kernel/hikey-linaro', 'kernel/hikey-modules', 'kernel/lk', 'kernel/manifest', 'kernel/mediatek']
+        repo_name: ['kernel/google-modules/wlan/qcom/wcn6740/cnss2', 'kernel/google-modules/wlan/qcom/wcn6740/wlan', 'kernel/google-modules/wlan/syna/dhd43752p', 'kernel/google-modules/wlan/syna/dhd4381', 'kernel/google-modules/wlan/wlan_ptracker', 'kernel/gs', 'kernel/hikey-linaro', 'kernel/hikey-modules', 'kernel/lk', 'kernel/manifest']
 
     steps:
       - name: Maximize build space

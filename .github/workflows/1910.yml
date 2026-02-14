@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/frameworks/opt/bitmap', 'platform/frameworks/opt/bluetooth', 'platform/frameworks/opt/calendar', 'platform/frameworks/opt/car/services', 'platform/frameworks/opt/car/setupwizard', 'platform/frameworks/opt/carddav', 'platform/frameworks/opt/chips', 'platform/frameworks/opt/colorpicker', 'platform/frameworks/opt/com.google.android', 'platform/frameworks/opt/com.google.android.googlelogin']
+        repo_name: ['platform/frameworks/multidex', 'platform/frameworks/native', 'platform/frameworks/opt/bitmap', 'platform/frameworks/opt/bluetooth', 'platform/frameworks/opt/calendar', 'platform/frameworks/opt/car/services', 'platform/frameworks/opt/car/setupwizard', 'platform/frameworks/opt/carddav', 'platform/frameworks/opt/chips', 'platform/frameworks/opt/colorpicker']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/hardware/ti/omap4-aah', 'platform/hardware/ti/omap4xxx', 'platform/hardware/ti/wlan', 'platform/hardware/ti/wpan', 'platform/libcore', 'platform/libcore-snapshot', 'platform/libcore2', 'platform/libnativehelper', 'platform/manifest', 'platform/media/cts']
+        repo_name: ['platform/hardware/ti/am57x', 'platform/hardware/ti/omap3', 'platform/hardware/ti/omap4-aah', 'platform/hardware/ti/omap4xxx', 'platform/hardware/ti/wlan', 'platform/hardware/ti/wpan', 'platform/libcore', 'platform/libcore-snapshot', 'platform/libcore2', 'platform/libnativehelper']
 
     steps:
       - name: Maximize build space

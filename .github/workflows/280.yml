@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/google-modules/touch/fts_touch', 'kernel/google-modules/touch/goodix_touch', 'kernel/google-modules/touch/himax_touch', 'kernel/google-modules/touch/novatek_touch', 'kernel/google-modules/touch/parade_touch', 'kernel/google-modules/touch/sec_touch', 'kernel/google-modules/touch/synaptics_touch', 'kernel/google-modules/trusty', 'kernel/google-modules/typec', 'kernel/google-modules/uwb']
+        repo_name: ['kernel/google-modules/touch/focaltech_touch', 'kernel/google-modules/touch/fts_touch', 'kernel/google-modules/touch/goodix_touch', 'kernel/google-modules/touch/himax_touch', 'kernel/google-modules/touch/novatek_touch', 'kernel/google-modules/touch/parade_touch', 'kernel/google-modules/touch/sec_touch', 'kernel/google-modules/touch/synaptics_touch', 'kernel/google-modules/trusty', 'kernel/google-modules/typec']
 
     steps:
       - name: Maximize build space

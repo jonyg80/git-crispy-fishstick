@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/serde_json', 'platform/external/rust/crates/serde_spanned', 'platform/external/rust/crates/serde_test', 'platform/external/rust/crates/serde_yaml', 'platform/external/rust/crates/sharded-slab', 'platform/external/rust/crates/shared_child', 'platform/external/rust/crates/shared_library', 'platform/external/rust/crates/shlex', 'platform/external/rust/crates/siphasher', 'platform/external/rust/crates/slab']
+        repo_name: ['platform/external/rust/crates/serde_cbor', 'platform/external/rust/crates/serde_derive', 'platform/external/rust/crates/serde_json', 'platform/external/rust/crates/serde_spanned', 'platform/external/rust/crates/serde_test', 'platform/external/rust/crates/serde_yaml', 'platform/external/rust/crates/sharded-slab', 'platform/external/rust/crates/shared_child', 'platform/external/rust/crates/shared_library', 'platform/external/rust/crates/shlex']
 
     steps:
       - name: Maximize build space

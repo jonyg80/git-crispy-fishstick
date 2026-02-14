@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp', 'platform/external/okhttp', 'platform/external/okhttp4']
+        repo_name: ['platform/external/nos/test/system-test-harness', 'platform/external/noto-fonts', 'platform/external/nsjail', 'platform/external/nullaway', 'platform/external/oauth', 'platform/external/obex', 'platform/external/objenesis', 'platform/external/oboe', 'platform/external/obstack', 'platform/external/oj-libjdwp']
 
     steps:
       - name: Maximize build space
