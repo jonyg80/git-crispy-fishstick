@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/android-emulator-build/protobuf', 'platform/prebuilts/android-emulator-build/qemu-android-deps', 'platform/prebuilts/android-emulator-build/qt', 'platform/prebuilts/android-emulator-build/system-images', 'platform/prebuilts/androidx/chrome-for-testing', 'platform/prebuilts/androidx/exoplayer', 'platform/prebuilts/androidx/external', 'platform/prebuilts/androidx/ink', 'platform/prebuilts/androidx/internal', 'platform/prebuilts/androidx/javascript-for-kotlin']
+        repo_name: ['platform/prebuilts/android-emulator-build/protobuf', 'platform/prebuilts/android-emulator-build/qemu-android-deps', 'platform/prebuilts/android-emulator-build/qt', 'platform/prebuilts/android-emulator-build/system-images', 'platform/prebuilts/androidx/chrome-for-testing', 'platform/prebuilts/androidx/credentials', 'platform/prebuilts/androidx/exoplayer', 'platform/prebuilts/androidx/external', 'platform/prebuilts/androidx/ink', 'platform/prebuilts/androidx/internal']
 
     steps:
       - name: Maximize build space

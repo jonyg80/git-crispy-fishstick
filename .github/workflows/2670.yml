@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/cros-codecs', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ap', 'platform/system/desktop/ec', 'platform/system/desktop/fingerprint']
+        repo_name: ['platform/system/connectivity/dhcp_client', 'platform/system/connectivity/shill', 'platform/system/connectivity/wificond', 'platform/system/connectivity/wifilogd', 'platform/system/core', 'platform/system/crash_reporter', 'platform/system/cros-codecs', 'platform/system/desktop/adb-dbc-bridge', 'platform/system/desktop/ap', 'platform/system/desktop/ec']
 
     steps:
       - name: Maximize build space

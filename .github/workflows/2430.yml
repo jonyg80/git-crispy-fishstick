@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/cmdline-tools', 'platform/prebuilts/deqp', 'platform/prebuilts/devtools', 'platform/prebuilts/eclipse', 'platform/prebuilts/eclipse-build-deps', 'platform/prebuilts/eclipse-build-deps-sources', 'platform/prebuilts/fuchsia_sdk', 'platform/prebuilts/fullsdk-darwin/build-tools', 'platform/prebuilts/fullsdk-darwin/build-tools/27.0.3', 'platform/prebuilts/fullsdk-darwin/build-tools/28.0.2']
+        repo_name: ['platform/prebuilts/cmake/windows-x86', 'platform/prebuilts/cmdline-tools', 'platform/prebuilts/deqp', 'platform/prebuilts/devtools', 'platform/prebuilts/eclipse', 'platform/prebuilts/eclipse-build-deps', 'platform/prebuilts/eclipse-build-deps-sources', 'platform/prebuilts/fuchsia_sdk', 'platform/prebuilts/fullsdk-darwin/build-tools', 'platform/prebuilts/fullsdk-darwin/build-tools/27.0.3']
 
     steps:
       - name: Maximize build space
