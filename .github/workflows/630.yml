@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/connectedappssdk', 'platform/external/conscrypt', 'platform/external/coreboot', 'platform/external/cpu_features', 'platform/external/cpuinfo', 'platform/external/crashpad', 'platform/external/crcalc', 'platform/external/cronet', 'platform/external/cros/system_api', 'platform/external/crosvm']
+        repo_name: ['platform/external/compose-hero-benchmarks/poxedex-compose', 'platform/external/connectedappssdk', 'platform/external/conscrypt', 'platform/external/coreboot', 'platform/external/cpu_features', 'platform/external/cpuinfo', 'platform/external/crashpad', 'platform/external/crcalc', 'platform/external/cronet', 'platform/external/cros/system_api']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/fonttools', 'platform/external/free-image', 'platform/external/freetype', 'platform/external/fsck_msdos', 'platform/external/fsverity-utils', 'platform/external/ganymed-ssh2', 'platform/external/gcc-demangle', 'platform/external/gdata', 'platform/external/gemmlowp', 'platform/external/genext2fs']
+        repo_name: ['platform/external/fmtlib', 'platform/external/fonttools', 'platform/external/free-image', 'platform/external/freetype', 'platform/external/fsck_msdos', 'platform/external/fsverity-utils', 'platform/external/ganymed-ssh2', 'platform/external/gcc-demangle', 'platform/external/gdata', 'platform/external/gemmlowp']
 
     steps:
       - name: Maximize build space

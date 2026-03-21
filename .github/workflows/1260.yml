@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rmi4utils', 'platform/external/rnnoise', 'platform/external/robolectric', 'platform/external/robolectric-shadows', 'platform/external/roboto-flex-fonts', 'platform/external/roboto-fonts', 'platform/external/roboto-mono', 'platform/external/rootdev', 'platform/external/rules_pkg', 'platform/external/rust/android-crates-io']
+        repo_name: ['platform/external/replicaisland', 'platform/external/rmi4utils', 'platform/external/rnnoise', 'platform/external/robolectric', 'platform/external/robolectric-shadows', 'platform/external/roboto-flex-fonts', 'platform/external/roboto-fonts', 'platform/external/roboto-mono', 'platform/external/rootdev', 'platform/external/rules_pkg']
 
     steps:
       - name: Maximize build space

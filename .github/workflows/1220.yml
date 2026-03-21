@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser', 'platform/external/python/pyee', 'platform/external/python/pyfakefs', 'platform/external/python/pyhsslms', 'platform/external/python/pylint', 'platform/external/python/pyopenssl', 'platform/external/python/pyparsing', 'platform/external/python/pyserial']
+        repo_name: ['platform/external/python/pyasn1', 'platform/external/python/pyasn1-modules', 'platform/external/python/pybind11', 'platform/external/python/pycparser', 'platform/external/python/pyee', 'platform/external/python/pyfakefs', 'platform/external/python/pyhsslms', 'platform/external/python/pylint', 'platform/external/python/pyopenssl', 'platform/external/python/pyparsing']
 
     steps:
       - name: Maximize build space
