@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['toolchain/binutils', 'toolchain/build', 'toolchain/capnproto', 'toolchain/cargo-deny', 'toolchain/cargo-vet', 'toolchain/ccache', 'toolchain/clang', 'toolchain/clang-tools-extra', 'toolchain/cloog', 'toolchain/common']
+        repo_name: ['toolchain/benchmark', 'toolchain/binutils', 'toolchain/build', 'toolchain/capnproto', 'toolchain/cargo-deny', 'toolchain/cargo-vet', 'toolchain/ccache', 'toolchain/clang', 'toolchain/clang-tools-extra', 'toolchain/cloog']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/adt/idea', 'platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk', 'platform/tools/build']
+        repo_name: ['platform/tools/adt/eclipse', 'platform/tools/adt/idea', 'platform/tools/analytics-library', 'platform/tools/apifinder', 'platform/tools/apksig', 'platform/tools/apkzlib', 'platform/tools/appbundle', 'platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk']
 
     steps:
       - name: Maximize build space
