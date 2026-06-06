@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd', 'platform/external/zucchini', 'platform/external/zxing', 'platform/frameworks/av', 'platform/frameworks/base', 'platform/frameworks/compile/libbcc']
+        repo_name: ['platform/external/xz-java', 'platform/external/yaffs2', 'platform/external/yapf', 'platform/external/zlib', 'platform/external/zopfli', 'platform/external/zstd', 'platform/external/zucchini', 'platform/external/zxing', 'platform/frameworks/av', 'platform/frameworks/base']
 
     steps:
       - name: Maximize build space

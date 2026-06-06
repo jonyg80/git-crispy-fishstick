@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/perfmark', 'platform/external/pffft', 'platform/external/piex', 'platform/external/pigweed', 'platform/external/pigz', 'platform/external/ping', 'platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config', 'platform/external/ply']
+        repo_name: ['platform/external/perfetto', 'platform/external/perfmark', 'platform/external/pffft', 'platform/external/piex', 'platform/external/pigweed', 'platform/external/pigz', 'platform/external/ping', 'platform/external/ping6', 'platform/external/pixman', 'platform/external/pkg-config']
 
     steps:
       - name: Maximize build space

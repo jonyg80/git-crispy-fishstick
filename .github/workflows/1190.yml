@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/google-cloud-core', 'platform/external/python/google-cloud-pubsub', 'platform/external/python/google-gax', 'platform/external/python/googleapis', 'platform/external/python/grpc-google-iam-v1', 'platform/external/python/grpcio', 'platform/external/python/httplib2', 'platform/external/python/ipaddress', 'platform/external/python/jinja', 'platform/external/python/liboqs-python']
+        repo_name: ['platform/external/python/google-auth-library-python', 'platform/external/python/google-cloud-core', 'platform/external/python/google-cloud-pubsub', 'platform/external/python/google-gax', 'platform/external/python/googleapis', 'platform/external/python/grpc-google-iam-v1', 'platform/external/python/grpcio', 'platform/external/python/httplib2', 'platform/external/python/ipaddress', 'platform/external/python/jinja']
 
     steps:
       - name: Maximize build space
