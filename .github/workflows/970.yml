@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libnl', 'platform/external/libnl-headers', 'platform/external/libogg', 'platform/external/libopenapv', 'platform/external/libopus', 'platform/external/liboqs', 'platform/external/libpalmrejection', 'platform/external/libpcap', 'platform/external/libpciaccess', 'platform/external/libphonenumber']
+        repo_name: ['platform/external/libnfnetlink', 'platform/external/libnl', 'platform/external/libnl-headers', 'platform/external/libogg', 'platform/external/libopenapv', 'platform/external/libopus', 'platform/external/liboqs', 'platform/external/libpalmrejection', 'platform/external/libpcap', 'platform/external/libpciaccess']
 
     steps:
       - name: Maximize build space
