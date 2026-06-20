@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/postcard', 'platform/external/rust/crates/ppv-lite86', 'platform/external/rust/crates/predicates', 'platform/external/rust/crates/predicates-core', 'platform/external/rust/crates/predicates-tree', 'platform/external/rust/crates/prettyplease', 'platform/external/rust/crates/proc-macro-error', 'platform/external/rust/crates/proc-macro-error-attr', 'platform/external/rust/crates/proc-macro-hack', 'platform/external/rust/crates/proc-macro-nested']
+        repo_name: ['platform/external/rust/crates/p9_wire_format_derive', 'platform/external/rust/crates/parking_lot', 'platform/external/rust/crates/parking_lot_core', 'platform/external/rust/crates/paste', 'platform/external/rust/crates/paste-impl', 'platform/external/rust/crates/pathdiff', 'platform/external/rust/crates/pdl-compiler', 'platform/external/rust/crates/pdl-runtime', 'platform/external/rust/crates/peeking_take_while', 'platform/external/rust/crates/percent-encoding']
 
     steps:
       - name: Maximize build space

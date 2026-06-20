@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/asuite', 'platform/tools/base', 'platform/tools/bdk', 'platform/tools/build', 'platform/tools/buildSrc', 'platform/tools/camera', 'platform/tools/carrier_settings', 'platform/tools/cmake-utils', 'platform/tools/content_addressed_storage/prebuilts', 'platform/tools/content_addressed_storage/src']
+        repo_name: ['platform/system/software_defined_vehicle/update_manager', 'platform/system/software_defined_vehicle/vsidl', 'platform/system/usb', 'platform/system/weaver', 'platform/tools/mainline', 'platform/tools/rootcanal', 'platform/system/secretkeeper', 'platform/system/secure_element', 'platform/system/security', 'platform/system/see/authmgr']
 
     steps:
       - name: Maximize build space

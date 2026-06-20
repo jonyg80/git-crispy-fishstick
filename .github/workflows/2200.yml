@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/InCallUI', 'platform/packages/apps/KeyChain', 'platform/packages/apps/Launcher', 'platform/packages/apps/Launcher2', 'platform/packages/apps/Launcher3', 'platform/packages/apps/LegacyCamera', 'platform/packages/apps/ManagedProvisioning', 'platform/packages/apps/Messaging', 'platform/packages/apps/Mms', 'platform/packages/apps/Multiuser']
+        repo_name: ['platform/packages/apps/Car/TemplatesPrebuilt', 'platform/packages/apps/Car/UserManagement', 'platform/packages/apps/Car/VoiceControl', 'platform/packages/apps/Car/externallibs', 'platform/packages/apps/Car/libs', 'platform/packages/apps/Car/systemlibs', 'platform/packages/apps/Car/tests', 'platform/packages/apps/CarrierConfig', 'platform/packages/apps/CellBroadcastReceiver', 'platform/packages/apps/CertInstaller']
 
     steps:
       - name: Maximize build space

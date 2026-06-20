@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/chrono', 'platform/external/rust/crates/ciborium', 'platform/external/rust/crates/ciborium-io', 'platform/external/rust/crates/ciborium-ll', 'platform/external/rust/crates/clang-sys', 'platform/external/rust/crates/clap', 'platform/external/rust/crates/clap_complete', 'platform/external/rust/crates/clap_derive', 'platform/external/rust/crates/clap_lex', 'platform/external/rust/crates/cobs']
+        repo_name: ['platform/external/rust/crates/atomic', 'platform/external/rust/crates/atomic-polyfill', 'platform/external/rust/crates/atty', 'platform/external/rust/crates/axum', 'platform/external/rust/crates/axum-core', 'platform/external/rust/crates/base64', 'platform/external/rust/crates/bencher', 'platform/external/rust/crates/bincode', 'platform/external/rust/crates/bindgen', 'platform/external/rust/crates/bindgen-cli']
 
     steps:
       - name: Maximize build space

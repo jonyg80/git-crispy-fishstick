@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/SmartCardService', 'platform/packages/apps/SoundRecorder', 'platform/packages/apps/SpareParts', 'platform/packages/apps/SpeechRecorder', 'platform/packages/apps/Stk', 'platform/packages/apps/StorageManager', 'platform/packages/apps/Sync', 'platform/packages/apps/SystemUIGo', 'platform/packages/apps/TV', 'platform/packages/apps/Tag']
+        repo_name: ['platform/packages/apps/IM', 'platform/packages/apps/IdentityCredentialSupport', 'platform/packages/apps/ImsServiceEntitlement', 'platform/packages/apps/InCallUI', 'platform/packages/apps/KeyChain', 'platform/packages/apps/Launcher', 'platform/packages/apps/Launcher2', 'platform/packages/apps/Launcher3', 'platform/packages/apps/LegacyCamera', 'platform/packages/apps/Login']
 
     steps:
       - name: Maximize build space

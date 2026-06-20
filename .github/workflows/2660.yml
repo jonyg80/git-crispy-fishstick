@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/superproject', 'platform/system/acpi/bert_collector', 'platform/system/adb', 'platform/system/apex', 'platform/system/ashmemd', 'platform/system/attestation', 'platform/system/authgraph', 'platform/system/bluetooth', 'platform/system/bpf', 'platform/system/bpfprogs']
+        repo_name: ['platform/prebuilts/ndk', 'platform/prebuilts/ninja/darwin-x86', 'platform/prebuilts/ninja/linux-arm64', 'platform/prebuilts/ninja/linux-x86', 'platform/prebuilts/ninja/windows-x86', 'platform/prebuilts/protobuf', 'platform/prebuilts/python/darwin-x86', 'platform/prebuilts/python/darwin-x86/2.7.5', 'platform/prebuilts/python/linux-arm64', 'platform/prebuilts/python/linux-x86']
 
     steps:
       - name: Maximize build space

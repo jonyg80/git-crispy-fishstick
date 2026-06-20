@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libldac', 'platform/external/liblzf', 'platform/external/libmicrohttpd', 'platform/external/libmojo', 'platform/external/libmonet', 'platform/external/libmpeg2', 'platform/external/libmtp', 'platform/external/libnetfilter_conntrack', 'platform/external/libnfc-nci', 'platform/external/libnfc-nxp']
+        repo_name: ['platform/external/libcxxabi_35a', 'platform/external/libcxxrt', 'platform/external/libdaemon', 'platform/external/libdav1d', 'platform/external/libdisplay-info', 'platform/external/libdivsufsort', 'platform/external/libdrm', 'platform/external/libedit', 'platform/external/libepoxy', 'platform/external/libese']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/inputmethods/PinyinIME', 'platform/packages/modules/ANGLE', 'platform/packages/modules/AdServices', 'platform/packages/modules/ApiExtensions', 'platform/packages/modules/AppSearch', 'platform/packages/modules/ArtPrebuilt', 'platform/packages/modules/Bluetooth', 'platform/packages/modules/BootPrebuilt/5.10/arm64', 'platform/packages/modules/BootPrebuilt/5.4/arm64', 'platform/packages/modules/CaptivePortalLogin']
+        repo_name: ['platform/packages/apps/SafetyRegulatoryInfo', 'platform/packages/apps/SampleLocationAttribution', 'platform/packages/apps/SecureElement', 'platform/packages/apps/Settings', 'platform/packages/apps/SettingsIntelligence', 'platform/packages/apps/SmartCardService', 'platform/packages/apps/SoundRecorder', 'platform/packages/apps/SpareParts', 'platform/packages/apps/SpeechRecorder', 'platform/packages/apps/Stk']
 
     steps:
       - name: Maximize build space

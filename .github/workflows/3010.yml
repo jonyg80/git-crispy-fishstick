@@ -1,0 +1,70 @@
+name: 3010 Clone and Push
+
+on:
+  schedule:
+    - cron: '0 2 26 * *' # Runs monthly, every 2 hours, incrementing day when hour resets
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      max-parallel: 1
+      matrix:
+        repo_name: ['toolchain/prebuilts/ndk/r15', 'toolchain/prebuilts/ndk/r16', 'toolchain/prebuilts/ndk/r17', 'toolchain/prebuilts/ndk/r18', 'toolchain/prebuilts/ndk/r19', 'toolchain/prebuilts/ndk/r20', 'toolchain/prebuilts/ndk/r21', 'toolchain/prebuilts/ndk/r23', 'toolchain/prebuilts/ndk/r24', 'toolchain/prebuilts/ndk/r25']
+
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-android: 'true'
+          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone --mirror https://android.googlesource.com/${{ matrix.repo_name }} ${{ matrix.repo_name }}
+
+      - name: Increase Git buffer size
+        run: git config --global http.postBuffer 157286400
+
+      - name: Push
+        run: |
+          cd ${{ matrix.repo_name }}
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git push --mirror https://${{ secrets.GitUsername }}:${{ secrets.GitToken }}@${{ secrets.GitURL }}/${{ matrix.repo_name }}.git
+
+      - name: Notify Slack on failure
+        if: failure()
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: "❌ GitHub Actions Workflow Failed"
+            blocks:
+              - type: section
+                text:
+                  type: mrkdwn
+                  text: "*Workflow Failure Details:*"
+              - type: section
+                text:
+                  type: mrkdwn
+                  text: "Job *${{ github.job }}* failed in workflow *${{ github.workflow }}*"
+                fields:
+                  - type: mrkdwn
+                    text: "*Repository* ${{ github.repository }}"
+                  - type: mrkdwn
+                    text: "*Branch* ${{ github.ref_name }}"
+              - type: section
+                text:
+                  type: mrkdwn
+                  text: "<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Job Details> :warning:"

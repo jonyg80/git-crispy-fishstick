@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/tracing-attributes', 'platform/external/rust/crates/tracing-core', 'platform/external/rust/crates/tracing-subscriber', 'platform/external/rust/crates/try-lock', 'platform/external/rust/crates/tungstenite', 'platform/external/rust/crates/twox-hash', 'platform/external/rust/crates/ucd-trie', 'platform/external/rust/crates/ucs2', 'platform/external/rust/crates/uds', 'platform/external/rust/crates/uefi']
+        repo_name: ['platform/external/rust/crates/tikv-jemalloc-sys', 'platform/external/rust/crates/tikv-jemallocator', 'platform/external/rust/crates/time', 'platform/external/rust/crates/time-macros', 'platform/external/rust/crates/time-macros-impl', 'platform/external/rust/crates/tinyjson', 'platform/external/rust/crates/tinytemplate', 'platform/external/rust/crates/tinyvec', 'platform/external/rust/crates/tinyvec_macros', 'platform/external/rust/crates/tinyvec_string']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/libcppbor', 'platform/external/libcups', 'platform/external/libcupsfilters', 'platform/external/libcxx', 'platform/external/libcxx_35a', 'platform/external/libcxxabi', 'platform/external/libcxxabi_35a', 'platform/external/libcxxrt', 'platform/external/libdaemon', 'platform/external/libdav1d']
+        repo_name: ['platform/external/lfi/lfi-bind', 'platform/external/lfi/lfi-runtime', 'platform/external/lfi/lfi-verifier', 'platform/external/lfi/rlbox', 'platform/external/lfi/rlbox-lfi', 'platform/external/libabigail', 'platform/external/libaom', 'platform/external/libavc', 'platform/external/libbackup', 'platform/external/libbpf']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/clang/host/windows-x86_32', 'platform/prebuilts/clang/linux-x86/3.1', 'platform/prebuilts/clang/linux-x86/3.2', 'platform/prebuilts/clang/linux-x86/arm/3.3', 'platform/prebuilts/clang/linux-x86/host/3.3', 'platform/prebuilts/clang/linux-x86/host/3.4', 'platform/prebuilts/clang/linux-x86/host/3.5', 'platform/prebuilts/clang/linux-x86/host/3.6', 'platform/prebuilts/clang/linux-x86/mips/3.3', 'platform/prebuilts/clang/linux-x86/x86/3.3']
+        repo_name: ['platform/prebuilts/androidx/credentials', 'platform/prebuilts/androidx/exoplayer', 'platform/prebuilts/androidx/external', 'platform/prebuilts/androidx/ink', 'platform/prebuilts/androidx/internal', 'platform/prebuilts/androidx/javascript-for-kotlin', 'platform/prebuilts/androidx/konan', 'platform/prebuilts/androidx/studio', 'platform/prebuilts/androidx/traceprocessor', 'platform/prebuilts/androidx/webgpu']
 
     steps:
       - name: Maximize build space

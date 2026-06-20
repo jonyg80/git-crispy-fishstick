@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/rust/crates/hashbrown', 'platform/external/rust/crates/hashlink', 'platform/external/rust/crates/heapless', 'platform/external/rust/crates/heck', 'platform/external/rust/crates/hermit-abi', 'platform/external/rust/crates/hex', 'platform/external/rust/crates/hickory-proto', 'platform/external/rust/crates/hound', 'platform/external/rust/crates/http', 'platform/external/rust/crates/http-body']
+        repo_name: ['platform/external/rust/crates/fs-err', 'platform/external/rust/crates/futures', 'platform/external/rust/crates/futures-channel', 'platform/external/rust/crates/futures-core', 'platform/external/rust/crates/futures-executor', 'platform/external/rust/crates/futures-io', 'platform/external/rust/crates/futures-macro', 'platform/external/rust/crates/futures-sink', 'platform/external/rust/crates/futures-task', 'platform/external/rust/crates/futures-test']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/external/python/pyopenssl', 'platform/external/python/pyparsing', 'platform/external/python/pyserial', 'platform/external/python/pytest', 'platform/external/python/python-api-core', 'platform/external/python/pyyaml', 'platform/external/python/requests', 'platform/external/python/rsa', 'platform/external/python/scipy', 'platform/external/python/setuptools']
+        repo_name: ['platform/external/python/mako', 'platform/external/python/markupsafe', 'platform/external/python/matplotlib', 'platform/external/python/mobly', 'platform/external/python/mock', 'platform/external/python/more-itertools', 'platform/external/python/numpy', 'platform/external/python/oauth2client', 'platform/external/python/olefile', 'platform/external/python/packaging']
 
     steps:
       - name: Maximize build space

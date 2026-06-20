@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/packages/apps/Car/Messenger', 'platform/packages/apps/Car/MessengerPrebuilt', 'platform/packages/apps/Car/MultiDisplay', 'platform/packages/apps/Car/Notification', 'platform/packages/apps/Car/Overview', 'platform/packages/apps/Car/Provision', 'platform/packages/apps/Car/Radio', 'platform/packages/apps/Car/RadioPrebuilt', 'platform/packages/apps/Car/References', 'platform/packages/apps/Car/RotaryController']
+        repo_name: ['platform/packages/apps/AlarmClock', 'platform/packages/apps/AvatarPicker', 'platform/packages/apps/BasicSmsReceiver', 'platform/packages/apps/Benchmark', 'platform/packages/apps/Bluetooth', 'platform/packages/apps/Browser', 'platform/packages/apps/Browser2', 'platform/packages/apps/Calculator', 'platform/packages/apps/Calendar', 'platform/packages/apps/Camera']
 
     steps:
       - name: Maximize build space

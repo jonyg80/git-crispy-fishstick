@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['kernel/common-modules/virtio-msg', 'kernel/common-modules/virtual-device', 'kernel/common-modules/wonder', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay', 'kernel/devices/google/caimito', 'kernel/devices/google/comet']
+        repo_name: ['kernel/common-modules/binder', 'kernel/common-modules/trusty', 'kernel/common-modules/virtio-msg', 'kernel/common-modules/virtual-device', 'kernel/common-modules/wonder', 'kernel/common-patches', 'kernel/configs', 'kernel/cuttlefish-modules', 'kernel/devices/google/akita', 'kernel/devices/google/bluejay']
 
     steps:
       - name: Maximize build space

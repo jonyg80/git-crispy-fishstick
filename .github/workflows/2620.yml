@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/prebuilts/protobuf', 'platform/prebuilts/python/darwin-x86', 'platform/prebuilts/python/darwin-x86/2.7.5', 'platform/prebuilts/python/linux-arm64', 'platform/prebuilts/python/linux-x86', 'platform/prebuilts/python/linux-x86/2.7.5', 'platform/prebuilts/python/windows-x86', 'platform/prebuilts/qemu-kernel', 'platform/prebuilts/r8', 'platform/prebuilts/remoteexecution-client']
+        repo_name: ['platform/prebuilts/libprotobuf/linux-x86', 'platform/prebuilts/libprotobuf/windows', 'platform/prebuilts/libprotobuf/windows-x86', 'platform/prebuilts/libs/libedit', 'platform/prebuilts/manifest-merger', 'platform/prebuilts/maven_repo/android', 'platform/prebuilts/maven_repo/bumptech', 'platform/prebuilts/maven_repo/google-play-service-client-libraries-3p', 'platform/prebuilts/metalava', 'platform/prebuilts/misc']
 
     steps:
       - name: Maximize build space

@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/tools/currysrc', 'platform/tools/dctv-tracedb', 'platform/tools/deviceinfra/prebuilts', 'platform/tools/dexter', 'platform/tools/doc_generation', 'platform/tools/dokka-devsite-plugin', 'platform/tools/emulator', 'platform/tools/external/bazelbuild-rules-kotlin', 'platform/tools/external/fat32lib', 'platform/tools/external/go/src/github.com/go-gl-legacy/gl']
+        repo_name: ['platform/system/sepolicy', 'platform/system/server_configurable_flags', 'platform/system/teeui', 'platform/system/testing/gtest_extras', 'platform/system/timezone', 'platform/system/tools/aidl', 'platform/system/tools/bpt', 'platform/system/tools/hidl', 'platform/system/tools/mkbootimg', 'platform/system/tools/sysprop']
 
     steps:
       - name: Maximize build space

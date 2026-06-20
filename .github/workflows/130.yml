@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['device/google/tangorpro-kernel', 'device/google/tangorpro-kernels/5.10', 'device/google/tangorpro-kernels/6.1', 'device/google/tangorpro-sepolicy', 'device/google/tegu', 'device/google/tegu-kernels/6.1', 'device/google/tegu-sepolicy', 'device/google/trout', 'device/google/vrservices', 'device/google/wahoo']
+        repo_name: ['device/google/taimen', 'device/google/tangorpro', 'device/google/tangorpro-kernel', 'device/google/tangorpro-kernels/5.10', 'device/google/tangorpro-kernels/6.1', 'device/google/tangorpro-sepolicy', 'device/google/tegu', 'device/google/tegu-kernels/6.1', 'device/google/tegu-sepolicy', 'device/google/trout']
 
     steps:
       - name: Maximize build space

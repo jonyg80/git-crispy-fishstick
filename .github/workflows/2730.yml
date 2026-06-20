@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/nativepower', 'platform/system/netd', 'platform/system/nfc', 'platform/system/nvram', 'platform/system/peripheralmanager', 'platform/tools/rootcanal', 'platform/system/secretkeeper', 'platform/system/secure_element', 'platform/system/security', 'platform/system/see/authmgr']
+        repo_name: ['platform/system/desktop/ec', 'platform/system/desktop/fingerprint', 'platform/system/desktop/intel-pmt', 'platform/system/desktop/security', 'platform/system/dmesgd', 'platform/system/extras', 'platform/system/firewalld', 'platform/system/fs/casefolding_remover', 'platform/system/fs/fs_mgr', 'platform/system/gatekeeper']
 
     steps:
       - name: Maximize build space
