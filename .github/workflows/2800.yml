@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        repo_name: ['platform/system/software_defined_vehicle/update_manager', 'platform/system/software_defined_vehicle/vsidl', 'platform/system/usb', 'platform/system/weaver', 'platform/tools/mainline', 'platform/tools/rootcanal', 'platform/system/secretkeeper', 'platform/system/secure_element', 'platform/system/security', 'platform/system/see/authmgr']
+        repo_name: ['platform/system/software_defined_vehicle/update_manager', 'platform/system/software_defined_vehicle/vpm', 'platform/system/software_defined_vehicle/vsidl', 'platform/system/usb', 'platform/system/weaver', 'platform/tools/mainline', 'platform/tools/rootcanal', 'platform/system/secretkeeper', 'platform/system/secure_element', 'platform/system/security']
 
     steps:
       - name: Maximize build space
